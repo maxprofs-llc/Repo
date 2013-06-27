@@ -1,0 +1,180 @@
+/*
+Theme Name: Lenora
+Description: Used to style the TinyMCE editor.
+*/
+
+html .mceContentBody {
+	max-width: 100%;
+}
+
+body, input, textarea {
+	color: #333;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1em;
+	line-height:1.5em;
+}
+
+pre, code, tt, kbd {
+	font-size: 1.1em;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+}
+
+
+/* Text elements */
+p {
+	margin-bottom: 18px;
+}
+
+ul{
+	padding:0.5em 0 0.5em 2em; 
+	line-height: 1.3;
+}
+ul li{
+	padding:0;
+	list-style: disc;
+}
+ol {
+	padding:0.5em 0 0.5em 2em ;
+	line-height: 1.3;
+}
+ol li{
+	padding:0;
+	list-style: decimal;
+}
+ol ol li {
+	list-style: lower-latin;
+}
+ol ol ol li {
+	list-style: decimal;
+}
+dl {
+	margin:0 ;
+	padding: 0;
+}
+dt {
+	font-weight: bold;
+	margin: 0;
+	padding-top: 1em;
+}
+dd {
+	margin: 0;
+	padding-bottom: 1em;
+	padding-left: 3em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+cite, em, i {
+	border: none;
+	font-style: italic;
+}
+
+blockquote {
+	background-color: #E9E9E9;
+	font-style: italic;
+	margin-top: 1em;
+	margin-right: 0em;
+	margin-bottom: 1em;
+	margin-left: 0em;
+	padding-top: 1em;
+	padding-right: 2em;
+	padding-bottom: 0.5em;
+	padding-left: 2em;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+
+a, a:link, a:visited {
+	color: #999;
+	text-decoration: none;
+} 
+a:hover, a:active {
+	color: #3399CC;
+	text-decoration: underline;
+}
+
+p, ul, ol, dd, pre, hr {
+	margin-bottom: 2em;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+}
+h1 {
+	font: bold 1.6em/1.6 serif;
+	padding: 1.8em 0 0.6em;
+	color:#333;
+}
+h2 {
+	font: bold 1.4em/1.4 serif;
+	padding: 1.5em 0 0.5em;
+	color:#333;
+}
+h3 {
+	font: bold 1.2em/1.4 serif;
+	padding: 1.2em 0 0.3em;
+	color:#333;
+}
+h4 {
+	font: bold 1.1em/1.4 serif;
+	padding: 1.2em 0 0.3em;	
+	color:#333;	
+}
+h5 {
+	font: bold 1em/1.3 serif;
+}
+h6 {
+	font: bold .9em/1.3 serif;
+}
+
+
+table {
+	margin:1em 0em 3em 0em;
+}
+table tr {
+	border-bottom:1px solid #333;
+}
+table tr th {
+	padding: 1em 2em 1em 2em;
+	border-top:1px solid #333;
+	border-left:1px solid #333;
+	border-right:1px solid #333;
+	font-weight:bold;
+}
+table tr td {
+	padding: 1em 2em 1em 2em;
+	border-left:1px solid #333;
+	border-right:1px solid #333;
+}
+
+img {
+	max-width:100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+img.aligncenter {
+	margin: 1em auto;
+}
+img.alignleft ,#.wp-caption.alignleft {
+	margin: 1em 1em 0 0;
+}
+img.alignright.wp-caption.alignright {
+	margin: 1em 0 0 2em;
+}
+img.alignnone {
+	margin: 0;
+}
+
+.wp-caption.alignnone {
+	margin: 0 0 1em;
+}
+.wp-caption {
+	max-width: 100%;
+}
+p.wp-caption-text, .entry-caption p  {
+	font-size:0.8em;
+}

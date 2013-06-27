@@ -1,0 +1,539 @@
+body 
+{ 
+	margin: 0; 
+	padding: 0;
+	font: 11px "Trebuchet MS", Arial, Tahoma, sans-serif;
+	line-height: 1.6em;
+	background: #f1f1f1; 
+	color: #555555;
+	background: #f1f1f1 url(../images/backgrounds/bodybg.gif) repeat-x;
+}
+
+/* LAYOUT */
+.content 
+{ 
+	margin: 0 auto;
+	width: 1020px;
+	padding: 10px; 
+	background: #ffffff;
+	border-left: 1px solid #c1c1c1;
+	border-right: 1px solid #c1c1c1;
+}
+
+.header 
+{ 
+	height: 95px;
+	background: #fff url(../images/logos/sobg.jpg) no-repeat left;
+	color: #808080;
+	margin: 0px 0;
+	padding: 0px 0 0 0;
+}
+
+	.header_left
+	{
+		float: left;
+		height: 95px;
+		width: 300px;
+	}
+
+	.header_left a em
+	{
+		position: absolute;
+		color: #000000;
+		float: left;
+		height: 95px;
+		width: 300px;
+		text-decoration: none;
+		cursor: hand;
+		cursor: pointer;
+	}
+
+.top_info 
+{
+	float: right;
+	width: 555px;
+	padding: 5px 0 4px 0;
+	color: #808080;
+}
+
+	.top_info_right 
+	{
+		float: right;
+		width: 290px;
+		padding: 0 0 0 35px;
+		/* border-left: 1px solid #eee; */
+	}
+
+.bar 
+{ 
+	clear: both;
+	font-size: 1.1em;
+	height: 30px; 
+	color: #FFF;
+	margin-bottom: 30px;
+}
+
+.info_field 
+{ 
+	color: #808080;
+	clear: both;
+	font-weight: bold;
+	padding: 7px 12px 10px 10px;
+	margin: 15px 0;
+	text-align: right;	
+}
+
+/* LEFT SIDE */
+.left 
+{
+	float: left;
+	margin-left: 2px;
+	margin-top: -20px;
+	width:820px;
+}
+
+/* RIGHT SIDE */
+.right
+{
+	text-align: center;
+	width: 177px;
+	float: left;
+	margin-top: -20px;
+}
+
+/* FOOTER */
+.footer 
+{ 
+	clear: both;
+	text-align: center;
+	padding: 10px 0;
+	border-top: 1px solid #ccc;
+	line-height: 2em;
+}
+
+/* ROUNDED-CORNER DIVS */
+.left_dialog {
+ margin:0px auto;
+ min-width:20em;
+ width:820px;
+ float: left;
+}
+
+.left_dialog .hd .c,
+.left_dialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:10px;
+}
+
+.left_dialog .ft .c {
+ height:14px;
+}
+
+.left_dialog .hd {
+ background:transparent url(../images/rounded_divs/tl.gif) no-repeat 0px 0px;
+}
+
+.left_dialog .hd .c {
+ background:transparent url(../images/rounded_divs/tr.gif) no-repeat right 0px;
+}
+
+.left_dialog .bd {
+ background:transparent url(../images/rounded_divs/ml.gif) repeat-y 0px 0px;
+}
+
+.left_dialog .bd .c {
+ background:transparent url(../images/rounded_divs/mr.gif) repeat-y right 0px;
+}
+
+.left_dialog .bd .c .s {
+ margin:0px 8px 0px 4px;
+ /* background:#fff1f1 url(../images/rounded_divs/ms.jpg) repeat-y 0px 0px; */
+ background: #fff;
+ padding:1em;
+}
+
+.left_dialog .ft {
+ background:transparent url(../images/rounded_divs/bl.gif) no-repeat 0px 0px;
+}
+
+.left_dialog .ft .c {
+ background:transparent url(../images/rounded_divs/br.gif) no-repeat right 0px;
+}
+
+.right_dialog {
+ width:177px;
+ margin:0px auto;
+ /* min-width:20em; */
+ float: left;
+}
+
+.right_dialog .hd .c,
+.right_dialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:10px;
+}
+
+.right_dialog .ft .c {
+ height:14px;
+}
+
+.right_dialog .hd {
+ background:transparent url(../images/rounded_divs/tl.gif) no-repeat 0px 0px;
+}
+
+.right_dialog .hd .c {
+ background:transparent url(../images/rounded_divs/tr.gif) no-repeat right 0px;
+}
+
+.right_dialog .bd {
+ background:transparent url(../images/rounded_divs/ml.gif) repeat-y 0px 0px;
+}
+
+.right_dialog .bd .c {
+ background:transparent url(../images/rounded_divs/mr.gif) repeat-y right 0px;
+}
+
+.right_dialog .bd .c .s {
+ margin:0px 8px 0px 4px;
+ /* background:#fff1f1 url(../images/rounded_divs/ms.jpg) repeat-y 0px 0px; */
+ background: #fff;
+ padding:1em;
+}
+
+.right_dialog .ft {
+ background:transparent url(../images/rounded_divs/bl.gif) no-repeat 0px 0px;
+}
+
+.right_dialog .ft .c {
+ background:transparent url(../images/rounded_divs/br.gif) no-repeat right 0px;
+}
+
+/* addons by me, myself and I */
+.leftContentLeft
+{
+	float: left;
+	width: 500px;
+	margin-right: 15px
+}
+
+.leftContentRight
+{
+	float: left;
+	width: 250px;
+}
+
+.hide 
+{ 
+	display: none; 
+}
+
+.clear 
+{ 
+	clear: both;
+}
+
+/* IMAGES */
+img.iconLink
+{
+	border: 0px;
+}
+
+img.partners
+{
+	border-width: 1px;
+	border-color: #c1c1c1;
+	margin-bottom: 2px;
+}
+
+/* have to put this table here, since the slide needs a larger table */
+table.mainTable
+{
+	/* fix for IE 5 (and more browsers?) */
+	font: 11px "Trebuchet MS", Arial, Tahoma, sans-serif;
+	border-collapse: collapse;
+	width: 760px;
+}
+
+/* LINKS */
+a:link,
+a:visited,
+a:active 
+{
+	color: #555555;
+}
+
+a:hover 
+{
+	color: #666666;
+}
+
+a.white:link,
+a.white:visited,
+a.white:active 
+{
+	color: #f1f1f1;
+	font-weight: bold;
+}
+
+a.white:hover 
+{
+	color: #d1d1d1;
+	font-weight: bold;
+}
+
+div.form
+{
+	background-color: #efefef;
+	border: 1px solid #dfdfdf;
+}
+
+div.highLight
+{
+	border: 1px solid #e1e1e1;
+	background: #ffffa0;
+	padding: 8px;
+	margin-bottom: 8px;
+}
+
+div.info
+{
+	border: 1px solid #e1e1e1;
+	background: #f1f1f1;
+	padding: 8px;
+	width: 300px;
+}
+
+div.warning
+{
+	border: 1px solid #e1e1e1;
+	background: #f1f1f1;
+	padding: 8px;
+	margin-bottom: 8px;
+}
+
+/* TEXT */
+b.highLight
+{
+	color: #a64444;
+}
+
+i.small
+{
+	font-size: 10px;
+}
+
+/* SELECTS & INPUT */
+input.defaultReq
+{
+	background-color: #ffffa0;
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+   	font-size: 11px;
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-bottom: 5px;
+}
+
+input.default
+{
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-bottom: 5px;
+}
+
+select.defaultReq
+{
+	background-color: #ffffa0;
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	font-size: 11px;
+	padding-left: 2px;	
+	margin-bottom: 5px;
+}
+
+select.default
+{
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	font-size: 11px;
+	padding-right: 2px;
+	padding-left: 2px;	
+	margin-bottom: 5px;
+}
+
+textarea.default
+{
+	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	font-size: 11px;
+	margin-bottom: 5px;	
+}
+
+textarea.defaultReq
+{
+	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	font-size: 11px;
+	background-color: #ffffa0;
+	margin-bottom: 5px;	
+}
+
+input.submitDefault
+{
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+
+input.tight
+{
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+	font-size: 11px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+br
+{
+    clear: left;
+}
+
+h2
+{
+	margin-top:0px;
+	font-size: 17px;
+	color: #565670;
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;	
+}
+
+h3
+{
+	margin-bottom: 5px;
+	margin-top: 15px;
+	font-size: 16px;
+	color: #565670;
+   	font-family: Trebuchet MS, Arial, Verdana sans-serif;
+}
+
+h4
+{
+	margin-bottom: 3px;
+}
+
+
+h3.noMarginBottom
+{
+	margin-bottom: 0px;
+}
+
+h3.news
+{
+	font-size: 11px;
+	color: #666666;
+	margin-bottom: -15px;
+	background-color: #f1f1f1;	
+	border-top: solid 1px #b1b1b1;
+	border-left: solid 1px #b1b1b1;
+	border-right: solid 1px #919191;
+	border-bottom: solid 1px #919191;
+	padding: 3px;
+}
+
+/* IMAGES */
+img.iconLink
+{
+	border: 0px;
+}
+
+img.link
+{
+	border: 0px;
+}
+
+img.border
+{
+	border: 1px solid #e1e1e1;
+}
+
+span.small
+{
+	font-size: 10px;
+}
+
+span.highLight
+{
+	color: #a64444;
+}
+
+span.smallLight
+{
+	font-size: 10px;
+	color: #a1a1a1;
+}
+
+span.light
+{
+	color: #a1a1a1;	
+}
+
+span.bold
+{
+	font-weight: bold;
+}
+
+span.underline
+{
+	text-decoration: underline;
+}
+
+span.italics
+{
+	font-style: italic;
+}
+
+form
+{
+	margin: 0;
+}
+
+#payEntranceFee
+{
+	background: #f9f9f9;
+	border: 1px solid #c1c1c1;
+	padding: 10px;
+}
+
+/* Social media CSS: */
+
+#socialLeft {
+  width: 385px;
+  float: left;
+  margin-right: 10px; 
+}
+
+#socialRight {
+  width: 385px;
+  float: left;
+}
+
+#fb-root {
+  border: 1px solid #e8e8e8; 
+  border-radius: 5px;
+  overflow: visible;
+}
+
+.fb-like, .fb_reset {
+  overflow: visible;
+}
+
+.fb-margin {
+  margin-top: 5px;
+}
+
+#share {
+  margin-top: 15px;
+  clear: both;
+}
+
+.hand {
+  cursor: hand;
+  cursor: pointer;
+}

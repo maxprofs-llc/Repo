@@ -1,0 +1,5 @@
+.timeline .e-entry-title, .p-author .p-name, .cards-base h3, .new-tweets-bar button, .load-tweets, .no-more-pane .twtr-tweet-text {
+	font: 11px "Trebuchet MS", Arial, Tahoma, sans-serif;
+	line-height: 1.6em;
+	color: #555555;
+}

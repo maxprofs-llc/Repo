@@ -1,0 +1,1607 @@
+<h1>Flipper-SM 2011 kvalresultat</h1>
+
+
+
+                <table class="browse_records">
+                    <thead>
+                        <tr>
+                            <th class="browse_header">
+                                Placering
+                            </th>
+                            <th class="browse_header">
+                                Po&auml;ng
+                            </th>
+                            <th class="browse_header">
+                                Tag
+                            </th>
+                            <th class="browse_header">
+                                Namn
+                            </th>
+                            <th class="browse_header">
+                                Ort
+                            </th>
+                            <th class="browse_header">
+                                Spel
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                                <tr>
+  <td>1</td>
+  <td>384</td>
+  <td>JOE</td>
+  <td>Jorian Engelbrektsson</td>
+  <td>Stockholm</td>
+  <td>TSPP 100, TFTC 100, DW 92, WW92</td>
+ </tr>
+ <tr>
+  <td>2</td>
+  <td>384</td>
+  <td>LEL</td>
+  <td>Reidar Spets</td>
+  <td>Sunne</td>
+  <td>T3 100, JM 100, Tron 92, ES 92</td>
+ </tr>
+ <tr>
+  <td>3</td>
+  <td>376</td>
+  <td>PAL</td>
+  <td>Patrik Bodin</td>
+  <td>Stockholm</td>
+  <td>BTDK 100, ES 100, TFTC 92, DW 84</td>
+ </tr>
+ <tr>
+  <td>4</td>
+  <td>372</td>
+  <td>REC</td>
+  <td>Rolph Ericson</td>
+  <td>Stockholm Enskede</td>
+  <td>AFM 100, TSPP 92, BTDK 92, JM 88</td>
+ </tr>
+ <tr>
+  <td>5</td>
+  <td>364</td>
+  <td>YOO</td>
+  <td>Helena Walter</td>
+  <td>Haninge</td>
+  <td>WW 100, Corv 100, SM 96, BS 68</td>
+ </tr>
+ <tr>
+  <td>6</td>
+  <td>362</td>
+  <td>KGB</td>
+  <td>Karl Brostr&ouml;m</td>
+  <td>G&ouml;teborg</td>
+  <td>WW 96, AFM 96, Corv 96, Tron 74</td>
+ </tr>
+ <tr>
+  <td>7</td>
+  <td>353</td>
+  <td>RED</td>
+  <td>Tobias Lund</td>
+  <td>Eskilstuna</td>
+  <td>SM 100, TS 96, MA 92, RBION 65</td>
+ </tr>
+ <tr>
+  <td>8</td>
+  <td>348</td>
+  <td>JEE</td>
+  <td>Eric Erlandsson</td>
+  <td>G&ouml;teborg</td>
+  <td>I500 92, MB 92, AFM 84, DW 80</td>
+ </tr>
+ <tr>
+  <td>9</td>
+  <td>338</td>
+  <td>PER</td>
+  <td>Per Ahlenius</td>
+  <td>M&ouml;lndal</td>
+  <td>I500 100, DH 96, BTDK 80, AFM 62</td>
+ </tr>
+ <tr>
+  <td>10</td>
+  <td>330</td>
+  <td>LIX</td>
+  <td>Magnus Rost&ouml;</td>
+  <td>Norrk&ouml;ping</td>
+  <td>Tron 100, Corv 92, TSPP 88, TFTC 50</td>
+ </tr>
+ <tr>
+  <td>11</td>
+  <td>325</td>
+  <td>APA</td>
+  <td>Alvar Palm</td>
+  <td>G&ouml;teborg</td>
+  <td>JM 96, WW 88, ES 88, TS 53</td>
+ </tr>
+ <tr>
+  <td>12</td>
+  <td>324</td>
+  <td>IFK</td>
+  <td>J&ouml;rgen Holm</td>
+  <td>Stockholm</td>
+  <td>TS 100, MA 88, ES 77, Bay 59</td>
+ </tr>
+ <tr>
+  <td>13</td>
+  <td>318</td>
+  <td>MSH</td>
+  <td>Marcus Hugosson</td>
+  <td>korsberga</td>
+  <td>SM 92, MB 84, BS 77, Corv 65</td>
+ </tr>
+ <tr>
+  <td>14</td>
+  <td>312</td>
+  <td>BLA</td>
+  <td>Christian Balac</td>
+  <td>Alings&aring;s</td>
+  <td>I500 96, AFM 92, BS 92, Bay 32</td>
+ </tr>
+ <tr>
+  <td>15</td>
+  <td>307</td>
+  <td>LJA</td>
+  <td>Jonas Andersson</td>
+  <td>Stockholm</td>
+  <td>AFM 88, DH 80, TFTC 77, MB 62</td>
+ </tr>
+ <tr>
+  <td>16</td>
+  <td>304</td>
+  <td>JCC</td>
+  <td>Jonas Carlsson</td>
+  <td>H&auml;rryda</td>
+  <td>MA 100, TSPP 77, T3 65, JM 62</td>
+ </tr>
+ <tr>
+  <td>17</td>
+  <td>300</td>
+  <td>MAG</td>
+  <td>Christian Magnusson</td>
+  <td>S&auml;vedalen</td>
+  <td>Tron 96, TS 77, JM 77, DW 50</td>
+ </tr>
+ <tr>
+  <td>18</td>
+  <td>299</td>
+  <td>FAN</td>
+  <td>Fanny Sunesson</td>
+  <td>Asarum</td>
+  <td>DH 92, BTDK 77, BS 65, MB 65</td>
+ </tr>
+ <tr>
+  <td>19</td>
+  <td>292</td>
+  <td>MCR</td>
+  <td>Mats Runsten</td>
+  <td>Stockholm</td>
+  <td>ES 96, BTDK 84, Bay 80, RBION 32</td>
+ </tr>
+ <tr>
+  <td>20</td>
+  <td>291</td>
+  <td>REY</td>
+  <td>Fredrik Malmqvist</td>
+  <td>Sk&ouml;vde</td>
+  <td>Corv 84, DW 71, JM 71, BTDK 65</td>
+ </tr>
+ <tr>
+  <td>21</td>
+  <td>288</td>
+  <td>CC</td>
+  <td>Christer Carlsson</td>
+  <td>Rydboholm</td>
+  <td>ES 84, MA 80, WW 68, TS 56</td>
+ </tr>
+ <tr>
+  <td>22</td>
+  <td>287</td>
+  <td>MIW</td>
+  <td>Mikael Telerud</td>
+  <td>Nyk&ouml;ping</td>
+  <td>BTDK 96, TS 88, Tron 68, ES 35</td>
+ </tr>
+ <tr>
+  <td>23</td>
+  <td>286</td>
+  <td>SIC</td>
+  <td>Stefan Cederl&ouml;f</td>
+  <td>G&ouml;teborg</td>
+  <td>Bay 100, TSPP 74, I500 65, T3 47</td>
+ </tr>
+ <tr>
+  <td>24</td>
+  <td>286</td>
+  <td>ABI</td>
+  <td>Anders Birgersson</td>
+  <td>Lindome</td>
+  <td>TFTC 96, Bay 84, T3 56, TSPP 50</td>
+ </tr>
+ <tr>
+  <td>25</td>
+  <td>283</td>
+  <td>J L</td>
+  <td>Johan Lundin</td>
+  <td>Eskilstuna</td>
+  <td>T3 84, RBION 84, WW 62, MB 53</td>
+ </tr>
+ <tr>
+  <td>26</td>
+  <td>280</td>
+  <td>HBK</td>
+  <td>Jonas Valstr&ouml;m</td>
+  <td>Harplinge</td>
+  <td>TFTC 88, SM 80, ES 59, DW 53</td>
+ </tr>
+ <tr>
+  <td>27</td>
+  <td>280</td>
+  <td>FB</td>
+  <td>Frans Bergbom</td>
+  <td>Motala</td>
+  <td>MB 88, AFM 71, DW 65, Bay 56</td>
+ </tr>
+ <tr>
+  <td>28</td>
+  <td>269</td>
+  <td>JG</td>
+  <td>Johan Genberg</td>
+  <td>Ulricehamn</td>
+  <td>DW 77, T3 71, Bay 62, Tron 59</td>
+ </tr>
+ <tr>
+  <td>29</td>
+  <td>268</td>
+  <td>MIT</td>
+  <td>Martin Tiljander</td>
+  <td>Boxholm</td>
+  <td>DH 88, I500 80, Tron 71, TSPP 29</td>
+ </tr>
+ <tr>
+  <td>30</td>
+  <td>267</td>
+  <td>PRO</td>
+  <td>Per-olof Romell</td>
+  <td>Tyres&ouml;</td>
+  <td>TFTC 84, SM 74, T3 68, DW 41</td>
+ </tr>
+ <tr>
+  <td>31</td>
+  <td>266</td>
+  <td>MAO</td>
+  <td>Anders Hast</td>
+  <td>M&ouml;lndal</td>
+  <td>MB 96, SM 88, TSPP 59, DH 23</td>
+ </tr>
+ <tr>
+  <td>32</td>
+  <td>266</td>
+  <td>BEN</td>
+  <td>Peter Benitez</td>
+  <td>Stockholm</td>
+  <td>T3 92, RBION 80, I500 59, BTDK 35</td>
+ </tr>
+ <tr>
+  <td>33</td>
+  <td>265</td>
+  <td>JT</td>
+  <td>Tommy Andersson</td>
+  <td>Bor&aring;s</td>
+  <td>DW 100, Corv 71, MA 68, I500 26</td>
+ </tr>
+ <tr>
+  <td>34</td>
+  <td>264</td>
+  <td>LOP</td>
+  <td>Linus Persson</td>
+  <td>G&ouml;teborg</td>
+  <td>BS 84, TFTC 74, BTDK 68, DW 38</td>
+ </tr>
+ <tr>
+  <td>35</td>
+  <td>262</td>
+  <td>FGR</td>
+  <td>Erik Fagerberg</td>
+  <td>G&ouml;teborg</td>
+  <td>DH 100, BTDK 71, Corv 47, JM 44</td>
+ </tr>
+ <tr>
+  <td>36</td>
+  <td>256</td>
+  <td>LDK</td>
+  <td>David Kjellberg</td>
+  <td>Uppsala</td>
+  <td>T3 88, JM 80, DW 74, SM 14</td>
+ </tr>
+ <tr>
+  <td>37</td>
+  <td>255</td>
+  <td>HAJ</td>
+  <td>Harald J&ouml;nsson</td>
+  <td>Stockholm</td>
+  <td>MA 84, MB 68, DH 65, TSPP 38</td>
+ </tr>
+ <tr>
+  <td>38</td>
+  <td>254</td>
+  <td>TIR</td>
+  <td>Timo Raita</td>
+  <td>Eskilstuna</td>
+  <td>Bay 74, Corv 74, JM 59, AFM 47</td>
+ </tr>
+ <tr>
+  <td>39</td>
+  <td>252</td>
+  <td>HEN</td>
+  <td>Henrik Lagercrantz</td>
+  <td>Uppsala</td>
+  <td>BS 96, MB 56, TFTC 53, DH 47</td>
+ </tr>
+ <tr>
+  <td>40</td>
+  <td>246</td>
+  <td>INW</td>
+  <td>Jonas Johansson</td>
+  <td>Stockholm</td>
+  <td>I500 84, WW 71, TSPP 65, Corv 26</td>
+ </tr>
+ <tr>
+  <td>41</td>
+  <td>243</td>
+  <td>AFX</td>
+  <td>Johan L&ouml;&ouml;v</td>
+  <td>Valbo</td>
+  <td>Bay 92, MA 71, ES 62, TSPP 18</td>
+ </tr>
+ <tr>
+  <td>42</td>
+  <td>241</td>
+  <td>FRE</td>
+  <td>Fredrik L&ouml;wgren</td>
+  <td>Lackal&auml;nga</td>
+  <td>MA 96, TSPP 84, SM 56, BS 5</td>
+ </tr>
+ <tr>
+  <td>43</td>
+  <td>240</td>
+  <td>SVE</td>
+  <td>Svante Ericsson</td>
+  <td>Stockholm</td>
+  <td>MB 80, RBION 77, DH 77, SM 6</td>
+ </tr>
+ <tr>
+  <td>44</td>
+  <td>237</td>
+  <td>BLO</td>
+  <td>Lars Blomgren</td>
+  <td>Uppsala</td>
+  <td>JM 84, I500 77, BS 74, TSPP 2</td>
+ </tr>
+ <tr>
+  <td>45</td>
+  <td>236</td>
+  <td>GTO</td>
+  <td>Michael Nilsson</td>
+  <td>Laholm</td>
+  <td>MB 77, TS 74, Tron 56, AFM 29</td>
+ </tr>
+ <tr>
+  <td>46</td>
+  <td>234</td>
+  <td>INK</td>
+  <td>Christian Holmsten</td>
+  <td>Bor&aring;s</td>
+  <td>TS 92, AFM 68, WW 65, TFTC 9</td>
+ </tr>
+ <tr>
+  <td>47</td>
+  <td>233</td>
+  <td>IKE</td>
+  <td>Ingemar Kemi</td>
+  <td>Uppsala</td>
+  <td>Bay 96, RBION 88, DW 35, I500 14</td>
+ </tr>
+ <tr>
+  <td>48</td>
+  <td>230</td>
+  <td>PKH</td>
+  <td>Patrik Lindberg</td>
+  <td>Stockholm</td>
+  <td>MB 100, TSPP 80, Corv 32, WW 18</td>
+ </tr>
+ <tr>
+  <td>49</td>
+  <td>229</td>
+  <td>HOT</td>
+  <td>Henrik Tomson</td>
+  <td>Alings&aring;s</td>
+  <td>ES 80, AFM 77, SM 62, Bay 10</td>
+ </tr>
+ <tr>
+  <td>50</td>
+  <td>228</td>
+  <td>MIC</td>
+  <td>Michael Lindstr&ouml;m</td>
+  <td>Lidk&ouml;ping</td>
+  <td>BS 100, Bay 65, RBION 47, BTDK 16</td>
+ </tr>
+ <tr>
+  <td>51</td>
+  <td>224</td>
+  <td>GM</td>
+  <td>Grimur Magnusson</td>
+  <td>Arl&ouml;v</td>
+  <td>JM 92, DH 68, AFM 38, MA 26</td>
+ </tr>
+ <tr>
+  <td>52</td>
+  <td>224</td>
+  <td>K O</td>
+  <td>Kjell &Ouml;mmersj&ouml;</td>
+  <td>Alings&aring;s</td>
+  <td>WW 77, T3 77, ES 50, SM 20</td>
+ </tr>
+ <tr>
+  <td>53</td>
+  <td>224</td>
+  <td>RIK</td>
+  <td>Henrik Bj&ouml;rk</td>
+  <td>Uppsala</td>
+  <td>Bay 68, TS 62, RBION 62, JM 32</td>
+ </tr>
+ <tr>
+  <td>54</td>
+  <td>221</td>
+  <td>KAL</td>
+  <td>Karl Mattsson</td>
+  <td>Surte</td>
+  <td>SM 65, T3 59, RBION 59, MA 38</td>
+ </tr>
+ <tr>
+  <td>55</td>
+  <td>217</td>
+  <td>MIK</td>
+  <td>Mikael Juusola</td>
+  <td>Laholm</td>
+  <td>BS 88, SM 71, DH 35, MA 23</td>
+ </tr>
+ <tr>
+  <td>56</td>
+  <td>216</td>
+  <td>AJF</td>
+  <td>Andreas Frid</td>
+  <td>Eskilstuna</td>
+  <td>Tron 80, BTDK 62, TSPP 56, Corv18</td>
+ </tr>
+ <tr>
+  <td>57</td>
+  <td>212</td>
+  <td>PH</td>
+  <td>Patrik Hassvall</td>
+  <td>Helsingborg</td>
+  <td>JM 74, ES 53, DW 44, SM 41</td>
+ </tr>
+ <tr>
+  <td>58</td>
+  <td>211</td>
+  <td>CH</td>
+  <td>Christer Holm</td>
+  <td>Torslanda</td>
+  <td>Corv 88, MA 74, ES 44, I500 5</td>
+ </tr>
+ <tr>
+  <td>59</td>
+  <td>211</td>
+  <td>FG</td>
+  <td>Fredrik Glenning</td>
+  <td>Bor&aring;s</td>
+  <td>I500 88, WW 59, BS 41, TSPP 23</td>
+ </tr>
+ <tr>
+  <td>60</td>
+  <td>210</td>
+  <td>CHI</td>
+  <td>Chiraz Moberg</td>
+  <td>Kvicksund</td>
+  <td>DW 96, BTDK 88, Tron 16, ES 10</td>
+ </tr>
+ <tr>
+  <td>61</td>
+  <td>210</td>
+  <td>KIS</td>
+  <td>Karin Jansson</td>
+  <td>G&ouml;teborg</td>
+  <td>RBION 96, TFTC 56, BS 56, Tron 2</td>
+ </tr>
+ <tr>
+  <td>62</td>
+  <td>209</td>
+  <td>M S</td>
+  <td>Markus Salo</td>
+  <td>Alings&aring;s</td>
+  <td>AFM 80, MA 62, BS 53, MB 14</td>
+ </tr>
+ <tr>
+  <td>63</td>
+  <td>209</td>
+  <td>DBO</td>
+  <td>Daniel Borgentun</td>
+  <td>M&ouml;lnlycke</td>
+  <td>RBION 68, DW 62, Tron 41, I500 38</td>
+ </tr>
+ <tr>
+  <td>64</td>
+  <td>209</td>
+  <td>MUH</td>
+  <td>Mats Holmquist</td>
+  <td>Lindome</td>
+  <td>JM 65, TSPP 62, Tron 47, T3 35</td>
+ </tr>
+ <tr>
+  <td>65</td>
+  <td>207</td>
+  <td>PER</td>
+  <td>Per Martinson</td>
+  <td>Stockholm</td>
+  <td>DH 74, AFM 74, Bay 41, JM 18</td>
+ </tr>
+ <tr>
+  <td>66</td>
+  <td>206</td>
+  <td>J__</td>
+  <td>Jonas Henriksson</td>
+  <td>Uppsala</td>
+  <td>ES 65, DW 59, JM 53, I500 29</td>
+ </tr>
+ <tr>
+  <td>67</td>
+  <td>203</td>
+  <td>ORG</td>
+  <td>Olof Gustafsson</td>
+  <td>V&auml;stra Fr&ouml;lunda</td>
+  <td>TFTC 80, MA 77, ES 41, RBION 5</td>
+ </tr>
+ <tr>
+  <td>68</td>
+  <td>202</td>
+  <td>MAG</td>
+  <td>Magnus Viktorsson</td>
+  <td>Bor&aring;s</td>
+  <td>T3 96, BTDK 56, WW 44, BS 6</td>
+ </tr>
+ <tr>
+  <td>69</td>
+  <td>200</td>
+  <td>CMK</td>
+  <td>Christer Kyt&ouml;m&auml;ki</td>
+  <td>Eskilstuna</td>
+  <td>TS 84, MA 65, TFTC 44, DW 7</td>
+ </tr>
+ <tr>
+  <td>70</td>
+  <td>198</td>
+  <td>JHS</td>
+  <td>Jon-henrik Svonni</td>
+  <td>G&ouml;teborg</td>
+  <td>WW 84, BS 71, T3 41, SM 2</td>
+ </tr>
+ <tr>
+  <td>71</td>
+  <td>195</td>
+  <td>DRI</td>
+  <td>Michael Mattsson</td>
+  <td>G&ouml;teborg</td>
+  <td>TSPP 96, BS 44, MB 41, Bay 14</td>
+ </tr>
+ <tr>
+  <td>72</td>
+  <td>195</td>
+  <td>JOE</td>
+  <td>Jonas Henriksson</td>
+  <td>S&ouml;lvesborg</td>
+  <td>RBION 74, I500 68, Bay 50, TSPP 3</td>
+ </tr>
+ <tr>
+  <td>73</td>
+  <td>190</td>
+  <td>BUD</td>
+  <td>Hans Andersson</td>
+  <td>G&ouml;teborg</td>
+  <td>BS 80, BTDK 59, WW 47, RBION 4</td>
+ </tr>
+ <tr>
+  <td>74</td>
+  <td>188</td>
+  <td>FRJ</td>
+  <td>Fredrik Josefsson</td>
+  <td>G&ouml;teborg</td>
+  <td>MB 71, ES 47, Bay 38, TSPP 32</td>
+ </tr>
+ <tr>
+  <td>75</td>
+  <td>188</td>
+  <td>KW</td>
+  <td>Kristofer Weidow</td>
+  <td>G&ouml;teborg</td>
+  <td>Corv 53, MA 50, Bay 47, T3 38</td>
+ </tr>
+ <tr>
+  <td>76</td>
+  <td>186</td>
+  <td>BOM</td>
+  <td>Richard Bomgren</td>
+  <td>Ume&aring;</td>
+  <td>RBION 71, MA 53, I500 44, T3 18</td>
+ </tr>
+ <tr>
+  <td>77</td>
+  <td>182</td>
+  <td>CRP</td>
+  <td>Tomas Bouse</td>
+  <td>Halmstad</td>
+  <td>Corv 80, DH 38, TFTC 35, WW 29</td>
+ </tr>
+ <tr>
+  <td>78</td>
+  <td>181</td>
+  <td>JAY</td>
+  <td>Jens Carlsson</td>
+  <td>Uppsala</td>
+  <td>T3 80, TS 65, MB 32, MA 4</td>
+ </tr>
+ <tr>
+  <td>79</td>
+  <td>179</td>
+  <td>KEW</td>
+  <td>Kewin Bertilsson</td>
+  <td>G&ouml;teborg</td>
+  <td>ES 56, AFM 53, BTDK 41, Bay 29</td>
+ </tr>
+ <tr>
+  <td>80</td>
+  <td>178</td>
+  <td>BHZ</td>
+  <td>Bosse Hellblom</td>
+  <td>Skepplanda</td>
+  <td>TS 80, I500 74, RBION 14, BTDK 10</td>
+ </tr>
+ <tr>
+  <td>81</td>
+  <td>174</td>
+  <td>SLJ</td>
+  <td>Stefan Ljungstr&ouml;m</td>
+  <td>Kalmar</td>
+  <td>MA 56, DW 56, WW 50, ES 12</td>
+ </tr>
+ <tr>
+  <td>82</td>
+  <td>173</td>
+  <td>TOR</td>
+  <td>Tor Englund</td>
+  <td>G&ouml;teborg</td>
+  <td>WW 80, ES 74, SM 18, TSPP 1</td>
+ </tr>
+ <tr>
+  <td>83</td>
+  <td>173</td>
+  <td>P Q</td>
+  <td>Pontus Qvarfordh</td>
+  <td>Lomma</td>
+  <td>MB 74, T3 50, Tron 35, DW 14</td>
+ </tr>
+ <tr>
+  <td>84</td>
+  <td>172</td>
+  <td>HEN</td>
+  <td>Henrik Engman</td>
+  <td>G&ouml;teborg</td>
+  <td>RBION 92, I500 56, TS 16, MB 8</td>
+ </tr>
+ <tr>
+  <td>85</td>
+  <td>171</td>
+  <td>COP</td>
+  <td>Thomas Jacobsson</td>
+  <td>Falun</td>
+  <td>JM 68, DH 50, TS 41, SM 12</td>
+ </tr>
+ <tr>
+  <td>86</td>
+  <td>170</td>
+  <td>JEK</td>
+  <td>Jesper Kinn&aring;s</td>
+  <td>G&ouml;teborg</td>
+  <td>Tron 84, BS 38, RBION 38, I500 10</td>
+ </tr>
+ <tr>
+  <td>87</td>
+  <td>169</td>
+  <td>WIG</td>
+  <td>Christian Wigertz</td>
+  <td>Dannike</td>
+  <td>TFTC 71, DH 53, Tron 38, RBION 7</td>
+ </tr>
+ <tr>
+  <td>88</td>
+  <td>169</td>
+  <td>JOS</td>
+  <td>Johan Sm&aring;ros</td>
+  <td>Stockholm</td>
+  <td>Corv 68, TFTC 65, MA 20, ES 16</td>
+ </tr>
+ <tr>
+  <td>89</td>
+  <td>166</td>
+  <td>AGA</td>
+  <td>Christian Eriksson</td>
+  <td>S&ouml;lvesborg</td>
+  <td>Bay 88, BTDK 47, TS 23, BS 8</td>
+ </tr>
+ <tr>
+  <td>90</td>
+  <td>165</td>
+  <td>PAU</td>
+  <td>Mats Paulin</td>
+  <td>V&auml;rnamo</td>
+  <td>WW 74, T3 44, TFTC 29, ES 18</td>
+ </tr>
+ <tr>
+  <td>91</td>
+  <td>162</td>
+  <td>LEC</td>
+  <td>Lasse Carlsson</td>
+  <td>Huddinge</td>
+  <td>TFTC 68, RBION 56, MB 29, TS 9</td>
+ </tr>
+ <tr>
+  <td>92</td>
+  <td>158</td>
+  <td>LEF</td>
+  <td>Leif Sp&aring;ngberg</td>
+  <td>J&auml;rf&auml;lla</td>
+  <td>Corv 62, I500 62, Tron 29, DW 5</td>
+ </tr>
+ <tr>
+  <td>93</td>
+  <td>157</td>
+  <td>CFW</td>
+  <td>Claes Wikner</td>
+  <td>Askim</td>
+  <td>DH 84, TS 38, WW 26, I500 9</td>
+ </tr>
+ <tr>
+  <td>94</td>
+  <td>157</td>
+  <td>SAM</td>
+  <td>Sami Kihlstr&ouml;m</td>
+  <td>S&ouml;lvesborg</td>
+  <td>Corv 77, AFM 56, TFTC 12, Tron 12</td>
+ </tr>
+ <tr>
+  <td>95</td>
+  <td>157</td>
+  <td>LHA</td>
+  <td>Henrik Hultin</td>
+  <td>Handen</td>
+  <td>DH 59, TFTC 47, Corv 44, MA 7</td>
+ </tr>
+ <tr>
+  <td>96</td>
+  <td>155</td>
+  <td>BEN</td>
+  <td>H&aring;kan Bengtsson</td>
+  <td>Morup</td>
+  <td>ES 71, TS 35, Bay 35, TFTC 14</td>
+ </tr>
+ <tr>
+  <td>97</td>
+  <td>155</td>
+  <td>VNV</td>
+  <td>Martin Falkman</td>
+  <td>Stockholm</td>
+  <td>I500 53, Tron 44, Corv 38, BS 20</td>
+ </tr>
+ <tr>
+  <td>98</td>
+  <td>153</td>
+  <td>JAN</td>
+  <td>Jan anders Nilsson</td>
+  <td>&Aring;karp</td>
+  <td>TS 68, Bay 44, BTDK 32, T3 9</td>
+ </tr>
+ <tr>
+  <td>99</td>
+  <td>152</td>
+  <td>JFW (U18)</td>
+  <td>Jakob Wikner</td>
+  <td>Askim</td>
+  <td>TS 59, SM 38, I500 32, Corv 23</td>
+ </tr>
+ <tr>
+  <td>100</td>
+  <td>147</td>
+  <td>BOZ</td>
+  <td>Bo Olsson</td>
+  <td>G&ouml;teborg</td>
+  <td>SM 68, DH 56, I500 16, BS 7</td>
+ </tr>
+ <tr>
+  <td>101</td>
+  <td>147</td>
+  <td>KAI</td>
+  <td>Andreas Nirvén</td>
+  <td>&Ouml;rkelljunga</td>
+  <td>DW 68, JM 47, BTDK 20, TS 12</td>
+ </tr>
+ <tr>
+  <td>102</td>
+  <td>146</td>
+  <td>LIN</td>
+  <td>Linda Eriksson</td>
+  <td>Korsberga</td>
+  <td>RBION 100, TSPP 41, Tron 3, I5002</td>
+ </tr>
+ <tr>
+  <td>103</td>
+  <td>139</td>
+  <td>JAH</td>
+  <td>Johan Hultgren</td>
+  <td>Bor</td>
+  <td>I500 71, Tron 32, T3 29, ES 7</td>
+ </tr>
+ <tr>
+  <td>104</td>
+  <td>138</td>
+  <td>K H</td>
+  <td>Klas Hellstr&ouml;m</td>
+  <td>Huddinge</td>
+  <td>JM 56, TSPP 47, AFM 26, Tron 9</td>
+ </tr>
+ <tr>
+  <td>105</td>
+  <td>136</td>
+  <td>TGS</td>
+  <td>Tobias Svensson</td>
+  <td>G&ouml;teborg</td>
+  <td>SM 84, I500 41, TSPP 8, Corv 3</td>
+ </tr>
+ <tr>
+  <td>106</td>
+  <td>135</td>
+  <td>FRD</td>
+  <td>Fredrik Jolheim</td>
+  <td>G&ouml;teborg</td>
+  <td>SM 50, MB 47, DW 29, TSPP 9</td>
+ </tr>
+ <tr>
+  <td>107</td>
+  <td>134</td>
+  <td>MOJ</td>
+  <td>M&aring;ns Jonasson</td>
+  <td>Stockholm</td>
+  <td>DW 88, WW 35, T3 8, MB 3</td>
+ </tr>
+ <tr>
+  <td>108</td>
+  <td>134</td>
+  <td>J O</td>
+  <td>Jan Ohlsson</td>
+  <td>Tr&auml;sl&ouml;vsl&auml;ge</td>
+  <td>Corv 41, AFM 41, MA 29, WW 23</td>
+ </tr>
+ <tr>
+  <td>109</td>
+  <td>133</td>
+  <td>JML</td>
+  <td>Jim micken Lindstedt</td>
+  <td>Lindome</td>
+  <td>T3 62, BS 59, MA 10, MB 2</td>
+ </tr>
+ <tr>
+  <td>110</td>
+  <td>133</td>
+  <td>MAS</td>
+  <td>Leksingen emil Bjurling</td>
+  <td>Avesta</td>
+  <td>SM 59, DH 44, RBION 23, JM 7</td>
+ </tr>
+ <tr>
+  <td>111</td>
+  <td>133</td>
+  <td>JOH (U18)</td>
+  <td>Joel Hellblom</td>
+  <td>Skepplanda</td>
+  <td>WW 53, TS 47, DW 26, TFTC 7</td>
+ </tr>
+ <tr>
+  <td>112</td>
+  <td>132</td>
+  <td>JEY</td>
+  <td>Johan Eyssen</td>
+  <td>Tj&ouml;rn</td>
+  <td>Tron 88, DH 20, ES 14, SM 10</td>
+ </tr>
+ <tr>
+  <td>113</td>
+  <td>132</td>
+  <td>JPM</td>
+  <td>Jonas Molin</td>
+  <td>Skepplanda</td>
+  <td>MB 59, Corv 29, BTDK 26, DW 18</td>
+ </tr>
+ <tr>
+  <td>114</td>
+  <td>132</td>
+  <td>DAH</td>
+  <td>Bally Hagman</td>
+  <td>Stockholm</td>
+  <td>WW 56, SM 47, DW 23, RBION 6</td>
+ </tr>
+ <tr>
+  <td>115</td>
+  <td>131</td>
+  <td>WIP</td>
+  <td>Wincent Papousek</td>
+  <td>G&ouml;teborg</td>
+  <td>Tron 53, SM 53, ES 23, DW 2</td>
+ </tr>
+ <tr>
+  <td>116</td>
+  <td>130</td>
+  <td>AWA</td>
+  <td>Anton Wahnstr&ouml;m</td>
+  <td>G&ouml;teborg</td>
+  <td>TFTC 62, DH 41, MA 18, RBION 9</td>
+ </tr>
+ <tr>
+  <td>117</td>
+  <td>129</td>
+  <td>J H</td>
+  <td>Johannes Hallman</td>
+  <td>slussfors</td>
+  <td>TSPP 71, WW 32, TFTC 20, ES 6</td>
+ </tr>
+ <tr>
+  <td>118</td>
+  <td>129</td>
+  <td>MQS</td>
+  <td>Marcus Stenvall</td>
+  <td>Stockholm</td>
+  <td>BS 50, WW 38, DW 32, SM 9</td>
+ </tr>
+ <tr>
+  <td>119</td>
+  <td>128</td>
+  <td>STO</td>
+  <td>Stefan Lundkvist</td>
+  <td>Ume&aring;</td>
+  <td>Corv 59, MA 41, AFM 16, JM 12</td>
+ </tr>
+ <tr>
+  <td>120</td>
+  <td>128</td>
+  <td>CAB</td>
+  <td>Carl Borgentun</td>
+  <td>Sj&ouml;vik</td>
+  <td>JM 50, BTDK 50, DH 26, ES 2</td>
+ </tr>
+ <tr>
+  <td>121</td>
+  <td>123</td>
+  <td>MAN</td>
+  <td>Fredrik Andersson</td>
+  <td>Bor&aring;s</td>
+  <td>Tron 62, RBION 35, SM 23, T3 3</td>
+ </tr>
+ <tr>
+  <td>122</td>
+  <td>123</td>
+  <td>ROG</td>
+  <td>Roger Hansson</td>
+  <td>Kungsbacka</td>
+  <td>Corv 50, ES 32, SM 29, WW 12</td>
+ </tr>
+ <tr>
+  <td>123</td>
+  <td>120</td>
+  <td>KOS</td>
+  <td>Daniel Kos</td>
+  <td>Viskafors</td>
+  <td>BTDK 74, MA 16, DH 16, BS 14</td>
+ </tr>
+ <tr>
+  <td>124</td>
+  <td>120</td>
+  <td>MAZ</td>
+  <td>Magnus Andersson</td>
+  <td>Lindome</td>
+  <td>Bay 71, TS 29, RBION 10, TFTC 10</td>
+ </tr>
+ <tr>
+  <td>125</td>
+  <td>119</td>
+  <td>BWK</td>
+  <td>Andreas Thorsen</td>
+  <td>Stockholm</td>
+  <td>SM 77, DH 18, BS 16, Bay 8</td>
+ </tr>
+ <tr>
+  <td>126</td>
+  <td>119</td>
+  <td>IRK</td>
+  <td>Ingvar Karlsson</td>
+  <td>Vikingstad</td>
+  <td>TS 50, WW 41, TFTC 16, Corv 12</td>
+ </tr>
+ <tr>
+  <td>127</td>
+  <td>118</td>
+  <td>SMG</td>
+  <td>Tobias Tillstr&ouml;m</td>
+  <td>G&ouml;teborg</td>
+  <td>AFM 65, RBION 41, Tron 7, WW 5</td>
+ </tr>
+ <tr>
+  <td>128</td>
+  <td>118</td>
+  <td>ALF</td>
+  <td>Anders Bengtsson</td>
+  <td>Kalmar</td>
+  <td>AFM 50, TFTC 32, TSPP 26, WW 10</td>
+ </tr>
+ <tr>
+  <td>129</td>
+  <td>116</td>
+  <td>ABE</td>
+  <td>Abbe Tjeder</td>
+  <td>Uppsala</td>
+  <td>Bay 77, DH 29, ES 8, BTDK 2</td>
+ </tr>
+ <tr>
+  <td>130</td>
+  <td>114</td>
+  <td>MYG</td>
+  <td>Mats Grehn</td>
+  <td>Djurmo</td>
+  <td>TFTC 59, RBION 44, JM 6, TSPP 5</td>
+ </tr>
+ <tr>
+  <td>131</td>
+  <td>113</td>
+  <td>JAX</td>
+  <td>Jarkko Tikkanen</td>
+  <td>M&aring;lsryd</td>
+  <td>AFM 59, ES 26, Tron 20, JM 8</td>
+ </tr>
+ <tr>
+  <td>132</td>
+  <td>113</td>
+  <td>BOB</td>
+  <td>Bengt Pettersson</td>
+  <td>S&ouml;lvesborg</td>
+  <td>Tron 50, JM 38, Corv 20, T3 5</td>
+ </tr>
+ <tr>
+  <td>133</td>
+  <td>112</td>
+  <td>SIM</td>
+  <td>Simon Jakobsson</td>
+  <td>Bor&aring;s</td>
+  <td>TS 71, ES 29, BTDK 8, WW 4</td>
+ </tr>
+ <tr>
+  <td>134</td>
+  <td>112</td>
+  <td>BL</td>
+  <td>Martin Olsson</td>
+  <td>Askim</td>
+  <td>T3 53, TS 44, Bay 9, I500 6</td>
+ </tr>
+ <tr>
+  <td>135</td>
+  <td>111</td>
+  <td>ROK</td>
+  <td>Mikael Gunnarsson</td>
+  <td>Stockholm</td>
+  <td>MA 47, AFM 44, MB 18, TS 2</td>
+ </tr>
+ <tr>
+  <td>136</td>
+  <td>109</td>
+  <td>PAT</td>
+  <td>Patrik Nilsson</td>
+  <td>Lund</td>
+  <td>I500 50, T3 32, Tron 18, Corv 9</td>
+ </tr>
+ <tr>
+  <td>137</td>
+  <td>109</td>
+  <td>PIG</td>
+  <td>Henrik W&auml;ngerstedt</td>
+  <td>Bor&aring;s</td>
+  <td>MA 44, BS 35, BTDK 29, DW 1</td>
+ </tr>
+ <tr>
+  <td>138</td>
+  <td>108</td>
+  <td>EAP</td>
+  <td>Elias Persson</td>
+  <td>G&ouml;teborg</td>
+  <td>Tron 77, JM 20, Corv 8, BS 3</td>
+ </tr>
+ <tr>
+  <td>139</td>
+  <td>108</td>
+  <td>KLF</td>
+  <td>Kenneth Lundell</td>
+  <td>Kumla</td>
+  <td>ES 38, MA 35, RBION 26, MB 9</td>
+ </tr>
+ <tr>
+  <td>140</td>
+  <td>106</td>
+  <td>MMS</td>
+  <td>Mats Sahlberg</td>
+  <td>Norrk&ouml;ping</td>
+  <td>MB 35, BS 29, SM 26, DW 16</td>
+ </tr>
+ <tr>
+  <td>141</td>
+  <td>105</td>
+  <td>JJ</td>
+  <td>Jonas Jansson</td>
+  <td>Str&auml;ngn&auml;s</td>
+  <td>T3 74, MB 20, Tron 8, RBION 3</td>
+ </tr>
+ <tr>
+  <td>142</td>
+  <td>104</td>
+  <td>TOP</td>
+  <td>Andreas Elmeljung</td>
+  <td>Alings&aring;s</td>
+  <td>Bay 53, TFTC 38, DW 9, TSPP 4</td>
+ </tr>
+ <tr>
+  <td>143</td>
+  <td>103</td>
+  <td>SVE</td>
+  <td>Sven Jansson</td>
+  <td>G&ouml;teborg</td>
+  <td>DH 71, JM 16, T3 10, TFTC 6</td>
+ </tr>
+ <tr>
+  <td>144</td>
+  <td>103</td>
+  <td>TEZ</td>
+  <td>Therese Lundgren</td>
+  <td>Bandhagen</td>
+  <td>BS 62, BTDK 18, I500 18, DH 5</td>
+ </tr>
+ <tr>
+  <td>145</td>
+  <td>101</td>
+  <td>PKB</td>
+  <td>Patrik Bengtsson</td>
+  <td>Sandared</td>
+  <td>ES 68, Bay 26, Corv 4, SM 3</td>
+ </tr>
+ <tr>
+  <td>146</td>
+  <td>100</td>
+  <td>SME</td>
+  <td>Thomas Smedberg</td>
+  <td>Norrk&ouml;ping</td>
+  <td>JM 41, Tron 26, AFM 23, DW 10</td>
+ </tr>
+ <tr>
+  <td>147</td>
+  <td>100</td>
+  <td>DIE</td>
+  <td>Tony Englund</td>
+  <td>Sandared</td>
+  <td>BTDK 38, TFTC 26, RBION 18, TS18</td>
+ </tr>
+ <tr>
+  <td>148</td>
+  <td>99</td>
+  <td>BAH</td>
+  <td>Andreas Holmner</td>
+  <td>Stensele</td>
+  <td>TSPP 68, SM 16, TFTC 8, Corv 7</td>
+ </tr>
+ <tr>
+  <td>149</td>
+  <td>99</td>
+  <td>EZL</td>
+  <td>Andreas Wesik</td>
+  <td>Malm&ouml;</td>
+  <td>DH 62, Bay 23, I500 8, TSPP 6</td>
+ </tr>
+ <tr>
+  <td>150</td>
+  <td>99</td>
+  <td>KKK</td>
+  <td>Kasper Karlsson</td>
+  <td>G&ouml;teborg</td>
+  <td>I500 35, SM 32, ES 20, DH 12</td>
+ </tr>
+ <tr>
+  <td>151</td>
+  <td>97</td>
+  <td>RED</td>
+  <td>Emil Svensson</td>
+  <td>Lidk&ouml;ping</td>
+  <td>TSPP 35, JM 23, TFTC 23, Corv 16</td>
+ </tr>
+ <tr>
+  <td>152</td>
+  <td>94</td>
+  <td>ELL</td>
+  <td>Peter Karlsson</td>
+  <td>R&auml;vlanda</td>
+  <td>TSPP 53, BTDK 23, DW 12, MB 6</td>
+ </tr>
+ <tr>
+  <td>153</td>
+  <td>92</td>
+  <td>GUL</td>
+  <td>David Ullner</td>
+  <td>M&ouml;lndal</td>
+  <td>BTDK 53, JM 29, DH 6, TS 4</td>
+ </tr>
+ <tr>
+  <td>154</td>
+  <td>92</td>
+  <td>CLU</td>
+  <td>Clas Haggren</td>
+  <td>Lindome</td>
+  <td>I500 47, TS 20, BS 18, Bay 7</td>
+ </tr>
+ <tr>
+  <td>155</td>
+  <td>92</td>
+  <td>OGR</td>
+  <td>Ola Rodenkirchen</td>
+  <td>H&auml;sselby</td>
+  <td>SM 44, TSPP 20, AFM 14, WW 14</td>
+ </tr>
+ <tr>
+  <td>156</td>
+  <td>91</td>
+  <td>PSE</td>
+  <td>Samuel Edqvist</td>
+  <td>Upplands V&auml;sby</td>
+  <td>BS 47, Bay 16, TSPP 14, Tron 14</td>
+ </tr>
+ <tr>
+  <td>157</td>
+  <td>91</td>
+  <td>SSS</td>
+  <td>Patrick Larsson</td>
+  <td>L&ouml;d&ouml;se</td>
+  <td>Corv 35, MB 23, I500 23, TS 10</td>
+ </tr>
+ <tr>
+  <td>158</td>
+  <td>90</td>
+  <td>DAD</td>
+  <td>Jonas Unell</td>
+  <td>K&aring;llered</td>
+  <td>MB 38, DH 32, T3 12, SM 8</td>
+ </tr>
+ <tr>
+  <td>159</td>
+  <td>87</td>
+  <td>JAG</td>
+  <td>Jan Eklund</td>
+  <td>D&ouml;sjebro</td>
+  <td>BTDK 44, RBION 20, JM 14, ES 9</td>
+ </tr>
+ <tr>
+  <td>160</td>
+  <td>86</td>
+  <td>SIS</td>
+  <td>Bj&ouml;rn Arkenstr&ouml;m</td>
+  <td>G&ouml;teborg</td>
+  <td>Tron 65, MB 12, AFM 6, ES 3</td>
+ </tr>
+ <tr>
+  <td>161</td>
+  <td>86</td>
+  <td>NEA (U18)</td>
+  <td>Linnea Bengtsson</td>
+  <td>Morup</td>
+  <td>DW 47, JM 35, AFM 3, BTDK 1</td>
+ </tr>
+ <tr>
+  <td>162</td>
+  <td>85</td>
+  <td>FED</td>
+  <td>Fredrik Dahlén</td>
+  <td>V&auml;nersborg</td>
+  <td>RBION 53, Tron 23, Bay 5, T3 4</td>
+ </tr>
+ <tr>
+  <td>163</td>
+  <td>83</td>
+  <td>KLA</td>
+  <td>Klas Axelsson</td>
+  <td>Lindome</td>
+  <td>MA 59, BTDK 14, AFM 9, Corv 1</td>
+ </tr>
+ <tr>
+  <td>164</td>
+  <td>81</td>
+  <td>ALB (U18)</td>
+  <td>Albin Dahlén</td>
+  <td>V&auml;nersborg</td>
+  <td>Corv 56, MA 14, TS 8, TFTC 3</td>
+ </tr>
+ <tr>
+  <td>165</td>
+  <td>78</td>
+  <td>TON</td>
+  <td>Tor-bj&ouml;rn Angin</td>
+  <td>M&ouml;lndal</td>
+  <td>MB 44, AFM 18, DH 10, Bay 6</td>
+ </tr>
+ <tr>
+  <td>166</td>
+  <td>77</td>
+  <td>LOA</td>
+  <td>Oscar Axelsson</td>
+  <td>Eskilstuna</td>
+  <td>TFTC 41, TS 26, MB 5, ES 5</td>
+ </tr>
+ <tr>
+  <td>167</td>
+  <td>73</td>
+  <td>ANG</td>
+  <td>Anders G&aring;nge</td>
+  <td>&Ouml;rebro</td>
+  <td>RBION 50, MA 12, TS 7, I500 4</td>
+ </tr>
+ <tr>
+  <td>168</td>
+  <td>69</td>
+  <td>AB (U18)</td>
+  <td>Aron Bengtsson</td>
+  <td>Morup</td>
+  <td>AFM 32, RBION 29, MA 6, TFTC 2</td>
+ </tr>
+ <tr>
+  <td>169</td>
+  <td>69</td>
+  <td>D D</td>
+  <td>David Dahlstr&ouml;m</td>
+  <td>Stockholm</td>
+  <td>MA 32, T3 20, MB 10, DH 7</td>
+ </tr>
+ <tr>
+  <td>170</td>
+  <td>68</td>
+  <td>TOB</td>
+  <td>Tobias L&ouml;fstedt</td>
+  <td>Lund</td>
+  <td>SM 35, MB 16, T3 14, TS 3</td>
+ </tr>
+ <tr>
+  <td>171</td>
+  <td>67</td>
+  <td>RRH</td>
+  <td>Robert Hensfelt</td>
+  <td>H&ouml;llviken</td>
+  <td>MB 50, AFM 10, MA 5, RBION 2</td>
+ </tr>
+ <tr>
+  <td>172</td>
+  <td>67</td>
+  <td>GON</td>
+  <td>Magnus Andersson</td>
+  <td>Bor&aring;s</td>
+  <td>TSPP 44, BS 9, WW 8, Tron 6</td>
+ </tr>
+ <tr>
+  <td>173</td>
+  <td>63</td>
+  <td>FDM</td>
+  <td>Fredrik Melin</td>
+  <td>V&auml;rnamo</td>
+  <td>AFM 35, TFTC 18, Corv 6, SM 4</td>
+ </tr>
+ <tr>
+  <td>174</td>
+  <td>61</td>
+  <td>BGB</td>
+  <td>Bengt Bengtsson</td>
+  <td>Morup</td>
+  <td>BS 26, Bay 18, TSPP 10, SM 7</td>
+ </tr>
+ <tr>
+  <td>175</td>
+  <td>61</td>
+  <td>JRH</td>
+  <td>J&ouml;rgen Hellkvist</td>
+  <td>G&ouml;teborg</td>
+  <td>BS 23, WW 20, TS 14, Tron 4</td>
+ </tr>
+ <tr>
+  <td>176</td>
+  <td>60</td>
+  <td>EL</td>
+  <td>Erik Lundell</td>
+  <td>Kumla</td>
+  <td>Bay 20, Corv 14, DH 14, BTDK 12</td>
+ </tr>
+ <tr>
+  <td>177</td>
+  <td>57</td>
+  <td>TEX</td>
+  <td>Thomas Eriksson</td>
+  <td>Trollh&auml;ttan</td>
+  <td>T3 26, DW 20, I500 7, JM 4</td>
+ </tr>
+ <tr>
+  <td>178</td>
+  <td>48</td>
+  <td>WUZ</td>
+  <td>Mattias Wu</td>
+  <td>svensh&ouml;gen</td>
+  <td>JM 26, DH 9, WW 7, T3 6</td>
+ </tr>
+ <tr>
+  <td>179</td>
+  <td>47</td>
+  <td>CGJ</td>
+  <td>Claes Johansson</td>
+  <td>Lerum</td>
+  <td>I500 20, T3 16, MB 7, DW 4</td>
+ </tr>
+ <tr>
+  <td>180</td>
+  <td>46</td>
+  <td>STK</td>
+  <td>Stefan Kettelhoit</td>
+  <td>Lycke</td>
+  <td>MB 26, TSPP 12, WW 6, BS 2</td>
+ </tr>
+ <tr>
+  <td>181</td>
+  <td>45</td>
+  <td>PVL</td>
+  <td>Per Von lingen</td>
+  <td>G&ouml;teborg</td>
+  <td>TS 32, DH 8, Bay 4, I500 1</td>
+ </tr>
+ <tr>
+  <td>182</td>
+  <td>42</td>
+  <td>TFO</td>
+  <td>Tomas Forsberg</td>
+  <td>G&ouml;teborg</td>
+  <td>BS 32, Tron 5, DH 3, Bay 2</td>
+ </tr>
+ <tr>
+  <td>183</td>
+  <td>42</td>
+  <td>MPH</td>
+  <td>Mikael Hellstr&ouml;m</td>
+  <td>G&ouml;teborg</td>
+  <td>T3 23, MA 8, BTDK 6, Corv 5</td>
+ </tr>
+ <tr>
+  <td>184</td>
+  <td>41</td>
+  <td>UFO</td>
+  <td>Tomas Eriksson</td>
+  <td>Eskilstuna</td>
+  <td>TSPP 16, I500 12, Corv 10, JM 3</td>
+ </tr>
+ <tr>
+  <td>185</td>
+  <td>37</td>
+  <td>KGA</td>
+  <td>G&ouml;ran Algdal</td>
+  <td>M&ouml;lndal</td>
+  <td>AFM 20, WW 9, TS 5, I500 3</td>
+ </tr>
+ <tr>
+  <td>186</td>
+  <td>37</td>
+  <td>JW</td>
+  <td>Jan Werner</td>
+  <td>&Ouml;rebro</td>
+  <td>RBION 16, BTDK 9, TSPP 7, TFTC 5</td>
+ </tr>
+ <tr>
+  <td>187</td>
+  <td>35</td>
+  <td>ALX (U18)</td>
+  <td>Alexander W&auml;ngerstedt</td>
+  <td>Bor&aring;s</td>
+  <td>AFM 12, Tron 10, RBION 8, SM 5</td>
+ </tr>
+ <tr>
+  <td>188</td>
+  <td>31</td>
+  <td>ALP</td>
+  <td>Ann-lineè Petterson</td>
+  <td>K&aring;llered</td>
+  <td>WW 16, T3 7, DW 6, JM 2</td>
+ </tr>
+ <tr>
+  <td>189</td>
+  <td>31</td>
+  <td>JGU</td>
+  <td>Jorma Lindgren</td>
+  <td>Lund</td>
+  <td>JM 10, BS 10, MA 9, T3 2</td>
+ </tr>
+ <tr>
+  <td>190</td>
+  <td>26</td>
+  <td>ASC</td>
+  <td>Anne-sofie Carlsson</td>
+  <td>Rydboholm</td>
+  <td>BS 12, AFM 7, BTDK 4, Bay 3</td>
+ </tr>
+ <tr>
+  <td>191</td>
+  <td>25</td>
+  <td>ASE</td>
+  <td>&Aring;se Johansson</td>
+  <td>Lerum</td>
+  <td>JM 9, AFM 8, TFTC 4, DH 4</td>
+ </tr>
+ <tr>
+  <td>192</td>
+  <td>22</td>
+  <td>MEL</td>
+  <td>Oskar Ingemarsson</td>
+  <td>G&ouml;teborg</td>
+  <td>RBION 12, DW 8, MB 1, SM 1</td>
+ </tr>
+ <tr>
+  <td>193</td>
+  <td>17</td>
+  <td>EVE (U18)</td>
+  <td>Evelina Bengtsson</td>
+  <td>Morup</td>
+  <td>BTDK 7, ES 4, DW 3, WW 3</td>
+ </tr>
+ <tr>
+  <td>194</td>
+  <td>17</td>
+  <td>ZAN</td>
+  <td>Zandra Nilsson</td>
+  <td>Vadstena</td>
+  <td>TS 6, JM 5, BS 4, WW 2</td>
+ </tr>
+ <tr>
+  <td>195</td>
+  <td>15</td>
+  <td>PS</td>
+  <td>Paula Seihlen</td>
+  <td>&Ouml;rkelljunga</td>
+  <td>Bay 12, ES 1, TS 1, JM 1</td>
+ </tr>
+ <tr>
+  <td>196</td>
+  <td>14</td>
+  <td>STA</td>
+  <td>Joakim St&aring;hling</td>
+  <td>Norrk&ouml;ping</td>
+  <td>AFM 5, MB 4, BTDK 3, DH 2</td>
+ </tr>
+ <tr>
+  <td>197</td>
+  <td>12</td>
+  <td>LEO (U18)</td>
+  <td>Leo Jonasson</td>
+  <td>Stockholm</td>
+  <td>BTDK 5, AFM 4, Corv 2, Tron 1</td>
+ </tr>
+                                            </tbody>
+                </table>
+

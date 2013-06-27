@@ -1,0 +1,27 @@
+body 
+{ 
+	margin: 2px; 
+	padding: 0;
+	font: 16px Arial, "Trebuchet MS", Tahoma, sans-serif;
+	line-height: 1.6em;
+	background: #fff; 
+	color: #000000;
+}
+
+a
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+table.mainTable
+{
+	border-collapse: collapse;
+	width: 1000px;
+	font: 16px "Trebuchet MS", Arial, Tahoma, sans-serif;
+}
+
+span.small
+{
+	font-size: 11px;
+}

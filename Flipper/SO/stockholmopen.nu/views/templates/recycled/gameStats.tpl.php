@@ -1,0 +1,1 @@
+<b>{#TOTAL_ROUNDS#}</b>: {$aGames[section].stats.no_of_played_entry_rounds} /	<b>{#MAX#}</b>: {$aGames[section].stats.score_highest_output} / <b>{#MIN#}:</b> {$aGames[section].stats.score_lowest_output} / <b>{#AVERAGE#}:</b> {$aGames[section].stats.score_average_output} / <b>{#MEDIAN#}</b>: {$aGames[section].stats.score_median_output}

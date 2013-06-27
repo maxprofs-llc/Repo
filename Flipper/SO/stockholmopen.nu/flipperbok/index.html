@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Flipper&aring;rsboken 2008</title>
+    <script type="text/javascript">
+      function pris() {
+        document.getElementById("pris").innerHTML = document.getElementById("antal").value*189 + " kr";
+      }
+    </script>
+  </head>
+  <body bgcolor="#000000" text="#000000">
+    <div style="width:755px;height:566px;margin:100px;padding:20px;background-image: url(../images/misc/flipperarsbok-background.jpg);">
+      <h1>Flipper&aring;rsboken!</h1>
+Nu &auml;r det snart dags f&ouml;r "Flipper&aring;rsboken 2008". Vi arbetar h&aring;rt f&ouml;r att f&aring; den klar lagom till jul, men kan 
+tyv&auml;rr inte garantera att jultomten packar ner den i sin s&auml;ck. Priset f&ouml;r boken med frakt &auml;r facila 189 kronor, och det priset 
+g&auml;ller &auml;ven om man sj&auml;lv v&auml;ljer att h&auml;mta sitt exemplar i Alings&aring;s eller Bor&aring;s. Solidariskt och fint. Vill man ha 
+ner kostnaden kan man g&ouml;ra som flera personer redan gjort. Anm&auml;l snabbt ditt intresse f&ouml;r att skriva ett litet stycke, och betala endast 
+89 kronor.
+          <h3>Ja, jag vill naturligtvis ha boken!</h3>
+          <form action="flipperbok.php" method="POST">
+            <table>
+              <tr><td align="right">Antal </td><td><input type="text" name="antal" size="3" value="1" onChange="javascript:pris()"> Pris: <span id="pris">189 kr</span></td></tr>
+              <tr><td align="right">F&ouml;rnamn </td><td><input type="text" name="fornamn"></td></tr> 
+              <tr><td align="right">Efternamn </td><td><input type="text" name="efternamn"></td></tr>
+              <tr><td align="right">TAG </td><td><input type="text" name="tag"></td></tr>
+              <tr><td align="right">Adress </td><td><input type="text" name="adress1"></td></tr>
+              <tr><td align="right"></td><td><input type="text" name="adress2"></td></tr>
+              <tr><td align="right">Postnummer </td><td><input type="text" name="postnummer"></td></tr>
+              <tr><td align="right">Ort </td><td><input type="text" name="ort"></td></tr>
+              <tr><td align="right">Telefon </td><td><input type="text" name="telefon"></td></tr>
+              <tr><td align="right">E-post </td><td><input type="text" name="epost"></td></tr>
+              <tr><td></td><td><input type="radio" name="frakt" value="skickad"> Jag vill ha boken med posten</td></tr>
+              <tr><td></td><td><input type="radio" name="frakt" value="alingsas"> Jag h&auml;mtar den i Alings&aring;s</td></tr>
+              <tr><td></td><td><input type="radio" name="frakt" value="boras"> Jag h&auml;mtar den i Bor&aring;s</td></tr>
+              <tr><td></td><td><input type="submit" value="K&ouml;p!"></td></tr>
+            </table>
+          </form>
+    </div>
+  </body>
+</html>

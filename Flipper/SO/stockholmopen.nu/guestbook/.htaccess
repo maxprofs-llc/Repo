@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /guestbook
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} .*/admin.php.*|.*/install.php.*
+RewriteRule (.*) https://www.stockholmopen.nu/guestbook/$1 [L,S=1]
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} !.*/admin.php.*
+RewriteCond %{REQUEST_URI} !.*/install.php.*
+RewriteRule (.*) http://www.stockholmopen.nu/guestbook/$1

@@ -1,0 +1,380 @@
+<TITLE>Christian Magnusson's Homepage</TITLE>
+<BASE HREF = "http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/">
+<body background="http://replay.waybackmachine.org/20090621074149im_/http://www.dtek.chalmers.se/~d1mag/background/maglogo3mini.gif" text="#ffffff" LINK="#00ff00" VLINK="#FFFF00" ALINK="#000000">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+
+<script type="text/javascript" src="http://static.waybackmachine.org/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="http://static.waybackmachine.org/js/graph-calc.js" ></script>
+<script type="text/javascript" src="http://static.waybackmachine.org/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+var firstDate = 820454400000;
+var lastDate = 1293839999999;
+var wbPrefix = "http://replay.waybackmachine.org/";
+var wbCurrentUrl = "http://www.dtek.chalmers.se/~d1mag/";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 15;
+var firstYear = 1996;
+var imgWidth=375;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "21";
+var displayMonth = "Jun";
+var displayYear = "2009";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px; z-index:9000;">
+<div id="wm-ipp-inside" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(http://static.waybackmachine.org/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="http://waybackmachine.org/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="http://static.waybackmachine.org/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="http://waybackmachine.org/query" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://www.dtek.chalmers.se/~d1mag/" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;"/><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20090621074149"><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;"/><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="http://replay.waybackmachine.org/20080620155250/http://www.dtek.chalmers.se/~d1mag/" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="20 Jun 2008"><strong>JUN</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 7:41:49 Jun 21, 2009">JUN</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jul
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="http://replay.waybackmachine.org/20080620155250/http://www.dtek.chalmers.se/~d1mag/" title="15:52:50 Jun 20, 2008" style="background-color:transparent;border:none;"><img src="http://static.waybackmachine.org/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 7:41:49 Jun 21, 2009">21</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="http://replay.waybackmachine.org/20090622152847/http://www.dtek.chalmers.se/~d1mag/" title="15:28:47 Jun 22, 2009" style="background-color:transparent;border:none;"><img src="http://static.waybackmachine.org/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
+		                
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="http://replay.waybackmachine.org/20080620155250/http://www.dtek.chalmers.se/~d1mag/" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="20 Jun 2008"><strong>2008</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 7:41:49 Jun 21, 2009">2009</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2010
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="http://waybackmachine.org/20090621074149*/http://www.dtek.chalmers.se/~d1mag/" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>44 captures</strong></a>
+           <div style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">2 Feb 97 - 22 Jun 09</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:375px;height:27px;" href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:375px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="375"
+				height="27"
+				border="0"
+				src="http://waybackmachine.org/jsp/graph.jsp?graphdata=375_27_1996:-1:000000000000_1997:-1:010000100100_1998:-1:010000000000_1999:-1:010000000000_2000:-1:000000001000_2001:-1:000120100100_2002:-1:000010110110_2003:-1:010011010111_2004:-1:011002111010_2005:-1:021000001000_2006:-1:000000000100_2007:-1:200011000000_2008:-1:000101000000_2009:5:000002000000_2010:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="http://static.waybackmachine.org/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="http://static.waybackmachine.org/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(http://static.waybackmachine.org/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="https://webarchive.jira.com/wiki/display/WWMOS/FAQs" style="display:block;padding-right:18px;background:url(http://static.waybackmachine.org/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<CENTER>
+<H1>Welcome to Christian Magnusson's WWW-homepage</H1>
+
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/pictures/lottamag.gif"><IMG SRC="http://replay.waybackmachine.org/20090621074149im_/http://www.dtek.chalmers.se/~d1mag/pictures/mag5.gif"></A>
+<P>
+Hi there!  I'll hope you'll enjoy my homepage...<BR>
+Take care,<BR>
+<BR>
+Christian<BR>
+<BR>
+</CENTER>
+<P>
+
+<HR>
+<P>
+<LI>Click <A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.handelsbanken.se/shb/Inet/ICentSv.nsf/vLookUpPics/Installation_iD2Personal2.8.1SvCom/$file/iD2Personal.exe">here</A> to download
+<LI>Click <A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/logg.html">here</A> to see if I'm logged on for the moment.
+<LI>Click <A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/pathfinder.html">here</A> to get some unsorted links to
+    the pathfinder space project.
+<LI>Click <A HREF =
+    "http://replay.waybackmachine.org/20090621074149/http://smeg.com/backwards/b2.cgi?url=www.dtek.chalmers.se%2F%7Ed1mag">here</A> to view this page backwards... :)
+<P>
+<CENTER><IMG SRC="http://replay.waybackmachine.org/20090621074149im_/http://www.dtek.chalmers.se/~d1mag/pictures/bar_blue.gif"></CENTER>
+<BLINK><CENTER><H1>Do you play pinball??</H1></CENTER></BLINK>
+<CENTER><H1>Then join</H1></CENTER>
+<CENTER><H2><A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/GPL.html">Gothenburg Pinball League! (GPL)</A></H2></CENTER>
+<P>
+<CENTER><IMG SRC="http://replay.waybackmachine.org/20090621074149im_/http://www.dtek.chalmers.se/~d1mag/pictures/bar_blue.gif"></CENTER>
+<CENTER>
+<P>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/friends.html">Friends</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/newslinks.html">News links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/partylinks.html">Party links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/weird.html">Weird links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/musiclinks.html">Music links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/searchlinks.html">Search links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/recipes.html">Recipes links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/otherlinks.html">Other links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/dictionary.html">Dictionary links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/swedishlinks.html">Swedish info links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/computerlinks.html">Computer links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/entertainment.html">Entertainment links</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/weatherlinks.html">Maps and weather reports</A>
+<BR>
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag/picmovies.html">Some pictures and movies</A>
+</CENTER>
+
+<P>
+<P>
+
+<HR width=100%>
+<HR width=60%>
+<HR width=20%>
+
+I (Christian)
+am currently 25 years old, 1.89m (about 6'3") male with light blond hair.
+I have a sister called <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/lottamag.gif">Lotta</A> who is two years elder than me. She is working at a place called DotCom and lives together with Daniel.
+<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/lottadan.gif">Lotta and Daniel</A> lives in an appartment on Stora Essingen in Stockholm.
+My <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/parents.gif">parents</A> (<A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/bo.gif">Bo</A> and <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/gunilla.gif">Gunilla</A>) still
+live in Kristianstad where I stayed until 1990.
+In the summer they usually spend their time in Åhus (about 20km from Kristianstad).
+Åhus is famous for <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/absolut.gif">Abolut Vodka</A> and is a very nice crowded place in the summer.
+There they play golf and take care of our summer house.
+<P>
+Most of my old friends from Kristianstad has moved away, but there are still some of them living there. One of those is <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/andersson.gif">Christian Andersson (and his brother)</A>, who I spend some time together with.
+<P>
+I like holidays very much and try to go somewhere outside sweden every year to relax.
+My uncle <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~mag/pictures/spain.gif">Ulf</A> lives in Spain now, and one of my aunt Inga-Maj lives in Italy (Rom) and has a summer house in Greece (Korfu), so those are places that I try to visit if I have some spare time.
+<P>
+One of my hobbies is golf. I have currently Hcp 5.6, but I'm only playing some months in the summer... mostly on Kristianstad Golf Course.
+<P>
+Cooking is one of my favourite too. During my studies at Chalmers, I've tried many new receips with my friend Malaga. (We still haven't agreed on which frying-pan is the best, and how should rice be cooked... :-)
+<P>
+I've also spent some time in front of computers during my youth. This is the computers I've owned:<BR>
+<LI>1980 I rent my first VIC-20.<BR>
+<LI>1982 It didn't take long time before I bought my first computer. This was a Commodore 64 with a 1541 disk drive.<BR>
+<LI>1983-1985 I worked in a computer shop after school.<BR>
+<LI>1986 I bought an Amiga 2000. I really enjoyed this machine, and I learned to program some C and made my first serious programs.<BR>
+<LI>1993 I decided to buy an Amiga 4000/040, 14Mb RAM, 1.5Gb HD.<BR>
+<LI>For the moment I have a Pentium Pro200 64Mb EDO RAM, 5Gb HD, 8x CD-ROM,
+    SoundBlaster 32 Vibra, Diamond Stealth 64 Video 4Mb and 10Mbit ethernetcard.
+    I'm currently running <A HREF="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/Organisations/linux/">Linux</A> at my computer.
+</UL>
+<P><P>
+<HR width=100%>
+<HR width=60%>
+<HR width=20%>
+<P><A NAME="otherinfo">
+<B>Other actual information.</B><P>
+I'm a member of 'Andvändarföreningen', And, at DTEK. If you want to install new programs or if you have any problems with existing programs, please contact me.
+<P>
+I'm spending some time on IRC with nickname 'Maag'. Send me a message if you want to talk with me. Take a look on channel #sweden, #pinball or #Maag<P>
+I've spent some time in <A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.lysator.liu.se:7500/mud/katmandus/Genesis.html">Genesis</A>
+<A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.lysator.liu.se:7500/mud/main.html">MUD</A> some years ago.
+Click here to see a more detailed <A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.lysator.liu.se/mud/faq/servers.html">Server list</A>,
+<A HREF = "http://replay.waybackmachine.org/20090621074149/http://www.cd.chalmers.se/~rw/genesis/genesis.html"> and some Genesis wizards.</A>
+<P>
+<HR width=100%>
+<HR width=60%>
+<HR width=20%>
+
+<P>
+<H3>Reach me at:</H3>
+<PRE>Email: <A HREF ="mailto:d1mag@dtek.chalmers.se">d1mag@dtek.chalmers.se</A>
+<IMG SRC="http://replay.waybackmachine.org/20090621074149im_/http://www.dtek.chalmers.se/~d1mag/pictures/skriv_en_rad.gif">
+
+GSM:   +46-(0)705-380580
+</PRE>
+<P>
+<HR>
+<CENTER>
+This page was viewed by
+<BR>
+<img align=middle src="http://replay.waybackmachine.org/20090621074149im_/http://www.ualberta.ca/htbin/Geo-counter.gif?chalmers-reg-magnusson1001-1.gif&font:Medium-red">
+<asdfIMG SRC = "http://www.dtek.chalmers.se/cgi-bin/counter//d1mag" width=60>
+<BR>
++950 people since March 27th 1996.
+<BR>
+</CENTER>
+
+
+<!-- Sig start -->
+<P>
+<P><CENTER><IMG SRC="http://replay.waybackmachine.org/20090621074149im_/http://www.dtek.chalmers.se/~d1mag/pictures/lemming_looker.gif"><BR><I>
+<!-- hhmts start -->
+Last modified: Wed Apr 25 19:42:35 MEST 2001
+<!-- hhmts end -->
+by <A HREF ="http://replay.waybackmachine.org/20090621074149/http://www.dtek.chalmers.se/~d1mag">Mag</A>.</I></CENTER>
+<!-- Sig end -->
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 7:41:49 Jun 21, 2009 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 0:41:38 Nov 28, 2010.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

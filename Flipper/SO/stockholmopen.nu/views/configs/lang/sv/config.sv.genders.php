@@ -1,0 +1,2 @@
+FEMALE=Kvinna
+MALE=Man

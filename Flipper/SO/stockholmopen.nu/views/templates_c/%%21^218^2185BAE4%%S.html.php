@@ -1,0 +1,131 @@
+<?php /* Smarty version 2.6.16, created on 2008-06-08 16:22:36
+         compiled from finals/2008/S.html */ ?>
+<table x:str border=0 cellpadding=0 cellspacing=0 width=642 style='border-collapse:
+ collapse;table-layout:fixed;width:487pt'>
+ <col width=72 style='width:54pt'>
+ <col width=33 style='mso-width-source:userset;mso-width-alt:1056;width:25pt'>
+ <col width=38 span=2 style='mso-width-source:userset;mso-width-alt:1216;
+ width:29pt'>
+ <col width=38 span=6 style='mso-width-source:userset;mso-width-alt:1216;
+ width:29pt'>
+ <col width=33 style='mso-width-source:userset;mso-width-alt:1056;width:25pt'>
+ <col width=38 style='mso-width-source:userset;mso-width-alt:1216;width:29pt'>
+ <col width=33 style='mso-width-source:userset;mso-width-alt:1056;width:25pt'>
+ <col width=57 style='mso-width-source:userset;mso-width-alt:1824;width:43pt'>
+ <col width=72 span=2 style='mso-width-source:userset;mso-width-alt:2304;
+ width:54pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl71>JFK</td>
+  <td colspan=13 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl70>CCP</td>
+  <td class=xl68>&nbsp;</td>
+  <td class=xl81>CCP</td>
+  <td class=xl67>&nbsp;</td>
+  <td colspan=10 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=4 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl82>&nbsp;</td>
+  <td class=xl81>CCP</td>
+  <td class=xl67>&nbsp;</td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl71>CWD</td>
+  <td class=xl69>&nbsp;</td>
+  <td class=xl75>CWD</td>
+  <td class=xl67>&nbsp;</td>
+  <td class=xl65>&nbsp;</td>
+  <td></td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl70>DPE</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+  <td class=xl65>&nbsp;</td>
+  <td class=xl66 style='border-left:none'>&nbsp;</td>
+  <td colspan=2 class=xl93 style='border-right:.5pt solid black'>Winner</td>
+  <td colspan=2 class=xl87 style='border-right:.5pt solid black;border-left:
+  none'>CCP</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=5 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl65>&nbsp;</td>
+  <td></td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl71>UBW</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+  <td class=xl65>&nbsp;</td>
+  <td class=xl66 style='border-left:none'>&nbsp;</td>
+  <td colspan=2 class=xl93 style='border-right:.5pt solid black'>Second</td>
+  <td colspan=2 class=xl88 style='border-right:.5pt solid black;border-left:
+  none'>LP</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl70>LP</td>
+  <td class=xl68>&nbsp;</td>
+  <td class=xl81>LP</td>
+  <td class=xl67>&nbsp;</td>
+  <td class=xl65>&nbsp;</td>
+  <td></td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=4 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl66>&nbsp;</td>
+  <td class=xl75>LP</td>
+  <td class=xl67>&nbsp;</td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl71>NOT</td>
+  <td class=xl69>&nbsp;</td>
+  <td class=xl75>KUT</td>
+  <td class=xl67>&nbsp;</td>
+  <td colspan=2 style='mso-ignore:colspan'></td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 style='height:15.0pt'></td>
+  <td class=xl70>KUT</td>
+  <td colspan=3 style='mso-ignore:colspan'></td>
+  <td colspan=2></td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=5 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl71>KUT</td>
+  <td class=xl66 style='border-left:none'>&nbsp;</td>
+  <td colspan=2 class=xl93 style='border-right:.5pt solid black'>Third</td>
+  <td colspan=2 class=xl85 style='border-right:.5pt solid black;border-left:
+  none'>CWD</td>
+  <td colspan=4 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 colspan=5 style='height:15.0pt;mso-ignore:colspan'></td>
+  <td class=xl70>CWD</td>
+  <td></td>
+  <td class=xl83></td>
+  <td colspan=7 style='mso-ignore:colspan'></td>
+ </tr>
+</table>

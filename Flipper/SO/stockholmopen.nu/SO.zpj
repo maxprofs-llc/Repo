@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<project version="5.5" encoding="default">
+	<project_entity ID="SourceControl">
+		<encodingStyle value="CVS"/>
+	</project_entity>
+	<project_entity ID="debugger">
+		<connectionInfo use_defaults="true" tempFilesLocation="C:\Documents and Settings\Stefan" debug_mode="local" serverHost="http://Server_Address/" port="10000"/>
+		<breakpoints/>
+		<watches/>
+	</project_entity>
+	<project_entity ID="project_roots">
+		<vfile name="D:\apache\SO\ajax"/>
+		<vfile name="D:\apache\SO\classes"/>
+		<vfile name="D:\apache\SO\config"/>
+		<vfile name="D:\apache\SO\cron"/>
+		<vfile name="D:\apache\SO\css"/>
+		<vfile name="D:\apache\SO\functions"/>
+		<vfile name="D:\apache\SO\guestbook"/>
+		<vfile name="D:\apache\SO\images"/>
+		<vfile name="D:\apache\SO\includes"/>
+		<vfile name="D:\apache\SO\init"/>
+		<vfile name="D:\apache\SO\javascript"/>
+		<vfile name="D:\apache\SO\login"/>
+		<vfile name="D:\apache\SO\logs"/>
+		<vfile name="D:\apache\SO\models"/>
+		<vfile name="D:\apache\SO\redirects"/>
+		<vfile name="D:\apache\SO\scoreRangeFiles"/>
+		<vfile name="D:\apache\SO\tools"/>
+		<vfile name="D:\apache\SO\views"/>
+		<vfile name="D:\apache\SO\accommodations.php"/>
+		<vfile name="D:\apache\SO\adminEmailAddresses.php"/>
+		<vfile name="D:\apache\SO\adminEntranceFee.php"/>
+		<vfile name="D:\apache\SO\adminEntriesDeleted.php"/>
+		<vfile name="D:\apache\SO\adminEntriesOpen.php"/>
+		<vfile name="D:\apache\SO\adminEntryCreate.php"/>
+		<vfile name="D:\apache\SO\adminEntryCreateDivision.php"/>
+		<vfile name="D:\apache\SO\adminEntryCreateStart.php"/>
+		<vfile name="D:\apache\SO\adminEntryDelete.php"/>
+		<vfile name="D:\apache\SO\adminEntryEdit.php"/>
+		<vfile name="D:\apache\SO\adminEntryReg.php"/>
+		<vfile name="D:\apache\SO\adminEntryRegStart.php"/>
+		<vfile name="D:\apache\SO\adminGames.php"/>
+		<vfile name="D:\apache\SO\adminGamesTournament.php"/>
+		<vfile name="D:\apache\SO\adminNews.php"/>
+		<vfile name="D:\apache\SO\adminPlayerDelete.php"/>
+		<vfile name="D:\apache\SO\adminPlayerEdit.php"/>
+		<vfile name="D:\apache\SO\adminPlayersDelete.php"/>
+		<vfile name="D:\apache\SO\adminPlayersEdit.php"/>
+		<vfile name="D:\apache\SO\adminUser.php"/>
+		<vfile name="D:\apache\SO\adminUserEdit.php"/>
+		<vfile name="D:\apache\SO\adminUserPassword.php"/>
+		<vfile name="D:\apache\SO\adminVoidSplit.php"/>
+		<vfile name="D:\apache\SO\adminVoidSplitStart.php"/>
+		<vfile name="D:\apache\SO\classics.php"/>
+		<vfile name="D:\apache\SO\contact.php"/>
+		<vfile name="D:\apache\SO\entranceFee.php"/>
+		<vfile name="D:\apache\SO\entranceFeePay.php"/>
+		<vfile name="D:\apache\SO\errorNotAuth.php"/>
+		<vfile name="D:\apache\SO\finalResults.php"/>
+		<vfile name="D:\apache\SO\finalResults.tpl.php"/>
+		<vfile name="D:\apache\SO\finalsDetails.php"/>
+		<vfile name="D:\apache\SO\flyers.php"/>
+		<vfile name="D:\apache\SO\gallery.php"/>
+		<vfile name="D:\apache\SO\game.php"/>
+		<vfile name="D:\apache\SO\games.php"/>
+		<vfile name="D:\apache\SO\index.php"/>
+		<vfile name="D:\apache\SO\juniors.php"/>
+		<vfile name="D:\apache\SO\location.php"/>
+		<vfile name="D:\apache\SO\loggedIn.php"/>
+		<vfile name="D:\apache\SO\login.php"/>
+		<vfile name="D:\apache\SO\logout.php"/>
+		<vfile name="D:\apache\SO\news.php"/>
+		<vfile name="D:\apache\SO\noScript.php"/>
+		<vfile name="D:\apache\SO\notFound.php"/>
+		<vfile name="D:\apache\SO\oldie.php"/>
+		<vfile name="D:\apache\SO\overview.php"/>
+		<vfile name="D:\apache\SO\payCancel.php"/>
+		<vfile name="D:\apache\SO\paySuccess.php"/>
+		<vfile name="D:\apache\SO\player.php"/>
+		<vfile name="D:\apache\SO\popupRegPlayers.php"/>
+		<vfile name="D:\apache\SO\press.php"/>
+		<vfile name="D:\apache\SO\prizes.php"/>
+		<vfile name="D:\apache\SO\promotion.php"/>
+		<vfile name="D:\apache\SO\qualDetails.php"/>
+		<vfile name="D:\apache\SO\qualPoints.php"/>
+		<vfile name="D:\apache\SO\register.php"/>
+		<vfile name="D:\apache\SO\registeredPlayers.php"/>
+		<vfile name="D:\apache\SO\registerSplit.php"/>
+		<vfile name="D:\apache\SO\results.php"/>
+		<vfile name="D:\apache\SO\rules.php"/>
+		<vfile name="D:\apache\SO\rulesSplit.php"/>
+		<vfile name="D:\apache\SO\searchGame.php"/>
+		<vfile name="D:\apache\SO\searchPlayer.php"/>
+		<vfile name="D:\apache\SO\slide.php"/>
+		<vfile name="D:\apache\SO\slideCustom.php"/>
+		<vfile name="D:\apache\SO\slideTotal.php"/>
+		<vfile name="D:\apache\SO\standings.php"/>
+		<vfile name="D:\apache\SO\statsAvgEntry.php"/>
+		<vfile name="D:\apache\SO\statsBestEntries.php"/>
+		<vfile name="D:\apache\SO\statsNoOfDifferentGames.php"/>
+		<vfile name="D:\apache\SO\statsPopularGames.php"/>
+		<vfile name="D:\apache\SO\statsPopularGamesByCountry.php"/>
+		<vfile name="D:\apache\SO\statsTopScores.php"/>
+		<vfile name="D:\apache\SO\statsVoidedEntries.php"/>
+		<vfile name="D:\apache\SO\statsYearly.php"/>
+		<vfile name="D:\apache\SO\stpb.php"/>
+		<vfile name="D:\apache\SO\travel.php"/>
+		<vfile name="D:\apache\SO\userActivity.php"/>
+	</project_entity>
+	<project_entity ID="bookmarks"/>
+	<project_entity ID="javaBridge" JRE_Name="1.5.0_06"/>
+	<project_entity ID="Subversion">
+		<svnCmdArguments>
+			<SubversionCommand commandType="update"/>
+			<SubversionCommand commandType="commit"/>
+			<SubversionCommand commandType="add"/>
+			<SubversionCommand commandType="status"/>
+			<SubversionCommand commandType="diff"/>
+			<SubversionCommand commandType="delete"/>
+			<SubversionCommand commandType="revert"/>
+			<SubversionCommand commandType="resolve"/>
+		</svnCmdArguments>
+	</project_entity>
+	<project_entity ID="editor_component" selectedEditor="0">
+		<openEditors>
+			<editor fileName="so@ithora.pal.pp.se:/home/so/public_html/index.php" caretPosition="869" clone="false" encoding="default"/>
+		</openEditors>
+	</project_entity>
+	<project_entity ID="CVS">
+		<lastArguments>
+			<CVSCommand commandType="update"/>
+			<CVSCommand commandType="commit"/>
+			<CVSCommand commandType="add"/>
+			<CVSCommand commandType="status"/>
+			<CVSCommand commandType="diff"/>
+		</lastArguments>
+	</project_entity>
+</project>

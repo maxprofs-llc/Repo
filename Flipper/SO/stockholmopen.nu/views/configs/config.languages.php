@@ -1,0 +1,2 @@
+ENGLISH=English
+SWEDISH=Svenska

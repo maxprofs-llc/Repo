@@ -1,0 +1,487 @@
+<?php /* Smarty version 2.6.16, created on 2013-06-19 16:34:42
+         compiled from finals/2013/C.html */ ?>
+<TABLE FRAME=VOID CELLSPACING=0 COLS=14 RULES=NONE BORDER=0>
+	<COLGROUP><COL WIDTH=26><COL WIDTH=42><COL WIDTH=86><COL WIDTH=26><COL WIDTH=40><COL WIDTH=86><COL WIDTH=44><COL WIDTH=86><COL WIDTH=40><COL WIDTH=86><COL WIDTH=40><COL WIDTH=86><COL WIDTH=40><COL WIDTH=86></COLGROUP>
+	<TBODY>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" WIDTH=26 HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="9" SDNUM="1053;">9</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" WIDTH=42 ALIGN=LEFT BGCOLOR="#C0C0C0">REO</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" WIDTH=86 ALIGN=LEFT>--,LW,--</TD>
+			<TD WIDTH=26 ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" WIDTH=40 ALIGN=LEFT BGCOLOR="#C0C0C0">PAT</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" WIDTH=86 ALIGN=LEFT>--,HD,--</TD>
+			<TD WIDTH=44 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=40 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=40 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=40 ALIGN=LEFT><BR></TD>
+			<TD WIDTH=86 ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="24" SDNUM="1053;">24</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PAT</TD>
+			<TD ALIGN=LEFT>8BD,--,TW</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="1" SDNUM="1053;">1</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">APB</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>LW,--,TW</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">APB</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,MH,--</TD>
+			<TD ALIGN=LEFT></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>TW,--,XO</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PKH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="16" SDNUM="1053;">16</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">JAN</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>HD,MH,(<strike>BP</strike>)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">JAN</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>8BD,--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PKH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR /></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="17" SDNUM="1053;">17</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PRO</TD>
+			<TD ALIGN=LEFT>--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="8" SDNUM="1053;">8</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PKH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>--,TW,XEN</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,--</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>BP,HD,(<strike>MH</strike>)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">DAH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="13" SDNUM="1053;">13</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">VYV</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>--,TW,--</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">SVE</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,MH,8BD</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="20" SDNUM="1053;">20</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">SVE</TD>
+			<TD ALIGN=LEFT>LW,--,XO</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="5" SDNUM="1053;">5</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">RON</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>BP,--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">SVE</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,TW,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">DAH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>8BD,--,XEN</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="21" SDNUM="1053;">21</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">ABI</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>MH,--,--</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">JOE</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,8B,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">DAH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="12" SDNUM="1053;">12</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">JOE</TD>
+			<TD ALIGN=LEFT>--,XEN,8BD</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="4" SDNUM="1053;">4</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">DAH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>MH,--,HD</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>XEN,8B</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#FFFF66">IFK</TD>
+			<TD ALIGN=LEFT>Winner!</TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#E6E6FF">DAH</TD>
+			<TD ALIGN=LEFT>Second place!</TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="11" SDNUM="1053;">11</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LJA</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>TW,BP,(<strike>LW</strike>)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LJA</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>XEN,XO,(<strike>BP)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="22" SDNUM="1053;">22</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">OPT</TD>
+			<TD ALIGN=LEFT>--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="3" SDNUM="1053;">3</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PAL</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LJA</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>8B,--,--</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>--,BP,8BD</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LOP</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="14" SDNUM="1053;">14</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LOP</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>XEN,8B,(<strike>TW</strike>)</TD>
+			<TD ALIGN=LEFT> </TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LOP</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>8B,8BD,(<strike>XO</strike>)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LOP</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="19" SDNUM="1053;">19</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LEL</TD>
+			<TD ALIGN=LEFT>--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="6" SDNUM="1053;">6</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">MCR</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>--,--</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,TW,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">IFK</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>8B,--,BP</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="15" SDNUM="1053;">15</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LIX</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>BP,8BD,(<strike>LW</strike>)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LIX</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,--,(<strike>LW</strike>)</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR /></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="18" SDNUM="1053;">18</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">K H</TD>
+			<TD ALIGN=LEFT>--,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="7" SDNUM="1053;">7</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">M S</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>HD,XEN</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">M S</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=17 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,--,(<strike>MH</strike>)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">IFK</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">PKH</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD HEIGHT=18 ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>BP,8BD</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,BP,LW</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#FF6633">PKH</TD>
+			<TD ALIGN=LEFT>Third place!</TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="23" SDNUM="1053;">23</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">SAM</TD>
+			<TD STYLE="border-bottom: 1px solid #000000" ALIGN=LEFT>8B,--,8BD</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">SAM</TD>
+			<TD STYLE="border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=LEFT>--,--,(<strike>MH</strike>)</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">IFK</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>8B,--,--</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+		<TR>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" HEIGHT=17 ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="10" SDNUM="1053;">10</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">MUH</TD>
+			<TD ALIGN=LEFT>--,XO,--</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000" ALIGN=RIGHT BGCOLOR="#C0C0C0" SDVAL="2" SDNUM="1053;">2</TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">IFK</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT>XO,BP</TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" ALIGN=LEFT BGCOLOR="#C0C0C0">LOP</TD>
+			<TD STYLE="border-left: 1px solid #000000" ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+			<TD ALIGN=LEFT><BR></TD>
+		</TR>
+	</TBODY>
+</TABLE>
