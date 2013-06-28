@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class data_session</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class data_session</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_classes---data---session.php.html">/classes/data/session.php</a> (line <span class="field">1</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																												
+												<div class="method-definition">
+											<span class="method-result">data_session</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#authorize" title="details" class="method-name">authorize</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$db</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#checkGroupPrivilege" title="details" class="method-name">checkGroupPrivilege</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$userId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$group</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$privileges</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#checkId" title="details" class="method-name">checkId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$db</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$user</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pass</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#checkLogin" title="details" class="method-name">checkLogin</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$showLoginForm</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$updateCookie</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#checkUrl" title="details" class="method-name">checkUrl</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$userId</span> = <span class="var-default">false</span>], <span class="var-type"></span>&nbsp;<span class="var-name">$requestUri</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$autoDie</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$showLinkOnAutoDie</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#doLogout" title="details" class="method-name">doLogout</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLoggedInUserId" title="details" class="method-name">getLoggedInUserId</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLoggedInUserPrefsPath" title="details" class="method-name">getLoggedInUserPrefsPath</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#showLogin" title="details" class="method-name">showLogin</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$thenDie</span> = <span class="var-default">true</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">13</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">data_session</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number">36</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodauthorize" id="authorize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">authorize</span> (line <span class="line-number">167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			authorize
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$db</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$row</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$db</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckGroupPrivilege" id="checkGroupPrivilege"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">checkGroupPrivilege</span> (line <span class="line-number">223</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkGroupPrivilege
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$userId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$group</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$privileges</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$userId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$group</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$privileges</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckId" id="checkId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">checkId</span> (line <span class="line-number">243</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$db</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$user</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pass</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$db</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$user</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$pass</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckLogin" id="checkLogin"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">checkLogin</span> (line <span class="line-number">41</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkLogin
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$showLoginForm</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$updateCookie</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$showLoginForm</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$updateCookie</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckUrl" id="checkUrl"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">checkUrl</span> (line <span class="line-number">185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			checkUrl
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$userId</span> = <span class="var-default">false</span>], <span class="var-type"></span>&nbsp;<span class="var-name">$requestUri</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$autoDie</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$showLinkOnAutoDie</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$userId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$requestUri</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$autoDie</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$showLinkOnAutoDie</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddoLogout" id="doLogout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">doLogout</span> (line <span class="line-number">257</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			doLogout
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLoggedInUserId" id="getLoggedInUserId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLoggedInUserId</span> (line <span class="line-number">253</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLoggedInUserId
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLoggedInUserPrefsPath" id="getLoggedInUserPrefsPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLoggedInUserPrefsPath</span> (line <span class="line-number">155</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLoggedInUserPrefsPath
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodshowLogin" id="showLogin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">showLogin</span> (line <span class="line-number">263</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			showLogin
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$thenDie</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$thenDie</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 05 May 2012 16:08:19 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

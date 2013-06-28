@@ -1,0 +1,32 @@
+db username = stats
+db password = Hmpr_0214
+db name = stats_ifkmalmo_test
+db host ip = localhost
+db host port = 3306
+
+db master username = stats
+db master password = Hmpr_0214
+db master name = stats_master
+db master host ip = localhost
+db master host port = 3306
+
+db security username = stats
+db security password = Hmpr_0214
+db security database = stats_users
+db security host ip = localhost
+db security host port = 3306
+
+path to public root =
+lang = sv
+available langs = sv,en
+stylesheets = aik.css
+
+icon_width=50
+icon_height=50
+useDataStore=0
+
+my team = 1
+my team name = AIK
+player role id = 1
+goalie role id = 46
+

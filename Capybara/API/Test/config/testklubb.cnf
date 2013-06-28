@@ -1,0 +1,7 @@
+db name = stats_testklubb
+
+db master username = stats
+db master password = Hmpr_0214
+db master name = stats_test
+db master host ip = localhost
+db master host port = 3306

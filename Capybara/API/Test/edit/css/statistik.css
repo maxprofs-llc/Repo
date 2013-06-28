@@ -1,0 +1,612 @@
+/* Basic styles */
+
+body {
+	color: black;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	line-height: 13px;
+}
+
+col {
+	width: 50%;
+}
+
+hr {
+	border: 1px dotted;
+	width: 95%;
+	margin-left: 0;
+}
+
+input,textarea {
+	border: 1px solid #CCCCCC;
+}
+
+input[type=text] {
+	width: 100%;
+}
+
+input[type=text].shirtNumber {
+	width: 35px;
+}
+
+input[type=text].dateField {
+	width: 75px;
+}
+
+input[type=text].dimensionDate {
+	width: 100%;
+}
+
+img {
+	max-width: 450px;
+}
+
+li {
+	padding-bottom: 5px;
+}
+
+select[multiple] {
+	border: 1px solid #CCCCCC;
+	width: 100%;
+}
+
+table {
+	border-spacing: 0;
+	padding: 0;
+	width: 100%;
+}
+
+td {
+	vertical-align: top;
+}
+
+textarea {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	width: 100%;	
+}
+
+th {
+	background: #000066;
+	color: white;
+	text-align: left;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* Style by id, in abc-order */
+
+#AIKInfo_expander {
+	margin-top: 15px;
+}
+
+#arenaStreetNumber {
+	width: 80px;
+}
+
+#arenaZipCode {
+	width: 80px;
+}
+
+#loginTable {
+	margin: auto;	
+}
+
+#mainImage {
+	width: 450px;
+}
+
+#matchWeather input[type=text] {
+	width: 50%;
+	margin-right: 5px;
+}
+
+#matchWeather .searchBox input[type=text] {
+	width: 100%;
+	margin-right: 0px;
+}
+
+#matchImage {
+	margin-bottom: 15px;
+}
+
+#navigationMenu {
+	position: relative;
+	left: 10px;
+}
+
+#navigationMenu li {
+	display: inline;
+}
+
+#navigationMenu ul {
+	padding: 0 0;
+	
+}
+
+#navigationMenu img {
+	padding: 0 5px;
+}
+
+#readMore_container {
+	display: inline-block;
+}
+
+#rightMenu {
+	float: left;
+}
+
+#rightMenu ul {
+	list-style: none;
+	padding-left: 2em;
+}
+
+#siteContents {
+	padding: 10px;
+	min-width: 600px;
+	border-right: 1px dotted gray;
+	float: left;
+}
+
+#siteFooter {
+	display: none;
+}
+
+/* Style by class, in abc-order */
+
+.ajaxBox {
+	border: 1px solid #CCCCCC;
+	white-space: nowrap;
+}
+
+.ajaxBox input {
+	width: 100%;
+	border: none;
+}
+
+.ajaxBox .addButton {
+	border: 1px solid #CCCCCC;
+	height: 100%;
+	width: 1.8em;
+	height: 1.5em;
+	margin-left: -4em;
+	padding-top: 3px;
+	display: inline-block;
+	cursor: hand;
+	cursor: pointer;
+	text-align: center;
+}
+
+.ajaxBox .addButton span {
+	font-size: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.ajaxLoading {
+	background: url(../icons/ajax-loader.gif) no-repeat;
+	background-position: top left;
+	cursor: wait;
+	padding: 16px;
+	
+}
+
+.block {
+	display: block;
+}
+
+.box {
+	border: 1px solid black;
+}
+
+.blur {
+	background: #1C1C1C none repeat scroll 0 0;
+	height: 200%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.comment {
+	background: url(../notes.gif) no-repeat;
+	background-position: center;
+	padding-left: 8px;
+	padding-right: 4px;
+}
+
+span.comment {
+	display: none;
+	left: 200px;
+}
+
+.collapsed {
+	background: url(../icons/pil.png) no-repeat;
+	background-position: center left;
+	cursor: pointer;
+	padding-left: 16px;
+}
+
+.ctrlColumn {
+	width: 5%;
+}
+
+.delete {
+	color: transparent;
+	background: url(../icons/delete.jpg) no-repeat center center;
+	width: 13px;
+	padding: 5px 0px;
+	cursor: pointer;
+	cursor: hand;
+	line-height: 24px;
+}
+
+.detailRow td {
+	color: #666666;
+}
+
+.detailsTable {
+	margin-top: 0px;
+}
+/*
+.detailRow .expandable {
+	padding-left: 26px;
+}
+*/
+
+.divider {
+	color: transparent;
+	background: url(../icons/pil.png) no-repeat center center;
+	padding: 8px;
+}
+
+.editText {
+	cursor:hand;
+	cursor:pointer;	
+	color:transparent;
+	background:url("../icons/notes.gif") no-repeat scroll left center transparent;
+	padding-left: 8px;
+}
+
+.error {
+	color: red;
+}
+
+.expandableMenu {
+	padding-top: 6px;
+	padding-left: 0px;
+}
+
+.expandable {
+	background: url(../icons/pil.png) no-repeat;
+	background-position: center left;
+	cursor: pointer;
+	padding-left: 16px;
+}
+
+.expanded {
+	background: url(../icons/pil_ner.png) no-repeat;
+	background-position: center left;
+	cursor: pointer;
+	padding-left: 16px;
+}
+
+.expander {
+	margin-top: 5px;
+}
+
+.expander_contents {
+	padding-left: 20px;
+}
+
+
+.fillUp {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	display: table;
+}
+
+.goalIcon{
+	color: transparent;
+	background: url(../goal.png) no-repeat center;
+	padding-left: 7px;
+}
+
+.headline {
+	font-weight: bold;
+	font-size: 125%;
+}
+
+.icon {
+	float: right;
+}
+
+.imageList {
+	width: auto;
+}
+
+.label {
+	
+}
+
+.mapContainer {
+	position: relative;
+}
+
+.mapViewport {
+	height: 350px;
+	width: 350px;
+}
+
+.mapButtons {
+	position: absolute;
+	left: 325px;
+	top: 0;
+}
+
+.mapHelptext {
+	font-style: italic;
+}
+
+.match {
+	padding-left: 46px;
+}
+
+.matchtype {
+	padding-left: 20px;
+}
+
+.matchRow td {
+	color: #000000;
+}
+
+
+.matchDate {
+	width: 20%;
+	white-space: nowrap;
+}
+
+.matchTeams {
+	white-space: nowrap;
+	min-width: 180px;
+}
+
+.matchResult {
+	width: 80%;
+}
+
+.matchGoals {
+	width: 100%;
+}
+
+.progressBar {
+	position: absolute; 
+	top: 0px; 
+	height: 100%; 
+	background: red; 
+	z-index: 0;	
+}
+
+.progressBarContainer {
+	position: relative; 
+	border: 1px solid black; 
+	width: 200px; 
+	height: 15px;	
+}
+
+.progressBarText {
+	position: relative; 
+	width: 100%; 
+	height: 100%; 
+	text-align: center; 
+	z-index: 1;	
+}
+
+.red {
+	background: red;
+}
+
+.redCard {
+	background: url(../../../bilder/event/rottkort.gif) center no-repeat;
+	padding-left: 5px;
+}
+
+.role td {
+	vertical-align: middle;
+}
+
+.saveButton {
+	margin: 10px;
+}
+
+.searchBox {
+	border: 1px solid #CCCCCC;
+	white-space: nowrap;
+	background: white;
+	position: relative;
+	height: 2em;
+}
+
+.searchBox input {
+	width: 100%;
+	border: none;
+}
+
+.searchBox .addButton {
+	border: 1px solid #CCCCCC;
+	height: 100%;
+	width: 1.8em;
+	height: 1.5em;
+	padding-top: 3px;
+	display: inline-block;
+	cursor: hand;
+	cursor: pointer;
+	text-align: center;
+	position: absolute;
+	right: 1.8em;
+	top:0;
+	background: url(../icons/add-icon.png) no-repeat center center;
+}
+
+.searchBox .addFromMasterButton {
+	border: 1px solid #CCCCCC;
+	height: 100%;
+	width: 1.8em;
+	height: 1.5em;
+	padding-top: 3px;
+	display: inline-block;
+	cursor: hand;
+	cursor: pointer;
+	text-align: center;
+	position: absolute;
+	right: 0;
+	top:0;
+	background: url(../icons/search.png) no-repeat center center;
+}
+
+.searchBox .addButton span {
+	font-size: 8px;
+	width: 100%;
+	text-align: center;
+	color: transparent;
+}
+
+.searchBox .addFromMasterButton span {
+	color:transparent;
+}
+.searchBoxList {
+	position: absolute;
+	border: 1px solid black;
+	background: white;
+	overflow: scroll;
+	cursor: hand;
+	cursor: pointer
+}
+
+.searchBoxList .alternate td{
+	background: #CCCCCC;
+}
+
+.searchBoxList .selected td{
+	background: yellow;
+}
+
+.selected {
+	border: 2px solid red;
+}
+
+.shortText {
+	width: 50px;
+}
+
+.smallheadline {
+	font-weight: bold;
+	font-size: 110%;
+}
+
+.statStat {
+	width: 10%;
+	text-align: center;
+}
+
+.status {
+	color: blue;
+}
+
+.subheadline {
+	font-weight: bolder;
+}
+
+.sumRow {
+	font-weight: bold;
+	border-top: 1px solid black;
+}
+
+.teamColumn {
+	width: 40%;
+}
+
+.thumbnail {
+	height: 50px;
+	width: 50px;
+}
+
+.tooltip {
+	position: absolute;
+	border: 1px solid black;
+	background: white;
+}
+
+.yearColumn {
+	width: 20%;
+	padding-left: 16px;
+}
+
+.yellowCard {
+	background: url(../../../bilder/event/gultkort.gif) center no-repeat;
+	padding-left: 5px;
+}
+
+.veryShortText {
+	width: 25px;
+}
+
+.window {
+	background: white;
+	border: 1px solid black;
+	height:auto;
+	margin:auto auto;
+	max-width:650px;
+	padding:10px;
+	position:relative;
+	width:auto;
+	z-index:1;
+	display: block;
+}
+
+.tooltip_popup {
+	background:white;
+}
+
+input[type=text].shirtnumber {
+	width: 30px;
+}
+
+input[type=text].distance {
+	width: 50px;
+}
+input[type=text].speed {
+	width: 50px;
+}
+
+.card .delete {
+	position: relative;
+	top: 10px;
+	left: -15px;
+}
+
+.substitute,.captain {
+	width: 100%;
+}
+
+.substitute.time,.captain.time {
+	width: 75px;
+}
+
+#geoDirectionDegrees {
+	width: 75px;
+}
+
+#periodTypeDefaultLength {
+	width: 75px;
+}
+
+input.score {
+	width: 50px;
+}

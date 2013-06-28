@@ -1,0 +1,2690 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class data_dataReader</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class data_dataReader</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_classes---data---dataReader.php.html">/classes/data/dataReader.php</a> (line <span class="field">1</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">data_dataReader</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$db</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAgeGroupById" title="details" class="method-name">getAgeGroupById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAgeGroupList" title="details" class="method-name">getAgeGroupList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getArenaById" title="details" class="method-name">getArenaById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getArenaKeyValueList" title="details" class="method-name">getArenaKeyValueList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getArenaList" title="details" class="method-name">getArenaList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAssistsForGoal" title="details" class="method-name">getAssistsForGoal</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCityById" title="details" class="method-name">getCityById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCityList" title="details" class="method-name">getCityList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$countryId</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$stateId</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCohortById" title="details" class="method-name">getCohortById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCohortList" title="details" class="method-name">getCohortList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCompetitorById" title="details" class="method-name">getCompetitorById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCompetitorsForMatchWithId" title="details" class="method-name">getCompetitorsForMatchWithId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getContinentById" title="details" class="method-name">getContinentById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getContinentList" title="details" class="method-name">getContinentList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCountryById" title="details" class="method-name">getCountryById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCountryList" title="details" class="method-name">&amp;getCountryList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getDatabaseName" title="details" class="method-name">getDatabaseName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getFileById" title="details" class="method-name">getFileById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$class</span> = <span class="var-default">'file'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGenderById" title="details" class="method-name">getGenderById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGenderList" title="details" class="method-name">getGenderList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGenericById" title="details" class="method-name">getGenericById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGenericKeyValueList" title="details" class="method-name">getGenericKeyValueList</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGenericList" title="details" class="method-name">getGenericList</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$where</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGeoDirectionById" title="details" class="method-name">getGeoDirectionById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGeoDirectionList" title="details" class="method-name">getGeoDirectionList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getGoalsForMatchWithId" title="details" class="method-name">getGoalsForMatchWithId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getImageList" title="details" class="method-name">getImageList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$table</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getLocationById" title="details" class="method-name">getLocationById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchById" title="details" class="method-name">getMatchById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchList" title="details" class="method-name">getMatchList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$year</span> = <span class="var-default">'%'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchReport" title="details" class="method-name">getMatchReport</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$languageId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$organizationId</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchReportById" title="details" class="method-name">getMatchReportById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchReportForMatchWithId" title="details" class="method-name">getMatchReportForMatchWithId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$languageId</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$organizationId</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchReportListForMatchWithId" title="details" class="method-name">getMatchReportListForMatchWithId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$languageId</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$organizationId</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchTypeById" title="details" class="method-name">getMatchTypeById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMatchTypeList" title="details" class="method-name">getMatchTypeList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOrganizationById" title="details" class="method-name">getOrganizationById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOrganizationList" title="details" class="method-name">getOrganizationList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOrganizationTypeById" title="details" class="method-name">getOrganizationTypeById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOrganizationTypeList" title="details" class="method-name">getOrganizationTypeList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPeriodsForMatchWithId" title="details" class="method-name">getPeriodsForMatchWithId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPersonById" title="details" class="method-name">getPersonById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPersonDimensions" title="details" class="method-name">getPersonDimensions</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$personId</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPersonList" title="details" class="method-name">getPersonList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$teamId</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPersonRoleList" title="details" class="method-name">getPersonRoleList</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$personId</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPlayerById" title="details" class="method-name">getPlayerById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPlayerFromPersonOnMatch" title="details" class="method-name">getPlayerFromPersonOnMatch</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$personId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$competitorId</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPlayerList" title="details" class="method-name">getPlayerList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$teamId</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$atDate</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPrecipitationTypeById" title="details" class="method-name">getPrecipitationTypeById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPrecipitationTypeList" title="details" class="method-name">getPrecipitationTypeList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRefereeList" title="details" class="method-name">getRefereeList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$atDate</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRefereesForMatchWithId" title="details" class="method-name">getRefereesForMatchWithId</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRoleById" title="details" class="method-name">getRoleById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getRoleList" title="details" class="method-name">getRoleList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSearchResult" title="details" class="method-name">getSearchResult</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$search</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$keyvalues</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSeasonById" title="details" class="method-name">getSeasonById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSeasonList" title="details" class="method-name">getSeasonList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSectionById" title="details" class="method-name">getSectionById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSectionList" title="details" class="method-name">getSectionList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSportById" title="details" class="method-name">getSportById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSportList" title="details" class="method-name">getSportList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSquadForCompetitor" title="details" class="method-name">getSquadForCompetitor</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getStateById" title="details" class="method-name">getStateById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getStateList" title="details" class="method-name">getStateList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSubstitutionsForCompetitor" title="details" class="method-name">getSubstitutionsForCompetitor</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTeamById" title="details" class="method-name">getTeamById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTeamList" title="details" class="method-name">getTeamList</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getUserById" title="details" class="method-name">getUserById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getUserKeyValueList" title="details" class="method-name">getUserKeyValueList</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getUserPrivileges" title="details" class="method-name">getUserPrivileges</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$userid</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getWeatherById" title="details" class="method-name">getWeatherById</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#joinCity" title="details" class="method-name">joinCity</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span> = <span class="var-default">'ci'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#joinContinent" title="details" class="method-name">joinContinent</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#joinCountry" title="details" class="method-name">joinCountry</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#joinLocation" title="details" class="method-name">joinLocation</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#joinState" title="details" class="method-name">joinState</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span> = <span class="var-default">'st'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#parseCity" title="details" class="method-name">parseCity</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$city</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#parseContinent" title="details" class="method-name">parseContinent</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$continent</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#parseCountry" title="details" class="method-name">parseCountry</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$country</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#parseLocation" title="details" class="method-name">parseLocation</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$location</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#parseState" title="details" class="method-name">parseState</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">6</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">data_dataReader</span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$db</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$db</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$lang</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAgeGroupById" id="getAgeGroupById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAgeGroupById</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAgeGroupById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAgeGroupList" id="getAgeGroupList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAgeGroupList</span> (line <span class="line-number">355</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAgeGroupList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetArenaById" id="getArenaById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getArenaById</span> (line <span class="line-number">1465</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArenaById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetArenaKeyValueList" id="getArenaKeyValueList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getArenaKeyValueList</span> (line <span class="line-number">1496</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArenaKeyValueList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetArenaList" id="getArenaList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getArenaList</span> (line <span class="line-number">1500</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getArenaList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAssistsForGoal" id="getAssistsForGoal"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAssistsForGoal</span> (line <span class="line-number">1367</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAssistsForGoal
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCityById" id="getCityById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCityById</span> (line <span class="line-number">1684</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCityById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$canBeIncomplete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCityList" id="getCityList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCityList</span> (line <span class="line-number">1672</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCityList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$countryId</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$stateId</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$countryId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$stateId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCohortById" id="getCohortById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCohortById</span> (line <span class="line-number">341</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCohortById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCohortList" id="getCohortList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCohortList</span> (line <span class="line-number">345</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCohortList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCompetitorById" id="getCompetitorById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCompetitorById</span> (line <span class="line-number">1287</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCompetitorById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCompetitorsForMatchWithId" id="getCompetitorsForMatchWithId"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCompetitorsForMatchWithId</span> (line <span class="line-number">1266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCompetitorsForMatchWithId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetContinentById" id="getContinentById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getContinentById</span> (line <span class="line-number">2103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getContinentById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$canBeIncomplete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetContinentList" id="getContinentList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getContinentList</span> (line <span class="line-number">2060</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getContinentList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCountryById" id="getCountryById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCountryById</span> (line <span class="line-number">1982</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCountryById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$canBeIncomplete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCountryList" id="getCountryList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCountryList</span> (line <span class="line-number">1923</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			&amp;getCountryList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetDatabaseName" id="getDatabaseName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDatabaseName</span> (line <span class="line-number">14</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getDatabaseName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFileById" id="getFileById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFileById</span> (line <span class="line-number">1390</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getFileById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$class</span> = <span class="var-default">'file'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGenderById" id="getGenderById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGenderById</span> (line <span class="line-number">1073</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGenderById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGenderList" id="getGenderList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGenderList</span> (line <span class="line-number">1077</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGenderList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetGenericById" id="getGenericById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGenericById</span> (line <span class="line-number">20</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGenericById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$abbrevation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGenericKeyValueList" id="getGenericKeyValueList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGenericKeyValueList</span> (line <span class="line-number">130</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGenericKeyValueList
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$abbrevation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGenericList" id="getGenericList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGenericList</span> (line <span class="line-number">74</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGenericList
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$where</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$abbrevation</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$where</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGeoDirectionById" id="getGeoDirectionById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGeoDirectionById</span> (line <span class="line-number">180</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGeoDirectionById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGeoDirectionList" id="getGeoDirectionList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGeoDirectionList</span> (line <span class="line-number">176</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGeoDirectionList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetGoalsForMatchWithId" id="getGoalsForMatchWithId"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getGoalsForMatchWithId</span> (line <span class="line-number">1347</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getGoalsForMatchWithId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetImageList" id="getImageList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getImageList</span> (line <span class="line-number">1437</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getImageList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$table</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetLocationById" id="getLocationById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLocationById</span> (line <span class="line-number">1579</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getLocationById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchById" id="getMatchById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchById</span> (line <span class="line-number">1238</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchList" id="getMatchList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchList</span> (line <span class="line-number">1207</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$year</span> = <span class="var-default">'%'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$year</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchReport" id="getMatchReport"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchReport</span> (line <span class="line-number">160</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchReport
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$languageId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$organizationId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$matchId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$languageId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$organizationId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchReportById" id="getMatchReportById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchReportById</span> (line <span class="line-number">362</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchReportById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchReportForMatchWithId" id="getMatchReportForMatchWithId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchReportForMatchWithId</span> (line <span class="line-number">394</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchReportForMatchWithId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$languageId</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$organizationId</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$matchId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$languageId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$organizationId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchReportListForMatchWithId" id="getMatchReportListForMatchWithId"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchReportListForMatchWithId</span> (line <span class="line-number">439</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchReportListForMatchWithId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$languageId</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$organizationId</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$matchId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$languageId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$organizationId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchTypeById" id="getMatchTypeById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchTypeById</span> (line <span class="line-number">1063</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchTypeById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMatchTypeList" id="getMatchTypeList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMatchTypeList</span> (line <span class="line-number">1067</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMatchTypeList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetOrganizationById" id="getOrganizationById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOrganizationById</span> (line <span class="line-number">230</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOrganizationById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetOrganizationList" id="getOrganizationList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOrganizationList</span> (line <span class="line-number">293</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOrganizationList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetOrganizationTypeById" id="getOrganizationTypeById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOrganizationTypeById</span> (line <span class="line-number">299</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOrganizationTypeById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetOrganizationTypeList" id="getOrganizationTypeList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOrganizationTypeList</span> (line <span class="line-number">335</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOrganizationTypeList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPeriodsForMatchWithId" id="getPeriodsForMatchWithId"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPeriodsForMatchWithId</span> (line <span class="line-number">1307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPeriodsForMatchWithId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPersonById" id="getPersonById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPersonById</span> (line <span class="line-number">744</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPersonById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$canBeIncomplete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPersonDimensions" id="getPersonDimensions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPersonDimensions</span> (line <span class="line-number">928</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPersonDimensions
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$personId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$personId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPersonList" id="getPersonList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPersonList</span> (line <span class="line-number">811</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPersonList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$teamId</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$teamId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPersonRoleList" id="getPersonRoleList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPersonRoleList</span> (line <span class="line-number">894</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPersonRoleList
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$personId</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$personId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPlayerById" id="getPlayerById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPlayerById</span> (line <span class="line-number">603</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPlayerById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPlayerFromPersonOnMatch" id="getPlayerFromPersonOnMatch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPlayerFromPersonOnMatch</span> (line <span class="line-number">644</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPlayerFromPersonOnMatch
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$personId</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$matchId</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$competitorId</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$personId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$matchId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$competitorId</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPlayerList" id="getPlayerList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPlayerList</span> (line <span class="line-number">549</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPlayerList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$teamId</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$atDate</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$teamId</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$atDate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPrecipitationTypeById" id="getPrecipitationTypeById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPrecipitationTypeById</span> (line <span class="line-number">171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPrecipitationTypeById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPrecipitationTypeList" id="getPrecipitationTypeList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPrecipitationTypeList</span> (line <span class="line-number">167</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPrecipitationTypeList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRefereeList" id="getRefereeList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRefereeList</span> (line <span class="line-number">497</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRefereeList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$atDate</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$atDate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRefereesForMatchWithId" id="getRefereesForMatchWithId"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRefereesForMatchWithId</span> (line <span class="line-number">1326</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRefereesForMatchWithId
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRoleById" id="getRoleById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRoleById</span> (line <span class="line-number">825</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRoleById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRoleList" id="getRoleList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRoleList</span> (line <span class="line-number">820</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getRoleList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$includeNone</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeNone</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSearchResult" id="getSearchResult"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSearchResult</span> (line <span class="line-number">186</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSearchResult
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$search</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$className</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$keyvalues</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$search</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$className</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$keyvalues</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSeasonById" id="getSeasonById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSeasonById</span> (line <span class="line-number">1082</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSeasonById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSeasonList" id="getSeasonList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSeasonList</span> (line <span class="line-number">1086</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSeasonList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSectionById" id="getSectionById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSectionById</span> (line <span class="line-number">1149</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSectionById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSectionList" id="getSectionList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSectionList</span> (line <span class="line-number">1177</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSectionList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSportById" id="getSportById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSportById</span> (line <span class="line-number">1091</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSportById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSportList" id="getSportList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSportList</span> (line <span class="line-number">1119</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSportList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSquadForCompetitor" id="getSquadForCompetitor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSquadForCompetitor</span> (line <span class="line-number">675</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSquadForCompetitor
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetStateById" id="getStateById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getStateById</span> (line <span class="line-number">1832</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getStateById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$canBeIncomplete</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$canBeIncomplete</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetStateList" id="getStateList"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getStateList</span> (line <span class="line-number">1785</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getStateList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSubstitutionsForCompetitor" id="getSubstitutionsForCompetitor"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSubstitutionsForCompetitor</span> (line <span class="line-number">713</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSubstitutionsForCompetitor
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTeamById" id="getTeamById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTeamById</span> (line <span class="line-number">960</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTeamById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTeamList" id="getTeamList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTeamList</span> (line <span class="line-number">1014</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTeamList
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$includeUnknown</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$includeUnknown</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUserById" id="getUserById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUserById</span> (line <span class="line-number">2171</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUserById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUserKeyValueList" id="getUserKeyValueList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUserKeyValueList</span> (line <span class="line-number">2149</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUserKeyValueList
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUserPrivileges" id="getUserPrivileges"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUserPrivileges</span> (line <span class="line-number">2202</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUserPrivileges
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$userid</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$userid</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetWeatherById" id="getWeatherById"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getWeatherById</span> (line <span class="line-number">1536</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getWeatherById
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodjoinCity" id="joinCity"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">joinCity</span> (line <span class="line-number">1650</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			joinCity
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span> = <span class="var-default">'ci'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qb</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$abbrevation</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodjoinContinent" id="joinContinent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">joinContinent</span> (line <span class="line-number">2053</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			joinContinent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qb</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$key</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodjoinCountry" id="joinCountry"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">joinCountry</span> (line <span class="line-number">1912</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			joinCountry
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qb</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$key</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodjoinLocation" id="joinLocation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">joinLocation</span> (line <span class="line-number">1571</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			joinLocation
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$table</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qb</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$table</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodjoinState" id="joinState"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">joinState</span> (line <span class="line-number">1768</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			joinState
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$qb</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$abbrevation</span> = <span class="var-default">'st'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$qb</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$abbrevation</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseCity" id="parseCity"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseCity</span> (line <span class="line-number">1631</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			parseCity
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$city</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$city</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$row</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseContinent" id="parseContinent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseContinent</span> (line <span class="line-number">2049</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			parseContinent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$continent</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$continent</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$row</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseCountry" id="parseCountry"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseCountry</span> (line <span class="line-number">1904</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			parseCountry
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$country</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$country</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$row</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseLocation" id="parseLocation"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseLocation</span> (line <span class="line-number">1545</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			parseLocation
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$location</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$location</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$row</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparseState" id="parseState"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">parseState</span> (line <span class="line-number">1753</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			parseState
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$state</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$state</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$row</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$prefix</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 05 May 2012 16:08:12 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

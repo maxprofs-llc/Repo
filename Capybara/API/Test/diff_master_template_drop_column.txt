@@ -1,0 +1,29 @@
+ALTER TABLE `bodypart` DROP COLUMN `name`; # was varchar(255) default NULL
+ALTER TABLE `country` DROP COLUMN `parentCountryId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `country` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `direction` DROP COLUMN `name`; # was varchar(255) default NULL
+ALTER TABLE `formation` DROP COLUMN `nickname`; # was varchar(255) default NULL
+ALTER TABLE `formation` DROP COLUMN `subsystem`; # was varchar(255) default NULL
+ALTER TABLE `formation` DROP COLUMN `name`; # was varchar(255) default NULL
+ALTER TABLE `geoDirection` DROP COLUMN `name`; # was varchar(255) default NULL
+ALTER TABLE `match` DROP COLUMN `indoors`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `played`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `includedInSummary`; # was tinyint(1) default '1'
+ALTER TABLE `match` DROP COLUMN `underRoof`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `showOnWeb`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `ruledResultId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `publicComment`; # was varchar(255) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `matchEventId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `periodId`; # was bigint(20) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `matchEventTypeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationType` DROP COLUMN `publicComment`; # was varchar(255) default NULL
+ALTER TABLE `period` DROP COLUMN `length`; # was time default NULL
+ALTER TABLE `period` DROP COLUMN `startTime`; # was time default NULL
+ALTER TABLE `period` DROP COLUMN `nextPeriodId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `actualLength`; # was time default NULL
+ALTER TABLE `periodType` DROP COLUMN `isGametime`; # was tinyint(1) default NULL
+ALTER TABLE `periodType` DROP COLUMN `effectiveTime`; # was tinyint(1) default NULL
+ALTER TABLE `personRole` DROP COLUMN `publicComment`; # was varchar(255) default NULL
+ALTER TABLE `roundType` DROP COLUMN `name`; # was varchar(255) default NULL
+ALTER TABLE `surface` DROP COLUMN `name`; # was varchar(255) default NULL
+ALTER TABLE `weatherType` DROP COLUMN `name`; # was varchar(255) default NULL

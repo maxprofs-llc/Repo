@@ -1,0 +1,694 @@
+## mysqldiff 0.33
+## 
+## Run on Fri Jan 21 21:38:40 2011
+## Options: password=Lagerlof18
+##
+## ---   db: stats_template
+## +++   db: stats_master
+
+ALTER TABLE `ageGroup` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `ageGroupStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `ageGroupStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `ageGroupStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `ageGroupStrings` DROP INDEX `ageGroupStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`ageGroupId`)
+ALTER TABLE `ageGroupStrings` ADD UNIQUE `name` (`ageGroupId`,`languageId`);
+ALTER TABLE `arena` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `arena` DROP COLUMN `surfaceId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `arena` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `arena` ENGINE=MyISAM AUTO_INCREMENT=220 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `arenaStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `arenaStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `arenaStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `arenaStrings` DROP INDEX `arenaStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`arenaId`)
+ALTER TABLE `arenaStrings` ADD UNIQUE `name` (`arenaId`,`languageId`);
+ALTER TABLE `arenaStrings` ENGINE=MyISAM AUTO_INCREMENT=220 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `assist`;
+
+DROP TABLE `assistStrings`;
+
+DROP TABLE `assistType`;
+
+DROP TABLE `assistTypeStrings`;
+
+DROP TABLE `attendance`;
+
+DROP TABLE `attendanceStrings`;
+
+DROP TABLE `attendee`;
+
+DROP TABLE `attendeeStrings`;
+
+ALTER TABLE `award` DROP COLUMN `refereeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `periodId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `seasonId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `honoringRefereeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `honoringAttendeeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `honoringAttendanceId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `playerId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `honoringCompetitorId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `honoringPlayerId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `attendanceId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `attendeeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `competitorId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `honoringTeamId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `award` DROP COLUMN `leagueId`; # was bigint(20) unsigned default NULL
+DROP TABLE `awardStrings`;
+
+DROP TABLE `awardType`;
+
+DROP TABLE `awardTypeStrings`;
+
+ALTER TABLE `bodypart` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `bodypart` DROP COLUMN `directionId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `bodypart` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `bodypart` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `bodypart` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `bodypartStrings`;
+
+DROP TABLE `break`;
+
+DROP TABLE `breakReason`;
+
+DROP TABLE `breakReasonStrings`;
+
+DROP TABLE `breakStrings`;
+
+DROP TABLE `card`;
+
+DROP TABLE `cardReason`;
+
+DROP TABLE `cardReasonStrings`;
+
+DROP TABLE `cardStrings`;
+
+DROP TABLE `cardType`;
+
+DROP TABLE `cardTypeStrings`;
+
+ALTER TABLE `city` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `city` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `city` ENGINE=MyISAM AUTO_INCREMENT=953 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `cityStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `cityStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `cityStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `cityStrings` DROP INDEX `cityStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`cityId`)
+ALTER TABLE `cityStrings` ADD UNIQUE `name` (`cityId`,`languageId`);
+ALTER TABLE `cityStrings` ENGINE=MyISAM AUTO_INCREMENT=1168 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `cohort` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `cohort` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `cohortStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `cohortStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `cohortStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `cohortStrings` DROP INDEX `cohortStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`cohortId`)
+ALTER TABLE `cohortStrings` ADD UNIQUE `name` (`cohortId`,`languageId`);
+DROP TABLE `color`;
+
+DROP TABLE `colorPattern`;
+
+DROP TABLE `colorPatternStrings`;
+
+DROP TABLE `colorStrings`;
+
+DROP TABLE `competitor`;
+
+DROP TABLE `competitorStrings`;
+
+ALTER TABLE `contact` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `contact` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `contact` ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `contactStrings`;
+
+ALTER TABLE `continent` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `continent` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `continent` ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `continentStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `continentStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `continentStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `continentStrings` DROP INDEX `continentStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`continentId`)
+ALTER TABLE `continentStrings` ADD UNIQUE `name` (`continentId`,`languageId`);
+ALTER TABLE `continentStrings` ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `corner`;
+
+DROP TABLE `cornerStrings`;
+
+ALTER TABLE `country` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `country` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `country` ADD COLUMN `parentCountryId` bigint(20) unsigned default NULL;
+ALTER TABLE `country` ADD COLUMN `organizationId` bigint(20) unsigned default NULL;
+ALTER TABLE `country` ENGINE=MyISAM AUTO_INCREMENT=271 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `countryStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `countryStrings` DROP COLUMN `shortName`; # was varchar(8) default NULL
+ALTER TABLE `countryStrings` CHANGE COLUMN `countryId` `countryId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `countryStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `countryStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `countryStrings` DROP INDEX `countryStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`countryId`)
+ALTER TABLE `countryStrings` ADD UNIQUE `name` (`countryId`,`languageId`);
+ALTER TABLE `countryStrings` ENGINE=MyISAM AUTO_INCREMENT=490 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `direction` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `direction` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `direction` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `direction` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `directionStrings`;
+
+DROP TABLE `dress`;
+
+DROP TABLE `dressGarment`;
+
+DROP TABLE `dressGarmentStrings`;
+
+DROP TABLE `dressStrings`;
+
+DROP TABLE `field`;
+
+DROP TABLE `fieldStrings`;
+
+ALTER TABLE `file` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `fileConnector` CHANGE COLUMN `tableName` `tableName` varchar(255) default NULL; # was varchar(255) NOT NULL
+ALTER TABLE `fileConnector` CHANGE COLUMN `isPrimary` `isPrimary` tinyint(1) default NULL; # was tinyint(1) NOT NULL
+ALTER TABLE `fileConnector` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `foreignKeys` CHANGE COLUMN `foreignTable` `foreignTable` varchar(255) default NULL; # was varchar(255) NOT NULL
+ALTER TABLE `foreignKeys` CHANGE COLUMN `column` `column` varchar(255) default NULL; # was varchar(255) NOT NULL
+ALTER TABLE `foreignKeys` CHANGE COLUMN `table` `table` varchar(255) default NULL; # was varchar(255) NOT NULL
+ALTER TABLE `foreignKeys` CHANGE COLUMN `foreignColumn` `foreignColumn` varchar(255) default 'id'; # was varchar(255) NOT NULL default 'id'
+ALTER TABLE `foreignKeys` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `formation` DROP COLUMN `formationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `formation` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `formation` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `formation` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `formation` ADD COLUMN `nickname` varchar(255) default NULL;
+ALTER TABLE `formation` ADD COLUMN `subsystem` varchar(255) default NULL;
+ALTER TABLE `formation` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `formationStrings`;
+
+DROP TABLE `foul`;
+
+DROP TABLE `foulStrings`;
+
+DROP TABLE `foulType`;
+
+DROP TABLE `foulTypeStrings`;
+
+DROP TABLE `freekick`;
+
+DROP TABLE `freekickReason`;
+
+DROP TABLE `freekickReasonStrings`;
+
+DROP TABLE `freekickStrings`;
+
+DROP TABLE `freekickType`;
+
+DROP TABLE `freekickTypeStrings`;
+
+DROP TABLE `garment`;
+
+DROP TABLE `garmentStrings`;
+
+DROP TABLE `garmentType`;
+
+DROP TABLE `garmentTypeStrings`;
+
+ALTER TABLE `gender` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `gender` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `gender` ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `genderStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `genderStrings` DROP COLUMN `shortName`; # was varchar(8) default NULL
+ALTER TABLE `genderStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `genderStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `genderStrings` DROP INDEX `genderStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`genderId`)
+ALTER TABLE `genderStrings` ADD UNIQUE `name` (`genderId`,`languageId`);
+ALTER TABLE `genderStrings` ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `geoDirection` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `geoDirection` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `geoDirection` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `geoDirection` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `geoDirectionStrings`;
+
+DROP TABLE `goal`;
+
+DROP TABLE `goalStrings`;
+
+DROP TABLE `ground`;
+
+DROP TABLE `groundStrings`;
+
+DROP TABLE `injury`;
+
+DROP TABLE `injuryStrings`;
+
+DROP TABLE `injuryType`;
+
+DROP TABLE `injuryTypeStrings`;
+
+ALTER TABLE `language` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `language` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `language` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `language` ADD UNIQUE `code` (`code`);
+ALTER TABLE `language` ENGINE=MyISAM AUTO_INCREMENT=141 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `languageStrings` DROP COLUMN `publicComment`; # was varchar(255) default NULL
+ALTER TABLE `languageStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `languageStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `languageStrings` DROP INDEX `languageStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`languageTableId`)
+ALTER TABLE `languageStrings` ADD UNIQUE `name` (`languageTableId`,`languageId`);
+ALTER TABLE `languageStrings` ENGINE=MyISAM AUTO_INCREMENT=141 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `location` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `location` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `location` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+DROP TABLE `locationStrings`;
+
+ALTER TABLE `match` DROP COLUMN `isUnderRoof`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `isPlayed`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `attendance`; # was bigint(20) unsigned default NULL
+ALTER TABLE `match` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `match` DROP COLUMN `resultId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `match` CHANGE COLUMN `surfaceId` `surfaceId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `match` DROP COLUMN `isHidden`; # was tinyint(1) default NULL
+ALTER TABLE `match` DROP COLUMN `isExcludedFromSummary`; # was tinyint(1) default NULL
+ALTER TABLE `match` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `match` DROP COLUMN `isIndoors`; # was tinyint(1) default NULL
+ALTER TABLE `match` ADD COLUMN `indoors` tinyint(1) default NULL;
+ALTER TABLE `match` ADD COLUMN `played` tinyint(1) default NULL;
+ALTER TABLE `match` ADD COLUMN `includedInSummary` tinyint(1) default '1';
+ALTER TABLE `match` ADD COLUMN `underRoof` tinyint(1) default NULL;
+ALTER TABLE `match` ADD COLUMN `showOnWeb` tinyint(1) default NULL;
+ALTER TABLE `match` ADD COLUMN `ruledResultId` bigint(20) unsigned default NULL;
+ALTER TABLE `match` ADD INDEX `fk_22` (`weatherId`);
+ALTER TABLE `match` ADD INDEX `fk_18` (`surfaceId`);
+ALTER TABLE `match` ADD INDEX `fk_19` (`roundTypeId`);
+ALTER TABLE `matchEvent` DROP COLUMN `refereeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `startExtended`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `matchFull`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `previousMatchEventId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` CHANGE COLUMN `startTime` `startTime` time default NULL; # was int(11) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `endPeriodId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `personId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `teamId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` CHANGE COLUMN `endTime` `endTime` time default NULL; # was int(11) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `endExtended`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `matchEnd`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `endPercentage`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `matchStart`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `periodStart`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `playerId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `endMinuteOnly`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `startPercentage`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `roleId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `attendeeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `startApproximation`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `endApproximation`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `competitorId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `periodEnd`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `startPeriodId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `horizontalCoordinate`; # was tinyint(4) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `verticalCoordinate`; # was tinyint(4) default NULL
+ALTER TABLE `matchEvent` DROP COLUMN `startMinuteOnly`; # was tinyint(1) default NULL
+ALTER TABLE `matchEvent` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `matchEvent` ADD COLUMN `publicComment` varchar(255) default NULL;
+ALTER TABLE `matchEvent` ADD COLUMN `matchEventId` bigint(20) unsigned default NULL;
+ALTER TABLE `matchEvent` ADD COLUMN `periodId` bigint(20) default NULL;
+ALTER TABLE `matchEvent` ADD COLUMN `matchEventTypeId` bigint(20) unsigned default NULL;
+ALTER TABLE `matchEvent` ADD INDEX `fk_34` (`matchId`);
+ALTER TABLE `matchEvent` ADD INDEX `fk_33` (`matchEventTypeId`);
+DROP TABLE `matchEventStrings`;
+
+DROP TABLE `matchLink`;
+
+DROP TABLE `matchLinkReason`;
+
+DROP TABLE `matchLinkReasonStrings`;
+
+DROP TABLE `matchLinkStrings`;
+
+DROP TABLE `matchStrings`;
+
+ALTER TABLE `matchType` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `matchTypeStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchTypeStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `matchTypeStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `matchTypeStrings` DROP INDEX `matchTypeStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`matchTypeId`)
+ALTER TABLE `matchTypeStrings` ADD UNIQUE `name` (`matchTypeId`,`languageId`);
+ALTER TABLE `merit` CHANGE COLUMN `seasonId` `seasonId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `merit` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `meritConnector` DROP COLUMN `refereeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `meritConnector` DROP COLUMN `playerId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `meritConnector` DROP COLUMN `attendeeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `meritConnector` DROP COLUMN `competitorId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `meritConnector` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `meritConnector` ADD INDEX `fk_25` (`matchId`);
+ALTER TABLE `meritConnector` ADD INDEX `fk_17` (`personId`);
+ALTER TABLE `meritConnector` ADD INDEX `fk_16` (`meritId`);
+DROP TABLE `offside`;
+
+DROP TABLE `offsideStrings`;
+
+ALTER TABLE `organization` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `organization` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `organization` ADD INDEX `fk_6` (`organizationTypeId`);
+ALTER TABLE `organization` ENGINE=MyISAM AUTO_INCREMENT=1700 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `organizationStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationStrings` DROP COLUMN `organizationTableId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `organizationStrings` DROP INDEX `organizationStringsUnique`; # was UNIQUE (`languageId`,`organizationTableId`,`organizationId`)
+ALTER TABLE `organizationStrings` ADD UNIQUE `name` (`organizationId`,`languageId`);
+ALTER TABLE `organizationStrings` ENGINE=MyISAM AUTO_INCREMENT=1481 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `organizationType` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `organizationType` ADD COLUMN `publicComment` varchar(255) default NULL;
+ALTER TABLE `organizationType` ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `organizationTypeStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationTypeStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationTypeStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `organizationTypeStrings` CHANGE COLUMN `organizationTypeId` `organizationTypeId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `organizationTypeStrings` DROP INDEX `organizationTypeStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`organizationTypeId`)
+ALTER TABLE `organizationTypeStrings` ADD UNIQUE `languageId` (`languageId`,`organizationTypeId`);
+ALTER TABLE `organizationTypeStrings` ADD UNIQUE `name` (`organizationTypeId`,`languageId`);
+ALTER TABLE `organizationTypeStrings` ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `overruledGoal`;
+
+DROP TABLE `overruledGoalReason`;
+
+DROP TABLE `overruledGoalReasonStrings`;
+
+DROP TABLE `overruledGoalStrings`;
+
+DROP TABLE `passing`;
+
+DROP TABLE `passingStrings`;
+
+DROP TABLE `pattern`;
+
+DROP TABLE `patternStrings`;
+
+DROP TABLE `patternType`;
+
+DROP TABLE `patternTypeStrings`;
+
+DROP TABLE `penalty`;
+
+DROP TABLE `penaltyShot`;
+
+DROP TABLE `penaltyShotStrings`;
+
+DROP TABLE `penaltyStrings`;
+
+ALTER TABLE `period` DROP COLUMN `isUnderRoof`; # was tinyint(3) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `startingCompetitorId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `period` CHANGE COLUMN `periodTypeId` `periodTypeId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `regularLength`; # was int(11) default NULL
+ALTER TABLE `period` DROP COLUMN `startingTeamId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `isPlayed`; # was tinyint(3) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `previousPeriodId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `extensionLength`; # was int(11) default NULL
+ALTER TABLE `period` DROP COLUMN `weatherId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` DROP COLUMN `startingGeoDirectionId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `period` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `period` ADD COLUMN `length` time default NULL;
+ALTER TABLE `period` ADD COLUMN `startTime` time default NULL;
+ALTER TABLE `period` ADD COLUMN `nextPeriodId` bigint(20) unsigned default NULL;
+ALTER TABLE `period` ADD COLUMN `actualLength` time default NULL;
+ALTER TABLE `period` ADD INDEX `fk_27` (`matchId`);
+ALTER TABLE `period` ADD INDEX `fk_23` (`periodTypeId`);
+DROP TABLE `periodStrings`;
+
+ALTER TABLE `periodType` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `periodType` DROP COLUMN `isSilverGoal`; # was tinyint(1) default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `defaultLength` `defaultLength` time default NULL; # was int(11) default NULL
+ALTER TABLE `periodType` DROP COLUMN `isExtendable`; # was tinyint(1) unsigned default NULL
+ALTER TABLE `periodType` DROP COLUMN `isPause`; # was tinyint(1) unsigned default NULL
+ALTER TABLE `periodType` DROP COLUMN `isGoldenGoal`; # was tinyint(1) default NULL COMMENT 'Sudden Death'
+ALTER TABLE `periodType` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `periodType` DROP COLUMN `isEffectiveTime`; # was tinyint(1) unsigned default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `isPenaltyShootOut` `isPenaltyShootOut` tinyint(1) default NULL; # was tinyint(1) unsigned default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `defaultStartTime` `defaultStartTime` time default NULL; # was int(11) default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `periodType` ADD COLUMN `isGametime` tinyint(1) default NULL;
+ALTER TABLE `periodType` ADD COLUMN `effectiveTime` tinyint(1) default NULL;
+DROP TABLE `periodTypeStrings`;
+
+ALTER TABLE `person` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `person` DROP COLUMN `bestDirectionId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `person` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `person` ADD UNIQUE `username_UNIQUE` (`username`);
+ALTER TABLE `person` ENGINE=MyISAM AUTO_INCREMENT=6643 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `personDimension` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `personDimension` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `personDimension` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `personDimension` ENGINE=MyISAM AUTO_INCREMENT=741 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `personDimensionStrings`;
+
+ALTER TABLE `personRole` CHANGE COLUMN `teamId` `teamId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `personRole` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `personRole` CHANGE COLUMN `organizationId` `organizationId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `personRole` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `personRole` ADD COLUMN `publicComment` varchar(255) default NULL;
+ALTER TABLE `personRole` ADD INDEX `fk_11` (`personId`);
+ALTER TABLE `personRole` ADD INDEX `fk_12` (`roleId`);
+ALTER TABLE `personRole` ENGINE=MyISAM AUTO_INCREMENT=7855 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `personRoleStrings`;
+
+ALTER TABLE `personStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `personStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `personStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `personStrings` DROP INDEX `personStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`personId`)
+ALTER TABLE `personStrings` ADD UNIQUE `name` (`personId`,`languageId`);
+ALTER TABLE `personStrings` ENGINE=MyISAM AUTO_INCREMENT=6643 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `playGeoDirection`;
+
+DROP TABLE `playGeoDirectionStrings`;
+
+DROP TABLE `player`;
+
+DROP TABLE `playerStrings`;
+
+DROP TABLE `possession`;
+
+DROP TABLE `possessionStrings`;
+
+ALTER TABLE `precipitationType` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `precipitationType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `precipitationTypeStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `precipitationTypeStrings` DROP INDEX `precipitationTypeStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`precipitationTypeId`)
+ALTER TABLE `precipitationTypeStrings` ADD UNIQUE `name` (`precipitationTypeId`,`languageId`);
+DROP TABLE `referee`;
+
+DROP TABLE `refereeStrings`;
+
+DROP TABLE `result`;
+
+DROP TABLE `resultReason`;
+
+DROP TABLE `resultReasonStrings`;
+
+DROP TABLE `resultStrings`;
+
+ALTER TABLE `role` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `role` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `role` ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `roleStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `roleStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `roleStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `roleStrings` DROP INDEX `roleStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`roleId`)
+ALTER TABLE `roleStrings` ADD UNIQUE `name` (`roleId`,`languageId`);
+ALTER TABLE `roleStrings` ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `roundType` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `roundType` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `roundType` DROP COLUMN `return`; # was tinyint(3) unsigned default NULL
+ALTER TABLE `roundType` DROP COLUMN `max`; # was int(10) unsigned default NULL
+ALTER TABLE `roundType` DROP COLUMN `cup`; # was tinyint(3) unsigned default NULL
+ALTER TABLE `roundType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `roundType` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `roundTypeStrings`;
+
+DROP TABLE `save`;
+
+DROP TABLE `saveStrings`;
+
+DROP TABLE `score`;
+
+DROP TABLE `scoreStrings`;
+
+ALTER TABLE `section` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `section` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `section` ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `sectionStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `sectionStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `sectionStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `sectionStrings` DROP INDEX `sectionStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`sectionId`)
+ALTER TABLE `sectionStrings` ADD UNIQUE `name` (`sectionId`,`languageId`);
+ALTER TABLE `sectionStrings` ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `shot`;
+
+DROP TABLE `shotStrings`;
+
+DROP TABLE `shotType`;
+
+DROP TABLE `shotTypeStrings`;
+
+ALTER TABLE `specialLocation` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `specialLocation` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `specialLocation` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `specialLocationStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `specialLocationStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `specialLocationStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `specialLocationStrings` DROP INDEX `specialLocationStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`specialLocationId`)
+ALTER TABLE `specialLocationStrings` ADD UNIQUE `name` (`specialLocationId`,`languageId`);
+ALTER TABLE `sport` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `sport` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `sport` ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='fotboll, hockey etc'; # was ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='fotboll, hockey etc'
+ALTER TABLE `sportStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `sportStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `sportStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `sportStrings` DROP INDEX `sportStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`sportId`)
+ALTER TABLE `sportStrings` ADD UNIQUE `name` (`sportId`,`languageId`);
+ALTER TABLE `sportStrings` ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `stand`;
+
+DROP TABLE `standStrings`;
+
+ALTER TABLE `statConnector` DROP COLUMN `refereeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `statConnector` DROP COLUMN `playerId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `statConnector` DROP COLUMN `attendeeId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `statConnector` DROP COLUMN `competitorId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `statConnector` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `statConnector` ADD INDEX `fk_38` (`statTypeId`);
+ALTER TABLE `statType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `state` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `state` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `state` ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `stateStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `stateStrings` CHANGE COLUMN `stateId` `stateId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `stateStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `stateStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `stateStrings` DROP INDEX `stateStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`stateId`)
+ALTER TABLE `stateStrings` ADD UNIQUE `name` (`stateId`,`languageId`);
+ALTER TABLE `stateStrings` ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `substitution`;
+
+DROP TABLE `substitutionReason`;
+
+DROP TABLE `substitutionReasonStrings`;
+
+DROP TABLE `substitutionStrings`;
+
+ALTER TABLE `surface` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `surface` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `surface` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `surface` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `surfaceStrings`;
+
+ALTER TABLE `team` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `team` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `team` ENGINE=MyISAM AUTO_INCREMENT=963 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+ALTER TABLE `teamStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) default NULL; # was bigint(20) unsigned default NULL
+ALTER TABLE `teamStrings` DROP COLUMN `organizationId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `teamStrings` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `teamStrings` DROP INDEX `teamStringsUnique`; # was UNIQUE (`languageId`,`organizationId`,`teamId`)
+ALTER TABLE `teamStrings` ADD UNIQUE `name` (`teamId`,`languageId`);
+ALTER TABLE `teamStrings` ENGINE=MyISAM AUTO_INCREMENT=963 DEFAULT CHARSET=utf8; # was ENGINE=MyISAM DEFAULT CHARSET=utf8
+DROP TABLE `warning`;
+
+DROP TABLE `warningStrings`;
+
+ALTER TABLE `weather` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `weather` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `weather` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `weather` ADD INDEX `fk_21` (`weatherTypeId`);
+ALTER TABLE `weather` ADD INDEX `fk_31` (`locationId`);
+ALTER TABLE `weather` ADD INDEX `fk_32` (`windGeoDirectionId`);
+ALTER TABLE `weather` ADD INDEX `fk_20` (`precipitationTypeId`);
+DROP TABLE `weatherStrings`;
+
+ALTER TABLE `weatherType` DROP COLUMN `privateComment`; # was varchar(255) default NULL
+ALTER TABLE `weatherType` DROP COLUMN `masterId`; # was bigint(20) unsigned default NULL
+ALTER TABLE `weatherType` CHANGE COLUMN `id` `id` bigint(20) NOT NULL auto_increment; # was bigint(20) unsigned NOT NULL auto_increment
+ALTER TABLE `weatherType` ADD COLUMN `name` varchar(255) default NULL;
+DROP TABLE `weatherTypeStrings`;
+
+CREATE TABLE `matchEventPerson` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `personId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `matchEventRoleId` bigint(20) unsigned default NULL,
+  `isPrimary` tinyint(1) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_35` (`matchEventId`),
+  KEY `fk_36` (`matchEventRoleId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchEventRole`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchEventRole` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `name` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchEventType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchEventType` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `parentMatchEventTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `defaultPrimaryMatchEventRoleId` bigint(20) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_37` (`defaultPrimaryMatchEventRoleId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `participation` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `periodId` bigint(20) default NULL,
+  `teamId` bigint(20) default NULL,
+  `geoDirectionId` bigint(20) default NULL,
+  `startFormationId` bigint(20) default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `started` tinyint(1) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_24` (`startFormationId`),
+  KEY `fk_26` (`periodId`),
+  KEY `fk_28` (`matchId`),
+  KEY `fk_29` (`teamId`),
+  KEY `fk_30` (`geoDirectionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `period`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `personPartDirection` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `personId` bigint(20) unsigned default NULL,
+  `bodypartId` bigint(20) unsigned default NULL,
+  `directionId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_13` (`bodypartId`),
+  KEY `fk_14` (`directionId`),
+  KEY `fk_15` (`personId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `personRole`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+

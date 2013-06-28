@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.teamLogo {
+	background: url(../common/getFile.php?id=1) no-repeat center top transparent;
+	width: 100%;
+	height: 410px;
+	color: transparent;
+}

@@ -1,0 +1,24 @@
+<?php
+	require_once("_define.php");
+	
+	helper::debugPrint("Reroute began","reroute");
+	
+	$requestURI = explode('/', str_replace("?".$_SERVER['QUERY_STRING'],"",$_SERVER['REQUEST_URI']));
+	if($api=array_search("api",$requestURI)) {
+		error_reporting(E_ALL ^ E_NOTICE);
+		if(!$sess->checkLogin(false,false))
+			dieWithError('Not authorized');
+		helper::debugPrint("API","api");
+		$args=array_slice($requestURI,$api+1,count($requestURI));
+		helper::debugPrint("Args: ".json_encode($args),"api");
+		$api=new api_apidata($args);
+		if(isset($_GET['format']) && $_GET['format']=='xml')
+			$api->printXML();
+		else
+			$api->printJSON();
+	}
+
+	function dieWithError($err) {
+		die(json_encode(array('error'=>$err)));
+	}
+?>

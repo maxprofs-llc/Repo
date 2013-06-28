@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>Rodentia Test</title>
+<style type="text/css">
+html{
+font-family: "Segoe UI", Segoe, Calibri, Candara, Optima, Arial, sans-serif;
+font-size:20px;
+}
+body{
+margin:0px;
+padding:0px;
+}
+
+.items tr:first-child{
+font-weight: bold;
+}
+
+.items{
+width:500px;
+margin: 0 auto;
+padding: 5px 0 0 0;
+}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function() {
+	$(function rodentia() {
+		$.getJSON( "https://spreadsheets.google.com/feeds/list/0AponLh8HbLNEdDNiSk9RM1BWdlY3ZE5kZElzYXZRcVE/od6/public/values?alt=json-in-script&callback=?",
+		function (data) {
+			$('body').html('<table class="items" border="0" cellspacing="0" cellpadding="0"></table>');
+			$.each(data.feed.entry, function(i,entry) { 
+				var item = '<td class="test">' + entry.gsx$test.$t + '</td>';
+				item += '<td class="test2">' + entry.gsx$test2.$t + '</td>';
+				item += '<td class="test3">' + entry.gsx$test3.$t + '</td>';
+				item += '<td class="test4">' + entry.gsx$test4.$t + '</td>';
+				$('.items').append('<tr>' + item + '</span></tr>');
+			});
+		});
+	setTimeout(rodentia,10000);    
+	});
+});
+</script>
+</head>
+<body>
+</body>
+</html>

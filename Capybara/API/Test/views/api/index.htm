@@ -1,0 +1,202 @@
+{% extends "_root.htm" %}
+{% block title %}API Readme{% endblock %}
+{% block content %}
+	<div class="hero-unit">
+		<h1>Capybara API Readme</h1>
+		<p>
+			The Capybara API is a flexible RESTful api built to allow the user to do advanced queries easily. To access the api an api-key is required. Currently api-keys can only be requested by sending an email to <a href="mailto:api@rodentia.se">api@rodentia.se</a>.
+		</p>
+	</div>
+	<h3>Basic requests</h3>
+	<div>
+		All basic requests to the API begins with the url <em>{{ url }}</em> followed by arguments telling the api what data is requested. To request a list of objects, the url should end with the name of that object in plural. All request needs to have the api-key as a parameter (<em>?api_key=xxx</em>).
+		<blockquote>
+			Example: To request all cities in the database, go to the url <a href="http://{{ url }}/cities/?api_key=xxx">{{ url }}/cities/</a>.
+		</blockquote>
+		To request a single object, add the id of the requested object to the url.
+		<blockquote>
+			Example: To request the city with id 1 in the database, go to the url <a href="http://{{ url }}/cities/1?api_key=xxx">{{ url }}/cities/1</a>.
+		</blockquote>
+	</div>
+	<h3>Return</h3>
+	<div>
+		By default, all api calls returns a JSON containing the requested data. The api also supports returning data as xml, by adding <em>format=xml</em> to the url.
+		<blockquote>
+			Example: To request all cities in the database and return the data as xml, go to the url <a href="http://{{ url }}/cities/?api_key=xxx&format=xml">{{ url }}/cities/?format=xml</a>.
+		</blockquote>
+	</div>
+	<h3>
+		Subrequests
+	</h3>
+	<div>
+		The strength of the Capybara API is the ability to make subqueries against a list to retrieve children of a specified object. To achieve this you simply add the objects you want to fetch to the url. The url will then be parsed from left to right.
+		<blockquote>
+			Example: To request all cities within the country with id 1 in the database, go to the url <a href="http://{{ url }}/countries/1/cities/?api_key=xxx">{{ url }}/countries/1/cities/</a>.
+		</blockquote>
+		Some objects also have specialized subqueries.
+		<blockquote>
+			Example: To request the capital of the country with id 1 in the database, go to the url <a href="http://{{ url }}/countries/1/capital/?api_key=xxx">{{ url }}/countries/1/capital/</a>.
+		</blockquote>
+		You can continue to add subqueries as long as you want.
+		<blockquote>
+			Example: To request the state where the capital of the country with id 1 is, go to the url <a href="http://{{ url }}/countries/1/capital/state/?api_key=xxx">{{ url }}/countries/1/capital/state</a>.
+		</blockquote>
+	</div>
+	<h3>
+		Parameters
+	</h3>
+	<div>
+		There are a number of parameters that you can use to control the returned data besides the mentioned <em>format</em> parameter. Not all parameters will be relevant in all requests (for instance, all parameters that control date will be useless for a simple request for <em>cities</em>).
+		<table class="table table-striped">
+			<tr>
+				<th>Parameter</th>
+				<th>Usage</th>
+				<th>Value</th>
+				<th>Example</th>
+			</tr>
+			<tr>
+				<td>order</td>
+				<td>Change the sort order of the result</td>
+				<td>Field to sort data by. Defaults to <em>id</em>.</td>
+				<td><a href="http://{{ url }}/cities/?api_key=xxx&order=name">{{ url }}/cities/?api_key=xxx&order=name</a></td>
+			</tr>
+			<tr>
+				<td>page</td>
+				<td>When the number of objects exceeds <em>max_result</em> the result will be paged</td>
+				<td>Page to return</td>
+				<td><a href="http://{{ url }}/cities/?api_key=xxx&page=2">{{ url }}/cities/?api_key=xxx&page=2</a></td>
+			</tr>
+			<tr>
+				<td>fields</td>
+				<td>List of fields to include in the data</td>
+				<td>Comma separated string</td>
+				<td><a href="http://{{ url }}/cities/?api_key=xxx&fields=id,name">{{ url }}/cities/?api_key=xxx&fields=id,name</a></td>
+			</tr>
+			<tr>
+				<td>max_result</td>
+				<td>Maximum number of objects to return</td>
+				<td>Defaults to 100</td>
+				<td><a href="http://{{ url }}/cities/?api_key=xxx&max_result=10">{{ url }}/cities/?api_key=xxx&max_result=10</a></td>
+			</tr>
+			<tr>
+				<td>when</td>
+				<td>For data including date, filters result based on when it happened</td>
+				<td>
+					<ul>
+						<li><em>now</em>: today</li>
+						<li><em>mo,tu,we etc.</em>: weekday</li>
+						<li><em>jan,feb,mar etc.</em>: month</li>
+						<li><em>yyyy</em>: year</li>
+						<li><em>yyyy-mm-dd</em>: date</li>
+					</ul>
+					These can be combined into a comma separated string.
+				</td>
+				<td><a href="http://{{ url }}/matches/?api_key=xxx&when=sa,mar,1996">{{ url }}/cities/?api_key=xxx&when=sa,mar,1996</a></td>
+			</tr>
+			<tr>
+				<td>opponent</td>
+				<td>When requesting matches for a team, filters the request on opponent</td>
+				<td>id of the oppent or <em>me</em>.</td>
+				<td><a href="http://{{ url }}/me/matches/?api_key=xxx&opponent=2">{{ url }}/me/matches/?api_key=xxx&opponent=2</a></td>
+			</tr>
+		</table>
+		There are also to specialized filters that can be achieved by appending to the general path. These are paging (e.g. <em>/page/1</em>) and the <em>when=now</em> parameter (e.g <em>/me/players/now</em>).
+	</div>
+	<h3>Searching</h3>
+	<p>All object nodes can be searched by adding <em>/search/[search string]</em> to the url.
+	<blockquote>
+		Example: Searching for all cities containing "stock": <a href="http://{{ url }}/cities/search/stock?api_key=xxx">{{ url }}/cities/search/stock</a>.
+	</blockquote>
+	<h3>Objects</h3>
+	<p>Below is a list of all principal objects available in the database. If an object have specialized subqueries these are also specified.</p>
+	<div class="object">
+		<h4>Continents</h4>
+		<p>Continents are the largest geographical area in the database.</p>
+		<blockquote>
+			Example: <a href="http://{{ url }}/continents?api_key=xxx">{{ url }}/continents</a>.
+		</blockquote>
+		<strong>Specialized subqueries: </strong><em>None</em>.
+	</div>
+	<div class="object">
+		<h4>Countries</h4>
+		<p>Object containing data for a country.</p>
+		<blockquote>
+			Example: <a href="http://{{ url }}/countries?api_key=xxx">{{ url }}/countries</a>.
+		</blockquote>
+		<strong>Specialized subqueries: </strong><em>/capital</em>.
+	</div>
+	<div class="object">
+		<h4>States</h4>
+		<p>Object containing data for a state.</p>
+		<blockquote>
+			Example: <a href="http://{{ url }}/states?api_key=xxx">{{ url }}/states</a>.
+		</blockquote>
+		<strong>Specialized subqueries: </strong><em>/capital</em>.
+	</div>
+	<div class="object">
+		<h4>Cities</h4>
+		<p>Object containing data for a city.</p>
+		<blockquote>
+			Example: <a href="http://{{ url }}/cities?api_key=xxx">{{ url }}/cities</a>.
+		</blockquote>
+		<strong>Specialized subqueries: </strong><em>None</em>.
+	</div>
+	<div class="object">
+		<h4>Teams</h4>
+		<p>Object containing data for a team. All api keys are tied to specified team that can be referred to as /me, which is a shorthand query for /team/<em>[id of my team]</em>/.</p>
+		<blockquote>
+			Example: <a href="http://{{ url }}/teams/?api_key=xxx">{{ url }}/teams</a>.
+		</blockquote>
+		<strong>Specialized subqueries: </strong><em>/players</em>.
+	</div>
+	<div class="object">
+		<h4>Matches</h4>
+		<p>Object containing data for a match.</p>
+		<blockquote>
+			Example: <a href="http://{{ url }}/matches/?api_key=xxx">{{ url }}/matches</a>.
+		</blockquote>
+		<strong>Specialized subqueries: </strong><em>/players,/home,/away,/next,/prev</em>.
+	</div>
+	<div>
+		<h5>Single match</h5>
+		<p>When querying against a single match, there are several functions to return detailed data about that match. Below is a list of different parameters to add after the match id to retrieve more info.</p>
+		<ul>
+			<li>/me</li>
+			<li>/opponent</li>
+			<li>/homecompetitor</li>
+			<li>/awaycompetitor</li>
+			<li>/competitor/1</li>
+			<li>/goals</li>
+			<li>/warnings</li>
+			<li>/referees</li>
+			<li>/me/squad</li>
+			<li>/me/goals</li>
+			<li>/me/warnings</li>
+			<li>/me/matchevents</li>
+			<li>/me/substitutions</li>
+		</ul>
+	</div>
+	<h3>Advanced examples</h3>
+	<div>
+		<table class="table table-striped">
+			<tr>
+				<td>All capitals in continent with id 1</td>
+				<td>
+					<a href="http://{{ url }}/continents/1/countries/capital?api_key=xxx">{{ url }}/continents/1/countries/capital</a>
+				</td>
+			</tr>
+			<tr>
+				<td>All players currently playing in "my" team</td>
+				<td>
+					<a href="http://{{ url }}/me/players/now?api_key=xxx">{{ url }}/me/players/now</a>
+				</td>
+			</tr>
+			<tr>
+				<td>Next home game for "my" team</td>
+				<td>
+					<a href="http://{{ url }}/me/matches/home/next?api_key=xxx">{{ url }}/me/matches/home/next</a>
+				</td>
+			</tr>
+		</table>
+	<br/>	
+{% endblock %}

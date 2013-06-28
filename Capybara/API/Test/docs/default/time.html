@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class time</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class time</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_classes---time.php.html">/classes/time.php</a> (line <span class="field">1</span>)
+		</p>
+		
+				
+		<pre><a href="../default/baseClass.html">baseClass</a>
+   |
+   --time</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																				
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#compare" title="details" class="method-name">compare</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$time</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getAmbiguous" title="details" class="method-name">getAmbiguous</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getApproximation" title="details" class="method-name">getApproximation</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getExtended" title="details" class="method-name">getExtended</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMinute" title="details" class="method-name">getMinute</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getMinuteOnly" title="details" class="method-name">getMinuteOnly</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getName" title="details" class="method-name">getName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getOnlyMinute" title="details" class="method-name">getOnlyMinute</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPercentage" title="details" class="method-name">getPercentage</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getPeriod" title="details" class="method-name">getPeriod</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$seconds</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getSecond" title="details" class="method-name">getSecond</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTime" title="details" class="method-name">getTime</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getTimeString" title="details" class="method-name">getTimeString</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$delimiter</span> = <span class="var-default">':'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getUnknown" title="details" class="method-name">getUnknown</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setAmbiguous" title="details" class="method-name">setAmbiguous</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$ambiguous</span> = <span class="var-default">TRUE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setApproximation" title="details" class="method-name">setApproximation</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$approximation</span> = <span class="var-default">TRUE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setExtended" title="details" class="method-name">setExtended</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$extended</span> = <span class="var-default">TRUE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setMinute" title="details" class="method-name">setMinute</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$minute</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setMinuteOnly" title="details" class="method-name">setMinuteOnly</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$minuteOnly</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setOnlyMinute" title="details" class="method-name">setOnlyMinute</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$minute</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setPercentage" title="details" class="method-name">setPercentage</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$percentage</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$extended</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setPeriod" title="details" class="method-name">setPeriod</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$period</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setSecond" title="details" class="method-name">setSecond</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$second</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTime" title="details" class="method-name">setTime</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$minute</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$second</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isExtended</span> = <span class="var-default">FALSE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isAmbiguous</span> = <span class="var-default">FALSE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isMinuteOnly</span> = <span class="var-default">FALSE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isPercentage</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTimeString" title="details" class="method-name">setTimeString</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$period</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$extendedDelimiterPattern</span> = <span class="var-default">'/\s*\+\s*/'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$secondDelimiterPattern</span> = <span class="var-default">'/[^0-9]+/'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$regularTimeMaxDigits</span> = <span class="var-default">3</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$extendedTimeMaxDigits</span> = <span class="var-default">2</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setTimeString2" title="details" class="method-name">setTimeString2</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$period</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$delimiterPatterns</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxDigitss</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#splitTime" title="details" class="method-name">splitTime</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'second'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxDigits</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$delimiterPattern</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#timeSplit" title="details" class="method-name">timeSplit</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$delimiterPattern</span> = <span class="var-default">'/[^0-9]+/'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxDigits</span> = <span class="var-default">FALSE</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodcompare" id="compare"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">compare</span> (line <span class="line-number">37</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			compare
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$time</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$time</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAmbiguous" id="getAmbiguous"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getAmbiguous</span> (line <span class="line-number">70</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getAmbiguous
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetApproximation" id="getApproximation"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getApproximation</span> (line <span class="line-number">83</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getApproximation
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetExtended" id="getExtended"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getExtended</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getExtended
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMinute" id="getMinute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMinute</span> (line <span class="line-number">166</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMinute
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetMinuteOnly" id="getMinuteOnly"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMinuteOnly</span> (line <span class="line-number">95</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getMinuteOnly
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetName" id="getName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getName</span> (line <span class="line-number">28</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getName
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/baseClass.html#methodgetName">baseClass::getName()</a></dt>
+					</dl>
+			
+	</div>
+<a name="methodgetOnlyMinute" id="getOnlyMinute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getOnlyMinute</span> (line <span class="line-number">212</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getOnlyMinute
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPercentage" id="getPercentage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPercentage</span> (line <span class="line-number">234</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPercentage
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPeriod" id="getPeriod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPeriod</span> (line <span class="line-number">47</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getPeriod
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$seconds</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$seconds</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSecond" id="getSecond"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSecond</span> (line <span class="line-number">189</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getSecond
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTime" id="getTime"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTime</span> (line <span class="line-number">105</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTime
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetTimeString" id="getTimeString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getTimeString</span> (line <span class="line-number">287</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getTimeString
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$delimiter</span> = <span class="var-default">':'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'total'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$delimiter</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUnknown" id="getUnknown"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUnknown</span> (line <span class="line-number">464</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getUnknown
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetAmbiguous" id="setAmbiguous"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setAmbiguous</span> (line <span class="line-number">76</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAmbiguous
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$ambiguous</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$ambiguous</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetApproximation" id="setApproximation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setApproximation</span> (line <span class="line-number">88</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setApproximation
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$approximation</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$approximation</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetExtended" id="setExtended"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setExtended</span> (line <span class="line-number">64</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setExtended
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$extended</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$extended</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMinute" id="setMinute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setMinute</span> (line <span class="line-number">182</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMinute
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$minute</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$minute</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMinuteOnly" id="setMinuteOnly"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setMinuteOnly</span> (line <span class="line-number">99</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMinuteOnly
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$minuteOnly</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$minuteOnly</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOnlyMinute" id="setOnlyMinute"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOnlyMinute</span> (line <span class="line-number">228</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setOnlyMinute
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$minute</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$minute</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPercentage" id="setPercentage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPercentage</span> (line <span class="line-number">268</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPercentage
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$percentage</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$extended</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$percentage</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$extended</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPeriod" id="setPeriod"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPeriod</span> (line <span class="line-number">53</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPeriod
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$period</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$period</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSecond" id="setSecond"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setSecond</span> (line <span class="line-number">205</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setSecond
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$second</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$second</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTime" id="setTime"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTime</span> (line <span class="line-number">144</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTime
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$minute</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$second</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isExtended</span> = <span class="var-default">FALSE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isAmbiguous</span> = <span class="var-default">FALSE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isMinuteOnly</span> = <span class="var-default">FALSE</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$isPercentage</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timeString</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$minute</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$second</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isExtended</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isAmbiguous</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isMinuteOnly</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$isPercentage</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTimeString" id="setTimeString"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTimeString</span> (line <span class="line-number">401</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTimeString
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$period</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$extendedDelimiterPattern</span> = <span class="var-default">'/\s*\+\s*/'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$secondDelimiterPattern</span> = <span class="var-default">'/[^0-9]+/'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$regularTimeMaxDigits</span> = <span class="var-default">3</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$extendedTimeMaxDigits</span> = <span class="var-default">2</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timeString</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$period</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$extendedDelimiterPattern</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$secondDelimiterPattern</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$regularTimeMaxDigits</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$extendedTimeMaxDigits</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetTimeString2" id="setTimeString2"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setTimeString2</span> (line <span class="line-number">378</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setTimeString2
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$period</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$delimiterPatterns</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxDigitss</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timeString</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$period</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$delimiterPatterns</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$maxDigitss</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplitTime" id="splitTime"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">splitTime</span> (line <span class="line-number">303</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			splitTime
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'second'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxDigits</span> = <span class="var-default">NULL</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$delimiterPattern</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timeString</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$type</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$maxDigits</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$delimiterPattern</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtimeSplit" id="timeSplit"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">timeSplit</span> (line <span class="line-number">362</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			timeSplit
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$timeString</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$delimiterPattern</span> = <span class="var-default">'/[^0-9]+/'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$maxDigits</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$timeString</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$delimiterPattern</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$maxDigits</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../default/baseClass.html">baseClass</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../default/baseClass.html#methodgetData">baseClass::getData()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodgetJSON">baseClass::getJSON()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodgetLongString">baseClass::getLongString()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodgetName">baseClass::getName()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodgetNecessaryData">baseClass::getNecessaryData()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodgetXML">baseClass::getXML()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodminimumPrepareForSerialization">baseClass::minimumPrepareForSerialization()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#methodprepareForSerialization">baseClass::prepareForSerialization()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#method__get">baseClass::__get()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#method__set">baseClass::__set()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#method__sleep">baseClass::__sleep()</a></span><br>
+													<span class="method-name"><a href="../default/baseClass.html#method__toString">baseClass::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 05 May 2012 16:08:22 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

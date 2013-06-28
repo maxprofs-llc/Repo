@@ -1,0 +1,9 @@
+{% extends "_root.htm" %}
+{% block content %}
+<table>
+    <h1>Cities:</h1>
+	{% for city in model %}
+    	<tr><td>{{html.link(city.name,city.id)}}</td><td>{{city.country}}</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

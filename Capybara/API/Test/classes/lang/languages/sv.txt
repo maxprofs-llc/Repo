@@ -1,0 +1,230 @@
+#General
+First = F&ouml;rsta
+Second = Andra
+Yes = Ja
+No = Nej
+All = Alla
+With = Med
+Or = Eller
+In = I
+Save = Spara
+Swedish = Svenska
+English = Engelska
+
+#Login
+Log_in = Logga in
+Log_out = Logga ut
+Username = Anv&auml;ndarnamn
+Password = L&ouml;senord
+Invalid_username_or_password = Felaktigt anv.namn eller l&ouml;senord
+User_has_no_access_to_this_page = Ingen access till sidan
+
+#Menu
+Statistics = Statistik
+Data = Data
+Editor = Editor
+Start_page = Startsida
+Cities = St&auml;der
+States = Stater
+Countries = L&auml;nder
+Continents = V&auml;rldsdelar
+Arenas = Arenor
+Matches = Matcher
+Sports = Sporter
+Genders = K&ouml;n
+Teams = Lag
+External_links = Externa l&auml;nkar
+Geography = Geografi
+Basics = Grundl&auml;ggande
+Cohorts = Kullar
+Age_groups = &Aring;ldersgrupper
+Sections = Sektioner
+Match_types = Matchtyper
+Organizations = Organisationer
+
+#Forms
+New = Ny
+Choose = V&auml;lj
+Strings = Str&auml;ngar
+Name = Namn
+Homepage = Hemsida
+Internal = Interna
+Public = Publika
+Comments = Kommentarer
+
+#Matches
+New match = Ny match
+match_info = matchinfo
+Hide = D&ouml;lj
+Show = Visa
+Match_information = Matchinfo
+Read = L&auml;s in
+Match = Match
+Sport = Sport
+Gender = K&ouml;n
+Section = Sektion
+Match_type = Matchtyp
+Home_team = Hemmalag
+Away_team = Bortalag
+Team = Lag
+Host = Arrang&ouml;r
+Arena = Arena
+Date = Datum
+Time = Tid
+Audience = Publik
+Sponsor = Sponsor
+Is played = Har spelats
+Comments = Kommentarer
+Image = Bild
+Upload = Ladda upp
+No image has been uploaded = Ingen bild har laddats upp
+Periods = Perioder
+Period_type = Periodtyp
+Start_minute = Startminut
+End_minute = Slutminut
+Kick_off = Avspark
+Unknown = Ok&auml;nt
+Add = L&auml;gg till
+Half = Halvlek
+Referees = Domare
+Referee = Domare
+Weather = V&auml;der
+Temperature = Temperatur
+Wind_speed = Vindhastighet
+Wind_direction = Vindriktning
+Description = Beskrivning
+Formation = Spelsystem
+The_home_team = Hemmalaget
+Information = Information
+About = Om
+Position = Position
+Player = Spelare
+Players = Spelare
+Entire game = Spelade hela
+Min = Min
+Sec = Sek
+Distance = Distans
+Max_speed = Max hast
+Captain = Kapten
+MoM = Lirare
+Man_of_the_match = Matchens lirare
+Goal_scorer = M&aring;lskyttt
+Goals = M&aring;l
+Assist = Assist
+Game_time = Matchtid
+Home_team goals = M&aring;l f&ouml;r hemmalaget
+Cards = Kort
+Home_team cards = Kort f&ouml;r hemmalaget
+Simple = Enkel
+Home_goals = M&aring;l f&ouml;r hemmalaget
+Away_goals = M&aring;l f&ouml;r bortalaget
+
+#Organization
+Organization = Organisation
+Organization_info = Organisationsinfo
+Organization_information = Information om organisationen
+
+#Team
+
+New_team = Nytt lag
+Team_info = Laginfo
+Team_information = Information om laget
+Home_arena = Hemmaarena
+Founding_date = Grundat
+Cessation_date = Nedlagt
+
+#Section
+
+Section_info = Sektionsinfo
+Section_information = Information om sektionen
+
+#Cohort
+Cohort = Kull
+No_cohort = Ingen kull
+Cohort_info = Info om kullen
+Cohort_information = Information om kullen
+Start_date = Fr&aring;n datum
+End_date = Till datum
+
+#Age group
+Age_group = &Aring;ldersgrupp
+No_age_group = Ingen &aring;ldersgrupp
+Age_group_info = Info om &aring;ldersgruppen
+Age_group_information = Information om &aring;ldersgruppen
+Minimum_age = Minsta &aring;lder
+Maximum_age = H&ouml;gsta &aring;lder
+
+#Gender
+New_gender = Nytt k&ouml;n
+Gender_info = K&ouml;nsinformation
+Gender_information = Information om k&ouml;n
+#Sport
+Sport_info = Sportinformation
+Sport_information = Information om sport
+
+#Match type
+Match_type_info = Information om matchtypen
+#Match_type_information = Information om matchtypen
+
+#Arena
+Arena = Arena
+Arena_info = Arenainformation
+Arena_information = Information om arenan
+
+#Location
+Location = Plats
+Address = Adress
+Street_name = Gatunamn
+Street_number = Gatuadress
+Zip_code = Postkod
+Zip_area = Postort
+Coordinates = Koordinater
+Click_map_to_change_coordinates = Klicka p&aring; kartan f&ouml;r att &auml;ndra koordinater
+Search_on_map = S&ouml;k plats p&aring; kartan
+Revert_position = &Aring;terst&auml;ll position
+Get_address = H&auml;mta adress
+Center_coordinates_on_map = Centrera koordinaterna p&aring; kartan
+
+#City
+City = Stad
+Country = Land
+State = Stat
+City_information = Information om staden
+City_info = Info
+City_was_saved = Staden sparades
+
+#State
+State_information = Information om staten
+State_info = Info
+Only = Endast
+From = Fr&aring;n
+
+#Country
+ISO_2 = ISO 2
+ISO_3 = ISO 3
+Number_code = Riktnummer
+Continent = V&auml;rldsdel
+Native_name = Inhemskt namn
+Country_information = Information om landet
+Country_info = Info
+Move = Flytta
+Manage = Hantera
+To = Till
+Merge = Sl&aring; ihop
+Capital = Huvudstad
+
+#Continent
+Short_name = Kort namn
+Continent_info = Info
+Continent_information = Information om kontinenten
+
+#Classes
+
+Unknown_city = Ok&auml;nd stad
+Unknown_country = Ok&auml;nt land
+Unknown_state = Ok&auml;nd stat
+Unknown_continent = Ok&auml;nd v&auml;rldsdel
+Unknown_matchtype = Ok&auml;nd matchtyp
+Unknown_team = Ok&auml;nt lag
+Unknown_arena = Ok&auml;nd arena
+

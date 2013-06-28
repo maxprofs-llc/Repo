@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Encoding_BaseEncoding</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Encoding_BaseEncoding</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_classes---Encoding---BaseEncoding.php.html">/classes/Encoding/BaseEncoding.php</a> (line <span class="field">2</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Zend_Json/Encoding_JSON.html">Encoding_JSON</a></td>
+					<td>
+											Encode PHP constructs to JSON
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../default/Encoding_XML.html">Encoding_XML</a></td>
+					<td>
+											
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																												
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$cycleCheck</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#encode" title="details" class="method-name">encode</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$cycleCheck</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#encodeUnicodeString" title="details" class="method-name">encodeUnicodeString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#_encodeObject" title="details" class="method-name">_encodeObject</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$value</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_encodeString" title="details" class="method-name">_encodeString</a>
+											(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$string</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_encodeValue" title="details" class="method-name">_encodeValue</a>
+											(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_utf82utf16" title="details" class="method-name">_utf82utf16</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$utf8</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">31</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$cycleCheck</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$cycleCheck</span><span class="var-description">: Whether or not to check for recursion when encoding</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Additional options used during encoding</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode" id="encode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">encode</span> (line <span class="line-number">45</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Use the JSON encoding scheme for the value specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The encoded value</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encode
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$cycleCheck</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to be encoded</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$cycleCheck</span><span class="var-description">: Whether or not to check for possible object recursion when encoding</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$options</span><span class="var-description">: Additional options used during encoding</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencodeUnicodeString" id="encodeUnicodeString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">encodeUnicodeString</span> (line <span class="line-number">131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encode Unicode Characters to \u0000 ASCII syntax.</p>
+<p class="description"><p>This algorithm was originally developed for the Solar Framework by Paul M. Jones</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://svn.solarphp.com/core/trunk/Solar/Json.php">http://svn.solarphp.com/core/trunk/Solar/Json.php</a></li>
+				<li><span class="field">link:</span> <a href="http://solarphp.com/">http://solarphp.com/</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encodeUnicodeString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_encodeObject" id="_encodeObject"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_encodeObject</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_encodeObject
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$value</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$value</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$array</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Zend_Json/Encoding_JSON.html#method_encodeObject">Encoding_JSON::_encodeObject()</a>
+								: Encode an object to JSON by encoding each of the public properties
+							</li>
+					<li>
+				<a href="../default/Encoding_XML.html#method_encodeObject">Encoding_XML::_encodeObject()</a>
+							</li>
+				</ul>
+	</div>
+<a name="method_encodeString" id="_encodeString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_encodeString</span> (line <span class="line-number">104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">JSON encode a string value by escaping characters as necessary</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_encodeString
+		</span>
+					(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$value</span>
+				<span class="var-name">&$string</span><span class="var-description">: string</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_encodeValue" id="_encodeValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_encodeValue</span> (line <span class="line-number">61</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Recursive driver which determines the type of value to be encoded</p>
+<p class="description"><p>and then dispatches to the appropriate method. $values are either <ul><li>objects (returns from <a href="../default/Encoding_BaseEncoding.html#method_encodeObject">_encodeObject()</a>)</li><li>arrays (returns from _encodeArray())</li><li>basic datums (e.g. numbers or strings) (returns from _encodeDatum())</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Encoded value</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_encodeValue
+		</span>
+					(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$value</span>
+				<span class="var-name">&$value</span><span class="var-description">: mixed The value to be encoded</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_utf82utf16" id="_utf82utf16"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_utf82utf16</span> (line <span class="line-number">227</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert a string from one UTF-8 char to one UTF-16 char.</p>
+<p class="description"><p>Normally should be handled by mb_convert_encoding, but provides a slower PHP-only method for installations that lack the multibye string extension.</p><p>This method is from the Solar Framework by Paul M. Jones</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> UTF-16 character</li>
+				<li><span class="field">link:</span> <a href="http://solarphp.com">http://solarphp.com</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_utf82utf16
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$utf8</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$utf8</span><span class="var-description">: UTF-8 character</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 05 May 2012 16:08:10 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

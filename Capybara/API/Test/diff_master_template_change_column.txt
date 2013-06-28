@@ -1,0 +1,95 @@
+ALTER TABLE `ageGroupStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `ageGroupStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `arena` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `arenaStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `arenaStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `bodypart` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `city` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `cityStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `cityStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `cohort` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `cohortStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `cohortStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `contact` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `continent` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `continentStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `continentStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `country` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `countryStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `countryStrings` CHANGE COLUMN `countryId` `countryId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `countryStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `direction` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `file` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `fileConnector` CHANGE COLUMN `tableName` `tableName` varchar(255) NOT NULL; # was varchar(255) default NULL
+ALTER TABLE `fileConnector` CHANGE COLUMN `isPrimary` `isPrimary` tinyint(1) NOT NULL; # was tinyint(1) default NULL
+ALTER TABLE `fileConnector` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `foreignKeys` CHANGE COLUMN `foreignTable` `foreignTable` varchar(255) NOT NULL; # was varchar(255) default NULL
+ALTER TABLE `foreignKeys` CHANGE COLUMN `column` `column` varchar(255) NOT NULL; # was varchar(255) default NULL
+ALTER TABLE `foreignKeys` CHANGE COLUMN `table` `table` varchar(255) NOT NULL; # was varchar(255) default NULL
+ALTER TABLE `foreignKeys` CHANGE COLUMN `foreignColumn` `foreignColumn` varchar(255) NOT NULL default 'id'; # was varchar(255) default 'id'
+ALTER TABLE `foreignKeys` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `formation` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `gender` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `genderStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `genderStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `geoDirection` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `language` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `languageStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `location` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `match` CHANGE COLUMN `surfaceId` `surfaceId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `match` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `matchEvent` CHANGE COLUMN `startTime` `startTime` int(11) default NULL; # was time default NULL
+ALTER TABLE `matchEvent` CHANGE COLUMN `endTime` `endTime` int(11) default NULL; # was time default NULL
+ALTER TABLE `matchEvent` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `matchType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `matchTypeStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `matchTypeStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `merit` CHANGE COLUMN `seasonId` `seasonId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `merit` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `meritConnector` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `organization` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `organizationStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `organizationStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `organizationType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `organizationTypeStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `organizationTypeStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `organizationTypeStrings` CHANGE COLUMN `organizationTypeId` `organizationTypeId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `period` CHANGE COLUMN `periodTypeId` `periodTypeId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `period` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `periodType` CHANGE COLUMN `defaultLength` `defaultLength` int(11) default NULL; # was time default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `defaultStartTime` `defaultStartTime` int(11) default NULL; # was time default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `isPenaltyShootOut` `isPenaltyShootOut` tinyint(1) unsigned default NULL; # was tinyint(1) default NULL
+ALTER TABLE `periodType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `person` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `personDimension` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `personRole` CHANGE COLUMN `teamId` `teamId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `personRole` CHANGE COLUMN `organizationId` `organizationId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `personRole` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `personStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `personStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `precipitationType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `role` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `roleStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `roleStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `roundType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `section` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `sectionStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `sectionStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `specialLocation` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `specialLocationStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `specialLocationStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `sport` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `sportStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `sportStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `statConnector` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `statType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `state` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `stateStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `stateStrings` CHANGE COLUMN `stateId` `stateId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `stateStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `surface` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `team` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `teamStrings` CHANGE COLUMN `languageId` `languageId` bigint(20) unsigned default NULL; # was bigint(20) default NULL
+ALTER TABLE `teamStrings` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `weather` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment
+ALTER TABLE `weatherType` CHANGE COLUMN `id` `id` bigint(20) unsigned NOT NULL auto_increment; # was bigint(20) NOT NULL auto_increment

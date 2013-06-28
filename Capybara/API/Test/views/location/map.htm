@@ -1,0 +1,27 @@
+{% block head %}
+	<style>
+		#map {
+			width: 400px;
+			height: 400px;
+		}
+	</style>
+	<script language="javascript" type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=113&key=AIzaSyC6dElSVKevjFNukkNmqrUgDEeXDRt2wms" charset="UTF-8"></script>
+	<script type="text/javascript">
+		var lat={{model.latitude}};
+		var lng={{model.longitude}};
+		$(function() {
+			var latlng = new google.maps.LatLng(lat, lng);
+			opt= {
+					zoom:7,
+					center: latlng,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+			map=new google.maps.Map(document.getElementById("map"), opt);
+			marker=new google.maps.Marker({map: map});
+			marker.setPosition(latlng);
+		});
+	</script>
+{% endblock %}
+<div id="map">
+	<img src="http://maps.googleapis.com/maps/api/staticmap?center={{model.latitude}},{{model.longitude}}&zoom=7&size=400x400&sensor=false&markers=color:blue%7C{{model.latitude}},{{model.longitude}}">
+</div>

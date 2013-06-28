@@ -1,0 +1,12 @@
+stylesheets = ifkmalmo.css
+
+my team = 1
+my team name = AIK
+
+default_sport_id = 1
+
+db username = root
+db password = hmpr
+db name = stats_test
+db host ip = localhost
+db host port = 3306

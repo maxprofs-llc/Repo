@@ -1,0 +1,15 @@
+stylesheets = ifkmalmo.css
+
+my team = 1
+my team name = IFK Malm&ouml;
+
+default_sport_id = 1
+
+
+db username = ifkmalmo
+db password = JhdsaSGQHGwjZfVv
+db name = stats_ifkmalmo_new
+db host ip = localhost
+db host port = 3306
+
+referee role id = 19

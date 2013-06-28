@@ -1,0 +1,7 @@
+{% extends "_root.htm" %}
+{% block content %}
+	<h1>{{model.name}}</h1>
+	{% if model.latitude != null %}
+		{% include "location/map.htm" %}
+	{% endif %}
+{% endblock %}

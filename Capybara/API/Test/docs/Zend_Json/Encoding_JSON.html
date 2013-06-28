@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Encoding_JSON</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Encoding_JSON</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encode PHP constructs to JSON</p>
+	<ul class="tags">
+				<li><span class="field">copyright:</span> Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)</li>
+				<li><span class="field">license:</span> <a href="http://framework.zend.com/license/new-bsd">New BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_classes---Encoding---JSON.php.html">/classes/Encoding/JSON.php</a> (line <span class="field">30</span>)
+		</p>
+		
+				
+		<pre><a href="../default/Encoding_BaseEncoding.html">Encoding_BaseEncoding</a>
+   |
+   --Encoding_JSON</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																												
+												<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_encodeArray" title="details" class="method-name">_encodeArray</a>
+											(<span class="var-type">$array</span>&nbsp;<span class="var-name">&$array</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_encodeDatum" title="details" class="method-name">_encodeDatum</a>
+											(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#_encodeObject" title="details" class="method-name">_encodeObject</a>
+											(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$value</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method_encodeArray" id="_encodeArray"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_encodeArray</span> (line <span class="line-number">110</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">JSON encode an array value</p>
+<p class="description"><p>Recursively encodes each value of an array and returns a JSON encoded array string.</p><p>Arrays are defined as integer-indexed arrays starting at index 0, where the last index is (count($array) -1); any deviation from that is considered an associative array, and will be encoded as such.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_encodeArray
+		</span>
+					(<span class="var-type">$array</span>&nbsp;<span class="var-name">&$array</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$array</span>
+				<span class="var-name">&$array</span><span class="var-description">: array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_encodeDatum" id="_encodeDatum"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">_encodeDatum</span> (line <span class="line-number">150</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">JSON encode a basic data type (string, number, boolean, null)</p>
+<p class="description"><p>If value type is not a string, number, boolean, or null, the string 'null' is returned.</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_encodeDatum
+		</span>
+					(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$value</span>
+				<span class="var-name">&$value</span><span class="var-description">: mixed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method_encodeObject" id="_encodeObject"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">_encodeObject</span> (line <span class="line-number">44</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encode an object to JSON by encoding each of the public properties</p>
+<p class="description"><p>A special property is added to the JSON object called '__className' that contains the name of the class of $value. This is used to decode the object on the client into a specific class.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> Zend_Json_Exception If recursive checks are enabled and the object has been serialized previously</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			_encodeObject
+		</span>
+					(<span class="var-type">$value</span>&nbsp;<span class="var-name">&$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$value</span>
+				<span class="var-name">&$value</span><span class="var-description">: object</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../default/Encoding_BaseEncoding.html#method_encodeObject">Encoding_BaseEncoding::_encodeObject()</a></dt>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../default/Encoding_BaseEncoding.html">Encoding_BaseEncoding</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#method__construct">Encoding_BaseEncoding::__construct()</a></span><br>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#methodencode">Encoding_BaseEncoding::encode()</a></span><br>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#methodencodeUnicodeString">Encoding_BaseEncoding::encodeUnicodeString()</a></span><br>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#method_encodeObject">Encoding_BaseEncoding::_encodeObject()</a></span><br>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#method_encodeString">Encoding_BaseEncoding::_encodeString()</a></span><br>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#method_encodeValue">Encoding_BaseEncoding::_encodeValue()</a></span><br>
+													<span class="method-name"><a href="../default/Encoding_BaseEncoding.html#method_utf82utf16">Encoding_BaseEncoding::_utf82utf16()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Sat, 05 May 2012 16:08:15 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

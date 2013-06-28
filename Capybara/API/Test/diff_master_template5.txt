@@ -1,0 +1,2049 @@
+## mysqldiff 0.33
+## 
+## Run on Fri Jan 21 21:41:02 2011
+## Options: password=Lagerlof18
+##
+## ---   db: stats_master
+## +++   db: stats_template
+
+DROP TABLE `matchEventPerson`;
+DROP TABLE `matchEventRole`;
+DROP TABLE `matchEventType`;
+DROP TABLE `participation`;
+DROP TABLE `personPartDirection`;
+CREATE TABLE `assist` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `goalId` bigint(20) unsigned default NULL,
+  `playerId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `assistStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `assistId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `assistStringsUnique` (`languageId`,`organizationId`,`assistId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `assistType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `assistTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `assistTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `assistTypeStringsUnique` (`languageId`,`organizationId`,`assistTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `attendance`;
+CREATE TABLE `attendance` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `standId` bigint(20) unsigned default NULL,
+  `arenaId` bigint(20) unsigned default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `periodId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `size` int(10) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `attendanceStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `attendanceId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `attendanceStringsUnique` (`languageId`,`organizationId`,`attendanceId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `attendee` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `personId` bigint(20) unsigned default NULL,
+  `playerId` bigint(20) unsigned default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `periodId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `attendanceId` bigint(20) unsigned default NULL,
+  `roleId` bigint(20) unsigned default NULL,
+  `dressId` bigint(20) unsigned default NULL,
+  `matchFull` tinyint(1) default NULL,
+  `matchStart` tinyint(1) default NULL,
+  `startPeriodId` bigint(20) unsigned default NULL,
+  `periodStart` tinyint(1) default NULL,
+  `startTime` int(11) default NULL,
+  `startMinuteOnly` tinyint(1) default NULL,
+  `startPercentage` tinyint(1) default NULL,
+  `startExtended` tinyint(1) default NULL,
+  `startApproximation` tinyint(1) default NULL,
+  `matchEnd` tinyint(1) default NULL,
+  `endPeriodId` bigint(20) unsigned default NULL,
+  `periodEnd` tinyint(1) default NULL,
+  `endTime` int(11) default NULL,
+  `endMinuteOnly` tinyint(1) default NULL,
+  `endPercentage` tinyint(1) default NULL,
+  `endExtended` tinyint(1) default NULL,
+  `endApproximation` tinyint(1) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `attendeeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `attendeeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `attendeeStringsUnique` (`languageId`,`organizationId`,`attendeeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `awardStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `awardId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `awardStringsUnique` (`languageId`,`organizationId`,`awardId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `awardType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `awardTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `awardTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `awardTypeStringsUnique` (`languageId`,`organizationId`,`awardTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `bodypartStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `bodypartId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `pluralName` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `bodypartStringsUnique` (`languageId`,`organizationId`,`bodypartId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `break`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `break` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `breakReasonId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `breakReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `breakReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `breakReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `breakReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `breakReasonId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `breakReasonStringsUnique` (`languageId`,`organizationId`,`breakReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `breakStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `breakStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `breakId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `breakStringsUnique` (`languageId`,`organizationId`,`breakId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `card`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `card` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `foulId` bigint(20) unsigned default NULL,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `cardReasonId` bigint(20) unsigned default NULL,
+  `cardTypeId` bigint(20) unsigned default NULL,
+  `orderNumber` tinyint(3) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `cardReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `cardReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `cardReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `cardReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `cardReasonId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cardReasonStringsUnique` (`languageId`,`organizationId`,`cardReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `cardStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `cardStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `cardId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cardStringsUnique` (`languageId`,`organizationId`,`cardId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `cardType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `cardType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `colorId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `cardTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `cardTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `cardTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cardTypeStringsUnique` (`languageId`,`organizationId`,`cardTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `city`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `color` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `r` smallint(5) unsigned default NULL,
+  `g` smallint(5) unsigned default NULL,
+  `b` smallint(5) unsigned default NULL,
+  `c` tinyint(3) unsigned default NULL,
+  `m` tinyint(3) unsigned default NULL,
+  `y` tinyint(3) unsigned default NULL,
+  `k` tinyint(3) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `colorPattern`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `colorPattern` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `colorId` bigint(20) unsigned default NULL,
+  `patternId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `colorPatternStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `colorPatternStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `colorPatternId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `colorPatternStringsUnique` (`languageId`,`organizationId`,`colorPatternId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `colorStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `colorStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `colorId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `neutrumName` varchar(255) default NULL,
+  `realeName` varchar(255) default NULL,
+  `pluralName` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `colorStringsUnique` (`languageId`,`organizationId`,`colorId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `competitor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `competitor` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchId` bigint(20) unsigned default NULL,
+  `periodId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `dressId` bigint(20) unsigned default NULL,
+  `formationId` bigint(20) unsigned default NULL,
+  `groundId` bigint(20) unsigned default NULL,
+  `resultId` bigint(20) unsigned default NULL,
+  `orderNumber` int(11) NOT NULL default '0',
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `competitorStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `competitorStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `competitorStringsUnique` (`languageId`,`organizationId`,`competitorId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `contactStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `contactId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `contactStringsUnique` (`languageId`,`organizationId`,`contactId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `continent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `corner` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `directionId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `cornerStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `cornerStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `cornerId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cornerStringsUnique` (`languageId`,`organizationId`,`cornerId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `country`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `directionStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `directionId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `directionStringsUnique` (`languageId`,`organizationId`,`directionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `dress`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `dress` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `nativeName` varchar(255) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `dressGarment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `dressGarment` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `dressId` bigint(20) unsigned default NULL,
+  `garmentId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `dressGarmentStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `dressGarmentStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `dressGarmentId` bigint(20) unsigned default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `dressGarmentStringsUnique` (`languageId`,`organizationId`,`dressGarmentId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `dressStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `dressStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `dressId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `dressStringsUnique` (`languageId`,`organizationId`,`dressId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `field`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `field` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `arenaId` bigint(20) unsigned default NULL,
+  `cityId` bigint(20) unsigned default NULL,
+  `stateId` bigint(20) unsigned default NULL,
+  `countryId` bigint(20) unsigned default NULL,
+  `continentId` bigint(20) unsigned default NULL,
+  `longitude` decimal(12,7) default NULL,
+  `latitude` decimal(12,7) default NULL,
+  `streetName` varchar(255) default NULL,
+  `streetNumber` varchar(255) default NULL,
+  `zipCode` varchar(255) default NULL,
+  `zipArea` varchar(255) default NULL,
+  `surfaceId` bigint(20) unsigned default NULL,
+  `underRoof` tinyint(3) unsigned default NULL,
+  `indoors` tinyint(3) unsigned default NULL,
+  `length` int(10) unsigned default NULL,
+  `width` int(10) unsigned default NULL,
+  `height` int(10) unsigned default NULL,
+  `capacity` mediumint(8) unsigned default NULL,
+  `foundingDate` date default NULL,
+  `cessationDate` date default NULL,
+  `nativeName` varchar(255) default NULL,
+  `nativeFullName` varchar(255) default NULL,
+  `nativeSortName` varchar(255) default NULL,
+  `nativeNickName` varchar(255) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  `migratedId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `fieldStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `fieldStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `fieldId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `fullName` varchar(255) default NULL,
+  `sortName` varchar(255) default NULL,
+  `nickName` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `fieldStringsUnique` (`languageId`,`organizationId`,`fieldId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `file`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `formationStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `formationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `nickName` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `formationStringsUnique` (`languageId`,`organizationId`,`formationId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `foul`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `foul` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `playerId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `personId` bigint(20) unsigned default NULL,
+  `foulTypeId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `foulStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `foulStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `foulId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `foulStringsUnique` (`languageId`,`organizationId`,`foulId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `foulType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `foulType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `foulTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `foulTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `foulTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `foulTypeStringsUnique` (`languageId`,`organizationId`,`foulTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `freekick`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `freekick` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `freekickReasonId` bigint(20) unsigned default NULL,
+  `freekickTypeId` bigint(20) unsigned default NULL,
+  `playerId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `personId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `freekickReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `freekickReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `freekickReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `freekickReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `freekickReasonId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `freekickReasonStringsUnique` (`languageId`,`organizationId`,`freekickReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `freekickStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `freekickStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `freekickId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `freekickStringsUnique` (`languageId`,`organizationId`,`freekickId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `freekickType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `freekickType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `freekickTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `freekickTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `freekickTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `freekickTypeStringsUnique` (`languageId`,`organizationId`,`freekickTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `garment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `garment` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `garmentTypeId` bigint(20) unsigned default NULL,
+  `patternId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `garmentStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `garmentStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `garmentId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `garmentStringsUnique` (`languageId`,`organizationId`,`garmentId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `garmentType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `garmentType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `bodypartId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `garmentTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `garmentTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `garmentTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `pluralName` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `garmentTypeStringsUnique` (`languageId`,`organizationId`,`garmentTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `gender`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `geoDirectionStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `geoDirectionId` bigint(20) unsigned default NULL,
+  `shortName` varchar(8) default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `geoDirectionStringsUnique` (`languageId`,`organizationId`,`geoDirectionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `goal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `goal` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `ownScore` tinyint(3) unsigned default NULL,
+  `opponentScore` tinyint(3) unsigned default NULL,
+  `orderNumber` tinyint(3) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `goalStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `goalStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `goalId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `goalStringsUnique` (`languageId`,`organizationId`,`goalId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `ground`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `ground` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `groundStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `groundStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `groundId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `groundStringsUnique` (`languageId`,`organizationId`,`groundId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `injury`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `injury` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `injuryTypeId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `injuryStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `injuryStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `injuryId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `injuryStringsUnique` (`languageId`,`organizationId`,`injuryId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `injuryType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `injuryType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `bodypartId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `injuryTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `injuryTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `injuryTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `injuryTypeStringsUnique` (`languageId`,`organizationId`,`injuryTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `language`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `locationStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `locationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `locationStringsUnique` (`languageId`,`organizationId`,`locationId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `match`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchEventStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `matchEventStringsUnique` (`languageId`,`organizationId`,`matchEventId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchLink`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchLink` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `firstMatchId` bigint(20) unsigned default NULL,
+  `secondMatchId` bigint(20) unsigned default NULL,
+  `matchLinkReasonId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchLinkReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchLinkReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchLinkReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchLinkReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `matchLinkReasonId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `matchLinkReasonStringsUnique` (`languageId`,`organizationId`,`matchLinkReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchLinkStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchLinkStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `matchLinkId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `matchLinkStringsUnique` (`languageId`,`organizationId`,`matchLinkId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `matchStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `nickName` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `matchStringsUnique` (`languageId`,`organizationId`,`matchId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `matchType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `offside` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `offsideStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `offsideStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `offsideId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `offsideStringsUnique` (`languageId`,`organizationId`,`offsideId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `organization`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `overruledGoal` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `overruledGoalReasonId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `overruledGoalReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `overruledGoalReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `overruledGoalReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `overruledGoalReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `overruledGoalReasonId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `overruledGoalReasonStringsUnique` (`languageId`,`organizationId`,`overruledGoalReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `overruledGoalStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `overruledGoalStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `overruledGoalId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `overruledGoalStringsUnique` (`languageId`,`organizationId`,`overruledGoalId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `passing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `passing` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `percentage` tinyint(3) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `passingStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `passingStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `passingId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `passingStringsUnique` (`languageId`,`organizationId`,`passingId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `pattern`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `pattern` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `patternTypeId` bigint(20) unsigned default NULL,
+  `nativeName` varchar(255) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `patternStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `patternStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `patternId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `patternStringsUnique` (`languageId`,`organizationId`,`patternId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `patternType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `patternType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `nativeName` varchar(255) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `patternTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `patternTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `patternTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `patternTypeStringsUnique` (`languageId`,`organizationId`,`patternTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `penalty`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `penalty` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `length` int(10) unsigned default NULL,
+  `remainder` int(11) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `penaltyShot`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `penaltyShot` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `orderNumber` tinyint(3) unsigned default NULL,
+  `playerId` bigint(20) unsigned default NULL,
+  `goalKeeperDirectionId` bigint(20) unsigned default NULL,
+  `ownShotsScored` tinyint(3) unsigned default NULL,
+  `opponentShotsScored` tinyint(3) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `penaltyShotStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `penaltyShotStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `penaltyShotId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `penaltyShotStringsUnique` (`languageId`,`organizationId`,`penaltyShotId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `penaltyStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `penaltyStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `penaltyId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `penaltyStringsUnique` (`languageId`,`organizationId`,`penaltyId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `period`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `periodStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `periodId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `periodStringsUnique` (`languageId`,`organizationId`,`periodId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `periodType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `periodTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `periodTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `periodTypeStringsUnique` (`languageId`,`organizationId`,`periodTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `person`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `personDimensionStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `personDimensionId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `personDimensionStringsUnique` (`languageId`,`organizationId`,`personDimensionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `personRole`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `personRoleStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `personRoleId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `personRoleStringsUnique` (`languageId`,`organizationId`,`personRoleId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `personStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `playGeoDirection` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `periodId` bigint(20) unsigned default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `geoDirectionId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `playGeoDirectionStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `playGeoDirectionStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `playGeoDirectionId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `playGeoDirectionStringsUnique` (`languageId`,`organizationId`,`playGeoDirectionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `player`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `player` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `personId` bigint(20) unsigned default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `periodId` bigint(20) unsigned default NULL,
+  `competitorId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `roleId` bigint(20) unsigned default NULL,
+  `shirtNumber` smallint(6) default NULL,
+  `distance` int(10) unsigned default NULL,
+  `speed` int(10) unsigned default NULL,
+  `dressId` bigint(20) unsigned default NULL,
+  `matchFull` tinyint(1) default NULL,
+  `matchStart` tinyint(1) default NULL,
+  `startPeriodId` bigint(20) unsigned default NULL,
+  `periodStart` tinyint(1) default NULL,
+  `startTime` int(11) default NULL,
+  `startMinuteOnly` tinyint(1) default NULL,
+  `startPercentage` tinyint(1) default NULL,
+  `startExtended` tinyint(1) default NULL,
+  `startApproximation` tinyint(1) default NULL,
+  `matchEnd` tinyint(1) default NULL,
+  `endPeriodId` bigint(20) unsigned default NULL,
+  `periodEnd` tinyint(1) default NULL,
+  `endTime` int(11) default NULL,
+  `endMinuteOnly` tinyint(1) default NULL,
+  `endPercentage` tinyint(1) default NULL,
+  `endExtended` tinyint(1) default NULL,
+  `endApproximation` tinyint(1) default NULL,
+  `horizontalCoordinate` int(11) default NULL,
+  `verticalCoordinate` int(11) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `playerStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `playerStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `playerId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `playerStringsUnique` (`languageId`,`organizationId`,`playerId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `possession`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `possession` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `percentage` tinyint(3) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `possessionStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `possessionStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `possessionId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `possessionStringsUnique` (`languageId`,`organizationId`,`possessionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `precipitationType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `referee` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `personId` bigint(20) unsigned default NULL,
+  `matchId` bigint(20) unsigned default NULL,
+  `periodId` bigint(20) unsigned default NULL,
+  `roleId` bigint(20) unsigned default NULL,
+  `directionId` bigint(20) unsigned default NULL,
+  `dressId` bigint(20) unsigned default NULL,
+  `matchFull` tinyint(1) default NULL,
+  `matchStart` tinyint(1) default NULL,
+  `startPeriodId` bigint(20) unsigned default NULL,
+  `periodStart` tinyint(1) default NULL,
+  `startTime` int(11) default NULL,
+  `startMinuteOnly` tinyint(1) default NULL,
+  `startPercentage` tinyint(1) default NULL,
+  `startExtended` tinyint(1) default NULL,
+  `startApproximation` tinyint(1) default NULL,
+  `matchEnd` tinyint(1) default NULL,
+  `endPeriodId` bigint(20) unsigned default NULL,
+  `periodEnd` tinyint(1) default NULL,
+  `endTime` int(11) default NULL,
+  `endMinuteOnly` tinyint(1) default NULL,
+  `endPercentage` tinyint(1) default NULL,
+  `endExtended` tinyint(1) default NULL,
+  `endApproximation` tinyint(1) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `refereeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `refereeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `refereeId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `refereeStringsUnique` (`languageId`,`organizationId`,`refereeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `result`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `result` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `resultReasonId` bigint(20) unsigned default NULL,
+  `ruled` tinyint(3) unsigned default NULL,
+  `ruledDate` date default NULL,
+  `rulerOrganizationId` bigint(20) unsigned default NULL,
+  `result` varchar(1) default NULL COMMENT '01X2C (0=both lose, C=cancelled)',
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `resultReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `resultReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `resultReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `resultReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `resultReasonId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `resultReasonStringsUnique` (`languageId`,`organizationId`,`resultReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `resultStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `resultStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `resultId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `resultStringsUnique` (`languageId`,`organizationId`,`resultId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `roundTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `roundTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `roundTypeStringsUnique` (`languageId`,`organizationId`,`roundTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `save`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `save` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `directionId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `saveStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `saveStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `saveId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `saveStringsUnique` (`languageId`,`organizationId`,`saveId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `score`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `score` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `resultId` bigint(20) unsigned default NULL,
+  `teamId` bigint(20) unsigned default NULL,
+  `score` tinyint(4) default NULL,
+  `points` tinyint(4) default NULL,
+  `disqualified` tinyint(1) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `scoreStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `scoreStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `scoreId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `scoreStringsUnique` (`languageId`,`organizationId`,`scoreId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `section`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `shot` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `directionId` bigint(20) unsigned default NULL,
+  `shotTypeId` bigint(20) unsigned default NULL,
+  `height` tinyint(3) unsigned default NULL,
+  `width` tinyint(4) default NULL,
+  `length` smallint(5) unsigned default NULL,
+  `speed` int(11) default NULL,
+  `isInGoal` tinyint(1) default NULL,
+  `isOnGoal` tinyint(1) default NULL,
+  `isOnFrame` tinyint(1) default NULL,
+  `isOnPost` tinyint(1) default NULL,
+  `isOnBar` tinyint(1) default NULL,
+  `isOnPlayer` tinyint(1) default NULL,
+  `onPlayerId` bigint(20) unsigned default NULL,
+  `isOut` tinyint(1) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `shotStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `shotStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `shotId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `shotStringsUnique` (`languageId`,`organizationId`,`shotId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `shotType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `shotType` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `shotTypeStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `shotTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `shotTypeId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `shotTypeStringsUnique` (`languageId`,`organizationId`,`shotTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `specialLocation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `stand` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `fieldId` bigint(20) unsigned default NULL,
+  `arenaId` bigint(20) unsigned default NULL,
+  `cityId` bigint(20) unsigned default NULL,
+  `stateId` bigint(20) unsigned default NULL,
+  `countryId` bigint(20) unsigned default NULL,
+  `continentId` bigint(20) unsigned default NULL,
+  `longitude` decimal(12,7) default NULL,
+  `latitude` decimal(12,7) default NULL,
+  `streetName` varchar(64) default NULL,
+  `streetNumber` varchar(16) default NULL,
+  `zipCode` varchar(32) default NULL,
+  `zipArea` varchar(64) default NULL,
+  `capacity` int(10) unsigned default NULL,
+  `foundingDate` date default NULL,
+  `cessationDate` date default NULL,
+  `nativeName` varchar(255) default NULL,
+  `nativeFullName` varchar(255) default NULL,
+  `nativeSortName` varchar(255) default NULL,
+  `nativeNickName` varchar(255) default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `standStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `standStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `standId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `fullName` varchar(255) default NULL,
+  `sortName` varchar(255) default NULL,
+  `nickName` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `standStringsUnique` (`languageId`,`organizationId`,`standId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `statConnector`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `substitution` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `nextPlayerId` bigint(20) unsigned default NULL,
+  `substitutionReasonId` bigint(20) unsigned default NULL,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `substitutionReason`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `substitutionReason` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `substitutionReasonStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `substitutionReasonStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `substitutionReasonId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `substitutionReasonStringsUnique` (`languageId`,`organizationId`,`substitutionReasonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `substitutionStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `substitutionStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `substitutionId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `substitutionStringsUnique` (`languageId`,`organizationId`,`substitutionId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `surface`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `surfaceStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `surfaceId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `surfaceStringsUnique` (`languageId`,`organizationId`,`surfaceId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `team`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `warning` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `matchEventId` bigint(20) unsigned default NULL,
+  `privateComment` varchar(255) default NULL,
+  `masterId` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `warningStrings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `warningStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `warningId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `warningStringsUnique` (`languageId`,`organizationId`,`warningId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `weather`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `weatherStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `weatherId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `weatherStringsUnique` (`languageId`,`organizationId`,`weatherId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+DROP TABLE IF EXISTS `weatherType`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+
+CREATE TABLE `weatherTypeStrings` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `weatherTypeId` bigint(20) unsigned default NULL,
+  `languageId` bigint(20) unsigned default NULL,
+  `organizationId` bigint(20) unsigned default NULL,
+  `name` varchar(255) default NULL,
+  `publicComment` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name` (`weatherTypeId`,`languageId`),
+  UNIQUE KEY `weatherTypeStringsUnique` (`languageId`,`organizationId`,`weatherTypeId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+
