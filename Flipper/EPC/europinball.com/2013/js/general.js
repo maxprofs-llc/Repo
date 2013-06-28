@@ -478,6 +478,7 @@ function ifpaReg(id, dstId) {
   })
   .fail(function(jqHXR,status,error) {
     alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+    debugOut(jqHXR.responseText);
   });
 }
 
@@ -575,11 +576,15 @@ function printPlayerAsList(obj,dstId) {
         input.id = prop + 'Text'; // ...while ID will also tell what type of input it is.
         input.value = (obj[prop]) ? obj[prop] : '';
         input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
+        if (prop == 'birthDate') {
+          debugOut('huff','hepp');
+          $('#' + input.id).datepicker();
+        }
         lbl.for = input.id;
         td.appendChild(input);
         lblTd.appendChild(lbl);
         if (prop == 'username') {
-          input.onchange = function() { checkUser(this); }; // Let's check that the username is up for grabs. Only done when leaving the field (changed), and not at every keypress.
+          input.onchange = function() { checkField(this); }; // Let's check that the username is up for grabs. Only done when leaving the field (changed), and not at every keypress.
           var span = document.createElement('span'); // ...and put the result here
           span.id = 'usernameTextSpan';
           td.appendChild(span);
@@ -672,7 +677,7 @@ function printPlayerAsList(obj,dstId) {
   input.name = 'password'; // Name is actual property name, as defined in the database.
   input.id = 'passwordText'; // ...while ID will also tell what type of input it is.
   input.value = '';
-  input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
+  input.className += (classes['player'].mandatory.indexOf('password') != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
   lbl.for = input.id;
   td.appendChild(input);
   lblTd.appendChild(lbl);
@@ -759,8 +764,8 @@ function submit(obj) {
   });
 }
 
-function checkUser(el) {
-  $.post('ajax/checkUser.php', {u: el.value, id: document.getElementById('idHidden').value}) // Let's check if the username is up for grabs.
+function checkField(el) {
+  $.post('ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check if the username is up for grabs.
   .done(function(data) {
     var txt = document.createTextNode(data);
     document.getElementById(el.id + 'Span').innerHTML = '';

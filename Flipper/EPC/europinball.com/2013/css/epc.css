@@ -56,6 +56,10 @@ img.icon {
   margin-right: 20px;
 }
 
+#ifpaRegResults {
+  margin-top: 20px;
+}
+
 li {
   display: block;
 }
@@ -75,4 +79,8 @@ li {
 
 .errorTd {
   background-color: #FF0000;
+}
+
+.ui-datepicker {
+  z-index: 9999; 
 }

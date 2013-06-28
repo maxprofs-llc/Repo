@@ -6,11 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="'.$scriptPath.'contrib/jquery.js"></script>
+    <script type="text/javascript" src="'.$scriptPath.'contrib/jquery-ui.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'contrib/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'contrib/purl.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'contrib/recaptcha_ajax.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'general.js"></script>
     <link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-1.10.3.custom2.min.css" rel="stylesheet" type="text/css" />
     <link href="css/epc.css" rel="stylesheet" type="text/css" />
     <title>'.$title.'</title>
   </head>
