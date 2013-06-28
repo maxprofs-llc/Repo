@@ -1,13 +1,13 @@
 <?php
   require_once("db.php");
   
-  spl_autoload_register(function($class) {
-    if (is_file('../classes/'.$class.'.php')) {
-      include '../classes/'.$class.'.php';
-    } else if (is_file('classes/'.$class.'.php')) {
-      include 'classes/'.$class.'.php';
-    } else if (is_file($class.'.php')) {
-      include $class.'.php';
+  spl_autoload_register(function($class) { // Autoloading classes. To fix some day: For some reason, some of the classes require require_once:s - which they shouldn't. 
+    if (is_file('../classes/'.$class.'.class.php')) {
+      include '../classes/'.$class.'.class.php';
+    } else if (is_file('classes/'.$class.'.class.php')) {
+      include 'classes/'.$class.'.class.php';
+    } else if (is_file($class.'.class.php')) {
+      include $class.'.class.php';
     }
   });
   
