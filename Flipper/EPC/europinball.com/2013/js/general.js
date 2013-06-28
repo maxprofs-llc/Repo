@@ -692,7 +692,7 @@ function printPlayerAsList(obj,dstId) {
   btn.id = 'submit';
   btn.type = 'button';
   btn.appendChild(document.createTextNode('Let\'s play!'));
-  btn.onclick = function() { submit(); };
+  btn.onclick = function() { submit(); return false; };
   td.appendChild(btn);
   setTimeout(function(){ // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
     Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', {
@@ -1136,7 +1136,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
     btn.id = 'meBtn_' + obj.id;
     btn.type = 'button';
     btn.appendChild(document.createTextNode('This is me!'));
-    btn.onclick = function() { thisIsMe(this); };
+    btn.onclick = function() { thisIsMe(this); return false; };
     var td = tr.insertCell(-1);
     td.appendChild(btn);
   } else {
