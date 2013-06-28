@@ -67,3 +67,12 @@ li {
 .mandatory {
   background-color: #FFFF00;
 }
+
+.error {
+  color: #FF0000;
+  font-style: bold;
+}
+
+.errorTd {
+  background-color: #FF0000;
+}

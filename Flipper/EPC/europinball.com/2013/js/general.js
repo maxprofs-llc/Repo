@@ -8,6 +8,7 @@ var classes = {
     geo: true,
     plural: 'continents',
     headers: ['name', 'latitude', 'longitude'], // Headers normally used in tables and lists
+    mandatory: ['name'],
     complete: false
   },
   country: {
@@ -15,6 +16,7 @@ var classes = {
     geo: true,
     plural: 'countries',
     headers: ['name', 'continent', 'latitude', 'longitude'], // Headers normally used in tables and lists
+    mandatory: ['name', 'continent'],
     complete: false
   },
   region: {
@@ -22,6 +24,7 @@ var classes = {
     geo: true,
     plural: 'regions',
     headers: ['name', 'country', 'continent', 'latitude', 'longitude'], // Headers normally used in tables and lists
+    mandatory: ['name', 'country'],
     complete: false
   },
   city: {
@@ -29,6 +32,7 @@ var classes = {
     geo: true,
     plural: 'cities',
     headers: ['name', 'region', 'country', 'continent', 'latitude', 'longitude'], // Headers normally used in tables and lists
+    mandatory: ['name', 'country'],
     complete: false
   },
   player: {
@@ -36,6 +40,7 @@ var classes = {
     geo: false,
     plural: 'players',
     headers: ['name', 'initials', 'city', 'region', 'country', 'continent'], // Headers normally used in tables and lists
+    mandatory: ['password', 'username', 'country', 'mailAddress', 'mobileNumber', 'lastName', 'firstName'],
     complete: false
   },
   gender: {
@@ -43,6 +48,7 @@ var classes = {
     geo: false,
     plural: 'genders',
     headers: ['name'],
+    mandatory: ['name'],
     complete: true
   }
 }
@@ -456,7 +462,7 @@ function ifpaReg(id, dstId) {
   try { 
     $('#' + tbl.id).dataTable.fnClearTable(); // Clear the datatable layout (and the table) if the datatable object exists...
   } catch(err) {
-    tbl.innerHTML = null; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
+    tbl.innerHTML = ''; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
   }
   $.getJSON('ajax/ifpaReg.php',{ifpaId: $('#' + id).val()}) // Returns a JSON with all hits
   .done(function(data) {
@@ -485,7 +491,7 @@ function printPlayers(objs, dstId, meBtns, sels) {
   try {
     $('#' + tbl.id).dataTable.fnClearTable(); // Clear the datatable layout (and the table) if the datatable object exists...
   } catch(err) {
-    tbl.innerHTML = null; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
+    tbl.innerHTML = ''; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
   }
   addThead(tbl, classes['player'], meBtns); // Add table headers (don't forget the header for the meBtn!)
   var tbody = addTbody(tbl);
@@ -533,7 +539,6 @@ function printPlayerAsList(obj,dstId) {
   th.appendChild(h3); // It only took 10 lines to add a title!
   var tbody = tbl.appendChild(document.createElement('tbody'));
   for (var prop in obj) { // Loop through all object properties (player names and such)
-    var mandatory = false; // Mandatory fields will become yellow, but let's assume this is not a mandatory field
     switch (prop) {
       case 'dateRegistered':
       case 'id': // Person ID from the database, so we know who this is. A new guy will have ID 0.
@@ -549,7 +554,6 @@ function printPlayerAsList(obj,dstId) {
       case 'username':
       case 'mailAddress':
       case 'mobileNumber':
-        mandatory = true; // The fields above are fields we require from each player. They are free to enter dummy info though. The fields below are optional.
       case 'initials':
       case 'streetAddress':
       case 'zipCode':
@@ -565,12 +569,12 @@ function printPlayerAsList(obj,dstId) {
         lbl.appendChild(txt);
         var td = tr.insertCell(-1);
         var input = document.createElement('input');
-        td.id = prop + 'TextTd';
+        td.id = prop + 'Td';
         input.type = 'text';
         input.name = prop; // Name is actual property name, as defined in the database.
         input.id = prop + 'Text'; // ...while ID will also tell what type of input it is.
         input.value = (obj[prop]) ? obj[prop] : '';
-        input.className += (mandatory) ? ' mandatory' : ''; // Make it yellow?
+        input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
         lbl.for = input.id;
         td.appendChild(input);
         lblTd.appendChild(lbl);
@@ -582,7 +586,6 @@ function printPlayerAsList(obj,dstId) {
         }
       break;
       case 'country':
-        mandatory = true; // We want to know country! The rest is optional.
       case 'city':
       case 'region':
       case 'continent':
@@ -595,14 +598,14 @@ function printPlayerAsList(obj,dstId) {
         var txt = document.createTextNode(ucfirst(prop.toLowerCase())); // Field name. I'm lazy, so let's get it from the object property name and just change capitalization.
         lbl.appendChild(txt);
         var td = tr.insertCell(-1);
-        td.id = prop + 'SelectTd';
+        td.id = prop + 'Td';
         var input = document.createElement('select');
         input.name = prop; // Name is actual property name, as defined in the database.
         input.id = prop + 'Select'; // ...while ID will also tell what type of input it is.
         popSel(input);
         selectOption(input, obj[prop + '_id']);
         input.onchange = function () { geoSelected(this); }; // When the user has selected one geo-object, then let's adapt all the other ones. If choosing Sweden, only Swedish regions and cities will be shown in the other dropdowns. And if a city in Uppland is chosen - Uppland, Sweden and Europe are automatically selected.
-        input.className += (mandatory) ? ' mandatory' : ''; // Make it yellow?
+        input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
         lbl.for = input.id;
         td.appendChild(input);
         lblTd.appendChild(lbl);
@@ -642,7 +645,7 @@ function printPlayerAsList(obj,dstId) {
         lbl.appendChild(txt);
         var td = tr.insertCell(-1);
         var input = document.createElement('input');
-        td.id = prop + 'TextTd';
+        td.id = prop + 'Td';
         input.type = 'checkbox';
         input.name = prop; // Name is actual property name, as defined in the database.
         input.id = prop + 'Checkbox'; // ...while ID will also tell what type of input it is.
@@ -663,13 +666,13 @@ function printPlayerAsList(obj,dstId) {
   var txt = document.createTextNode('Password');
   lbl.appendChild(txt);
   var td = tr.insertCell(-1);
-  td.id = 'passwordTextTd';
+  td.id = 'passwordTd';
   var input = document.createElement('input');
   input.type = 'password'; // Let's hide the typing
   input.name = 'password'; // Name is actual property name, as defined in the database.
   input.id = 'passwordText'; // ...while ID will also tell what type of input it is.
   input.value = '';
-  input.className += ' mandatory'; // Password is mandatory!
+  input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
   lbl.for = input.id;
   td.appendChild(input);
   lblTd.appendChild(lbl);
@@ -692,8 +695,13 @@ function printPlayerAsList(obj,dstId) {
   btn.id = 'submit';
   btn.type = 'button';
   btn.appendChild(document.createTextNode('Let\'s play!'));
-  btn.onclick = function() { submit(); return false; };
+  btn.onclick = function() { checkForm(this); return false; };
   td.appendChild(btn);
+  var tr = tbody.insertRow(-1);
+  tr.colSpan = 2;
+  var td = tr.insertCell(-1);
+  td.id = 'errorTd';
+  td.className += ' error';
   setTimeout(function(){ // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
     Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', {
       theme: 'blackglass'
@@ -702,54 +710,11 @@ function printPlayerAsList(obj,dstId) {
   document.getElementById(dstId).appendChild(tbl); // Let's show it to the user
 }
 
-function submit() {
+function submit(obj) {
   $.post('ajax/recaptcha.php', {resp: Recaptcha.get_response(), chall: Recaptcha.get_challenge()}) // Let's ajax-check the recaptcha
   .done(function(data) { // Allright, recaptcha response received
     Recaptcha.destroy(); // Let's destroy the recaptcha (either we are done and fine, or we need to create a new one anyway)
     if (data == 'Valid') { // Allright, recaptcha was fine!
-      var newData = $('#newData').serializeArray(); // For some reason, I can't use the original object. So we have to serialize the form info...
-      var obj = unknown(classes['player']); // ...and create a new object from it. Very annoying.
-      for(var i = 0; i < newData.length; i++) {
-        switch (newData[i].name) {
-          case 'dateRegistered':
-          case 'id':
-          case 'firstName':
-          case 'lastName':
-          case 'initials':
-          case 'username':
-          case 'password':
-          case 'streetAddress':
-          case 'zipCode':
-          case 'telephoneNumber':
-          case 'mobileNumber':
-          case 'mailAddress':
-          case 'birthDate':
-            obj[newData[i].name] = newData[i].value; // All the above are simple add values to the property.
-          break;
-          case 'city':
-          case 'region':
-          case 'country':
-          case 'continent':
-          case 'gender':
-            obj[newData[i].name + '_id'] = newData[i].value; // The ones above we want to store as IDs
-          break;
-          case 'cityAddText':
-          case 'regionAddText':
-            if (newData[i].value.length > 0) {
-              obj[newData[i].name.replace('AddText', '')] = newData[i].value; // The user added a new object, so let's save the name.
-              obj[newData[i].name + '_id'] = 0; // ...and to be safe - also remove the ID from the dropdown.
-            }
-          break;
-          case 'main':
-          case 'classics':
-            if (newData[i].value == 'on') {
-              obj[newData[i].name] = true; // Will actually be a 1 when received in ajax
-            } else {
-              obj[newData[i].name] = false; // Will actually be a 0 when received in ajax
-            }
-          break;
-        }
-      }
       var jsonPlayer = JSON.stringify(obj, [ // I stringify the object...
         'dateRegistered', 
         'firstName', 
@@ -801,13 +766,11 @@ function checkUser(el) {
     document.getElementById(el.id + 'Span').innerHTML = '';
     document.getElementById(el.id + 'Span').appendChild(txt);
     if (data == ' Username is already taken!') { // Oh, no! Some bastard took my name!
-      document.getElementById(el.id + 'Span').style.color = 'red';
-      document.getElementById(el.id + 'Span').style.fontStyle = 'bold';
+      document.getElementById(el.id + 'Span').className += ' error';
       document.getElementById('submit').disabled = true; // No submitting taken usernames!
     } else {
-      document.getElementById(el.id + 'Span').style.color = ''; // This means the username is free (or that it already belongs to the user)
-      document.getElementById(el.id + 'Span').style.fontStyle = '';
-      document.getElementById('submit').disabled = false;
+      $('#' + el.id + 'Span').removeClass('error'); // This means the username is free (or that it already belongs to the user)
+      document.getElementById('submit').disabled = false; // OK to submit
     }
   })
   .fail(function(jqHXR,status,error) {
@@ -815,8 +778,81 @@ function checkUser(el) {
   });
 }
 
-function checkForm() {
-  // This will be where the details form is validated. We won't validate much - just some basic stuff. Things like invalid email addresses and stuff is ok.
+// This is where the details form is validated. We won't validate much - just some basic stuff. Things like invalid email addresses and stuff is ok, we'll fix it in the database if necessary.
+function checkForm(el) {
+  var newData = $('#newData').serializeArray(); // For some reason, I can't use the original object. So we have to serialize the form info...
+  var obj = unknown(classes['player']); // ...and create a new object from it. Very annoying.
+  for(var i = 0; i < newData.length; i++) {
+    switch (newData[i].name) {
+      case 'dateRegistered':
+      case 'id':
+      case 'firstName':
+      case 'lastName':
+      case 'initials':
+      case 'username':
+      case 'password':
+      case 'streetAddress':
+      case 'zipCode':
+      case 'telephoneNumber':
+      case 'mobileNumber':
+      case 'mailAddress':
+      case 'birthDate':
+        obj[newData[i].name] = newData[i].value; // All the above are simple add values to the property.
+      break;
+      case 'city':
+      case 'region':
+      case 'country':
+      case 'continent':
+      case 'gender':
+        obj[newData[i].name + '_id'] = newData[i].value; // The ones above we want to store as IDs
+      break;
+      case 'cityAddText':
+      case 'regionAddText':
+        if (newData[i].value.length > 0) {
+          obj[newData[i].name.replace('AddText', '')] = newData[i].value; // The user added a new object, so let's save the name.
+          obj[newData[i].name + '_id'] = 0; // ...and to be safe - also remove the ID from the dropdown.
+        }
+      break;
+      case 'main':
+      case 'classics':
+        if (newData[i].value == 'on') {
+          obj[newData[i].name] = true; // Will actually be a 1 when received in ajax
+        } else {
+          obj[newData[i].name] = false; // Will actually be a 0 when received in ajax
+        }
+      break;
+    }
+  }
+  // Check required fields:
+  var valid = true;
+  var error = '';
+  if (!obj.main && !obj.classics) {
+    $('#mainTd').removeClass('errorTd');
+    $('#classicsTd').removeClass('errorTd');
+    valid = false;
+    error = 'You need to participate in at least one division';
+    document.getElementById('mainTd').className += ' errorTd';
+    document.getElementById('classicsTd').className += ' errorTd';
+  }
+  if (!obj.country_id && !obj.country) {
+    $('#countryTd').removeClass('errorTd');
+    valid = false;
+    error = 'Country is required';
+    document.getElementById('countryTd').className += ' errorTd';
+  }
+  for (var field in classes['player'].mandatory) {
+    $('#' + classes['player'].mandatory[field] + 'Td').removeClass('errorTd');
+    if (!obj[classes['player'].mandatory[field]] && classes['player'].mandatory[field] != 'country') {
+      valid = false;
+      error = classes['player'].mandatory[field] + ' is required';
+      document.getElementById(classes['player'].mandatory[field] + 'Td').className += ' errorTd';
+    }
+  }
+  if (valid) {
+    submit(obj);
+  } else {
+    alert(error);
+  }
 }
 
 function ucfirst(txt) {
@@ -900,7 +936,7 @@ function addOptions(sel, objs) { // Add options with the provided objects array
       sel.add(addOption(objs[obj]));
     }
   } else {
-    sel.innerHTML = null;
+    sel.innerHTML = '';
     sel.add(addOption({id: 0, name: 'None found...'})); // No objects provided!
   }
 }
@@ -920,12 +956,12 @@ function selectOption(sel, id) { // Make the specific select option selected (ID
 }
 
 function filterOptions (sel, obj) { // This will remove all non-appropriate options from a select. I.e. if someone chose "Europe", all non-european objects will be removed. If obj.id is 0 (unknown item), the select is in stead restored to show all options.
-  sel.innerHTML = null;
+  sel.innerHTML = '';
   sel.add(addOption({id: 0, name: 'Loading...'})); // This might take some time - there are thousands of cities.
   showLoading(classes[sel.name]);
   var objs = (obj.id != 0) ? window[classes[sel.name].plural].filter(cmpGeo, obj) : window[classes[sel.name].plural];
    // It took a while to figure out the line above! sel.name is "country" or similar. classes['country'].plural is "countries". window['countries'] is the global countries array. And then apply the filter to get rid of unwanted objects.
-  sel.innerHTML = null;
+  sel.innerHTML = '';
   sel.add(addOption({id: 0, name: 'Choose ' + sel.name + '...'}));
   addOptions(sel, objs); // Add the new options
   hideLoading(classes[sel.name]);
@@ -997,7 +1033,7 @@ function popSel(sel, type) { // Let's pop a sel!
     var type = classes[sel.id.replace('Select', '').toLowerCase()]; // Who needs a type when we've got the select?
   }
   if (sel && type) { // Both were provided (or we figured them out)
-    sel.innerHTML = null;
+    sel.innerHTML = '';
     addTypeOptions(sel, type); // Add all the object of a specific type as options to the select
     hideLoading(type);
   }
@@ -1038,7 +1074,7 @@ function popTbl(tbl, type) { // Let's populate a table
     try {
       $('#' + tbl.id).dataTable.fnClearTable();// Clear the datatable layout (and the table) if the datatable object exists...
     } catch(err) {
-      tbl.innerHTML = null; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
+      tbl.innerHTML = ''; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
     }
     addThead(tbl, type); // Add headers...
     var tbody = addTbody(tbl); // ...body...
@@ -1069,7 +1105,7 @@ function addThead(tbl, type, meBtn) { // meBtn is the "This is me!" button at th
 }
 
 function addTheaders (thead, headers, meBtn) { // meBtn is the "This is me!" button at the end of each row - it also needs a header
-  thead.innerHTML = null;
+  thead.innerHTML = '';
   var tr = thead.insertRow(-1);
   tr.className += ' header';
   for (var header in headers) { // Let's go through the headers form the meta information objects
@@ -1096,7 +1132,7 @@ function addTbody(tbl) {
 // "meBtns" true/false = add the "This is me!" button at the end of each row
 // "sels" true/false = make all suitable fields into selects containing all objects of that class, with the current one pre-selected (to let a player change his/her city, or similar).
 function addRows(tbody, type, links, meBtns, sels, objs) {
-  tbody.innerHTML = null;
+  tbody.innerHTML = '';
   objs = (objs) ? objs : window[type.plural]; // If no objs were provided, use the type and get the global array with all objects of that type
   for (var obj in objs) {
     addRow(tbody, objs[obj], links, meBtns, sels);
