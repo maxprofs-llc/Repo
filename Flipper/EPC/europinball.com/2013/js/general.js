@@ -487,19 +487,18 @@ function printPlayers(objs, dstId, meBtns, sels) {
   } catch(err) {
     tbl.innerHTML = null; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
   }
-  }
   addThead(tbl, classes['player'], meBtns); // Add table headers (don't forget the header for the meBtn!)
   var tbody = addTbody(tbl);
   addRows(tbody, classes['player'], false, meBtns, sels, objs); // Add the rows, and include info about meBtn and sels.
   $('#' + dstId).show(); // Allright, table done, let's show it
   $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true}); // Rebuild the datatable
-  $('#' + tbl.id).css('width', '') // This is needed, or the table is butt ugly!
+  $('#' + tbl.id).css('width', ''); // This is needed, or the table is butt ugly!
 }
 
 // This is me!
 function thisIsMe(btnId) {
   var meId = btnId.id.replace('meBtn_', ''); // Let's find out who "me" is.
-  printPlayerAsList(player(meId),'ifpaRegResults') // Show the details form to the player, with info pre-filled in.
+  printPlayerAsList(player(meId),'ifpaRegResults'); // Show the details form to the player, with info pre-filled in.
 }
 
 // I'm a new guy!
@@ -1471,7 +1470,7 @@ function varDump(obj, name, tab) { // Debug function that recursively walk throu
   }
 }
 
-function debugOut(obj, name) { // Send some info to the debug div, if debugMode is true. Which, right now, it always is.
+function debugOut(obj, name) { // Send some info to the debug div, if debugMode is true. Which, right now, it always is...
   var debugMode = $.url().param('debug');
   debugMode = true;
   if (debugMode) {
