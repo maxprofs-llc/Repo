@@ -8,7 +8,11 @@ var classes = {
     geo: true,
     plural: 'continents',
     headers: ['name', 'latitude', 'longitude'], // Headers normally used in tables and lists
-    mandatory: ['name'],
+    fields: {
+      name: { label: 'Name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      latitude: { label: 'Latitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      longitude: { label: 'Longtitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''}
+    },
     complete: false
   },
   country: {
@@ -16,7 +20,12 @@ var classes = {
     geo: true,
     plural: 'countries',
     headers: ['name', 'continent', 'latitude', 'longitude'], // Headers normally used in tables and lists
-    mandatory: ['name', 'continent'],
+    fields: {
+      name: { label: 'Name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      continent: { label: 'Continent', type: 'text', mandatory: true, special: false, bundle: false},
+      latitude: { label: 'Latitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      longitude: { label: 'Longtitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''}
+    },
     complete: false
   },
   region: {
@@ -24,7 +33,13 @@ var classes = {
     geo: true,
     plural: 'regions',
     headers: ['name', 'country', 'continent', 'latitude', 'longitude'], // Headers normally used in tables and lists
-    mandatory: ['name', 'country'],
+    fields: {
+      name: { label: 'Name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      continent: { label: 'Continent', type: 'text', mandatory: true, special: false, bundle: 1},
+      country: { label: 'Country', type: 'text', mandatory: true, special: false, bundle: 1},
+      latitude: { label: 'Latitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      longitude: { label: 'Longtitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''}
+    },
     complete: false
   },
   city: {
@@ -32,7 +47,14 @@ var classes = {
     geo: true,
     plural: 'cities',
     headers: ['name', 'region', 'country', 'continent', 'latitude', 'longitude'], // Headers normally used in tables and lists
-    mandatory: ['name', 'country'],
+    fields: {
+      name: { label: 'Name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      continent: { label: 'Continent', type: 'text', mandatory: true, special: false, bundle: 1},
+      country: { label: 'Country', type: 'text', mandatory: true, special: false, bundle: 1},
+      region: { label: 'Region', type: 'text', mandatory: true, special: false, bundle: 1},
+      latitude: { label: 'Latitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      longitude: { label: 'Longtitude', type: 'text', mandatory: false, special: false, bundle: false, default: ''}
+    },
     complete: false
   },
   player: {
@@ -40,7 +62,29 @@ var classes = {
     geo: false,
     plural: 'players',
     headers: ['name', 'initials', 'city', 'region', 'country', 'continent'], // Headers normally used in tables and lists
-    mandatory: ['password', 'username', 'country', 'mailAddress', 'mobileNumber', 'lastName', 'firstName'],
+    fields: {
+      id: { label: 'Id', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
+      firstName: { label: 'First name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      lastName: { label: 'Last name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      initials: { label: 'Initials', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      username: { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      password: { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''},
+      gender: { label: 'Gender', type: 'select', mandatory: false, special: false, bundle: false},
+      streetAddress: { label: 'Street address', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      zipCode: { label: 'ZIP', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      city: { label: 'City', type: 'select', mandatory: false, special: 'add', bundle: false},
+      region: { label: 'Region', type: 'select', mandatory: false, special: 'add', bundle: false},
+      country: { label: 'Country', type: 'select', mandatory: true, special: false, bundle: false},
+      continent: { label: 'Continent', type: 'select', mandatory: false, special: false, bundle: false},
+      telephoneNumber: { label: 'Phone', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      mobileNumber: { label: 'Cell phone', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      mailAddress: { label: 'Email', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      main: { label: 'Main', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
+      classics: { label: 'Classics', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
+      volunteer: { label: 'Volunteer', type: 'checkbox', mandatory: false, special: false, bundle: false, default: true},
+      birthdate: { label: 'Birth date', type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
+      dateRegistered: { label: 'Date registered', type: 'hidden', mandatory: false, special: false, bundle: false, default: new Date().toISOString().substring(0,10)}
+    },
     complete: false
   },
   gender: {
@@ -49,6 +93,9 @@ var classes = {
     plural: 'genders',
     headers: ['name'],
     mandatory: ['name'],
+    fields: {
+      name: { label: 'Name', type: 'text', mandatory: true, special: false, bundle: false}
+    },
     complete: true
   }
 }
@@ -373,6 +420,7 @@ function PLAYER(data) {
     this.birthDate = data.birthDate;
     this.classics = null;
     this.main = null;
+    this.volunteer = null;
     this.username = data.username;
     this.password = null;
     this.link = addLink(this);
@@ -513,7 +561,7 @@ function newGuy(dstId) {
   printPlayerAsList(player(), dstId); // Create a dummy player with no info, and show the (non-existing) details form fo the player.
 }
 
-// This prints out the details form. Could probably have done this with meta-information in arrays and some simple loops in stead, but this way gives us total control of what is shown how.
+// This prints out the details form. Now done with meta arrays.
 function printPlayerAsList(obj,dstId) {
   $('#' + dstId + 'TableDiv').hide(); // Hide the table div with players - either we've found the player or this is a new guy.
   $('#' + dstId).show(); // And show the details form
@@ -539,148 +587,9 @@ function printPlayerAsList(obj,dstId) {
   h3.appendChild(document.createTextNode('Please confirm, change or add to our info:'));
   th.appendChild(h3); // It only took 10 lines to add a title!
   var tbody = tbl.appendChild(document.createElement('tbody'));
-  for (var prop in obj) { // Loop through all object properties (player names and such)
-    switch (prop) {
-      case 'dateRegistered':
-      case 'id': // Person ID from the database, so we know who this is. A new guy will have ID 0.
-        var input = document.createElement('input');
-        input.type = 'hidden';
-        input.id = prop + 'Hidden';
-        input.name = prop;
-        input.value = (prop == 'id') ? obj.id : new Date().toISOString().substring(0,10);
-        document.getElementById(dstId).appendChild(input);
-      break;
-      case 'firstName':
-      case 'lastName':
-      case 'username':
-      case 'mailAddress':
-      case 'mobileNumber':
-      case 'initials':
-      case 'streetAddress':
-      case 'zipCode':
-      case 'telephoneNumber':
-      case 'birthDate':
-      case 'initials':
-        var tr = tbody.insertRow(-1);
-        var lblTd = tr.insertCell(-1); // Label TD
-        lblTd.id = prop + 'LabelTd';
-        var lbl = document.createElement('label');
-        lbl.id = prop + 'TextLabel';
-        var txt = document.createTextNode(ucfirst(prop.toLowerCase())); // Field name. I'm lazy, so let's get it from the object property name and just change capitalization.
-        lbl.appendChild(txt);
-        var td = tr.insertCell(-1);
-        var input = document.createElement('input');
-        td.id = prop + 'Td';
-        input.type = 'text';
-        input.name = prop; // Name is actual property name, as defined in the database.
-        input.id = prop + 'Text'; // ...while ID will also tell what type of input it is.
-        input.value = (obj[prop]) ? obj[prop] : '';
-        input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
-        if (prop == 'birthDate') {
-          debugOut('huff','hepp');
-          $('#' + input.id).datepicker();
-        }
-        lbl.for = input.id;
-        td.appendChild(input);
-        lblTd.appendChild(lbl);
-        if (prop == 'username') {
-          input.onchange = function() { checkField(this); }; // Let's check that the username is up for grabs. Only done when leaving the field (changed), and not at every keypress.
-          var span = document.createElement('span'); // ...and put the result here
-          span.id = 'usernameTextSpan';
-          td.appendChild(span);
-        }
-      break;
-      case 'country':
-      case 'city':
-      case 'region':
-      case 'continent':
-      case 'gender':
-        var tr = tbody.insertRow(-1);
-        var lblTd = tr.insertCell(-1);
-        lblTd.id = prop + 'LabelTd'; // Label TD
-        var lbl = document.createElement('label');
-        lbl.id = prop + 'SelectLabel';
-        var txt = document.createTextNode(ucfirst(prop.toLowerCase())); // Field name. I'm lazy, so let's get it from the object property name and just change capitalization.
-        lbl.appendChild(txt);
-        var td = tr.insertCell(-1);
-        td.id = prop + 'Td';
-        var input = document.createElement('select');
-        input.name = prop; // Name is actual property name, as defined in the database.
-        input.id = prop + 'Select'; // ...while ID will also tell what type of input it is.
-        popSel(input);
-        selectOption(input, obj[prop + '_id']);
-        input.onchange = function () { geoSelected(this); }; // When the user has selected one geo-object, then let's adapt all the other ones. If choosing Sweden, only Swedish regions and cities will be shown in the other dropdowns. And if a city in Uppland is chosen - Uppland, Sweden and Europe are automatically selected.
-        input.className += (classes['player'].mandatory.indexOf(prop) != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
-        lbl.for = input.id;
-        td.appendChild(input);
-        lblTd.appendChild(lbl);
-        if (prop == 'city' || prop == 'region') { // Users have a possibility to add cities and regions not already in the database. So let's add some elements for that.
-          var img = document.createElement('img'); // A plus sign after the select, to click on to add stuff.
-          img.id = prop + 'Add';
-          img.src = 'images/add_icon.gif';
-          img.className += ' icon';
-          img.onclick = function () { geoAdd(this, true); }; // They want to add something (true)!
-          img.alt = 'Click to add a new ' + prop.toLowerCase();
-          img.title = img.alt;
-          td.appendChild(img);
-          var selTxt = document.createElement('input'); // So let's replace the select with a text input
-          selTxt.type = 'text';
-          selTxt.name = selTxt.id; // We can't use actual property name here, since that is used by the dropdown. If this field has a value, the dropdown value is ignored.
-          selTxt.id = prop + "AddText"; // ...so both ID and name will also tell what type of input it is.
-          selTxt.className += ' invisible'; // Display none until the plus sign is clicked
-          td.appendChild(selTxt);
-          var cImg = document.createElement('img'); // What if the user regrets his/her choice, and wants to select an existing item anyway? No problem - just click the X icon! If they do, we will remove the value from the selTxt text input, and use the value from the dropdown.
-          cImg.id = prop + 'AddCancel';
-          cImg.src = 'images/cancel.png';
-          cImg.className += ' invisible'; // Display none until the plus sign is clicked
-          cImg.alt = 'Click to cancel and get back to the dropdown';
-          cImg.title = cImg.alt;
-          cImg.onclick = function () { geoAdd(this, false ); }; // The don't want to add something (false)!
-          td.appendChild(cImg);
-        }
-      break;
-      case 'classics':
-      case 'main':
-        var tr = tbody.insertRow(-1);
-        var lblTd = tr.insertCell(-1); // Label TD
-        lblTd.id = prop + 'LabelTd';
-        var lbl = document.createElement('label');
-        lbl.id = prop + 'TextLabel';
-        var txt = document.createTextNode(ucfirst(prop.toLowerCase()));// Field name. I'm lazy, so let's get it from the object property name and just change capitalization.
-        lbl.appendChild(txt);
-        var td = tr.insertCell(-1);
-        var input = document.createElement('input');
-        td.id = prop + 'Td';
-        input.type = 'checkbox';
-        input.name = prop; // Name is actual property name, as defined in the database.
-        input.id = prop + 'Checkbox'; // ...while ID will also tell what type of input it is.
-        input.checked = true;;
-        lbl.for = input.id;
-        td.appendChild(input);
-        var txt = document.createTextNode('Participate in ' + ucfirst(prop.toLowerCase()));
-        td.appendChild(txt);
-        lblTd.appendChild(lbl);
-      break;
-    }
+  for (var prop in classes[obj.class].fields) { // Loop through all object properties (player names and such)
+    document.getElementById(dstId).appendChild(addFieldRow(tbody, obj, prop));
   }
-  var tr = tbody.insertRow(-1);
-  var lblTd = tr.insertCell(-1); // Label TD
-  lblTd.id = 'passwordLabelTd';
-  var lbl = document.createElement('label');
-  lbl.id = 'passwordTextLabel';
-  var txt = document.createTextNode('Password');
-  lbl.appendChild(txt);
-  var td = tr.insertCell(-1);
-  td.id = 'passwordTd';
-  var input = document.createElement('input');
-  input.type = 'password'; // Let's hide the typing
-  input.name = 'password'; // Name is actual property name, as defined in the database.
-  input.id = 'passwordText'; // ...while ID will also tell what type of input it is.
-  input.value = '';
-  input.className += (classes['player'].mandatory.indexOf('password') != -1) ? ' mandatory' : ''; // Mandatory fields will become yellow
-  lbl.for = input.id;
-  td.appendChild(input);
-  lblTd.appendChild(lbl);
   var tr = tbody.insertRow(-1);
   var td = tr.insertCell(-1);
   td.colSpan = 2;
@@ -702,17 +611,80 @@ function printPlayerAsList(obj,dstId) {
   btn.appendChild(document.createTextNode('Let\'s play!'));
   btn.onclick = function() { checkForm(this); return false; };
   td.appendChild(btn);
-  var tr = tbody.insertRow(-1);
-  tr.colSpan = 2;
-  var td = tr.insertCell(-1);
-  td.id = 'errorTd';
-  td.className += ' error';
-  setTimeout(function(){ // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
+  setTimeout(function() { // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
     Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', {
       theme: 'blackglass'
-    }), 100
-  });
+    })
+  }, 100);
   document.getElementById(dstId).appendChild(tbl); // Let's show it to the user
+}
+
+function addFieldRow(tbody, obj, prop) {
+  var type = classes[obj.class].fields[prop].type;
+  if (type != 'hidden') { // No label or td needed for hidden stuff
+    var tr = tbody.insertRow(-1);
+    var lblTd = tr.insertCell(-1); // Label TD
+    lblTd.id = prop + 'LabelTd';
+    var lbl = document.createElement('label');
+    lbl.id = prop + 'Label';
+    var txt = document.createTextNode(classes[obj.class].fields[prop].label); // Field name.
+    lbl.appendChild(txt);
+    var td = tr.insertCell(-1);
+    td.id = prop + 'Td';
+  }
+  var input = document.createElement((type == 'select') ? 'select' : 'input');
+  input.name = prop; // Name is actual property name, as defined in the database.
+  input.id = prop + ucfirst(type); // ...while ID will also tell what type of input it is.
+  if (type == 'select') {
+    popSel(input);
+    selectOption(input, obj[prop + '_id']);
+    input.onchange = function () { geoSelected(this); }; // When the user has selected one geo-object, then let's adapt all the other ones. If choosing Sweden, only Swedish regions and cities will be shown in the other dropdowns. And if a city in Uppland is chosen - Uppland, Sweden and Europe are automatically selected.
+  } else {
+    input.type = type;
+    input[(type == 'checkbox') ? 'checked' : 'value'] = (obj[prop]) ? obj[prop] : classes[obj.class].fields[prop].default; // Add existing value, or the default value
+    input.onchange = function() { checkField(this); }; // Let's check that the field is correct. Only done when leaving the field (changed), and not at every keypress.
+    if (classes[obj.class].fields[prop].special == 'date') {
+      setTimeout(function() { $('#' + input.id).datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, yearRange: '-100:-0' }); }, 100); // Fancy date picker added!
+    }
+  }
+  if (type != 'hidden') { // No label, td or span needed for hidden stuff
+    lbl.for = input.id;
+    td.appendChild(input);
+    lblTd.appendChild(lbl);
+    var span = document.createElement('span'); // Let's put the result from the field check in here
+    span.id = prop + 'Span';
+    if (classes[obj.class].fields[prop].mandatory) {
+      input.className += ' mandatory'; // Mandatory fields will become yellow
+      span.appendChild(document.createTextNode('*')); // Let's be very clear!
+    }
+    td.appendChild(span);
+    if (classes[obj.class].fields[prop].special == 'add') { // Users have a possibility to add cities and regions not already in the database. So let's add some elements for that.
+      var img = document.createElement('img'); // A plus sign after the select, to click on to add stuff.
+      img.id = prop + 'Add';
+      img.src = 'images/add_icon.gif';
+      img.className += ' icon';
+      img.onclick = function () { geoAdd(this, true); }; // They want to add something (true)!
+      img.alt = 'Click to add a new ' + classes[obj.class].fields[prop].label.toLowerCase();
+      img.title = img.alt;
+      td.appendChild(img);
+      var selTxt = document.createElement('input'); // So let's replace the select with a text input
+      selTxt.type = 'text';
+      selTxt.name = selTxt.id; // We can't use actual property name here, since that is used by the dropdown. If this field has a value, the dropdown value is ignored.
+      selTxt.id = prop + 'AddText'; // ...so both ID and name will also tell what type of input it is.
+      selTxt.className += ' invisible'; // Display none until the plus sign is clicked
+      td.appendChild(selTxt);
+      var cImg = document.createElement('img'); // What if the user regrets his/her choice, and wants to select an existing item anyway? No problem - just click the X icon! If they do, we will remove the value from the selTxt text input, and use the value from the dropdown.
+      cImg.id = prop + 'AddCancel';
+      cImg.src = 'images/cancel.png';
+      cImg.className += ' invisible'; // Display none until the plus sign is clicked
+      cImg.alt = 'Click to cancel and get back to the dropdown';
+      cImg.title = cImg.alt;
+      cImg.onclick = function () { geoAdd(this, false ); }; // The don't want to add something (false)!
+      td.appendChild(cImg);
+    }
+    return document.createTextNode('');
+  }
+  return input;
 }
 
 function submit(obj) {
@@ -865,12 +837,14 @@ function ucfirst(txt) {
 }
 
 function complete(type) { // Used to check that all objects are completely loaded from ajax
-  if (type) {
+  if (type && type != 'geo') {
     return (classes[type].complete); // Mark the type as complete
   } else {
     for (var item in classes) { // Check if all types are complete
       if (!complete(item)) {
-        return false; // Nope - still stuff to load.
+        if (!(type == 'geo' && classes[item].name == 'player')) {
+          return false; // Nope - still stuff to load.
+        } 
       }
     }
     return true; // Yes, they are.
@@ -892,6 +866,9 @@ function getObjects(type) { // Load all objects from ajax. If type is specified,
         popEls($('select')); // Look for selects to populate
         popEls($('table')); // Look for tables to populate 
         popEls($('input')); // Look for inputs to populate (I don't think we ever do this)
+      }
+      if (complete('geo')) {
+        document.getElementById('newButton').disabled = false;
       }
     });
   } else {

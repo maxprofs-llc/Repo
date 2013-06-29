@@ -31,6 +31,7 @@
 
   $button = new formInput('button', 'newButton', 'I\'m a new guy!');
   $button->type = 'button';
+  $button->disabled = true;
   $button->action = "newGuy('ifpaRegResults');";
   $form->addField($button);
 

@@ -12,7 +12,7 @@
     <script type="text/javascript" src="'.$scriptPath.'contrib/recaptcha_ajax.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'general.js"></script>
     <link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
-    <link href="css/jquery-ui-1.10.3.custom2.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link href="css/epc.css" rel="stylesheet" type="text/css" />
     <title>'.$title.'</title>
   </head>

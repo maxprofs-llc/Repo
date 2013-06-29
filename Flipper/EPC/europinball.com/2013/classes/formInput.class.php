@@ -9,6 +9,7 @@
     public $value;
     public $text;
     public $keydown;
+    public $disabled = false;
     public $loading = true;
     public $addIcon = true;
     public $addAction;
@@ -53,6 +54,9 @@
           $this->content .= '<select name="'.$this->name.'" id="'.$this->id.'" class="'.$this->class.'"';
           if ($this->action) {
             $this->content .= ' onchange="'.$this->action.'"';
+          }
+          if ($this->disabled) {
+            $this->content .= ' disabled';
           }
           $this->content .= ">\n";
           foreach($this->options as $option) {
@@ -104,6 +108,9 @@
           if ($this->value) {
             $this->content .= ' value="'.$this->value.'"';
           }
+          if ($this->disabled) {
+            $this->content .= ' disabled';
+          }
           $this->content .= '>';
           if ($this->text) {
             $this->content .= ' '.$this->text;
@@ -114,6 +121,9 @@
           $this->content .= '<button id="'.$this->id.'" type="'.(($this->type) ? $this->type : 'submit').'" value="'.$this->value.'" class="'.$this->class.'"';
           if ($this->action) {
             $this->content .= ' onclick="'.$this->action.'"';
+          }
+          if ($this->disabled) {
+            $this->content .= ' disabled';
           }
           $this->content .= '>'.$this->value.'</button>';
           if ($this->text) {
