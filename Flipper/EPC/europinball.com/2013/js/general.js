@@ -63,7 +63,12 @@ var classes = {
     plural: 'players',
     headers: ['name', 'initials', 'city', 'region', 'country', 'continent'], // Headers normally used in tables and lists
     fields: {
-      id: { label: 'Id', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
+      id: { label: 'ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
+      ifpa_id: { label: 'IFPA ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
+      class: { label: 'Class', type: 'hidden', mandatory: false, special: false, bundle: false, default: 'player'},
+      isPlayer: { label: 'isPlayer', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
+      isPerson: { label: 'isPerson', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
+      isIfpa: { label: 'isIfpa', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
       firstName: { label: 'First name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       lastName: { label: 'Last name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       initials: { label: 'Initials', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
@@ -82,7 +87,7 @@ var classes = {
       main: { label: 'Main', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
       classics: { label: 'Classics', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
       volunteer: { label: 'Volunteer', type: 'checkbox', mandatory: false, special: false, bundle: false, default: true},
-      birthdate: { label: 'Birth date', type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
+      birthDate: { label: 'Birth date', type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
       dateRegistered: { label: 'Date registered', type: 'hidden', mandatory: false, special: false, bundle: false, default: new Date().toISOString().substring(0,10)}
     },
     complete: false
@@ -405,24 +410,24 @@ function PLAYER(data) {
     this.gender_id = data.gender_id;
     this.streetAddress = data.streetAddress;
     this.zipCode = data.zipCode;
-    this.city = null;
+    this.city = data.city;
     this.city_id = data.city_id;
-    this.region = null;
+    this.region = data.region;
     this.region_id = data.region_id;
-    this.country = null;
+    this.country = data.country;
     this.country_id = data.country_id;
     this.continent_id = data.continent_id;
-    this.continent = null;
+    this.continent = data.continent;
     this.telephoneNumber = data.telephoneNumber;
     this.mobileNumber = data.mobileNumber;
     this.mailAddress = data.mailAddress;
     this.dateRegistered = data.dateRegistered;
     this.birthDate = data.birthDate;
-    this.classics = null;
-    this.main = null;
-    this.volunteer = null;
+    this.classics = data.classics;
+    this.main = data.main;
+    this.volunteer = data.volunteer;
     this.username = data.username;
-    this.password = null;
+    this.password = data.password;
     this.link = addLink(this);
     if (this.id !=0) {
       players.push(this); // Add to the global players array
@@ -561,6 +566,18 @@ function newGuy(dstId) {
   printPlayerAsList(player(), dstId); // Create a dummy player with no info, and show the (non-existing) details form fo the player.
 }
 
+function checkIfpaBtn(el, event) {
+  setTimeout(function() { 
+    var regExp = /^[0-9]{1,}$|.{3,}/;
+    if (regExp.test(el.value)) {
+      document.getElementById('ifpaButton').disabled = false;
+      enterClick('ifpaButton', event);
+    } else {
+      document.getElementById('ifpaButton').disabled = true;
+    }
+  }, 100);
+}
+
 // This prints out the details form. Now done with meta arrays.
 function printPlayerAsList(obj,dstId) {
   $('#' + dstId + 'TableDiv').hide(); // Hide the table div with players - either we've found the player or this is a new guy.
@@ -570,6 +587,9 @@ function printPlayerAsList(obj,dstId) {
   }
   if ($('#idHidden')) {
     $('#idHidden').remove(); // If this is not the first time this player found him/her self, there will be old hidden fields laying around. Let's remove those.
+  }
+  if ($('#ifpa_idHidden')) {
+    $('#ifpa_idHidden').remove(); // If this is not the first time this player found him/her self, there will be old hidden fields laying around. Let's remove those.
   }
   if ($('#dateRegisteredHidden')) {
     $('#dateRegisteredHidden').remove(); // ...both of them.
@@ -644,7 +664,7 @@ function addFieldRow(tbody, obj, prop) {
     input[(type == 'checkbox') ? 'checked' : 'value'] = (obj[prop]) ? obj[prop] : classes[obj.class].fields[prop].default; // Add existing value, or the default value
     input.onchange = function() { checkField(this); }; // Let's check that the field is correct. Only done when leaving the field (changed), and not at every keypress.
     if (classes[obj.class].fields[prop].special == 'date') {
-      setTimeout(function() { $('#' + input.id).datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, yearRange: '-100:-0' }); }, 100); // Fancy date picker added!
+      setTimeout(function() { $('#' + input.id).datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, yearRange: '-100:-0', changeMonth: true }); }, 100); // Fancy date picker added!
     }
   }
   if (type != 'hidden') { // No label, td or span needed for hidden stuff
@@ -653,6 +673,7 @@ function addFieldRow(tbody, obj, prop) {
     lblTd.appendChild(lbl);
     var span = document.createElement('span'); // Let's put the result from the field check in here
     span.id = prop + 'Span';
+    span.className += ' errorSpan'
     if (classes[obj.class].fields[prop].mandatory) {
       input.className += ' mandatory'; // Mandatory fields will become yellow
       span.appendChild(document.createTextNode('*')); // Let's be very clear!
@@ -692,37 +713,7 @@ function submit(obj) {
   .done(function(data) { // Allright, recaptcha response received
     Recaptcha.destroy(); // Let's destroy the recaptcha (either we are done and fine, or we need to create a new one anyway)
     if (data == 'Valid') { // Allright, recaptcha was fine!
-      var jsonPlayer = JSON.stringify(obj, [ // I stringify the object...
-        'dateRegistered', 
-        'firstName', 
-        'lastName', 
-        'initials', 
-        'username', 
-        'password', 
-        'streetAddress', 
-        'zipCode', 
-        'telephoneNumber',
-        'mobileNumber', 
-        'mailAddress', 
-        'birthDate', 
-        'city_id', 
-        'region_id', 
-        'country_id', 
-        'continent_id',
-        'city', 
-        'region', 
-        'country', 
-        'continent', 
-        'gender', 
-        'gender_id']
-      );
-      $.post('ajax/register.php', JSON.parse(jsonPlayer)) // ...and then objectify it again. Why? Shouldn't be necessary? I should be able to just use the object straight on? I don't remeber why I did this.
-      .done(function(data) {
-        alert(data); // No real insertion or updates in the database yet, but I do want to know what would have been inserted or updated.
-      })
-      .fail(function(jqHXR,status,error) {
-        alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
-      }); 
+      checkFields(obj);
     } else {
       alert('Recaptcha was invalid - try again! ' + data); // Oh, no! Our user can't read!
       Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { //... so let's recreate the recaptcha, and start all over again.
@@ -736,18 +727,47 @@ function submit(obj) {
   });
 }
 
-function checkField(el) {
-  $.post('ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check if the username is up for grabs.
+function submitChecked(obj) {
+  var props = [];
+  for (var prop in classes[obj.class].fields) {
+    props.push(prop);
+  }
+  var jsonPlayer = JSON.stringify(obj, props); // I stringify the object...
+  var newObj = JSON.parse(jsonPlayer); // ...and then objectify it again. Why? Shouldn't be necessary? I should be able to just use the object straight on? I don't remeber why I did this!
+  alert(newObj); // No real insertion yet
+}
+
+function checkFields(obj) {
+  var propArray = [];
+  for (var prop in classes[obj.class].fields) {
+    propArray.push('{"f":"' + prop + '","v":"' + obj[prop] +'","id":"' + obj.id +'"}');
+  }
+  $.post('ajax/checkField.php', {data: propArray}) // Let's check the fields
   .done(function(data) {
-    var txt = document.createTextNode(data);
-    document.getElementById(el.id + 'Span').innerHTML = '';
-    document.getElementById(el.id + 'Span').appendChild(txt);
-    if (data == ' Username is already taken!') { // Oh, no! Some bastard took my name!
-      document.getElementById(el.id + 'Span').className += ' error';
-      document.getElementById('submit').disabled = true; // No submitting taken usernames!
+    if (data.valid) {
+      submitChecked(obj);
     } else {
-      $('#' + el.id + 'Span').removeClass('error'); // This means the username is free (or that it already belongs to the user)
-      document.getElementById('submit').disabled = false; // OK to submit
+      Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { // Didn't validate! So let's recreate the recaptcha, and start all over again.
+        theme: 'blackglass',
+        callback: Recaptcha.focus_response_field
+      });
+      alert('Something is wrong with ' + data.field + ': ' + data.reason);
+    }
+  })
+  .fail(function(jqHXR,status,error) {
+    alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+  });
+}
+
+function checkField(el) {
+  $.post('ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check the field
+  .done(function(data) {
+    document.getElementById('submit').disabled = !data.valid; // OK or not OK to submit
+    if (document.getElementById(el.name + 'Span')) {
+      var txt = (data.valid) ? ((classes['player'].fields[el.name].mandatory) ? '*' : '') : data.reason;
+      $('#' + el.name + 'Span').toggleClass('error', !data.valid); // Add or remove error 
+      document.getElementById(el.name + 'Span').innerHTML = '';
+      document.getElementById(el.name + 'Span').appendChild(document.createTextNode(txt));
     }
   })
   .fail(function(jqHXR,status,error) {
@@ -758,46 +778,19 @@ function checkField(el) {
 // This is where the details form is validated. We won't validate much - just some basic stuff. Things like invalid email addresses and stuff is ok, we'll fix it in the database if necessary.
 function checkForm(el) {
   var newData = $('#newData').serializeArray(); // For some reason, I can't use the original object. So we have to serialize the form info...
-  var obj = unknown(classes['player']); // ...and create a new object from it. Very annoying.
-  for(var i = 0; i < newData.length; i++) {
-    switch (newData[i].name) {
-      case 'dateRegistered':
-      case 'id':
-      case 'firstName':
-      case 'lastName':
-      case 'initials':
-      case 'username':
-      case 'password':
-      case 'streetAddress':
-      case 'zipCode':
-      case 'telephoneNumber':
-      case 'mobileNumber':
-      case 'mailAddress':
-      case 'birthDate':
-        obj[newData[i].name] = newData[i].value; // All the above are simple add values to the property.
-      break;
-      case 'city':
-      case 'region':
-      case 'country':
-      case 'continent':
-      case 'gender':
-        obj[newData[i].name + '_id'] = newData[i].value; // The ones above we want to store as IDs
-      break;
-      case 'cityAddText':
-      case 'regionAddText':
-        if (newData[i].value.length > 0) {
-          obj[newData[i].name.replace('AddText', '')] = newData[i].value; // The user added a new object, so let's save the name.
-          obj[newData[i].name + '_id'] = 0; // ...and to be safe - also remove the ID from the dropdown.
-        }
-      break;
-      case 'main':
-      case 'classics':
-        if (newData[i].value == 'on') {
-          obj[newData[i].name] = true; // Will actually be a 1 when received in ajax
-        } else {
-          obj[newData[i].name] = false; // Will actually be a 0 when received in ajax
-        }
-      break;
+  var obj = player(newData); // ...and create a new object from it. Very annoying.
+  for (var prop in classes[obj.class].fields) {
+    var meta = classes[obj.class].fields[prop]
+    obj[prop] = document.getElementById(prop + ucfirst(meta.type)).value;
+    if (meta.type == 'select') {
+      if (meta.special == 'add') { // For selects we want to store the IDs, unless they added something
+        if (document.getElementById(prop + 'AddText').value != '') {
+          obj[prop] = document.getElementById(prop + 'AddText').value;
+        } 
+      }
+      obj[prop + '_id'] = obj[prop];
+    } else if (meta.type == 'checkbox') {
+      obj[prop] = document.getElementById(prop + ucfirst(meta.type)).checked;
     }
   }
   // Check required fields:
@@ -990,7 +983,7 @@ function geoSelected(sel) { // Someone chose something in a geo-select! The "sel
 function geoAdd(el, add) { // Somebody wants to add (or regrets wanting to add depending on add = true/false) a geo-object. The "el" is the plus sign. 
   if (add) { // We're adding!
     // Let's change the label using some creative (and ugly) cut'n'pasting-replacing of element IDs
-    document.getElementById(el.id.replace('Add', '') + 'SelectLabel').innerHTML = 'New ' + document.getElementById(el.id.replace('Add', '') + 'SelectLabel').innerHTML.toLowerCase();
+    document.getElementById(el.id.replace('Add', '') + 'Label').innerHTML = 'New ' + document.getElementById(el.id.replace('Add', '') + 'Label').innerHTML.toLowerCase();
     $('#' + el.id.replace('Add', '') + 'Select').hide(); // Hide the dropdown
     el.style.display = 'none'; // Hide the plus sign
     $('#' + el.id + 'Text').show(); // Show the text input field
@@ -998,7 +991,7 @@ function geoAdd(el, add) { // Somebody wants to add (or regrets wanting to add d
     $('#' + el.id + 'Text').focus(); // Put the focus on the text input
   } else { // We're regretting!
   // Some more creative (and ugly) cut'n'pasting-replacing of element IDs to change the label back
-    document.getElementById(el.id.replace('AddCancel', '') + 'SelectLabel').innerHTML = ucfirst(document.getElementById(el.id.replace('AddCancel', '') + 'SelectLabel').innerHTML.replace('New ', ''));
+    document.getElementById(el.id.replace('AddCancel', '') + 'Label').innerHTML = ucfirst(document.getElementById(el.id.replace('AddCancel', '') + 'Label').innerHTML.replace('New ', ''));
     $('#' + el.id.replace('AddCancel', '') + 'Select').show(); // Show the dropdown again
     $('#' + el.id.replace('Cancel', '')).show(); // Show the plus sign again
     $('#' + el.id.replace('Cancel', '') + 'Text').hide(); // Hide the text input
@@ -1146,7 +1139,13 @@ function addRow(tbody, obj, link, meBtn, sels) {
         } 
         var item = (item) ? item : ((obj[headers[header]].hasOwnProperty('name')) ? document.createTextNode(obj[headers[header]].name) : document.createTextNode(obj[headers[header]])); // There was no link - so let's just add the text (either a name - if this is an object, or the actual content - if this is a string)
       }
-      td.appendChild(item);
+      if (obj[headers[header]].hasOwnProperty('name')) {
+        if (obj[headers[header]].id > 0) {
+          td.appendChild(item);
+        } 
+      } else {
+        td.appendChild(item);
+      }
     }
   }
   if (meBtn) { // This is me! button

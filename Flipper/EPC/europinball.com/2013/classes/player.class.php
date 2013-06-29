@@ -32,6 +32,7 @@
     public $birthDate;
     public $classics;
     public $main;
+    public $volunteer;
     public $qualGroups = [];
     public $class = 'player';
     

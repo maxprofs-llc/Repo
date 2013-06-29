@@ -77,6 +77,10 @@ li {
   font-style: bold;
 }
 
+.errorSpan {
+  margin-left: 10px;
+}
+
 .errorTd {
   background-color: #FF0000;
 }

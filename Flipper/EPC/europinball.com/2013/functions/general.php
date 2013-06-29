@@ -67,69 +67,224 @@
     return $isValid;
   }
   
-  function getPlayerByIfpaId($dbh, $ifpaId, $type = null) {
-    if(preg_match('/@/',$ifpaId)) {
-      $type = 'email';
-    } else if (preg_match('/^[0-9]{1,5}$/', $ifpaId)) {
-      $type = 'ifpa';
-    } else if (preg_match('/^[0-9 \-\+\(\)]{6,}$/',$ifpaId)) {
-      $type = 'phone';
-    } else if (preg_match('/^[a-zA-Z0-9 \-]{3}$/',$ifpaId)) {
-      $type = 'tag';
-    } else {
-      $type = 'name';
-    }
+  function getRegions($dbh, $where, $order = 'order by r.name') {
     $query = '
-      select 
-        p.id as id,
-        if(p.id is not null,"person",if(l.id is not null,"player",null)) as type,
-        coalesce(l.firstName, p.firstName) as firstName,
-        coalesce(l.lastName, p.lastName) as lastName,
-        trim(concat(ifnull(coalesce(l.firstName, p.firstName),"")," ",ifnull(coalesce(l.lastName, p.lastName),""))) as name,
-        coalesce(l.initials, p.initials) as initials,
-        coalesce(l.gender_id, p.gender_id) as gender_id,
-        coalesce(l.streetAddress, p.streetAddress) as streetAddress,
-        coalesce(l.zipCode, p.zipCode) as zipCode,
-        coalesce(l.city_id, p.city_id) as city_id,
-        coalesce(l.region_id, p.region_id) as region_id,
-        coalesce(l.country_id, p.country_id) as country_id,
-        coalesce(l.continent_id, p.continent_id) as continent_id,
-        coalesce(l.telephoneNumber, p.telephoneNumber) as telephoneNumber,
-        coalesce(l.mobileNumber, p.mobileNumber) as mobileNumber,
-        coalesce(l.mailAddress, p.mailAddress) as mailAddress,
-        coalesce(l.birthDate, p.birthDate) as birthDate,
-        p.ifpa_id as ifpa_id,
-        if(p.id is not null,1,0) as isPerson,
-        if(l.id is not null,1,0) as isPlayer,
-        p.username as username
-      from person p 
-      left join player l 
-        on l.person_id = p.id and (l.tournamentDivision_id = 1 or l.tournamentDivision_id = 2) 
+      select
+        r.id as id,
+        r.name as name,
+        r.altName as altName,
+        r.latitude as latitude,
+        r.longitude as longitude,
+        coalesce(co.id, pRCo.id) as country_id,
+        coalesce(co.name, pRCo.name) as country,
+        coalesce(cn.id, rRCn.id, coCn.id) as continent_id,
+        coalesce(cn.name, rRCn.name, coCn.name) as continent,
+        c.comment as comment
+      from city c
+      left join parentRegion pR
+        on c.parentRegion_id = pR.id
+      left join country co
+        on c.country_id = co.id
+      left join country pRCo
+        on pR.country_id = pRCo.id
+      left join continent cn
+        on c.continent_id = cn.id
+      left join continent pRCn
+        on pR.continent_id = pRCn.id
+      left join continent coCn
+        on co.continent_id = coCn.id
     '; 
-    switch ($type) {
-      case 'email':
-        $where = ' where coalesce(l.mailAddress, p.mailAddress) = "'.$ifpaId.'"';
-      break;
-      case 'ifpa':
-        $where = ' where p.ifpa_id = '.$ifpaId;
-      break;
-      case 'phone':
-        $where = ' where replace(replace(replace(replace(replace(coalesce(l.telephoneNumber, p.telephoneNumber)," ",""),")",""),")",""),"-",""),"+","") like "%'.preg_replace('/[^0-9]/','',$ifpaId).'%" or replace(replace(replace(replace(replace(coalesce(l.mobileNumber, p.mobileNumber)," ",""),")",""),")",""),"-",""),"+","") like "%'.preg_replace('/[^0-9]/','',$ifpaId).'%"';
-      break;
-      case 'tag':
-        $where = ' where coalesce(l.initials, p.initials) like "'.preg_replace('/ $/','',$ifpaId).'"';
-      break;
-      case 'name':
-        $where = ' where concat(coalesce(l.firstName, p.firstName), " ", coalesce(l.lastName, p.lastName)) like "%'.$ifpaId.'%"';
-      break;
-    }
-    // echo($query.$where);
-    $sth = $dbh->query($query.$where);
-    while ($obj = $sth->fetchObject('player')) {
-      $obj->populate($dbh);
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('city')) {
+//      $obj->populate($dbh);
       $objs[] = $obj;
     }
     return $objs;
+  }
+  
+  function getCities($dbh, $where, $order = 'order by c.name') {
+    $query = '
+      select
+        c.id as id,
+        c.name as name,
+        c.altName as altName,
+        r.id as region_id,
+        r.name as region,
+        r.latitude as latitude,
+        r.longitude as longitude,
+        coalesce(co.id, rCo.id) as country_id,
+        coalesce(co.name, rCo.name) as country,
+        coalesce(cn.id, rCn.id, coCn.id) as continent_id,
+        coalesce(cn.name, rCn.name, coCn.name) as continent,
+        c.comment as comment
+      from city c
+      left join region r
+        on c.region_id = r.id
+      left join country co
+        on c.country_id = co.id
+      left join country rCo
+        on r.country_id = rCo.id
+      left join continent cn
+        on c.continent_id = cn.id
+      left join continent rCn
+        on r.continent_id = rCn.id
+      left join continent coCn
+        on co.continent_id = coCn.id
+    '; 
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('city')) {
+//      $obj->populate($dbh);
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  function getPlayers($dbh, $where, $order = 'order by p.firstName, p.lastName') {
+    $query = '
+      select 
+        p.id as id,
+        "player" as class,
+        "player" as type,
+        p.firstName as firstName,
+        p.lastName as lastName,
+        trim(concat(ifnull(p.firstName,"")," ",ifnull(p.lastName,""))) as name,
+        p.initials as initials,
+        g.id as gender_id,
+        g.name as gender,
+        p.streetAddress as streetAddress,
+        p.zipCode as zipCode,
+        pC.id as city_id,
+        pC.name as city,
+        coalesce(pR.id, pRPr.id, pCR.id, pCRpR.id) as region_id,
+        coalesce(pR.name, pRPr.name, pCR.name, pCRpR.name) as region,
+        coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) as country_id,
+        coalesce(pCo.name, pCoPco.name, pRCo.name, pRCoPco.name, pRPrCo.name, pRPrCoPco.name, pCCo.name, pCCoPco.name, pCRCo.name, pCRCoPco.name, pCRPrCo.name, pCRPrCoPco.name) as country,
+        coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) as continent_id,
+        coalesce(pCn.name, pCoCn.name, pCoPcoCn.name, pRCn.name, pRCoCn.name, pRCoPcoCn.name, pRPrCn.name, pRPrCoCn.name, pRPrCoPcoCn.name, pCCn.name, pCCoCn.name, pCCoPcoCn.name, pCRCn.name, pCRCoCn.name, pCRCoPcoCn.name, pCRPrCn.name, pCRPrCoCn.name, pCRPrCoPcoCn.name) as continent,
+        p.telephoneNumber as telephoneNumber,
+        p.mobileNumber as mobileNumber,
+        p.mailAddress as mailAddress,
+        p.birthDate as birthDate,
+        p.ifpa_id as ifpa_id,
+        p.comment as comment,
+        if(p.ifpa_id is not null,1,0) as isIfpa,
+        null as password,
+        if(p.id is not null,1,0) as isPerson,
+        if(m.id is not null or cl.id is not null,1,0) as isPlayer,
+        if(m.id is not null,1,0) as main,
+        if(cl.id is not null,1,0) as classics,
+        if(v.id is not null,1,0) as volunteer,
+        p.username as username
+      from person p 
+      left join player m
+        on m.person_id = p.id and m.tournamentDivision_id = 1
+      left join player cl
+        on cl.person_id = p.id and cl.tournamentDivision_id = 2
+      left join volunteer v 
+        on v.person_id = p.id and v.tournamentEdition_id = 1 
+      left join city pC
+        on p.city_id = pC.id
+      left join region pR
+        on p.region_id = pR.id
+      left join region pRPr
+        on pR.parentregion_id = pRPr.id
+      left join region pCR
+        on pC.region_id = pCR.id
+      left join region pCRpR
+        on pCR.parentregion_id = pCRpR.id
+      left join country pCo
+        on p.country_id = pCo.id
+      left join country pCoPco
+        on pCo.parentcountry_id = pCoPco.id
+      left join country pCCo
+        on pC.country_id = pCCo.id
+      left join country pCCoPco
+        on pCCo.parentcountry_id = pCCoPco.id
+      left join country pRCo
+        on pR.country_id = pRCo.id
+      left join country pRCoPco
+        on pRCo.parentcountry_id = pRCoPco.id
+      left join country pRPrCo
+        on pRPr.country_id = pRPrCo.id
+      left join country pRPrCoPco
+        on pRPrCo.parentcountry_id = pRPrCoPco.id
+      left join country pCRCo
+        on pCR.country_id = pCRCo.id
+      left join country pCRCoPco
+        on pCRCo.parentcountry_id = pCRCoPco.id
+      left join country pCRPrCo
+        on pCRpR.country_id = pCRPrCo.id
+      left join country pCRPrCoPco
+        on pCRPrCo.parentcountry_id = pCRPrCoPco.id
+      left join continent pCn
+        on p.continent_id = pCn.id
+      left join continent pCoCn
+        on pCo.continent_id = pCoCn.id
+      left join continent pCoPcoCn
+        on pCoPco.continent_id = pCoPcoCn.id
+      left join continent pCCn
+        on pC.continent_id = pCCn.id
+      left join continent pCCoCn
+        on pCCo.continent_id = pCCoCn.id
+      left join continent pCCoPcoCn
+        on pCCoPco.continent_id = pCCoPcoCn.id
+      left join continent pRCn
+        on pR.continent_id = pRCn.id
+      left join continent pRCoCn
+        on pRCo.continent_id = pRCoCn.id
+      left join continent pRCoPcoCn
+        on pRCoPco.continent_id = pRCoPcoCn.id
+      left join continent pRPrCn
+        on pRPr.continent_id = pRPrCn.id
+      left join continent pRPrCoCn
+        on pRPrCo.continent_id = pRPrCoCn.id
+      left join continent pRPrCoPcoCn
+        on pRPrCoPco.continent_id = pRPrCoPcoCn.id
+      left join continent pCRCn
+        on pCR.continent_id = pCRCn.id
+      left join continent pCRCoCn
+        on pCRCo.continent_id = pCRCoCn.id
+      left join continent pCRCoPcoCn
+        on pCRCoPco.continent_id = pCRCoPcoCn.id
+      left join continent pCRPrCn
+        on pCRpR.continent_id = pCRPrCn.id
+      left join continent pCRPrCoCn
+        on pCRPrCo.continent_id = pCRPrCoCn.id
+      left join continent pCRPrCoPcoCn
+        on pCRPrCoPco.continent_id = pCRPrCoPcoCn.id
+      left join gender g
+        on p.gender_id = g.id
+      left join tournamentDivision mT
+        on m.tournamentDivision_id = mT.id
+      left join tournamentDivision clT
+        on m.tournamentDivision_id = clT.id
+      left join tournamentDivision vT
+        on m.tournamentDivision_id = vT.id
+      left join tournamentEdition e
+        on (mT.tournamentEdition_id = e.id or clT.tournamentEdition_id = e.id or v.tournamentEdition_id = e.id) and e.id = 1 
+    '; 
+//    echo($query.' '.$where.' '.$order);
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('player')) {
+//      $obj->populate($dbh);
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  function getPlayerByIfpaId($dbh, $ifpaId, $type = null) {
+    if(preg_match('/@/',$ifpaId)) {
+      $where = 'where p.mailAddress = "'.$ifpaId.'"';
+    } else if (preg_match('/^[0-9]{1,5}$/', $ifpaId)) {
+      $where = 'where p.ifpa_id = '.$ifpaId;
+    } else if (preg_match('/^[0-9 \-\+\(\)]{6,}$/',$ifpaId)) {
+      $where = 'where replace(replace(replace(replace(replace(p.telephoneNumber," ",""),")",""),")",""),"-",""),"+","") like "%'.preg_replace('/[^0-9]/','',$ifpaId).'%" or replace(replace(replace(replace(replace(p.mobileNumber," ",""),")",""),")",""),"-",""),"+","") like "%'.preg_replace('/[^0-9]/','',$ifpaId).'%"';
+    } else if (preg_match('/^[a-zA-Z0-9 \-]{3}$/',$ifpaId)) {
+      $where = 'where p.initials like "'.preg_replace('/ $/','',$ifpaId).'"';
+    } else {
+      $where = 'where concat(ifnull(p.firstName,""), " ", ifnull(p.lastName,"")) like "%'.$ifpaId.'%"';
+    }
+    return getPlayers($dbh, $where);
   } 
     
   function addPlayerGeo($dbh, $player) {
@@ -172,7 +327,115 @@
       $sth = $dbh->prepare($query);
       $sth->execute();
     }
-    
+  }
+  
+  function checkField($dbh, $field, $value, $id = 0) {
+    switch ($field) {
+      case 'username':
+        if (!preg_match('/[a-zA-Z0-9\-_]{3,32}/', $value)) {
+          $return = array(false, '{"valid":false,"reason":"Username must be at least three character and can only include a-Z, A-Z, 0-9, dashes and underscores!","field":"'.$field.'"}');
+        } else {
+          $where = ' where username = "'.$value.'"';
+          if ($id && $id != 0) {
+            $where .= ' and id != '.$id;
+          }
+          $query = 'select count(*) from person '.$where;
+          $sth = $dbh->query($query);
+          if ($sth->fetchColumn() > 0) {
+            $return = array(false, '{"valid":false,"reason":"Username is already taken!","field":"'.$field.'"}');
+          } else {
+            $return = array(true, '{"valid":true,"reason":"Username is up for grabs (or unchanged)!","field":"'.$field.'"}');
+          }
+        }
+      break;
+      case 'mailAddress':
+        if (!validEmail($value)) {
+          $return = array(false, '{"valid":false,"reason":"Invalid mail address!","field":"'.$field.'"}');
+        } else {
+          $return = array(true, '{"valid":true,"reason":"Mail address is OK!","field":"'.$field.'"}');
+        }
+      break;
+      case 'telephoneNumber':
+        if ($value == '') {
+          $return = array(true, '{"valid":true,"reason":"Phone number is OK!","field":"'.$field.'"}');
+        }
+      case 'mobileNumber':
+        if (!preg_match('/^[0-9 \-\+\(\)]{6,}$/', $value)) {
+          $return = array(false, '{"valid":false,"reason":"Please use only numbers, parantheses, spaces, dashes and plus signs!","field":"'.$field.'"}');
+        } else {
+          $return = array(true, '{"valid":true,"reason":"Phone number is OK!","field":"'.$field.'"}');
+        }
+      break;
+      case 'firstName':
+      case 'lastName':
+      if ($value) {
+          $return = array(true, '{"valid":true,"reason":"'.ucfirst($field).' is OK!","field":"'.$field.'"}');
+        } else {
+          $return = array(false, '{"valid":false,"reason":"'.ucfirst($field).' is required!","field":"'.$field.'"}');
+        }
+      break;
+      case 'birthDate':
+      case 'dateRegistered':
+      if (checkdate(preg_replace('/00/','01',substr($value, 5,2)), preg_replace('/00/','01',substr($value, 8,2)), substr($value, 0,4)) || $value == '') {
+          $return = array(true, '{"valid":true,"reason":"'.ucfirst($field).' is OK!","field":"'.$field.'"}');
+        } else {
+          $return = array(false, '{"valid":false,"reason":"Invalid date format - use ISO 8601 format: YYYY-MM-DD!","field":"'.$field.'"}');
+        }
+      break;
+      case 'password':
+        if (preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$])[0-9A-Za-z!@#$]{6,50}$/', $value)) {
+          $return = array(true, '{"valid":true,"reason":"Password is OK!","field":"'.$field.'"}');
+        } else {
+          $return = array(false, '{"valid":false,"reason":"Password is required to be at least 6 characters, including a number, a letter and one of !@#$"}');
+        }
+      break;
+      case 'initials':
+        if (preg_match('/^[a-zA-Z0-9 \-]{1,3}$/', $value) || $value == '') {
+          $return = array(true, '{"valid":true,"reason":"Initials are OK!","field":"'.$field.'"}');
+        } else {
+          $return = array(false, '{"valid":false,"reason":"Initials can only be at most three characters without any strange ones!","field":"'.$field.'"}');
+        }
+      break;
+      case 'city':
+      case 'region':
+      case 'country':
+      case 'continent':
+      case 'gender':
+        if (preg_match('/^[0-9]+$/', $value)) {
+          $where = ' where id = "'.$value.'"';
+          $query = 'select count(*) from '.$field.' '.$where;
+          $sth = $dbh->query($query);
+          if ($sth->fetchColumn() > 0) {
+            $return = array(true, '{"valid":true,"reason":"'.ucfirst($field).' is OK!","field":"'.$field.'"}');
+          } else {
+            $return = array(false, '{"valid":false,"reason":"'.ucfirst($field).' ID '.$value.' doesn\'t exist!","field":"'.$field.'"}');
+          }
+        } else {
+          if ($value) {
+            $return = array(true, '{"valid":true,"reason":"'.ucfirst($field).' is OK!","field":"'.$field.'"}');
+          } else {
+            $return = array(false, '{"valid":false,"reason":"'.ucfirst($field).' is required!","field":"'.$field.'"}');
+          }
+        }
+      break;
+      case 'streetAddress':
+      case 'zipCode':
+      case 'main':
+      case 'id':
+      case 'ifpa_id':
+      case 'isPlayer':
+      case 'isPerson':
+      case 'isIfpa':
+      case 'class':
+      case 'classics':
+      case 'volunteer':
+        $return = array(true, '{"valid":true,"reason":"Not checked!","field":"'.$field.'"}');
+      break;
+      default:
+        $return = array(false, '{"valid":false,"reason":"Unknown field!","field":"'.$field.'"}');
+      break;
+    }
+    return $return;
   }
   
   function addGeo($dbh, $geoType, $name, $parentType = null, $parentId = null) {
@@ -191,12 +454,11 @@
         $objs = array_filter($objs, $cmp);
       }
     }
-    debug($objs);
     return $objs;
   }
   
   function cmpGeo($attr, $id, $type = true) {
-    debug('A: '.$attr.' ID: '.$id.' T: '.$type."\n<br />");
+//    debug('A: '.$attr.' ID: '.$id.' T: '.$type."\n<br />");
     return function($obj) use($attr, $id, $type) { 
       return ($obj->{$attr.'_id'} == $id) ? $type : !$type; 
     };
@@ -226,7 +488,6 @@
         locate($dbh, $obj, 'country');
       break;
       case 'country':
-      debug('LOCATE');
         $obj->country_id = (isset($obj->country_id)) ? $obj->country_id : ((isset($obj->city->country_id)) ? $obj->city->country_id : ((isset($obj->region->country_id)) ? $obj->region->country_id : null));
         $obj->country = (isset($obj->country_id)) ? getObject($dbh, 'country', $obj->country_id) : null;
         locate($dbh, $obj, 'continent');

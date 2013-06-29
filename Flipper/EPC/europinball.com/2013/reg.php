@@ -20,12 +20,13 @@
   $newField->name = 'ifpaId';
   $newField->label = 'Enter IFPA ID, email address, phone number or full name';
   $newField->type = 'text';
-  $newField->keydown = 'enterClick(\'ifpaButton\', event);';
+  $newField->keypress = 'checkIfpaBtn(this, event);';
   $form->addField($newField);
   
 
   $button = new formInput('button', 'ifpaButton', 'Look me up!');
   $button->type = 'button';
+  $button->disabled = true;
   $button->action = "ifpaReg('ifpaIdText', 'ifpaRegResults');";
   $form->addField($button);
 

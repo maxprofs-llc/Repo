@@ -9,6 +9,8 @@
     public $value;
     public $text;
     public $keydown;
+    public $keyup;
+    public $keypress;
     public $disabled = false;
     public $loading = true;
     public $addIcon = true;
@@ -104,6 +106,12 @@
           }
           if ($this->keydown) {
             $this->content .= ' onkeydown="'.$this->keydown.'"';
+          }
+          if ($this->keyup) {
+            $this->content .= ' onkeydown="'.$this->keyup.'"';
+          }
+          if ($this->keypress) {
+            $this->content .= ' onkeydown="'.$this->keypress.'"';
           }
           if ($this->value) {
             $this->content .= ' value="'.$this->value.'"';
