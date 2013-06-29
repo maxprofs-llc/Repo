@@ -568,10 +568,11 @@ function newGuy(dstId) {
 
 function checkIfpaBtn(el, event) {
   setTimeout(function() { 
-    var regExp = /^[0-9]{1,}$|.{3,}/;
-    if (regExp.test(el.value)) {
-      document.getElementById('ifpaButton').disabled = false;
-      enterClick('ifpaButton', event);
+    if (/^[0-9]{1,}$|.{3,}/.test(el.value)) {
+      document.getElementById('ifpaButton').disabled = document.getElementById('newButton').disabled;
+      if (!document.getElementById('ifpaButton').disabled) {
+        enterClick('ifpaButton', event);
+      }
     } else {
       document.getElementById('ifpaButton').disabled = true;
     }
@@ -731,10 +732,20 @@ function submitChecked(obj) {
   var props = [];
   for (var prop in classes[obj.class].fields) {
     props.push(prop);
+    if (classes[obj.class].fields[prop].type == 'select') {
+      props.push(prop + '_id'); // Keep the ID fields!
+    }
   }
+  debugOut(props,'props');
   var jsonPlayer = JSON.stringify(obj, props); // I stringify the object...
   var newObj = JSON.parse(jsonPlayer); // ...and then objectify it again. Why? Shouldn't be necessary? I should be able to just use the object straight on? I don't remeber why I did this!
-  alert(newObj); // No real insertion yet
+  $.post('ajax/register.php', newObj) // Send to server
+  .done(function(data) {
+    debugOut(data,'data');
+  })
+  .fail(function(jqHXR,status,error) {
+    alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+  });
 }
 
 function checkFields(obj) {
@@ -862,6 +873,9 @@ function getObjects(type) { // Load all objects from ajax. If type is specified,
       }
       if (complete('geo')) {
         document.getElementById('newButton').disabled = false;
+        if (/^[0-9]{1,}$|.{3,}/.test(document.getElementById('ifpaIdText').value)) {
+          document.getElementById('ifpaButton').disabled = false;
+        }
       }
     });
   } else {

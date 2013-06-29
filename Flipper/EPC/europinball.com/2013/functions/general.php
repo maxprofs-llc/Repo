@@ -67,32 +67,17 @@
     return $isValid;
   }
   
-  function getRegions($dbh, $where, $order = 'order by r.name') {
+  function getContinents($dbh, $where, $order = 'order by r.name') {
     $query = '
       select
-        r.id as id,
-        r.name as name,
-        r.altName as altName,
-        r.latitude as latitude,
-        r.longitude as longitude,
-        coalesce(co.id, pRCo.id) as country_id,
-        coalesce(co.name, pRCo.name) as country,
-        coalesce(cn.id, rRCn.id, coCn.id) as continent_id,
-        coalesce(cn.name, rRCn.name, coCn.name) as continent,
+        cn.id as id,
+        "continent" as class,
+        "continent" as type,
+        cn.name as name,
+        cn.latitude as latitude,
+        cn.longitude as longitude,
         c.comment as comment
-      from city c
-      left join parentRegion pR
-        on c.parentRegion_id = pR.id
-      left join country co
-        on c.country_id = co.id
-      left join country pRCo
-        on pR.country_id = pRCo.id
-      left join continent cn
-        on c.continent_id = cn.id
-      left join continent pRCn
-        on pR.continent_id = pRCn.id
-      left join continent coCn
-        on co.continent_id = coCn.id
+      from continent cn
     '; 
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('city')) {
@@ -102,34 +87,144 @@
     return $objs;
   }
   
+  
+  function getCountries($dbh, $where, $order = 'order by r.name') {
+    $query = '
+      select
+        co.id as id,
+        "country" as class,
+        "country" as type,
+        co.name as name,
+        coPco.id as country_id,
+        coPco.name as country,
+        coPco.id as parentCountry_id,
+        coPco.name as parentCountry,
+        co.altName as altName,
+        co.latitude as latitude,
+        co.longitude as longitude,
+        coalesce(rCo.id, rCoPco.id, rPrCo.id, rPrCoPco.id) as country_id,
+        coalesce(rCo.name, rCoPco.name, rPrCo.name, rPrCoPco.name) as country,
+        coalesce(rCn.id, rCoCn.id, rCoPcoCn.id, rPrCn.id, rPrCoCn.id, rPrCoPcoCn.id) as continent_id,
+        coalesce(rCn.name, rCoCn.name, rCoPcoCn.name, rPrCn.name, rPrCoCn.name, rPrCoPcoCn.name) as continent,
+        c.comment as comment
+      from country co
+      left join country coPco
+        on co.parentcountry_id = coPco.id
+      left join continent coCn
+        on co.continent_id = coCn.id
+      left join continent coPcoCn
+        on coPco.continent_id = coPcoCn.id
+    '; 
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('city')) {
+//      $obj->populate($dbh);
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  function getRegions($dbh, $where, $order = 'order by r.name') {
+    $query = '
+      select
+        r.id as id,
+        "region" as class,
+        "region" as type,
+        r.name as name,
+        rPr.id as region_id,
+        rPr.name as region,
+        rPr.id as parentRegion_id,
+        rPr.name as parentRegion,
+        r.altName as altName,
+        r.latitude as latitude,
+        r.longitude as longitude,
+        coalesce(rCo.id, rCoPco.id, rPrCo.id, rPrCoPco.id) as country_id,
+        coalesce(rCo.name, rCoPco.name, rPrCo.name, rPrCoPco.name) as country,
+        coalesce(rCn.id, rCoCn.id, rCoPcoCn.id, rPrCn.id, rPrCoCn.id, rPrCoPcoCn.id) as continent_id,
+        coalesce(rCn.name, rCoCn.name, rCoPcoCn.name, rPrCn.name, rPrCoCn.name, rPrCoPcoCn.name) as continent,
+        c.comment as comment
+      from region r
+      left join country rCo
+        on r.country_id = rCo.id
+      left join country rCoPco
+        on rCo.parentcountry_id = rCoPco.id
+      left join country rPrCo
+        on rPR.country_id = rPrCo.id
+      left join country rPrCoPco
+        on rPrCo.parentcountry_id = rPrCoPco.id
+      left join continent rCn
+        on r.continent_id = rCn.id
+      left join continent rCoCn
+        on rCo.continent_id = rCoCn.id
+      left join continent rCoPcoCn
+        on rCoPco.continent_id = rCoPcoCn.id
+      left join continent rPrCn
+        on rPr.continent_id = rPrCn.id
+      left join continent rPrCoCn
+        on rPrCo.continent_id = rPrCoCn.id
+      left join continent rPrCoPcoCn
+        on rPrCoPco.continent_id = rPrCoPcoCn.id
+    '; 
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('city')) {
+//      $obj->populate($dbh);
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  
   function getCities($dbh, $where, $order = 'order by c.name') {
     $query = '
       select
         c.id as id,
+        "city" as class,
+        "city" as type,
         c.name as name,
         c.altName as altName,
-        r.id as region_id,
-        r.name as region,
-        r.latitude as latitude,
-        r.longitude as longitude,
-        coalesce(co.id, rCo.id) as country_id,
-        coalesce(co.name, rCo.name) as country,
-        coalesce(cn.id, rCn.id, coCn.id) as continent_id,
-        coalesce(cn.name, rCn.name, coCn.name) as continent,
+        c.latitude as latitude,
+        c.longitude as longitude,
+        coalesce(cR.id, cRPr.id) as region_id,
+        coalesce(cR.name, cRPr.name) as region,
+        coalesce(cCo.id, cCoPco.id, cRco.id, cRCoPco.id, cRPrCo.id cRPrCoPco.id) as country_id,
+        coalesce(cCo.name, cCoPco.name, cRco.name, cRCoPco.name, cRPrCo.name cRPrCoPco.name) as country,
+        coalesce(cCn.id, cCoCn.id, cCoPcoCn.id, cRCn.id, cRCoCn.id, cRCoPcoCn.id, cRPrCn.id, cRPrCoCn.id, cRPrCoPcoCn.id) as continent_id,
+        coalesce(cncCn.name, cCoCn.name, cCoPcoCn.name, cRCn.name, cRCoCn.name, cRCoPcoCn.name, cRPrCn.name, cRPrCoCn.name, cRPrCoPcoCn.name) as continent,
         c.comment as comment
       from city c
-      left join region r
-        on c.region_id = r.id
-      left join country co
-        on c.country_id = co.id
-      left join country rCo
-        on r.country_id = rCo.id
-      left join continent cn
-        on c.continent_id = cn.id
-      left join continent rCn
-        on r.continent_id = rCn.id
-      left join continent coCn
-        on co.continent_id = coCn.id
+      left join region cR
+        on c.region_id = cR.id
+      left join region cRPr
+        on cR.parentregion_id = cRPr.id
+      left join country cCo
+        on c.country_id = cCo.id
+      left join country cCoPco
+        on cCo.parentcountry_id = cCoPco.id
+      left join country cRCo
+        on cR.country_id = cRCo.id
+      left join country cRCoPco
+        on cRCo.parentcountry_id = cRCoPco.id
+      left join country cRPrCo
+        on cRPr.country_id = cRPrCo.id
+      left join country cRPrCoPco
+        on cRPrCo.parentcountry_id = cRPrCoPco.id
+      left join continent cCn
+        on c.continent_id = cCn.id
+      left join continent cCoCn
+        on cCo.continent_id = cCoCn.id
+      left join continent cCoPcoCn
+        on cCoPco.continent_id = cCoPcoCn.id
+      left join continent cRCn
+        on cR.continent_id = cRCn.id
+      left join continent cRCoCn
+        on cRCo.continent_id = cRCoCn.id
+      left join continent cRCoPcoCn
+        on cRCoPco.continent_id = cRCoPcoCn.id
+      left join continent cRPrCn
+        on cRPr.continent_id = cRPrCn.id
+      left join continent cRPrCoCn
+        on cRPrCo.continent_id = cRPrCoCn.id
+      left join continent cRPrCoPcoCn
+        on cRPrCoPco.continent_id = cRPrCoPcoCn.id
     '; 
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('city')) {
@@ -155,8 +250,8 @@
         p.zipCode as zipCode,
         pC.id as city_id,
         pC.name as city,
-        coalesce(pR.id, pRPr.id, pCR.id, pCRpR.id) as region_id,
-        coalesce(pR.name, pRPr.name, pCR.name, pCRpR.name) as region,
+        coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) as region_id,
+        coalesce(pR.name, pRPr.name, pCR.name, pCRPr.name) as region,
         coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) as country_id,
         coalesce(pCo.name, pCoPco.name, pRCo.name, pRCoPco.name, pRPrCo.name, pRPrCoPco.name, pCCo.name, pCCoPco.name, pCRCo.name, pCRCoPco.name, pCRPrCo.name, pCRPrCoPco.name) as country,
         coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) as continent_id,
@@ -190,8 +285,8 @@
         on pR.parentregion_id = pRPr.id
       left join region pCR
         on pC.region_id = pCR.id
-      left join region pCRpR
-        on pCR.parentregion_id = pCRpR.id
+      left join region pCRPr
+        on pCR.parentregion_id = pCRPr.id
       left join country pCo
         on p.country_id = pCo.id
       left join country pCoPco
@@ -213,7 +308,7 @@
       left join country pCRCoPco
         on pCRCo.parentcountry_id = pCRCoPco.id
       left join country pCRPrCo
-        on pCRpR.country_id = pCRPrCo.id
+        on pCRPr.country_id = pCRPrCo.id
       left join country pCRPrCoPco
         on pCRPrCo.parentcountry_id = pCRPrCoPco.id
       left join continent pCn
@@ -247,7 +342,7 @@
       left join continent pCRCoPcoCn
         on pCRCoPco.continent_id = pCRCoPcoCn.id
       left join continent pCRPrCn
-        on pCRpR.continent_id = pCRPrCn.id
+        on pCRPr.continent_id = pCRPrCn.id
       left join continent pCRPrCoCn
         on pCRPrCo.continent_id = pCRPrCoCn.id
       left join continent pCRPrCoPcoCn
@@ -287,19 +382,28 @@
     return getPlayers($dbh, $where);
   } 
     
+  function addGeo($dbh, $geoType, $name, $parentType = null, $parentId = null) {
+    $query = 'insert into '.$geoType.' set name="'.$name.'"';
+    $query .= ($parentType) ? ', '.$parentType.'_id="'.$parentId.'"' : '';
+    echo $query;
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    return $dbh->lastInsertId();
+  }
+  
   function addPlayerGeo($dbh, $player) {
     global $geoTypes;
     foreach ($geoTypes as $geoType) {
       echo $geoType.' - '.$parentType.','.$parentId.' | ';
-      if ($player->{$geoType}) {
+      if (preg_match('/^[0-9]+$/', $player->{$geoType})) {
+        $geoId = $player->{$geoType};
+      } else if (preg_match('/.+/', $player->{$geoType})){
         $geoId = addGeo($dbh, $geoType, $player->{$geoType}, $parentType, $parentId);
       }
-      if ($player->{$geoType."_id"}) {
-        $parentType = $geoType;
-        $parentId = $player->{$geoType."_id"};
-      }
+      $player->{$geoType.'_id'} = $geoId;
+      $parentType = $geoType;
+      $parentId = $geoId;
     }
-    $player->{$geoType."_id"} = $geoId;
     return $player;
   }
   
@@ -307,6 +411,8 @@
     global $geoTypes;
     global $playerHeaders;
     $player = addPlayerGeo($dbh, $player);
+    var_dump($player);
+    die('huff');
     $query = 'insert into player set ';
     foreach($playerHeaders as $field) {
       if ($player->$field && $field != 'main' && $field != 'classics') {
@@ -401,7 +507,7 @@
       case 'country':
       case 'continent':
       case 'gender':
-        if (preg_match('/^[0-9]+$/', $value)) {
+        if (preg_match('/^[0-9]+$/', $value) && $value != 0) {
           $where = ' where id = "'.$value.'"';
           $query = 'select count(*) from '.$field.' '.$where;
           $sth = $dbh->query($query);
@@ -436,15 +542,6 @@
       break;
     }
     return $return;
-  }
-  
-  function addGeo($dbh, $geoType, $name, $parentType = null, $parentId = null) {
-    $query = 'insert into '.$geoType.' set name="'.$name.'"';
-    $query .= ($parentType) ? ', '.$parentType.'_id="'.$parentId.'"' : '';
-    echo $query;
-    $sth = $dbh->prepare($query);
-    $sth->execute();
-    return $dbh->lastInsertId();
   }
   
   function geoFilter($objs) {

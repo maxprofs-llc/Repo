@@ -5,9 +5,7 @@
   $allValid = true;
   if ($_REQUEST['data']) {
     foreach ($_REQUEST['data'] as $data) {
-      var_dump($data);
       $value = json_decode($data);
-      var_dump($value);
       $check = checkField($dbh, $value->f, $value->v, $value->id);
       if (!$check[0]) {
         $allValid = false;
