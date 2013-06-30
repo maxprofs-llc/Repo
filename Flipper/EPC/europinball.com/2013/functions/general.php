@@ -11,10 +11,404 @@
     }
   });
   
+  $classes = (object) array(
+    'continent' => (object) array(
+      'name' => 'continent', 'geo' => true, 'plural' => 'continents', 
+      'headers' => array('name', 'latitude', 'longitude'), // Headers normally used in tables and lists
+      'fields' => (object) array(
+        'name' => (object) array(
+          'label' => 'Name',
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''
+        ),
+        'latitude' => (object) array(
+          'label' => 'Latitude',
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''
+        ),
+        'longitude' => (object) array(
+          'label' => 'Longtitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''
+        )
+      ),
+      'complete' => false
+    ),
+    'country' => (object) array(
+      'name' => 'country', 'geo' => true, 'plural' => 'countries',
+      'headers' => array('name', 'continent', 'latitude', 'longitude'), // Headers normally used in tables and lists
+      'fields' => (object) array(
+        'name' => (object) array( 
+          'label' => 'Name',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'continent' => (object) array(
+          'label' => 'Continent',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false  
+        ),
+        'latitude' => (object) array(  
+          'label' => 'Latitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'longitude' => (object) array(  
+          'label' => 'Longtitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''
+        )
+      ),
+      'complete' => false
+    ),
+    'region' => (object) array(
+      'name' => 'region', 'geo' => true, 'plural' => 'regions',
+      'headers' => array('name', 'country', 'continent', 'latitude', 'longitude'),  // Headers normally used in tables nd lists
+      'fields' => (object) array(
+        'name' => (object) array(  
+          'label' => 'Name',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'continent' => (object) array(  
+          'label' => 'Continent',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => 1  
+        ),
+        'country' => (object) array(  
+          'label' => 'Country',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => 1  
+        ),
+        'latitude' => (object) array(  
+          'label' => 'Latitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'longitude' => (object) array(  
+          'label' => 'Longtitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''
+        )
+      ),
+      'complete' => false
+    ),
+    'city' => (object) array(
+      'name' => 'city', 'geo' => true, 'plural' => 'cities',
+      'headers' => array('name', 'region', 'country', 'continent', 'latitude', 'longitude'), // Headers normally used in tables and lists
+      'fields' => (object) array(
+        'name' => (object) array(  
+          'label' => 'Name',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'continent' => (object) array(  
+          'label' => 'Continent',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => 1  
+        ),
+        'country' => (object) array(  
+          'label' => 'Country',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => 1  
+        ),
+        'region' => (object) array(  
+          'label' => 'Region',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => 1  
+        ),
+        'latitude' => (object) array(  
+          'label' => 'Latitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'longitude' => (object) array(  
+          'label' => 'Longtitude',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''
+        )
+      ),
+      'complete' => false
+    ),
+    'player' => (object) array(
+      'name' => 'player', 'geo' => false, 'plural' => 'players', 
+      'headers' => array('name', 'initials', 'city', 'region', 'country', 'continent'), // Headers normally used in tables and lists
+      'fields' => (object) array(
+        'id' => (object) array(  
+          'label' => 'ID',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => 0  
+        ),
+        'ifpa_id' => (object) array(  
+          'label' => 'IFPA ID',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => 0  
+        ),
+        'class' => (object) array(  
+          'label' => 'Class',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => 'player'  
+        ),
+        'isPlayer' => (object) array(  
+          'label' => 'isPlayer',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => true  
+        ),
+        'isPerson' => (object) array(  
+          'label' => 'isPerson',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => true  
+        ),
+        'isIfpa' => (object) array(  
+          'label' => 'isIfpa',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => true  
+        ),
+        'firstName' => (object) array(  
+          'label' => 'First name',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'lastName' => (object) array(  
+          'label' => 'Last name',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'initials' => (object) array(  
+          'label' => 'Initials',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'username' => (object) array(  
+          'label' => 'Username',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'password' => (object) array(  
+          'label' => 'Password',  
+          'type' => 'password',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'gender' => (object) array(  
+          'label' => 'Gender',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false  
+        ),
+        'streetAddress' => (object) array(  
+          'label' => 'Street address',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'zipCode' => (object) array(  
+          'label' => 'ZIP',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'city' => (object) array(  
+          'label' => 'City',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => 'add',  
+          'bundle' => false  
+        ),
+        'region' => (object) array(  
+          'label' => 'Region',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => 'add',  
+          'bundle' => false  
+        ),
+        'country' => (object) array(  
+          'label' => 'Country',  
+          'type' => 'select',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false  
+        ),
+        'continent' => (object) array(  
+          'label' => 'Continent',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false  
+        ),
+        'telephoneNumber' => (object) array(  
+          'label' => 'Phone',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'mobileNumber' => (object) array(  
+          'label' => 'Cell phone',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'mailAddress' => (object) array(  
+          'label' => 'Email',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'main' => (object) array(  
+          'label' => 'Main',  
+          'type' => 'checkbox',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => 1,  
+          'default' => true  
+        ),
+        'classics' => (object) array(  
+          'label' => 'Classics',  
+          'type' => 'checkbox',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => 1,  
+          'default' => true  
+        ),
+        'volunteer' => (object) array(  
+          'label' => 'Volunteer',  
+          'type' => 'checkbox',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => true  
+        ),
+        'birthDate' => (object) array(  
+          'label' => 'Birth date',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => 'date',  
+          'bundle' => false,  
+          'default' => ''  
+        ),
+        'dateRegistered' => (object) array(  
+          'label' => 'Date registered',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'default' => date("Y-m-d")
+        )
+      ),
+      'complete' => false
+    ),
+    'gender' => (object) array(
+      'name' => 'gender', 'geo' => false, 'plural' => 'genders', 
+      'headers' => array('name'),
+      'mandatory' => array('name'),
+      'fields' => (object) array(
+        'name' => (object) array(  
+          'label' => 'Name',  
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false
+        )
+      ),
+      'complete' => true
+    )
+  );
+  
   $geoTypes = array('continent', 'country', 'region', 'city');
-  $playerHeaders = array('firstName', 'lastName', 'initials', 'gender', 'streetAddress', 'zipCode', 'telephoneNumber', 'mailAddress', 'birthDate', 'main', 'classics', 'comment');
-  $playerLabels = array('First name', 'Last name', 'Initials (tag)', 'Gender', 'Address', 'ZIP', 'Phone', 'E-mail', 'Birth date', 'Main division', 'Classics division', 'Comment');
-  $playerTypes = array('text', 'text', 'text', 'select', 'text', 'text', 'text', 'email', 'date', 'checkbox', 'checkbox', 'text');
+  $playerHeaders = array('firstName', 'lastName', 'username', 'password', 'initials', 'ifpa_id', 'gender', 'streetAddress', 'zipCode', 'city', 'region', 'country', 'continent', 'telephoneNumber', 'mobileNumber', 'mailAddress', 'dateRegistered', 'birthDate', 'main', 'classics', 'volunteer', 'id', 'comment');
+  $playerLabels = array('First name', 'Last name', 'Username', 'Password', 'Initials (tag)', 'IFPA ID', 'Gender', 'Address', 'ZIP', 'City', 'Region', 'Country', 'Continent', 'Phone', 'Cell phone', 'E-mail', 'Date registered', 'Birth date', 'Main division', 'Classics division', 'Volunteer', 'ID', 'Comment');
+  $playerTypes = array('text', 'text', 'text', 'text', 'text', 'text', 'select', 'text', 'text', 'select', 'select', 'select', 'select', 'text', 'text', 'text', 'text', 'text', 'checkbox', 'checkbox', 'checkbox', 'text', 'text');
   $debug = $_GET['debug'];
     
   function getObject($dbh, $class, $id) {
@@ -67,28 +461,30 @@
     return $isValid;
   }
   
-  function getContinents($dbh, $where, $order = 'order by r.name') {
+  function getContinents($dbh, $where, $order = 'order by name') {
     $query = '
       select
         cn.id as id,
+        cn.id as continent_id,
         "continent" as class,
         "continent" as type,
         cn.name as name,
         cn.latitude as latitude,
         cn.longitude as longitude,
-        c.comment as comment
+        cn.comment as comment
       from continent cn
     '; 
+    $where = preg_replace('/ id /', ' cn.id ', $where);
+    $where = preg_replace('/ continent_id /', ' cn.id ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
-    while ($obj = $sth->fetchObject('city')) {
-//      $obj->populate($dbh);
+    while ($obj = $sth->fetchObject('continent')) {
       $objs[] = $obj;
     }
     return $objs;
   }
   
   
-  function getCountries($dbh, $where, $order = 'order by r.name') {
+  function getCountries($dbh, $where, $order = 'order by name') {
     $query = '
       select
         co.id as id,
@@ -102,28 +498,30 @@
         co.altName as altName,
         co.latitude as latitude,
         co.longitude as longitude,
-        coalesce(rCo.id, rCoPco.id, rPrCo.id, rPrCoPco.id) as country_id,
-        coalesce(rCo.name, rCoPco.name, rPrCo.name, rPrCoPco.name) as country,
-        coalesce(rCn.id, rCoCn.id, rCoPcoCn.id, rPrCn.id, rPrCoCn.id, rPrCoPcoCn.id) as continent_id,
-        coalesce(rCn.name, rCoCn.name, rCoPcoCn.name, rPrCn.name, rPrCoCn.name, rPrCoPcoCn.name) as continent,
-        c.comment as comment
+        coalesce(coCn.id, coPcoCn.id) as continent_id,
+        coalesce(coCn.name, coPcoCn.name) as continent,
+        co.comment as comment
       from country co
       left join country coPco
-        on co.parentcountry_id = coPco.id
+        on co.parentCountry_id = coPco.id
       left join continent coCn
         on co.continent_id = coCn.id
       left join continent coPcoCn
         on coPco.continent_id = coPcoCn.id
     '; 
+    $where = preg_replace('/ id /', ' co.id ', $where);
+    $where = preg_replace('/ country_id /', ' co.id ', $where);
+    $where = preg_replace('/ parentCountry_id /', ' coPco.id ', $where);
+    $where = preg_replace('/ continent_id /', ' coalesce(coCn.id, coPcoCn.id) ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
-    while ($obj = $sth->fetchObject('city')) {
+    while ($obj = $sth->fetchObject('country')) {
 //      $obj->populate($dbh);
       $objs[] = $obj;
     }
     return $objs;
   }
   
-  function getRegions($dbh, $where, $order = 'order by r.name') {
+  function getRegions($dbh, $where, $order = 'order by name') {
     $query = '
       select
         r.id as id,
@@ -139,18 +537,22 @@
         r.longitude as longitude,
         coalesce(rCo.id, rCoPco.id, rPrCo.id, rPrCoPco.id) as country_id,
         coalesce(rCo.name, rCoPco.name, rPrCo.name, rPrCoPco.name) as country,
+        coalesce(rCoPco.id, rPrCoPco.id) as parentCountry_id,
+        coalesce(rCoPco.name, rPrCoPco.name) as parentCountry,
         coalesce(rCn.id, rCoCn.id, rCoPcoCn.id, rPrCn.id, rPrCoCn.id, rPrCoPcoCn.id) as continent_id,
         coalesce(rCn.name, rCoCn.name, rCoPcoCn.name, rPrCn.name, rPrCoCn.name, rPrCoPcoCn.name) as continent,
-        c.comment as comment
+        r.comment as comment
       from region r
+      left join region rPr
+        on r.parentRegion_id = rPr.id
       left join country rCo
         on r.country_id = rCo.id
       left join country rCoPco
-        on rCo.parentcountry_id = rCoPco.id
+        on rCo.parentCountry_id = rCoPco.id
       left join country rPrCo
-        on rPR.country_id = rPrCo.id
+        on rPr.country_id = rPrCo.id
       left join country rPrCoPco
-        on rPrCo.parentcountry_id = rPrCoPco.id
+        on rPrCo.parentCountry_id = rPrCoPco.id
       left join continent rCn
         on r.continent_id = rCn.id
       left join continent rCoCn
@@ -164,8 +566,14 @@
       left join continent rPrCoPcoCn
         on rPrCoPco.continent_id = rPrCoPcoCn.id
     '; 
+    $where = preg_replace('/ id /', ' r.id ', $where);
+    $where = preg_replace('/ region_id /', ' r.id ', $where);
+    $where = preg_replace('/ parentRegion_id /', ' rPr.id ', $where);
+    $where = preg_replace('/ country_id /', ' coalesce(rCo.id, rCoPco.id, rPrCo.id, rPrCoPco.id) ', $where);
+    $where = preg_replace('/ parentCountry_id /', ' coalesce(rCoPco.id, rPrCoPco.id) ', $where);
+    $where = preg_replace('/ continent_id /', ' coalesce(rCn.id, rCoCn.id, rCoPcoCn.id, rPrCn.id, rPrCoCn.id, rPrCoPcoCn.id) ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
-    while ($obj = $sth->fetchObject('city')) {
+    while ($obj = $sth->fetchObject('region')) {
 //      $obj->populate($dbh);
       $objs[] = $obj;
     }
@@ -173,7 +581,7 @@
   }
   
   
-  function getCities($dbh, $where, $order = 'order by c.name') {
+  function getCities($dbh, $where, $order = 'order by name') {
     $query = '
       select
         c.id as id,
@@ -185,28 +593,32 @@
         c.longitude as longitude,
         coalesce(cR.id, cRPr.id) as region_id,
         coalesce(cR.name, cRPr.name) as region,
-        coalesce(cCo.id, cCoPco.id, cRco.id, cRCoPco.id, cRPrCo.id cRPrCoPco.id) as country_id,
-        coalesce(cCo.name, cCoPco.name, cRco.name, cRCoPco.name, cRPrCo.name cRPrCoPco.name) as country,
+        cRPr.id as parentRegion_id,
+        cRPr.name as parentRegion,
+        coalesce(cCo.id, cCoPco.id, cRCo.id, cRCoPco.id, cRPrCo.id, cRPrCoPco.id) as country_id,
+        coalesce(cCo.name, cCoPco.name, cRCo.name, cRCoPco.name, cRPrCo.name, cRPrCoPco.name) as country,
+        coalesce(cCoPco.id, cRCoPco.id, cRPrCoPco.id) as parentCountry_id,
+        coalesce(cCoPco.name, cRCoPco.name, cRPrCoPco.name) as parentCountry,
         coalesce(cCn.id, cCoCn.id, cCoPcoCn.id, cRCn.id, cRCoCn.id, cRCoPcoCn.id, cRPrCn.id, cRPrCoCn.id, cRPrCoPcoCn.id) as continent_id,
-        coalesce(cncCn.name, cCoCn.name, cCoPcoCn.name, cRCn.name, cRCoCn.name, cRCoPcoCn.name, cRPrCn.name, cRPrCoCn.name, cRPrCoPcoCn.name) as continent,
+        coalesce(cCn.name, cCoCn.name, cCoPcoCn.name, cRCn.name, cRCoCn.name, cRCoPcoCn.name, cRPrCn.name, cRPrCoCn.name, cRPrCoPcoCn.name) as continent,
         c.comment as comment
       from city c
       left join region cR
         on c.region_id = cR.id
       left join region cRPr
-        on cR.parentregion_id = cRPr.id
+        on cR.parentRegion_id = cRPr.id
       left join country cCo
         on c.country_id = cCo.id
       left join country cCoPco
-        on cCo.parentcountry_id = cCoPco.id
+        on cCo.parentCountry_id = cCoPco.id
       left join country cRCo
         on cR.country_id = cRCo.id
       left join country cRCoPco
-        on cRCo.parentcountry_id = cRCoPco.id
+        on cRCo.parentCountry_id = cRCoPco.id
       left join country cRPrCo
         on cRPr.country_id = cRPrCo.id
       left join country cRPrCoPco
-        on cRPrCo.parentcountry_id = cRPrCoPco.id
+        on cRPrCo.parentCountry_id = cRPrCoPco.id
       left join continent cCn
         on c.continent_id = cCn.id
       left join continent cCoCn
@@ -225,7 +637,14 @@
         on cRPrCo.continent_id = cRPrCoCn.id
       left join continent cRPrCoPcoCn
         on cRPrCoPco.continent_id = cRPrCoPcoCn.id
-    '; 
+    ';
+    $where = preg_replace('/ id /', ' c.id ', $where);
+    $where = preg_replace('/ city_id /', ' c.id ', $where);
+    $where = preg_replace('/ region_id /', ' coalesce(cR.id, cRPr.id) ', $where);
+    $where = preg_replace('/ parentRegion_id /', ' cRPr.id ', $where);
+    $where = preg_replace('/ country_id /', ' coalesce(cCo.id, cCoPco.id, cRCo.id, cRCoPco.id, cRPrCo.id, cRPrCoPco.id) ', $where);
+    $where = preg_replace('/ parentCountry_id /', ' coalesce(cCoPco.id, cRCoPco.id, cRPrCoPco.id) ', $where);
+    $where = preg_replace('/ continent_id /', ' coalesce(cCn.id, cCoCn.id, cCoPcoCn.id, cRCn.id, cRCoCn.id, cRCoPcoCn.id, cRPrCn.id, cRPrCoCn.id, cRPrCoPcoCn.id) ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('city')) {
 //      $obj->populate($dbh);
@@ -234,7 +653,7 @@
     return $objs;
   }
   
-  function getPlayers($dbh, $where, $order = 'order by p.firstName, p.lastName') {
+  function getPlayers($dbh, $where, $order = 'order by firstName, lastName') {
     $query = '
       select 
         p.id as id,
@@ -252,8 +671,12 @@
         pC.name as city,
         coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) as region_id,
         coalesce(pR.name, pRPr.name, pCR.name, pCRPr.name) as region,
+        coalesce(pRPr.id, pCRPr.id) as parentRegion_id,
+        coalesce(pRPr.name, pCRPr.name) as parentRegion,
         coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) as country_id,
         coalesce(pCo.name, pCoPco.name, pRCo.name, pRCoPco.name, pRPrCo.name, pRPrCoPco.name, pCCo.name, pCCoPco.name, pCRCo.name, pCRCoPco.name, pCRPrCo.name, pCRPrCoPco.name) as country,
+        coalesce(pCoPco.id, pRCoPco.id, pRPrCoPco.id, pCCoPco.id, pCRCoPco.id, pCRPrCoPco.id) as parentCountry_id,
+        coalesce(pCoPco.name, pRCoPco.name, pRPrCoPco.name, pCCoPco.name, pCRCoPco.name, pCRPrCoPco.name) as parentCountry,
         coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) as continent_id,
         coalesce(pCn.name, pCoCn.name, pCoPcoCn.name, pRCn.name, pRCoCn.name, pRCoPcoCn.name, pRPrCn.name, pRPrCoCn.name, pRPrCoPcoCn.name, pCCn.name, pCCoCn.name, pCCoPcoCn.name, pCRCn.name, pCRCoCn.name, pCRCoPcoCn.name, pCRPrCn.name, pCRPrCoCn.name, pCRPrCoPcoCn.name) as continent,
         p.telephoneNumber as telephoneNumber,
@@ -269,6 +692,7 @@
         if(m.id is not null,1,0) as main,
         if(cl.id is not null,1,0) as classics,
         if(v.id is not null,1,0) as volunteer,
+        e.id as tournamentEdition_id,
         p.username as username
       from person p 
       left join player m
@@ -282,35 +706,35 @@
       left join region pR
         on p.region_id = pR.id
       left join region pRPr
-        on pR.parentregion_id = pRPr.id
+        on pR.parentRegion_id = pRPr.id
       left join region pCR
         on pC.region_id = pCR.id
       left join region pCRPr
-        on pCR.parentregion_id = pCRPr.id
+        on pCR.parentRegion_id = pCRPr.id
       left join country pCo
         on p.country_id = pCo.id
       left join country pCoPco
-        on pCo.parentcountry_id = pCoPco.id
+        on pCo.parentCountry_id = pCoPco.id
       left join country pCCo
         on pC.country_id = pCCo.id
       left join country pCCoPco
-        on pCCo.parentcountry_id = pCCoPco.id
+        on pCCo.parentCountry_id = pCCoPco.id
       left join country pRCo
         on pR.country_id = pRCo.id
       left join country pRCoPco
-        on pRCo.parentcountry_id = pRCoPco.id
+        on pRCo.parentCountry_id = pRCoPco.id
       left join country pRPrCo
         on pRPr.country_id = pRPrCo.id
       left join country pRPrCoPco
-        on pRPrCo.parentcountry_id = pRPrCoPco.id
+        on pRPrCo.parentCountry_id = pRPrCoPco.id
       left join country pCRCo
         on pCR.country_id = pCRCo.id
       left join country pCRCoPco
-        on pCRCo.parentcountry_id = pCRCoPco.id
+        on pCRCo.parentCountry_id = pCRCoPco.id
       left join country pCRPrCo
         on pCRPr.country_id = pCRPrCo.id
       left join country pCRPrCoPco
-        on pCRPrCo.parentcountry_id = pCRPrCoPco.id
+        on pCRPrCo.parentCountry_id = pCRPrCoPco.id
       left join continent pCn
         on p.continent_id = pCn.id
       left join continent pCoCn
@@ -352,12 +776,17 @@
       left join tournamentDivision mT
         on m.tournamentDivision_id = mT.id
       left join tournamentDivision clT
-        on m.tournamentDivision_id = clT.id
-      left join tournamentDivision vT
-        on m.tournamentDivision_id = vT.id
+        on cl.tournamentDivision_id = clT.id
       left join tournamentEdition e
         on (mT.tournamentEdition_id = e.id or clT.tournamentEdition_id = e.id or v.tournamentEdition_id = e.id) and e.id = 1 
     '; 
+    $where = preg_replace('/ id /', ' p.id ', $where);
+    $where = preg_replace('/ city_id /', ' pC.id ', $where);
+    $where = preg_replace('/ region_id /', ' coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) ', $where);
+    $where = preg_replace('/ parentRegion_id /', ' coalesce(pRPr.id, pCRPr.id) ', $where);
+    $where = preg_replace('/ country_id /', ' coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) ', $where);
+    $where = preg_replace('/ parentCountry_id /', ' coalesce(pCoPco.id, pRCoPco.id, pRPrCoPco.id, pCCoPco.id, pCRCoPco.id, pCRPrCoPco.id) ', $where);
+    $where = preg_replace('/ continent_id /', ' coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) ', $where);
 //    echo($query.' '.$where.' '.$order);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('player')) {
@@ -391,14 +820,29 @@
     return $dbh->lastInsertId();
   }
   
+  function updateGeo($dbh, $geoType, $id, $parentArray){
+    $query = 'update '.$geoType.' set '.$parentArray[0].'_id = '.$parentArray[1].' where id = '.$id;
+    echo $query;
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+  }
+  
   function addPlayerGeo($dbh, $player) {
     global $geoTypes;
+    $update = false;
     foreach ($geoTypes as $geoType) {
       echo $geoType.' - '.$parentType.','.$parentId.' | ';
       if (preg_match('/^[0-9]+$/', $player->{$geoType})) {
         $geoId = $player->{$geoType};
+        if ($update) {
+          updateGeo($dbh, $geoType, $geoId, $update);
+        }
       } else if (preg_match('/.+/', $player->{$geoType})){
         $geoId = addGeo($dbh, $geoType, $player->{$geoType}, $parentType, $parentId);
+        if ($update) {
+          updateGeo($dbh, $geoType, $geoId, $update);
+        }
+        $update = array($geoType, $geoId);
       }
       $player->{$geoType.'_id'} = $geoId;
       $parentType = $geoType;
@@ -412,9 +856,11 @@
     global $playerHeaders;
     $player = addPlayerGeo($dbh, $player);
     var_dump($player);
-    die('huff');
     $query = 'insert into player set ';
-    foreach($playerHeaders as $field) {
+    foreach($classes->player->field as $key => $value) {
+      var_dump($key);
+      var_dump($value);
+      die('huff');
       if ($player->$field && $field != 'main' && $field != 'classics') {
         $query .= '`'.(($field == 'gender') ? $field.'_id' : $field).'`="'.$player->$field.'",'; 
       }
@@ -517,7 +963,7 @@
             $return = array(false, '{"valid":false,"reason":"'.ucfirst($field).' ID '.$value.' doesn\'t exist!","field":"'.$field.'"}');
           }
         } else {
-          if ($value) {
+          if ($value || $value == 0) {
             $return = array(true, '{"valid":true,"reason":"'.ucfirst($field).' is OK!","field":"'.$field.'"}');
           } else {
             $return = array(false, '{"valid":false,"reason":"'.ucfirst($field).' is required!","field":"'.$field.'"}');

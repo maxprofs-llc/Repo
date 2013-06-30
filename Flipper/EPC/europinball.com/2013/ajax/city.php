@@ -3,12 +3,12 @@
   header('Content-Type: application/json');
   
   $where = ' where';
-  $where .= (isset($_REQUEST['id'])) ? ' c.id = '.$_REQUEST['id'] : ' 1';
-  $where .= (isset($_REQUEST['region_id'])) ? ' and c.region_id = '.$_REQUEST['region_id'] : ' and 1';
+  $where .= (isset($_REQUEST['id'])) ? ' id = '.$_REQUEST['id'] : ' 1';
+  $where .= (isset($_REQUEST['region_id'])) ? ' and region_id = '.$_REQUEST['region_id'].' or parentRegion_id = '.$_REQUEST['region_id'] : ' and 1';
+  $where .= (isset($_REQUEST['country_id'])) ? ' and country_id = '.$_REQUEST['country_id'].' or parentCountry_id = '.$_REQUEST['country_id'] : ' and 1';
+  $where .= (isset($_REQUEST['continent_id'])) ? ' and continent_id = '.$_REQUEST['continent_id'] : ' and 1';
     
-  $query = 'select * from city c'.$where.' order by c.name';
-    
-  $objs = (array) getObjects($dbh, 'city', $query);
+  $objs = (array) getCities($dbh, $where);
 
-  print json_encode(array_values(geoFilter($objs)));
+  print json_encode(array_values($objs));
 ?>

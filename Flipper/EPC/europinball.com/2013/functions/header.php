@@ -10,6 +10,7 @@
     <script type="text/javascript" src="'.$scriptPath.'contrib/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'contrib/purl.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'contrib/recaptcha_ajax.js"></script>
+    <script type="text/javascript" src="'.$scriptPath.'contrib/ga.js"></script>
     <script type="text/javascript" src="'.$scriptPath.'general.js"></script>
     <link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
     <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />

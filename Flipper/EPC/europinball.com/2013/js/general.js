@@ -508,10 +508,11 @@ GENDER.prototype = {
 // Function called from the search button on the registration page. "id" is not necessarily an IFPA ID - it might as well be a phone number, email address, TAG or (parts of) a person's name. What to search for is determined by the regexps in the getPlayerByIfpaId function in functions/general.php. The results table is normally shown in the ifpaRegResults div  (dstId).
 function ifpaReg(id, dstId) {
   var tbl = document.getElementById(dstId + 'Table');
-  $('#' + dstId + 'TableDiv').show();
   if ($('#playerEditTable')) {
     $('#playerEditTable').hide();
   }
+  $('#ifpaRegResultsTableDiv').hide();
+  showLoading(classes['player']);
   try { 
     $('#' + tbl.id).dataTable.fnClearTable(); // Clear the datatable layout (and the table) if the datatable object exists...
   } catch(err) {
@@ -526,6 +527,9 @@ function ifpaReg(id, dstId) {
       for (var obj in data) {
         new window[type.toUpperCase()](data[obj]); // ...and create new player objects from the JSON.
       }
+      $('#' + dstId + 'TableDiv').show();
+      hideLoading(classes['player']);
+      $('#ifpaRegResultsTableDiv').show();
       printPlayers(players, dstId);
     }
   })
@@ -541,7 +545,6 @@ function ifpaReg(id, dstId) {
 function printPlayers(objs, dstId, meBtns, sels) {
   meBtns = (typeof meBtns === 'undefined') ? true : meBtns; // Default is true
   var tbl = document.getElementById(dstId + 'Table');
-  $('#' + dstId + 'TableDiv').show();
   try {
     $('#' + tbl.id).dataTable.fnClearTable(); // Clear the datatable layout (and the table) if the datatable object exists...
   } catch(err) {
@@ -585,15 +588,6 @@ function printPlayerAsList(obj,dstId) {
   $('#' + dstId).show(); // And show the details form
   if ($('#playerEditTable')) {
     $('#playerEditTable').remove(); // Kill the player table
-  }
-  if ($('#idHidden')) {
-    $('#idHidden').remove(); // If this is not the first time this player found him/her self, there will be old hidden fields laying around. Let's remove those.
-  }
-  if ($('#ifpa_idHidden')) {
-    $('#ifpa_idHidden').remove(); // If this is not the first time this player found him/her self, there will be old hidden fields laying around. Let's remove those.
-  }
-  if ($('#dateRegisteredHidden')) {
-    $('#dateRegisteredHidden').remove(); // ...both of them.
   }
   var tbl = document.createElement('table'); // Details form table. Table based layout design ftw!
   tbl.id = 'playerEditTable';
@@ -652,6 +646,8 @@ function addFieldRow(tbody, obj, prop) {
     lbl.appendChild(txt);
     var td = tr.insertCell(-1);
     td.id = prop + 'Td';
+  } else {
+    $('#' + prop + 'Hidden').remove(); // If this is not the first time this player found him/her self, there will be old hidden fields laying around. Let's remove those.
   }
   var input = document.createElement((type == 'select') ? 'select' : 'input');
   input.name = prop; // Name is actual property name, as defined in the database.
