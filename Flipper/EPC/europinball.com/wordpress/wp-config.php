@@ -19,10 +19,10 @@
 define('DB_NAME', 'epc_wp');
 
 /** MySQL database username */
-define('DB_USER', 'mungo');
+define('DB_USER', 'epc');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'vRKsYRSp9Esc23sv');
+define('DB_PASSWORD', 'vLdqLYyvxSZermEv');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
