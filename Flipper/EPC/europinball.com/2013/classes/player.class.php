@@ -6,6 +6,7 @@
     public $lastName;
     public $username;
     public $password;
+    public $passwordRequired;
     public $initials;
     public $isIfpa;
     public $ifpa_id;

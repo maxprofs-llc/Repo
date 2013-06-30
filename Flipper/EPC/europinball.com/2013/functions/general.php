@@ -21,7 +21,8 @@
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
-          'bundle' => false,  
+          'bundle' => false,
+          'insert' => true,
           'default' => ''
         ),
         'latitude' => (object) array(
@@ -30,6 +31,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''
         ),
         'longitude' => (object) array(
@@ -38,6 +40,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''
         )
       ),
@@ -53,6 +56,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'continent' => (object) array(
@@ -60,6 +64,7 @@
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
+          'insert' => true,
           'bundle' => false  
         ),
         'latitude' => (object) array(  
@@ -68,6 +73,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'longitude' => (object) array(  
@@ -76,6 +82,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''
         )
       ),
@@ -91,6 +98,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'continent' => (object) array(  
@@ -113,6 +121,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'longitude' => (object) array(  
@@ -121,6 +130,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''
         )
       ),
@@ -136,6 +146,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'continent' => (object) array(  
@@ -165,6 +176,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'longitude' => (object) array(  
@@ -173,6 +185,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''
         )
       ),
@@ -188,6 +201,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => 0  
         ),
         'ifpa_id' => (object) array(  
@@ -196,6 +210,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => 0  
         ),
         'class' => (object) array(  
@@ -204,6 +219,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => 'player'  
         ),
         'isPlayer' => (object) array(  
@@ -212,6 +228,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => true  
         ),
         'isPerson' => (object) array(  
@@ -220,6 +237,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => true  
         ),
         'isIfpa' => (object) array(  
@@ -228,6 +246,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => true  
         ),
         'firstName' => (object) array(  
@@ -236,6 +255,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'lastName' => (object) array(  
@@ -244,6 +264,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'initials' => (object) array(  
@@ -252,6 +273,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'username' => (object) array(  
@@ -260,6 +282,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => ''  
         ),
         'password' => (object) array(  
@@ -268,6 +291,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => false,
           'default' => ''  
         ),
         'gender' => (object) array(  
@@ -275,7 +299,9 @@
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
-          'bundle' => false  
+          'bundle' => false,
+          'insert' => true,
+          'default' => ''
         ),
         'streetAddress' => (object) array(  
           'label' => 'Street address',  
@@ -283,6 +309,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'zipCode' => (object) array(  
@@ -291,6 +318,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'city' => (object) array(  
@@ -298,28 +326,36 @@
           'type' => 'select',  
           'mandatory' => false,  
           'special' => 'add',  
-          'bundle' => false  
+          'bundle' => false,
+          'insert' => true,
+          'default' => ''  
         ),
         'region' => (object) array(  
           'label' => 'Region',  
           'type' => 'select',  
           'mandatory' => false,  
           'special' => 'add',  
-          'bundle' => false  
+          'bundle' => false,
+          'insert' => true,
+          'default' => ''  
         ),
         'country' => (object) array(  
           'label' => 'Country',  
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
-          'bundle' => false  
+          'bundle' => false,
+          'insert' => true,
+          'default' => ''  
         ),
         'continent' => (object) array(  
           'label' => 'Continent',  
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
-          'bundle' => false  
+          'bundle' => false,
+          'insert' => true,
+          'default' => ''            
         ),
         'telephoneNumber' => (object) array(  
           'label' => 'Phone',  
@@ -327,6 +363,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'mobileNumber' => (object) array(  
@@ -335,6 +372,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'mailAddress' => (object) array(  
@@ -343,6 +381,7 @@
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'main' => (object) array(  
@@ -351,6 +390,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => 1,  
+          'insert' => true,
           'default' => true  
         ),
         'classics' => (object) array(  
@@ -359,6 +399,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => 1,  
+          'insert' => true,
           'default' => true  
         ),
         'volunteer' => (object) array(  
@@ -367,6 +408,7 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
+          'insert' => true,
           'default' => true  
         ),
         'birthDate' => (object) array(  
@@ -375,6 +417,7 @@
           'mandatory' => false,  
           'special' => 'date',  
           'bundle' => false,  
+          'insert' => true,
           'default' => ''  
         ),
         'dateRegistered' => (object) array(  
@@ -383,7 +426,8 @@
           'mandatory' => false,  
           'special' => false,  
           'bundle' => false,  
-          'default' => date("Y-m-d")
+          'insert' => true,
+          'default' => date('Y-m-d')
         )
       ),
       'complete' => false
@@ -398,7 +442,9 @@
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
-          'bundle' => false
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''  
         )
       ),
       'complete' => true
@@ -693,7 +739,8 @@
         if(cl.id is not null,1,0) as classics,
         if(v.id is not null,1,0) as volunteer,
         e.id as tournamentEdition_id,
-        p.username as username
+        p.username as username,
+        if(p.password is null,1,0) as passwordRequired
       from person p 
       left join player m
         on m.person_id = p.id and m.tournamentDivision_id = 1
@@ -851,34 +898,87 @@
     return $player;
   }
   
-  function addPlayer($dbh, $player) {
-    global $geoTypes;
-    global $playerHeaders;
-    $player = addPlayerGeo($dbh, $player);
-    var_dump($player);
-    $query = 'insert into player set ';
-    foreach($classes->player->field as $key => $value) {
-      var_dump($key);
-      var_dump($value);
-      die('huff');
-      if ($player->$field && $field != 'main' && $field != 'classics') {
-        $query .= '`'.(($field == 'gender') ? $field.'_id' : $field).'`="'.$player->$field.'",'; 
+  function addPlayerQuery($dbh, $player, $type = 'player', $division = 1) {
+    global $classes;
+    $query = 'insert into '.$type.' set';
+    foreach($classes->player->fields as $value => $meta) {
+      if ($player->{$value}) {
+        switch ($meta->type) {
+          case 'select':
+            if (preg_match('/^[0-9]+$/', $player->{$value})) {
+              $id = $player->{$value};
+            } else if (preg_match('/^[0-9]+$/', $player->{$value.'_id'})) {
+              $id = $player->{$value.'_id'};
+            }
+            $query .= ' '.$value.'_id = '.$id.',';
+            break;
+          case 'hidden':
+          case 'text':
+            if ($meta->insert) {
+              if ($value == 'id') {
+                $field = 'person_id';
+              } else {
+                $field = $value;
+              }
+              $query .= ' '.$field.' = "'.$player->{$value}.'",';
+            }
+          break;
+        }
       }
     }
-    $query = rtrim($query,',');
+    $query .= ($type == 'player') ? ' tournamentDivision_id = '.$division : '';
+    $query .= ($type == 'volunteer') ? ' tournamentEdition_id = '.$division : '';
+    return rtrim($query, ',');
+  }
+  
+  function addPlayer($dbh, $player) {
+    $player = addPlayerGeo($dbh, $player);
+    var_dump($player);
+    if (!$player->isPerson && (!$player->id || $player->id == 0 || $player->id == '0')) {
+      $player->id = addPerson($dbh, $player);
+    } 
+    if ($player->username && $player->password) {
+      updateUser($dbh, $player);
+    }
+    foreach(array('main', 'classics') as $division) {
+      $query = addPlayerQuery($dbh, $player, 'player', (($division == 'main') ? 1 : 2));
+      $sth = $dbh->prepare($query);
+      $sth->execute();
+    }
+    if ($player->volunteer) {
+      addVolunteer($dbh, $player, 1);
+    }
+  }
+  
+  function addPerson($dbh, $player) {
+    $query = addPlayerQuery($dbh, $player, 'person');
     $sth = $dbh->prepare($query);
     $sth->execute();
-    $player->id = $dbh->lastInsertId();
-    if ($player->main == 'on') {
-      $query = 'insert into divisionPlayer set name="'.$player->initials.'", tournamentDivision_id=1, player_id='.$player->id.';';
-      $sth = $dbh->prepare($query);
-      $sth->execute();
-    }
-    if ($player->classics == 'on') {
-      $query = 'insert into divisionPlayer set name="'.$player->initials.'", tournamentDivision_id=2, player_id='.$player->id.';';
-      $sth = $dbh->prepare($query);
-      $sth->execute();
-    }
+    return $dbh->lastInsertId();
+  }
+  
+  function addVolunteer($dbh, $player, $tournament) {
+    $query = addPlayerQuery($dbh, $player, 'volunteer', $tournament);
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+    return $dbh->lastInsertId();
+  }
+  
+  function updateUser($dbh, $player){
+    $query = 'update person p set p.username = "'.$player->username.'",';
+    $query .= ' password = "'.encrPass($player->password, $player->id).'"';
+    $query .= ' where p.id = '.$player->id;
+    $sth = $dbh->prepare($query);
+    $sth->execute();
+  }
+  
+  function salt($ind){
+    return 'qcy0UPy5g4jC'.$ind;
+  }
+  
+  function encrPass($pass, $ind = null, $salt = null) {
+    $salt = ($salt) ? $salt : salt($ind);
+    return sha1($salt.$pass);
   }
   
   function checkField($dbh, $field, $value, $id = 0) {
@@ -912,7 +1012,7 @@
           $return = array(true, '{"valid":true,"reason":"Phone number is OK!","field":"'.$field.'"}');
         }
       case 'mobileNumber':
-        if (!preg_match('/^[0-9 \-\+\(\)]{6,}$/', $value)) {
+        if (!preg_match('/^[0-9 \-\+\(\)]{6,}$/', $value) && !$return) {
           $return = array(false, '{"valid":false,"reason":"Please use only numbers, parantheses, spaces, dashes and plus signs!","field":"'.$field.'"}');
         } else {
           $return = array(true, '{"valid":true,"reason":"Phone number is OK!","field":"'.$field.'"}');

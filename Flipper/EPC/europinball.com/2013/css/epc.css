@@ -46,6 +46,10 @@ img.icon {
   font-style: italic;
 }
 
+.italic {
+  font-style: italic;  
+}
+
 #ifpaIdTextDiv {
   float: left;
   margin-right: 20px;

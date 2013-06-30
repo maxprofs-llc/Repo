@@ -74,6 +74,7 @@ var classes = {
       initials: { label: 'Initials', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
       username: { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       password: { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''},
+      passwordRequired: { label: 'Password', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
       gender: { label: 'Gender', type: 'select', mandatory: false, special: false, bundle: false},
       streetAddress: { label: 'Street address', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
       zipCode: { label: 'ZIP', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
@@ -428,6 +429,7 @@ function PLAYER(data) {
     this.volunteer = data.volunteer;
     this.username = data.username;
     this.password = data.password;
+    this.passwordRequired = data.password;
     this.link = addLink(this);
     if (this.id !=0) {
       players.push(this); // Add to the global players array
@@ -507,6 +509,10 @@ GENDER.prototype = {
 
 // Function called from the search button on the registration page. "id" is not necessarily an IFPA ID - it might as well be a phone number, email address, TAG or (parts of) a person's name. What to search for is determined by the regexps in the getPlayerByIfpaId function in functions/general.php. The results table is normally shown in the ifpaRegResults div  (dstId).
 function ifpaReg(id, dstId) {
+  if (!classes['player'].fields.username) {
+    classes['player'].fields.username = { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''};
+    classes['player'].fields.password = { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''};
+  }
   var tbl = document.getElementById(dstId + 'Table');
   if ($('#playerEditTable')) {
     $('#playerEditTable').hide();
@@ -584,6 +590,12 @@ function checkIfpaBtn(el, event) {
 
 // This prints out the details form. Now done with meta arrays.
 function printPlayerAsList(obj,dstId) {
+  if (!obj.passwordRequired || obj.passwordRequired == 0) {
+    delete classes[obj.class].fields.username;
+    delete classes[obj.class].fields.password;
+    delete obj.username;
+    delete obj.password;
+  }
   $('#' + dstId + 'TableDiv').hide(); // Hide the table div with players - either we've found the player or this is a new guy.
   $('#' + dstId).show(); // And show the details form
   if ($('#playerEditTable')) {
@@ -721,6 +733,7 @@ function submit(obj) {
   })
   .fail(function(jqHXR,status,error) {
     alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+    debugOut(jqHXR.responseText);
   });
 }
 
@@ -732,7 +745,6 @@ function submitChecked(obj) {
       props.push(prop + '_id'); // Keep the ID fields!
     }
   }
-  debugOut(props,'props');
   var jsonPlayer = JSON.stringify(obj, props); // I stringify the object...
   var newObj = JSON.parse(jsonPlayer); // ...and then objectify it again. Why? Shouldn't be necessary? I should be able to just use the object straight on? I don't remeber why I did this!
   $.post('ajax/register.php', newObj) // Send to server
@@ -741,6 +753,7 @@ function submitChecked(obj) {
   })
   .fail(function(jqHXR,status,error) {
     alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+    debugOut(jqHXR.responseText);
   });
 }
 
@@ -763,6 +776,7 @@ function checkFields(obj) {
   })
   .fail(function(jqHXR,status,error) {
     alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+    debugOut(jqHXR.responseText);
   });
 }
 
@@ -779,6 +793,7 @@ function checkField(el) {
   })
   .fail(function(jqHXR,status,error) {
     alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+    debugOut(jqHXR.responseText);
   });
 }
 
