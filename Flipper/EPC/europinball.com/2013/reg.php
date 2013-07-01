@@ -1,7 +1,8 @@
 <?php
-  require_once('functions/general.php');
-  require_once('functions/header.php');
-  printHeader('EPC 2013');
+  define('__ROOT__', dirname(__FILE__)); 
+  require_once(__ROOT__.'/functions/general.php');
+  
+  printHeader('EPC 2013', $baseHref);
   printTopper("getObjects('geo');document.getElementById('ifpaIdText').focus()");
 
   $form = new regForm();
@@ -40,8 +41,10 @@
 
   $content .= '
     <form id="newData" name="newData">
+      <input type="hidden" name="loggedIn" id="loggedIn" value="false">
+      <input type="hidden" name="baseHref" id="baseHref" value="'.$baseHref.'">
       <div id="ifpaRegResults">
-      <span id="playerLoading" style="display: none"><img src="images/ajax-loader.gif" alt="Loading data..."></span>
+      <span id="playerLoading" style="display: none"><img src="'.$baseHref.'/images/ajax-loader.gif" alt="Loading data..."></span>
         <div id="ifpaRegResultsTableDiv" style="display: none">
           <h3 id="ifpaRegResultsH3">People found:</h3>
           <table id="ifpaRegResultsTable" class="list">

@@ -1,20 +1,20 @@
 <?php
-  function printHeader($title = 'EPC', $scriptPath = "js/") {
+  function printHeader($title = 'EPC', $baseHref = "2013/") {
     echo('
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script type="text/javascript" src="'.$scriptPath.'contrib/jquery.js"></script>
-    <script type="text/javascript" src="'.$scriptPath.'contrib/jquery-ui.js"></script>
-    <script type="text/javascript" src="'.$scriptPath.'contrib/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="'.$scriptPath.'contrib/purl.js"></script>
-    <script type="text/javascript" src="'.$scriptPath.'contrib/recaptcha_ajax.js"></script>
-    <script type="text/javascript" src="'.$scriptPath.'contrib/ga.js"></script>
-    <script type="text/javascript" src="'.$scriptPath.'general.js"></script>
-    <link href="css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
-    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="css/epc.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="'.$baseHref.'/js/contrib/jquery.js"></script>
+    <script type="text/javascript" src="'.$baseHref.'/js/contrib/jquery-ui.js"></script>
+    <script type="text/javascript" src="'.$baseHref.'/js/contrib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="'.$baseHref.'/js/contrib/purl.js"></script>
+    <script type="text/javascript" src="'.$baseHref.'/js/contrib/recaptcha_ajax.js"></script>
+    <script type="text/javascript" src="'.$baseHref.'/js/contrib/ga.js"></script>
+    <script type="text/javascript" src="'.$baseHref.'/js/general.js"></script>
+    <link href="'.$baseHref.'/css/jquery.dataTables_themeroller.css" rel="stylesheet" type="text/css" />
+    <link href="'.$baseHref.'/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="'.$baseHref.'/css/epc.css" rel="stylesheet" type="text/css" />
     <title>'.$title.'</title>
   </head>
     ');

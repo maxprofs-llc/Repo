@@ -1,15 +1,19 @@
 <?php
-  require_once("db.php");
+  define('__ROOT__', dirname(dirname(__FILE__))); 
+  require_once(__ROOT__.'/functions/db.php');
+  require_once(__ROOT__.'/functions/header.php');
+  require_once(__ROOT__.'/contrib/ulogin/config/all.inc.php');
+  require_once(__ROOT__.'/contrib/ulogin/main.inc.php');
+  require_once(__ROOT__.'/functions/auth.php');
+  
+
+  $baseHref = 'https://www.europinball.org/2013';
   
   spl_autoload_register(function($class) { // Autoloading classes. To fix some day: For some reason, some of the classes require require_once:s - which they shouldn't. 
-    if (is_file('../classes/'.$class.'.class.php')) {
-      include '../classes/'.$class.'.class.php';
-    } else if (is_file('classes/'.$class.'.class.php')) {
-      include 'classes/'.$class.'.class.php';
-    } else if (is_file($class.'.class.php')) {
-      include $class.'.class.php';
+    if (is_file(__ROOT__.'/classes/'.$class.'.class.php')) {
+      include __ROOT__.'/classes/'.$class.'.class.php';
     }
-  });
+  });  
   
   $classes = (object) array(
     'continent' => (object) array(
@@ -294,6 +298,15 @@
           'insert' => false,
           'default' => ''  
         ),
+        'passwordRequired' => (object) array(  
+          'label' => 'Password',  
+          'type' => 'hidden',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => false,
+          'default' => true  
+        ),
         'gender' => (object) array(  
           'label' => 'Gender',  
           'type' => 'select',  
@@ -561,7 +574,6 @@
     $where = preg_replace('/ continent_id /', ' coalesce(coCn.id, coPcoCn.id) ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('country')) {
-//      $obj->populate($dbh);
       $objs[] = $obj;
     }
     return $objs;
@@ -620,7 +632,6 @@
     $where = preg_replace('/ continent_id /', ' coalesce(rCn.id, rCoCn.id, rCoPcoCn.id, rPrCn.id, rPrCoCn.id, rPrCoPcoCn.id) ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('region')) {
-//      $obj->populate($dbh);
       $objs[] = $obj;
     }
     return $objs;
@@ -693,55 +704,13 @@
     $where = preg_replace('/ continent_id /', ' coalesce(cCn.id, cCoCn.id, cCoPcoCn.id, cRCn.id, cRCoCn.id, cRCoPcoCn.id, cRPrCn.id, cRPrCoCn.id, cRPrCoPcoCn.id) ', $where);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('city')) {
-//      $obj->populate($dbh);
       $objs[] = $obj;
     }
     return $objs;
   }
   
-  function getPlayers($dbh, $where, $order = 'order by firstName, lastName') {
-    $query = '
-      select 
-        p.id as id,
-        "player" as class,
-        "player" as type,
-        p.firstName as firstName,
-        p.lastName as lastName,
-        trim(concat(ifnull(p.firstName,"")," ",ifnull(p.lastName,""))) as name,
-        p.initials as initials,
-        g.id as gender_id,
-        g.name as gender,
-        p.streetAddress as streetAddress,
-        p.zipCode as zipCode,
-        pC.id as city_id,
-        pC.name as city,
-        coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) as region_id,
-        coalesce(pR.name, pRPr.name, pCR.name, pCRPr.name) as region,
-        coalesce(pRPr.id, pCRPr.id) as parentRegion_id,
-        coalesce(pRPr.name, pCRPr.name) as parentRegion,
-        coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) as country_id,
-        coalesce(pCo.name, pCoPco.name, pRCo.name, pRCoPco.name, pRPrCo.name, pRPrCoPco.name, pCCo.name, pCCoPco.name, pCRCo.name, pCRCoPco.name, pCRPrCo.name, pCRPrCoPco.name) as country,
-        coalesce(pCoPco.id, pRCoPco.id, pRPrCoPco.id, pCCoPco.id, pCRCoPco.id, pCRPrCoPco.id) as parentCountry_id,
-        coalesce(pCoPco.name, pRCoPco.name, pRPrCoPco.name, pCCoPco.name, pCRCoPco.name, pCRPrCoPco.name) as parentCountry,
-        coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) as continent_id,
-        coalesce(pCn.name, pCoCn.name, pCoPcoCn.name, pRCn.name, pRCoCn.name, pRCoPcoCn.name, pRPrCn.name, pRPrCoCn.name, pRPrCoPcoCn.name, pCCn.name, pCCoCn.name, pCCoPcoCn.name, pCRCn.name, pCRCoCn.name, pCRCoPcoCn.name, pCRPrCn.name, pCRPrCoCn.name, pCRPrCoPcoCn.name) as continent,
-        p.telephoneNumber as telephoneNumber,
-        p.mobileNumber as mobileNumber,
-        p.mailAddress as mailAddress,
-        p.birthDate as birthDate,
-        p.ifpa_id as ifpa_id,
-        p.comment as comment,
-        if(p.ifpa_id is not null,1,0) as isIfpa,
-        null as password,
-        if(p.id is not null,1,0) as isPerson,
-        if(m.id is not null or cl.id is not null,1,0) as isPlayer,
-        if(m.id is not null,1,0) as main,
-        if(cl.id is not null,1,0) as classics,
-        if(v.id is not null,1,0) as volunteer,
-        e.id as tournamentEdition_id,
-        p.username as username,
-        if(p.password is null,1,0) as passwordRequired
-      from person p 
+  function getPlayerJoin() {
+    return '
       left join player m
         on m.person_id = p.id and m.tournamentDivision_id = 1
       left join player cl
@@ -826,7 +795,55 @@
         on cl.tournamentDivision_id = clT.id
       left join tournamentEdition e
         on (mT.tournamentEdition_id = e.id or clT.tournamentEdition_id = e.id or v.tournamentEdition_id = e.id) and e.id = 1 
+    ';
+  }
+  
+  function getPlayers($dbh, $where, $order = 'order by p.firstName, p.lastName') {
+    $query = '
+      select 
+        p.id as id,
+        "player" as class,
+        "player" as type,
+        p.firstName as firstName,
+        p.lastName as lastName,
+        trim(concat(ifnull(p.firstName,"")," ",ifnull(p.lastName,""))) as name,
+        p.initials as initials,
+        g.id as gender_id,
+        g.name as gender,
+        p.streetAddress as streetAddress,
+        p.zipCode as zipCode,
+        pC.id as city_id,
+        pC.name as city,
+        coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) as region_id,
+        coalesce(pR.name, pRPr.name, pCR.name, pCRPr.name) as region,
+        coalesce(pRPr.id, pCRPr.id) as parentRegion_id,
+        coalesce(pRPr.name, pCRPr.name) as parentRegion,
+        coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) as country_id,
+        coalesce(pCo.name, pCoPco.name, pRCo.name, pRCoPco.name, pRPrCo.name, pRPrCoPco.name, pCCo.name, pCCoPco.name, pCRCo.name, pCRCoPco.name, pCRPrCo.name, pCRPrCoPco.name) as country,
+        coalesce(pCoPco.id, pRCoPco.id, pRPrCoPco.id, pCCoPco.id, pCRCoPco.id, pCRPrCoPco.id) as parentCountry_id,
+        coalesce(pCoPco.name, pRCoPco.name, pRPrCoPco.name, pCCoPco.name, pCRCoPco.name, pCRPrCoPco.name) as parentCountry,
+        coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) as continent_id,
+        coalesce(pCn.name, pCoCn.name, pCoPcoCn.name, pRCn.name, pRCoCn.name, pRCoPcoCn.name, pRPrCn.name, pRPrCoCn.name, pRPrCoPcoCn.name, pCCn.name, pCCoCn.name, pCCoPcoCn.name, pCRCn.name, pCRCoCn.name, pCRCoPcoCn.name, pCRPrCn.name, pCRPrCoCn.name, pCRPrCoPcoCn.name) as continent,
+        p.telephoneNumber as telephoneNumber,
+        p.mobileNumber as mobileNumber,
+        p.mailAddress as mailAddress,
+        p.birthDate as birthDate,
+        p.ifpa_id as ifpa_id,
+        p.comment as comment,
+        if(p.ifpa_id is not null,1,0) as isIfpa,
+        null as password,
+        if(p.id is not null,1,0) as isPerson,
+        if(m.id is not null or cl.id is not null,1,0) as isPlayer,
+        if(m.id is not null,1,0) as main,
+        if(cl.id is not null,1,0) as classics,
+        if(v.id is not null,1,0) as volunteer,
+        e.id as tournamentEdition_id,
+        p.username as username,
+        if(p.password is null,1,0) as passwordRequired
+      from person p 
     '; 
+    $query .= getPlayerJoin();
+    $where = preg_replace('/ tournamentEdition_id /', ' mT.tournamentEdition_id ', $where);
     $where = preg_replace('/ id /', ' p.id ', $where);
     $where = preg_replace('/ city_id /', ' pC.id ', $where);
     $where = preg_replace('/ region_id /', ' coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) ', $where);
@@ -837,7 +854,6 @@
 //    echo($query.' '.$where.' '.$order);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('player')) {
-//      $obj->populate($dbh);
       $objs[] = $obj;
     }
     return $objs;
@@ -859,30 +875,43 @@
   } 
     
   function addGeo($dbh, $geoType, $name, $parentType = null, $parentId = null) {
-    $query = 'insert into '.$geoType.' set name="'.$name.'"';
-    $query .= ($parentType) ? ', '.$parentType.'_id="'.$parentId.'"' : '';
+    $update[':name'] = $name;
+    $query = 'insert into '.$geoType.' set name = :name';
+    if ($parentType && $parentId) {
+      $update[':parentId'] = $parentId;
+      $query .= ', '.$parentType.'_id = :parentId';
+    }
     echo $query;
     $sth = $dbh->prepare($query);
-    $sth->execute();
+    $sth->execute($update);
     return $dbh->lastInsertId();
   }
   
   function updateGeo($dbh, $geoType, $id, $parentArray){
-    $query = 'update '.$geoType.' set '.$parentArray[0].'_id = '.$parentArray[1].' where id = '.$id;
+    $update[':id'] = $id;
+    $update[':parentId'] = $parentArray[1];
+    $query = 'update '.$geoType.' set '.$parentArray[0].'_id = :parentId where id = :id';
     echo $query;
     $sth = $dbh->prepare($query);
-    $sth->execute();
+    $sth->execute($update);
   }
   
   function addPlayerGeo($dbh, $player) {
     global $geoTypes;
     $update = false;
     foreach ($geoTypes as $geoType) {
-      echo $geoType.' - '.$parentType.','.$parentId.' | ';
+      var_dump('run:');
+      var_dump($geotype);
+      var_dump($player->{$geoType});
+      var_dump($player->{$geoType.'_id'});
+      var_dump($parentType);
+      var_dump($parentId);
+      var_dump($update);
       if (preg_match('/^[0-9]+$/', $player->{$geoType})) {
         $geoId = $player->{$geoType};
         if ($update) {
           updateGeo($dbh, $geoType, $geoId, $update);
+          $update = false;
         }
       } else if (preg_match('/.+/', $player->{$geoType})){
         $geoId = addGeo($dbh, $geoType, $player->{$geoType}, $parentType, $parentId);
@@ -905,13 +934,16 @@
       if ($player->{$value}) {
         switch ($meta->type) {
           case 'select':
-            if (preg_match('/^[0-9]+$/', $player->{$value})) {
-              $id = $player->{$value};
-            } else if (preg_match('/^[0-9]+$/', $player->{$value.'_id'})) {
-              $id = $player->{$value.'_id'};
+            if ($type != 'volunteer') {
+              if (preg_match('/^[0-9]+$/', $player->{$value})) {
+                $id = $player->{$value};
+              } else if (preg_match('/^[0-9]+$/', $player->{$value.'_id'})) {
+                $id = $player->{$value.'_id'};
+              }
+              $update[':'.$value] = $id;
+              $query .= ' '.$value.'_id = :'.$value.',';
             }
-            $query .= ' '.$value.'_id = '.$id.',';
-            break;
+          break;
           case 'hidden':
           case 'text':
             if ($meta->insert) {
@@ -920,59 +952,88 @@
               } else {
                 $field = $value;
               }
-              $query .= ' '.$field.' = "'.$player->{$value}.'",';
+              $update[':'.$field] = $player->{$value};
+              $query .= ' '.$field.' = :'.$field.',';
             }
           break;
         }
       }
     }
-    $query .= ($type == 'player') ? ' tournamentDivision_id = '.$division : '';
-    $query .= ($type == 'volunteer') ? ' tournamentEdition_id = '.$division : '';
-    return rtrim($query, ',');
+    switch ($type) {
+      case 'player':
+        $query .= ' tournamentDivision_id = :division';
+        $update[':division'] = $division;
+      break;
+      case 'volunteer':
+        $query .= ' tournamentEdition_id = :division';
+        $update[':division'] = $division;
+      break;
+    }
+    return array(rtrim($query, ','), $update);
   }
   
   function addPlayer($dbh, $player) {
     $player = addPlayerGeo($dbh, $player);
     var_dump($player);
-    if (!$player->isPerson && (!$player->id || $player->id == 0 || $player->id == '0')) {
+    if ($player->id == '0') {
       $player->id = addPerson($dbh, $player);
     } 
     if ($player->username && $player->password) {
       updateUser($dbh, $player);
     }
     foreach(array('main', 'classics') as $division) {
-      $query = addPlayerQuery($dbh, $player, 'player', (($division == 'main') ? 1 : 2));
-      $sth = $dbh->prepare($query);
-      $sth->execute();
+      if ($player->{$division} == 'true') {
+        $query = addPlayerQuery($dbh, $player, 'player', (($division == 'main') ? 1 : 2));
+        var_dump($query);
+        $sth = $dbh->prepare($query[0]);
+        $sth->execute($query[1]);
+      }
     }
-    if ($player->volunteer) {
+    if ($player->volunteer == 'true') {
       addVolunteer($dbh, $player, 1);
     }
   }
   
   function addPerson($dbh, $player) {
     $query = addPlayerQuery($dbh, $player, 'person');
-    $sth = $dbh->prepare($query);
-    $sth->execute();
+    $sth = $dbh->prepare($query[0]);
+    var_dump($query);
+    $sth->execute($query[1]);
     return $dbh->lastInsertId();
   }
   
   function addVolunteer($dbh, $player, $tournament) {
     $query = addPlayerQuery($dbh, $player, 'volunteer', $tournament);
-    $sth = $dbh->prepare($query);
-    $sth->execute();
+    $sth = $dbh->prepare($query[0]);
+    var_dump($query);
+    $sth->execute($query[1]);
     return $dbh->lastInsertId();
   }
   
   function updateUser($dbh, $player){
-    $query = 'update person p set p.username = "'.$player->username.'",';
-    $query .= ' password = "'.encrPass($player->password, $player->id).'"';
-    $query .= ' where p.id = '.$player->id;
+    $query = 'update person p set p.username = :username,';
+    $query .= ' password = :password';
+    $query .= ' where p.id = :playerId';
+    $update[':username'] = $player->username;
+    $update[':password'] = encrPass($player->password, $player->username);
+    $update[':playerId'] = $player->id;
     $sth = $dbh->prepare($query);
-    $sth->execute();
+    $sth->execute($update);
+    $ulogin = new uLogin('appLogin', 'appLoginFail');
+    $ulogin->CreateUser($player->username,  $player->password);
   }
   
-  function salt($ind){
+  function getIfpaIds($dbh, $where = 'where p.ifpa_id is not null', $order = 'order by ifpa_id asc') {
+    $query = 'select p.id, p.ifpa_id from person p'.getPlayerJoin();
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    var_dump($query);
+    while ($obj = $sth->fetchObject()) {
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  function salt($ind = null){
     return 'qcy0UPy5g4jC'.$ind;
   }
   
@@ -984,7 +1045,7 @@
   function checkField($dbh, $field, $value, $id = 0) {
     switch ($field) {
       case 'username':
-        if (!preg_match('/[a-zA-Z0-9\-_]{3,32}/', $value)) {
+        if (!preg_match('/^[a-zA-Z0-9\-_]{3,32}$/', $value)) {
           $return = array(false, '{"valid":false,"reason":"Username must be at least three character and can only include a-Z, A-Z, 0-9, dashes and underscores!","field":"'.$field.'"}');
         } else {
           $where = ' where username = "'.$value.'"';
@@ -1028,7 +1089,7 @@
       break;
       case 'birthDate':
       case 'dateRegistered':
-      if (checkdate(preg_replace('/00/','01',substr($value, 5,2)), preg_replace('/00/','01',substr($value, 8,2)), substr($value, 0,4)) || $value == '') {
+      if ($value == '' || checkdate(preg_replace('/00/','01',substr($value, 5,2)), preg_replace('/00/','01',substr($value, 8,2)), substr($value, 0,4))) {
           $return = array(true, '{"valid":true,"reason":"'.ucfirst($field).' is OK!","field":"'.$field.'"}');
         } else {
           $return = array(false, '{"valid":false,"reason":"Invalid date format - use ISO 8601 format: YYYY-MM-DD!","field":"'.$field.'"}');
@@ -1077,6 +1138,7 @@
       case 'ifpa_id':
       case 'isPlayer':
       case 'isPerson':
+      case 'passwordRequired':
       case 'isIfpa':
       case 'class':
       case 'classics':

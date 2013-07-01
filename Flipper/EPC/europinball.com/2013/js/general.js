@@ -1,5 +1,6 @@
 var scripts = new Array();
 var debugMode = 1;
+var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://www.europinball.org/2013';
 
 // The classes variable contains meta-information about the classes.
 var classes = {
@@ -111,20 +112,7 @@ var countries = []; // Contains all countries
 var regions = []; // Contains all regions
 var cities = []; // Contains all cities
 var players = []; // Contains all players
-var genders = [ // Contains all genders
-  {
-    id: 1,
-    name: 'Female'
-  }, 
-  {
-    id: 2,
-    name: 'Male'
-  },
-  {
-    id: 3,
-    name: 'Other'
-  }
-]; 
+var genders = []; // Contains all genders
 
 
 // Classes definitions for continents, countries, regions, cities, players and genders.
@@ -429,7 +417,7 @@ function PLAYER(data) {
     this.volunteer = data.volunteer;
     this.username = data.username;
     this.password = data.password;
-    this.passwordRequired = data.password;
+    this.passwordRequired = data.passwordRequired;
     this.link = addLink(this);
     if (this.id !=0) {
       players.push(this); // Add to the global players array
@@ -524,7 +512,7 @@ function ifpaReg(id, dstId) {
   } catch(err) {
     tbl.innerHTML = ''; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
   }
-  $.getJSON('ajax/ifpaReg.php',{ifpaId: $('#' + id).val()}) // Returns a JSON with all hits
+  $.getJSON(baseHref + '/ajax/ifpaReg.php',{ifpaId: $('#' + id).val()}) // Returns a JSON with all hits
   .done(function(data) {
     var type = 'player';
     var objs = [];
@@ -560,18 +548,53 @@ function printPlayers(objs, dstId, meBtns, sels) {
   var tbody = addTbody(tbl);
   addRows(tbody, classes['player'], false, meBtns, sels, objs); // Add the rows, and include info about meBtn and sels.
   $('#' + dstId).show(); // Allright, table done, let's show it
-  $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true}); // Rebuild the datatable
+  $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true, 'bJQueryUI': true,
+		'sPaginationType': 'full_numbers'}); // Rebuild the datatable
   $('#' + tbl.id).css('width', ''); // This is needed, or the table is butt ugly!
 }
 
 // This is me!
 function thisIsMe(btnId) {
-  var meId = btnId.id.replace('meBtn_', ''); // Let's find out who "me" is.
-  printPlayerAsList(player(meId),'ifpaRegResults'); // Show the details form to the player, with info pre-filled in.
+  var obj = player(btnId.id.replace('meBtn_', '')); // Let's find out who "me" is and make him a player
+  if ((!obj.passwordRequired || obj.passwordRequired == 0) && obj.id != 0) { // This user has already registered! He can log in to do his stuff.
+    window.location.href = baseHref + '/../wordpress/editplayer/?obj=player&id=' + btnId.id.replace('meBtn_', '');
+  } else {
+    printPlayerAsList(obj,'ifpaRegResults'); // Show the details form to the player, with info pre-filled in.
+  }
+}
+
+function editPlayer(id) {
+  showLoading(classes['player']);
+  $.getJSON(baseHref + '/ajax/player.php?id=' + id) // Returns a JSON with all hits
+  .done(function(data) {
+    var type = 'player';
+    var objs = [];
+    players.length = 0; // Let's delete all the players...
+    if (data.length > 0) {
+      for (var obj in data) {
+        new window[type.toUpperCase()](data[obj]); // ...and create new player objects from the JSON.
+      }
+      var obj = player(id);
+      hideLoading(classes['player']);
+      if (document.getElementById('user') && obj.username == document.getElementById('user').value) {
+        printPlayerAsList(player(id),'ifpaRegResults');
+      } else {
+        alert('You are not allowed to edit that player!');
+      }
+    }
+  })
+  .fail(function(jqHXR,status,error) {
+    alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+    debugOut(jqHXR.responseText);
+  });
 }
 
 // I'm a new guy!
 function newGuy(dstId) {
+  if (!classes['player'].fields.username) {
+    classes['player'].fields.username = { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''};
+    classes['player'].fields.password = { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''};
+  }
   printPlayerAsList(player(), dstId); // Create a dummy player with no info, and show the (non-existing) details form fo the player.
 }
 
@@ -590,10 +613,9 @@ function checkIfpaBtn(el, event) {
 
 // This prints out the details form. Now done with meta arrays.
 function printPlayerAsList(obj,dstId) {
-  if (!obj.passwordRequired || obj.passwordRequired == 0) {
+  if ((!obj.passwordRequired || obj.passwordRequired == 0) && obj.id != 0) {
     delete classes[obj.class].fields.username;
     delete classes[obj.class].fields.password;
-    delete obj.username;
     delete obj.password;
   }
   $('#' + dstId + 'TableDiv').hide(); // Hide the table div with players - either we've found the player or this is a new guy.
@@ -621,8 +643,10 @@ function printPlayerAsList(obj,dstId) {
   var td = tr.insertCell(-1);
   td.colSpan = 2;
   var div = document.createElement('div');
-  div.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
-  td.appendChild(div);
+  if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
+    div.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
+    td.appendChild(div);
+  }
   var tr = tbody.insertRow(-1);
   var lblTd = tr.insertCell(-1); // Label TD
   lblTd.id = 'submitLabelTd';
@@ -638,11 +662,13 @@ function printPlayerAsList(obj,dstId) {
   btn.appendChild(document.createTextNode('Let\'s play!'));
   btn.onclick = function() { checkForm(this); return false; };
   td.appendChild(btn);
-  setTimeout(function() { // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
-    Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', {
-      theme: 'blackglass'
-    })
-  }, 100);
+  if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
+    setTimeout(function() { // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
+      Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', {
+        theme: 'blackglass'
+      })
+    }, 100);
+  }
   document.getElementById(dstId).appendChild(tbl); // Let's show it to the user
 }
 
@@ -691,7 +717,7 @@ function addFieldRow(tbody, obj, prop) {
     if (classes[obj.class].fields[prop].special == 'add') { // Users have a possibility to add cities and regions not already in the database. So let's add some elements for that.
       var img = document.createElement('img'); // A plus sign after the select, to click on to add stuff.
       img.id = prop + 'Add';
-      img.src = 'images/add_icon.gif';
+      img.src = baseHref + '/images/add_icon.gif';
       img.className += ' icon';
       img.onclick = function () { geoAdd(this, true); }; // They want to add something (true)!
       img.alt = 'Click to add a new ' + classes[obj.class].fields[prop].label.toLowerCase();
@@ -705,7 +731,7 @@ function addFieldRow(tbody, obj, prop) {
       td.appendChild(selTxt);
       var cImg = document.createElement('img'); // What if the user regrets his/her choice, and wants to select an existing item anyway? No problem - just click the X icon! If they do, we will remove the value from the selTxt text input, and use the value from the dropdown.
       cImg.id = prop + 'AddCancel';
-      cImg.src = 'images/cancel.png';
+      cImg.src = baseHref + '/images/cancel.png';
       cImg.className += ' invisible'; // Display none until the plus sign is clicked
       cImg.alt = 'Click to cancel and get back to the dropdown';
       cImg.title = cImg.alt;
@@ -718,23 +744,27 @@ function addFieldRow(tbody, obj, prop) {
 }
 
 function submit(obj) {
-  $.post('ajax/recaptcha.php', {resp: Recaptcha.get_response(), chall: Recaptcha.get_challenge()}) // Let's ajax-check the recaptcha
-  .done(function(data) { // Allright, recaptcha response received
-    Recaptcha.destroy(); // Let's destroy the recaptcha (either we are done and fine, or we need to create a new one anyway)
-    if (data == 'Valid') { // Allright, recaptcha was fine!
-      checkFields(obj);
-    } else {
-      alert('Recaptcha was invalid - try again! ' + data); // Oh, no! Our user can't read!
-      Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { //... so let's recreate the recaptcha, and start all over again.
-        theme: 'blackglass',
-        callback: Recaptcha.focus_response_field
-      });
-    }
-  })
-  .fail(function(jqHXR,status,error) {
-    alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
-    debugOut(jqHXR.responseText);
-  });
+  if (document.getElementById('loggedin') && document.getElementById('loggedin').value == 'true') {
+    checkFields(obj);
+  } else {
+    $.post(baseHref + '/ajax/recaptcha.php', {resp: Recaptcha.get_response(), chall: Recaptcha.get_challenge()}) // Let's ajax-check the recaptcha
+    .done(function(data) { // Allright, recaptcha response received
+      Recaptcha.destroy(); // Let's destroy the recaptcha (either we are done and fine, or we need to create a new one anyway)
+      if (data == 'Valid') { // Allright, recaptcha was fine!
+        checkFields(obj);
+      } else {
+        alert('Recaptcha was invalid - try again! ' + data); // Oh, no! Our user can't read!
+        Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { //... so let's recreate the recaptcha, and start all over again.
+          theme: 'blackglass',
+          callback: Recaptcha.focus_response_field
+        });
+      }
+    })
+    .fail(function(jqHXR,status,error) {
+      alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+      debugOut(jqHXR.responseText);
+    });
+  }
 }
 
 function submitChecked(obj) {
@@ -747,7 +777,7 @@ function submitChecked(obj) {
   }
   var jsonPlayer = JSON.stringify(obj, props); // I stringify the object...
   var newObj = JSON.parse(jsonPlayer); // ...and then objectify it again. Why? Shouldn't be necessary? I should be able to just use the object straight on? I don't remeber why I did this!
-  $.post('ajax/register.php', newObj) // Send to server
+  $.post(baseHref + '/ajax/register.php', newObj) // Send to server
   .done(function(data) {
     debugOut(data,'data');
   })
@@ -762,15 +792,17 @@ function checkFields(obj) {
   for (var prop in classes[obj.class].fields) {
     propArray.push('{"f":"' + prop + '","v":"' + obj[prop] +'","id":"' + obj.id +'"}');
   }
-  $.post('ajax/checkField.php', {data: propArray}) // Let's check the fields
+  $.post(baseHref + '/ajax/checkField.php', {data: propArray}) // Let's check the fields
   .done(function(data) {
     if (data.valid) {
       submitChecked(obj);
     } else {
-      Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { // Didn't validate! So let's recreate the recaptcha, and start all over again.
-        theme: 'blackglass',
-        callback: Recaptcha.focus_response_field
-      });
+      if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
+        Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { // Didn't validate! So let's recreate the recaptcha, and start all over again.
+          theme: 'blackglass',
+          callback: Recaptcha.focus_response_field
+        });
+      }
       alert('Something is wrong with ' + data.field + ': ' + data.reason);
     }
   })
@@ -781,7 +813,7 @@ function checkFields(obj) {
 }
 
 function checkField(el) {
-  $.post('ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check the field
+  $.post(baseHref + '/ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check the field
   .done(function(data) {
     document.getElementById('submit').disabled = !data.valid; // OK or not OK to submit
     if (document.getElementById(el.name + 'Span')) {
@@ -869,7 +901,7 @@ function complete(type) { // Used to check that all objects are completely loade
 function getObjects(type) { // Load all objects from ajax. If type is specified, only that type is loaded. The function is recursive - if no type is specified, it will call itself for each type.
   if (type && type != 'geo') {
     showLoading(classes[type]); // Show a nice loading image
-    $.getJSON('ajax/' + type + '.php', {t: '10'}, function(data) { // Uuuh! Hard coded tournament ID!! Someone, hit me hard, please.
+    $.getJSON(baseHref + '/ajax/' + type + '.php', {t: '1'}, function(data) { // Uuuh! Hard coded tournament ID!! Someone, hit me hard, please.
       if (data.length > 0) {
         for (var obj in data) {
           new window[type.toUpperCase()](data[obj]); // Let's create objects from the JSON
@@ -883,10 +915,17 @@ function getObjects(type) { // Load all objects from ajax. If type is specified,
         popEls($('input')); // Look for inputs to populate (I don't think we ever do this)
       }
       if (complete('geo')) {
-        document.getElementById('newButton').disabled = false;
-        if (/^[0-9]{1,}$|.{3,}/.test(document.getElementById('ifpaIdText').value)) {
-          document.getElementById('ifpaButton').disabled = false;
+        if (document.getElementById('newButton')) {
+          document.getElementById('newButton').disabled = false;
+          if (/^[0-9]{1,}$|.{3,}/.test(document.getElementById('ifpaIdText').value)) {
+            document.getElementById('ifpaButton').disabled = false;
+          }
+        } else if ($.url().attr('file') == 'edit.php' && /^[0-9]+$/.test($.url().param('id'))) {
+          editPlayer($.url().param('id'));
+        } else if ($.url().segment(-1) == 'editplayer' && document.getElementById('id') && /^[0-9]+$/.test(document.getElementById('id').value)) {
+          editPlayer(document.getElementById('id').value);
         }
+        var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://www.europinball.org/2013';
       }
     });
   } else {
@@ -1080,7 +1119,8 @@ function popTbl(tbl, type) { // Let's populate a table
     var tbody = addTbody(tbl); // ...body...
     addRows(tbody, type, true); // ...and rows
     hideLoading(type);
-    $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true}); // Rebuild the datatable
+    $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true, 'bJQueryUI': true,
+		'sPaginationType': 'full_numbers'}); // Rebuild the datatable
     $('#' + tbl.id).css('width', '') // This is needed, or the table is butt ugly!
   }
 }
@@ -1192,7 +1232,7 @@ function tShirtIcon(tbody) { // This is not used yet, but will be
   var td = tr.insertCell(-1);
   var img = document.createElement('img');
   img.id = 'tShirt' + number;
-  img.src = 'images/add_icon.gif';
+  img.src = baseHref + '/images/add_icon.gif';
   img.className += ' icon';
   img.onclick = 'addTShirt(this);';
   img.alt = 'Click to add a T-shirt';
