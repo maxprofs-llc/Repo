@@ -10,6 +10,7 @@
     public $initials;
     public $isIfpa;
     public $ifpa_id;
+    public $ifpaRank;
     public $isPerson;
     public $isPlayer;
     public $player_ids = [];
@@ -35,6 +36,7 @@
     public $main;
     public $volunteer;
     public $qualGroups = [];
+    public $qualGroup;
     public $class = 'player';
     
     public function __construct($data = null, $type = 'array') {
@@ -50,12 +52,13 @@
           }
         break;
       }
+      $this->name = $this->firstName.' '.$this->lastName;
     }
     
     public function set($data) {
-        foreach ($data as $key => $value) {
-            $this->{$key} = $value;
-        }
+      foreach ($data as $key => $value) {
+        $this->{$key} = $value;
+      }
     }
 
     public function populate($dbh) {

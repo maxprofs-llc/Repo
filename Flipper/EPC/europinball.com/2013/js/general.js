@@ -1,6 +1,7 @@
 var scripts = new Array();
 var debugMode = 1;
 var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://www.europinball.org/2013';
+var pageMode = 'register';
 
 // The classes variable contains meta-information about the classes.
 var classes = {
@@ -62,10 +63,12 @@ var classes = {
     name: 'player',
     geo: false,
     plural: 'players',
-    headers: ['name', 'initials', 'city', 'region', 'country', 'continent'], // Headers normally used in tables and lists
+    headers: ['name', 'initials', 'city', 'region', 'country', 'continent', 'ifpaRank'], // Headers normally used in tables and lists
     fields: {
       id: { label: 'ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
+      name: { label: 'Name', type: 'hidden', mandatory: false, special: false, bundle: false, default: ''},
       ifpa_id: { label: 'IFPA ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
+      ifpaRank: { label: 'IFPA', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
       class: { label: 'Class', type: 'hidden', mandatory: false, special: false, bundle: false, default: 'player'},
       isPlayer: { label: 'isPlayer', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
       isPerson: { label: 'isPerson', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
@@ -115,9 +118,26 @@ var players = []; // Contains all players
 var genders = []; // Contains all genders
 
 
+jQuery.fn.dataTableExt.oSort['numeric-asc'] = function(x, y) { // We want empty fields last!
+  var retVal;
+  x = parseInt($.trim(x));
+  y = parseInt($.trim(y));
+  if (x == y) {
+    retVal = 0;
+  } else if (!x || x == 0 || x == '0' || x == '' || x == '&nbsp;') {
+    retVal = 1;
+  } else if (!y || y == 0 || y == '0' || y == '' || y == '&nbsp;' || x < y) {
+    retVal = -1;
+  } else {
+    retVal = 1;
+  }
+  return retVal;
+}
+
+jQuery.fn.dataTableExt.oSort['string-asc'] = jQuery.fn.dataTableExt.oSort['numeric-asc']; // For strings too!
+
 // Classes definitions for continents, countries, regions, cities, players and genders.
 // Implemented as JS functions with protoypes.
-
 function CONTINENT(data) {
   if (continents.indexOf(data) == -1) {
     this.id = data.id;
@@ -387,6 +407,7 @@ function PLAYER(data) {
     this.class = 'player';
     this.comment = data.comment;
     this.isIfpa = data.isIfpa;
+    this.ifpaRank = data.ifpaRank;
     this.isPerson = data.isPerson;
     this.isPlayer = data.isPlayer;
     this.ifpa_id = data.ifpa_id;
@@ -461,6 +482,7 @@ PLAYER.prototype = {
     this.links = {
       name: this.link,
       initials: false,
+      ifpaRank: addIfpaLink(this.ifpa_id, this.ifpaRank),
       city: addLink(city(this.city_id)),
       region: addLink(region(this.region_id)),
       country: addLink(country(this.country_id)),
@@ -517,14 +539,16 @@ function ifpaReg(id, dstId) {
     var type = 'player';
     var objs = [];
     players.length = 0; // Let's delete all the players...
-    if (data.length > 0) {
+    hideLoading(classes['player']);
+    if (data && data.length > 0) {
       for (var obj in data) {
         new window[type.toUpperCase()](data[obj]); // ...and create new player objects from the JSON.
       }
       $('#' + dstId + 'TableDiv').show();
-      hideLoading(classes['player']);
       $('#ifpaRegResultsTableDiv').show();
       printPlayers(players, dstId);
+    } else {
+      $('#noHits').show();
     }
   })
   .fail(function(jqHXR,status,error) {
@@ -549,8 +573,10 @@ function printPlayers(objs, dstId, meBtns, sels) {
   addRows(tbody, classes['player'], false, meBtns, sels, objs); // Add the rows, and include info about meBtn and sels.
   $('#' + dstId).show(); // Allright, table done, let's show it
   $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true, 'bJQueryUI': true,
-		'sPaginationType': 'full_numbers'}); // Rebuild the datatable
+		'sPaginationType': 'full_numbers', 'iDisplayLength': 100}); // Rebuild the datatable
+    
   $('#' + tbl.id).css('width', ''); // This is needed, or the table is butt ugly!
+  $('#newData').css('width', ''); // This is needed, or the table is butt ugly!
 }
 
 // This is me!
@@ -564,6 +590,7 @@ function thisIsMe(btnId) {
 }
 
 function editPlayer(id) {
+  pageMode = 'edit';
   showLoading(classes['player']);
   $.getJSON(baseHref + '/ajax/player.php?id=' + id) // Returns a JSON with all hits
   .done(function(data) {
@@ -591,14 +618,15 @@ function editPlayer(id) {
 
 // I'm a new guy!
 function newGuy(dstId) {
-  if (!classes['player'].fields.username) {
-    classes['player'].fields.username = { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''};
-    classes['player'].fields.password = { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''};
+  if (!classes.player.fields.username) {
+    classes.player.fields.username = { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''};
+    classes.player.fields.password = { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''};
   }
   printPlayerAsList(player(), dstId); // Create a dummy player with no info, and show the (non-existing) details form fo the player.
 }
 
 function checkIfpaBtn(el, event) {
+  $('#noHits').hide();
   setTimeout(function() { 
     if (/^[0-9]{1,}$|.{3,}/.test(el.value)) {
       document.getElementById('ifpaButton').disabled = document.getElementById('newButton').disabled;
@@ -652,14 +680,22 @@ function printPlayerAsList(obj,dstId) {
   lblTd.id = 'submitLabelTd';
   var lbl = document.createElement('label');
   lbl.id = 'submitTextLabel';
-  var txt = document.createTextNode('Submit'); // We have it all! Let's play!
+  var txt = document.createTextNode('Submit the above'); // We have it all! Let's play!
   lbl.appendChild(txt);
+  lblTd.appendChild(lbl);
   var td = tr.insertCell(-1);
   td.id = 'submitTd';
   var btn = document.createElement('button');
   btn.id = 'submit';
   btn.type = 'button';
-  btn.appendChild(document.createTextNode('Let\'s play!'));
+  switch (pageMode) {
+    case 'register':
+      btn.appendChild(document.createTextNode('Let\'s play!'));
+    break;
+    case 'edit':
+      btn.appendChild(document.createTextNode('Submit changes'));
+    break;
+  }
   btn.onclick = function() { checkForm(this); return false; };
   td.appendChild(btn);
   if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
@@ -732,7 +768,7 @@ function addFieldRow(tbody, obj, prop) {
       var cImg = document.createElement('img'); // What if the user regrets his/her choice, and wants to select an existing item anyway? No problem - just click the X icon! If they do, we will remove the value from the selTxt text input, and use the value from the dropdown.
       cImg.id = prop + 'AddCancel';
       cImg.src = baseHref + '/images/cancel.png';
-      cImg.className += ' invisible'; // Display none until the plus sign is clicked
+      cImg.className += ' icon invisible'; // Display none until the plus sign is clicked
       cImg.alt = 'Click to cancel and get back to the dropdown';
       cImg.title = cImg.alt;
       cImg.onclick = function () { geoAdd(this, false ); }; // The don't want to add something (false)!
@@ -744,7 +780,7 @@ function addFieldRow(tbody, obj, prop) {
 }
 
 function submit(obj) {
-  if (document.getElementById('loggedin') && document.getElementById('loggedin').value == 'true') {
+  if (document.getElementById('loggedIn') && document.getElementById('loggedIn').value == 'true') {
     checkFields(obj);
   } else {
     $.post(baseHref + '/ajax/recaptcha.php', {resp: Recaptcha.get_response(), chall: Recaptcha.get_challenge()}) // Let's ajax-check the recaptcha
@@ -777,9 +813,9 @@ function submitChecked(obj) {
   }
   var jsonPlayer = JSON.stringify(obj, props); // I stringify the object...
   var newObj = JSON.parse(jsonPlayer); // ...and then objectify it again. Why? Shouldn't be necessary? I should be able to just use the object straight on? I don't remeber why I did this!
-  $.post(baseHref + '/ajax/register.php', newObj) // Send to server
+  $.post(baseHref + ((pageMode == 'register') ? '/ajax/register.php' : ((pageMode == 'edit') ? '/ajax/playerEdit.php?newPhoto=' + document.getElementById('newPhoto').value : 'wrongPageMode')), newObj) // Send to server
   .done(function(data) {
-    debugOut(data,'data');
+    window.location.href = baseHref + '/../wordpress/registration/players/?obj=player&id=self';
   })
   .fail(function(jqHXR,status,error) {
     alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
@@ -813,20 +849,26 @@ function checkFields(obj) {
 }
 
 function checkField(el) {
-  $.post(baseHref + '/ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check the field
-  .done(function(data) {
-    document.getElementById('submit').disabled = !data.valid; // OK or not OK to submit
-    if (document.getElementById(el.name + 'Span')) {
-      var txt = (data.valid) ? ((classes['player'].fields[el.name].mandatory) ? '*' : '') : data.reason;
-      $('#' + el.name + 'Span').toggleClass('error', !data.valid); // Add or remove error 
-      document.getElementById(el.name + 'Span').innerHTML = '';
-      document.getElementById(el.name + 'Span').appendChild(document.createTextNode(txt));
-    }
-  })
-  .fail(function(jqHXR,status,error) {
-    alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
-    debugOut(jqHXR.responseText);
-  });
+  setTimeout(function() {
+    $.post(baseHref + '/ajax/checkField.php', {f: el.name, v: el.value, id: document.getElementById('idHidden').value}) // Let's check the field
+    .done(function(data) {
+      if (document.getElementById(el.name + 'Span')) {
+        var txt = (data.valid) ? ((document.getElementById('action') || classes['player'].fields[el.name].mandatory) ? '*' : '') : data.reason;
+        $('#' + el.name + 'Span').toggleClass('error', !data.valid); // Add or remove error 
+        document.getElementById(el.name + 'Span').innerHTML = '';
+        document.getElementById(el.name + 'Span').appendChild(document.createTextNode(txt));
+      } 
+      if (!document.getElementById('passwordRequiredHidden') || (document.getElementById('passwordRequiredHidden').value != '1' && document.getElementById('passwordRequiredHidden').value != 'true')) {
+        checkUsernameFields();
+      } else {
+        document.getElementById('submit').disabled = !data.valid; // OK or not OK to submit
+      }
+    })
+    .fail(function(jqHXR,status,error) {
+      alert('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+      debugOut(jqHXR.responseText);
+    });
+  }, 100);
 }
 
 // This is where the details form is validated. We won't validate much - just some basic stuff. Things like invalid email addresses and stuff is ok, we'll fix it in the database if necessary.
@@ -879,6 +921,52 @@ function checkForm(el) {
   }
 }
 
+function checkUsernameFields() {
+  document.getElementById('submit').disabled = true;
+  var usernameComplete = true;
+  if (document.getElementById('action').value == 'changeUsername') {
+    var usernameFields = ['username', 'currentPassword', 'newPassword', 'newPassword2'];
+  }
+  for (var field in usernameFields) {
+    if (document.getElementById(usernameFields[field] + 'Text').value == '' || document.getElementById(usernameFields[field] + 'Span').innerHTML != '*') {
+      usernameComplete = false;
+    }
+  }
+  if (usernameComplete && usernameFields.indexOf('newPassword') && usernameFields.indexOf('newPassword2')) {
+    if (document.getElementById('newPasswordText').value != document.getElementById('newPassword2Text').value) {
+      usernameComplete = false;
+      document.getElementById('newPassword2Span').innerHTML = '';
+      document.getElementById('newPassword2Span').appendChild(document.createTextNode('Passwords don\'t match!'));
+      $('#newPassword2Span').addClass('error'); // Add error 
+    } else {
+      document.getElementById('newPassword2Span').innerHTML = '';
+      document.getElementById('newPassword2Span').appendChild(document.createTextNode('*'));
+      $('#newPassword2Span').removeClass('error'); // Remove error 
+    }
+  }
+  document.getElementById('submit').disabled = !usernameComplete;
+  return usernameComplete;
+}
+
+function changeUsername(el) {
+  if (checkUsernameFields()) {
+    return true;
+  } else {
+    el.disabled = true;
+    return false;
+  }
+}
+
+function login(el) {
+  if (document.getElementById('usernameLogin').value != '' && document.getElementById('passwordText').value != '') {
+    document.getElementById('loginButton').disabled = false;
+    return true;
+  } else {
+    document.getElementById('loginButton').disabled = true;
+    return false;
+  }
+}
+
 function ucfirst(txt) {
   return txt.substring(0, 1).toUpperCase() + txt.substring(1); // Why is this not a native part of Javascript? 
 }
@@ -901,7 +989,9 @@ function complete(type) { // Used to check that all objects are completely loade
 function getObjects(type) { // Load all objects from ajax. If type is specified, only that type is loaded. The function is recursive - if no type is specified, it will call itself for each type.
   if (type && type != 'geo') {
     showLoading(classes[type]); // Show a nice loading image
-    $.getJSON(baseHref + '/ajax/' + type + '.php', {t: '1'}, function(data) { // Uuuh! Hard coded tournament ID!! Someone, hit me hard, please.
+    var tourn = ($.url().param('t')) ? $.url().param('t') : 1;
+    var urlParams = {t: tourn, obj: $.url().param('obj'), id: $.url().param('id')};
+    $.getJSON(baseHref + '/ajax/' + type + '.php', urlParams, function(data) { // Uuuh! Hard coded tournament ID!! Someone, hit me hard, please.
       if (data.length > 0) {
         for (var obj in data) {
           new window[type.toUpperCase()](data[obj]); // Let's create objects from the JSON
@@ -921,9 +1011,11 @@ function getObjects(type) { // Load all objects from ajax. If type is specified,
             document.getElementById('ifpaButton').disabled = false;
           }
         } else if ($.url().attr('file') == 'edit.php' && /^[0-9]+$/.test($.url().param('id'))) {
-          editPlayer($.url().param('id'));
+          editPlayer($.url().param('id')); // Player editing the profile = no recaptchas (player is logged in) and some other differences long the way
         } else if ($.url().segment(-1) == 'editplayer' && document.getElementById('id') && /^[0-9]+$/.test(document.getElementById('id').value)) {
-          editPlayer(document.getElementById('id').value);
+          editPlayer(document.getElementById('id').value); // Same thing coming through wordpress
+        } else if (document.getElementById('loggedIn') && document.getElementById('loggedIn').value == 'true' && document.getElementById('id') && /^[0-9]+$/.test(document.getElementById('id').value)) {
+          editPlayer(document.getElementById('id').value); // Same thing coming through wordpress
         }
         var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://www.europinball.org/2013';
       }
@@ -1018,14 +1110,21 @@ function geoSelected(sel) { // Someone chose something in a geo-select! The "sel
       if (targetSel.name == sel.name) { // The loop has reached the select that initiated things. So we need to change method (from filtering to selecting, or vice versa).
         start = true; // Now we're starting!
       } else if (start) {
-        filterOptions(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)); // This is filtering - i.e. if the user chose a country, the targetSel is regions or cities
-        /*
-        if (targetSel.options[targetSel.selectedIndex].value != 0) {
-          // Popup - if the user has already selected something and we want to change it. Don't think we will ever implement this.
+        if (targetSel.options[targetSel.selectedIndex].value != 0) { // Check if the user had already selected something (or if something was already in the database)
+          if (window[targetSel.name](targetSel.options[targetSel.selectedIndex].value)[sel.name + '_id'] && window[targetSel.name](targetSel.options[targetSel.selectedIndex].value)[sel.name + '_id'] != '') { // Check if the object already had a parent?
+            var oldParent = window[sel.name](window[targetSel.name](targetSel.options[targetSel.selectedIndex].value)[sel.name + '_id']);
+            var geoMove = confirm(targetSel.options[targetSel.selectedIndex].text + ' was already selected, and located in ' + oldParent.name + '. Do you suggest moving ' + targetSel.options[targetSel.selectedIndex].text + ' to ' + sel.options[sel.selectedIndex].text + '?');
+            if (!geoMove) {
+              filterOptions(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)); // No move! Then we filter - i.e. if the user chose a country, the targetSel is regions or cities and will be filtered to only showing for that country
+            } else {
+              // Nothing here = means that the user can essentially move Stockholm to Oman. If that's not acceptable, checks could be implemented here.
+            }
+          } else {
+            // This means that the object had no parent, but will get one when this user submits the data. Unless we implement something to stop it (but why?).
+          }
         } else {
-          filterOptions(targetSel, window[sel.name](sel.options[sel.selectedIndex].value));
+          filterOptions(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)); // This is filtering - i.e. if the user chose a country, the targetSel is regions or cities
         }
-        */
       } else {
         if(window[sel.name](sel.options[sel.selectedIndex].value)[targetSel.name + '_id']) {
           selectOption(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)[targetSel.name + '_id']); 
@@ -1120,7 +1219,7 @@ function popTbl(tbl, type) { // Let's populate a table
     addRows(tbody, type, true); // ...and rows
     hideLoading(type);
     $('#' + tbl.id).dataTable({'bProcessing': true, 'bDestroy': true, 'bJQueryUI': true,
-		'sPaginationType': 'full_numbers'}); // Rebuild the datatable
+		'sPaginationType': 'full_numbers', 'iDisplayLength': 100}); // Rebuild the datatable
     $('#' + tbl.id).css('width', '') // This is needed, or the table is butt ugly!
   }
 }
@@ -1151,7 +1250,7 @@ function addTheaders (thead, headers, meBtn) { // meBtn is the "This is me!" but
   for (var header in headers) { // Let's go through the headers form the meta information objects
     var th = document.createElement('th');
     tr.appendChild(th)
-    th.appendChild(document.createTextNode(ucfirst(headers[header])));
+    th.appendChild(document.createTextNode(classes.player.fields[headers[header]].label));
   }
   var th = document.createElement('th');
   if (meBtn) { // "This is me!" should be shown
@@ -1159,6 +1258,7 @@ function addTheaders (thead, headers, meBtn) { // meBtn is the "This is me!" but
     th.appendChild(document.createTextNode('Me?')); 
   } else {
     tr.appendChild(th)
+    th.style.display = 'none';
   }
   return thead;
 }
@@ -1223,6 +1323,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
     td.appendChild(btn);
   } else {
     var td = tr.insertCell(-1);
+    td.style.display = 'none';
   }
 }
 
@@ -1240,11 +1341,26 @@ function tShirtIcon(tbody) { // This is not used yet, but will be
   td.appendChild(img);
 }
 
+function addIfpaLink(ifpa_id, ifpaRank) {
+  var txt = document.createTextNode(ifpaRank);
+  if (ifpa_id && ifpaRank && /^[0-9]+$/.test(parseInt($.trim(ifpa_id))) && /^[0-9]+$/.test(parseInt($.trim(ifpaRank)))) {
+    var a = document.createElement('a');
+    a.href = 'http://www.ifpapinball.com/player.php?player_id=' + ifpa_id;
+    a.target = '_new';
+    a.appendChild(txt);
+    return a;
+  } else {
+    return txt;
+  }
+}
+
 function addLink(obj) { // Create a link for an object. This will be rewritten.
   var txt = document.createTextNode(obj.name)
   if (obj && obj.id != 0) {
     var a = document.createElement('a');
-    a.href = obj.class + '.php?id=' + obj.id + (($.url().param('debug')) ? '&debug=1' : '');
+    var url = $.url().attr('source').replace($.url().segment(-1), obj.class);
+    url = url.split('?')[0];
+    a.href = url + '?obj=' + obj.class + '&id=' + obj.id + (($.url().param('debug')) ? '&debug=1' : '') + (($.url().param('t')) ? '&t=' + $.url().param('t') : '');
     a.appendChild(txt);
     return a;
   } else {

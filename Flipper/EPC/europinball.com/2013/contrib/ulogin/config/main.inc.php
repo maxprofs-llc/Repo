@@ -199,7 +199,7 @@ define('UL_SESSION_AUTOSTART', true);
 // To disable automatic expiry, set it to a sufficiently
 // large value (eg. 86400 = 1 day).
 // Only positive values are valid.
-define('UL_SESSION_EXPIRE', 1200);
+define('UL_SESSION_EXPIRE', 7200);
 
 // Probability that the session id will be regenerated
 // when a session is started. Zero will disable automatic
@@ -226,7 +226,7 @@ define('UL_SESSION_BACKEND', 'ulPdoSessionStorage');
 // For example, you'd want to disable this if you accept PayPal checkouts or
 // other forms of online payment. Otherwise, keep this enabled for added
 // security.
-define('UL_SESSION_CHECK_REFERER', true);
+define('UL_SESSION_CHECK_REFERER', false);
 
 // Defines if the user's IP must always be consistent.
 // Disable this if you get a lot of complaints from users behind load balancing

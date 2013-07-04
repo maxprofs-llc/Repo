@@ -6,7 +6,7 @@
     public $comment;
     public $class = 'base';
 
-    public function populate() {
+    public function populate($dbh) {
     }
   }
 ?>

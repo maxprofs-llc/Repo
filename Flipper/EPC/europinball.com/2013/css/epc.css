@@ -60,6 +60,20 @@ img.icon {
   margin-right: 20px;
 }
 
+#newButton {
+  float: left;
+  margin-right: 20px;
+}
+
+#newData {
+  clear: left;
+}
+
+#noHits {
+  display: block;
+  clear: left;
+}
+
 #ifpaRegResults {
   margin-top: 20px;
 }
@@ -73,7 +87,7 @@ li {
 }
 
 .mandatory {
-  background-color: #FFFF00;
+  background-color: #FFFF00 !important;
 }
 
 .error {
@@ -82,6 +96,7 @@ li {
 }
 
 .errorSpan {
+  font-size: 75%;
   margin-left: 10px;
 }
 
@@ -92,3 +107,25 @@ li {
 .ui-datepicker {
   z-index: 9999; 
 }
+
+.preview {
+  width: 400px;
+}
+
+#imageUpload {
+  width: 1px;
+  height: 1px;
+}
+
+.leftInfoDiv {
+  float: left;
+}
+
+.leftInfoDiv td {
+  padding-right: 10px;
+}
+
+.objectPhoto {
+  width: 400px;
+}
+

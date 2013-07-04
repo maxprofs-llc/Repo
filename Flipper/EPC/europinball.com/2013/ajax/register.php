@@ -4,6 +4,6 @@
     
   $player = new player($_REQUEST);
 
-  addPlayer($dbh, $player);
+  addPlayer($dbh, $player, $ulogin);
 
 ?>

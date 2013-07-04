@@ -14,14 +14,23 @@
 		$full = $url . "?" . $query;
 		$html = file_get_html($full);
 
-		// This magic search id is the div containing player rank
-		$magic = "#sidebar-content-wrap";
-		$raw = $html->find($magic, 0)->find('td', 1)->plaintext;
+    $pos = false;
+    
+    if ($html) {
+  		// This magic search id is the div containing player rank
+      $magic = "#sidebar-content-wrap";
+      if ($magic) {
+        $magicRes = $html->find($magic, 0);
+        if ($magicRes) {
+		      $raw = $html->find($magic, 0)->find('td', 1)->plaintext;
+  	      $pos = stripos($raw, "not ranked");
+        }
+      }
+    }
 
 		$rank = "-1";
 		$ranked_player = array();
 
-		$pos = stripos($raw, "not ranked");
 		if ($pos === false)
 		{
 			$result = preg_match("/(?P<digit>\d+)/", $raw, $matches);
@@ -38,5 +47,5 @@
 	$id = trim($_GET['id']);
 	$rank = get_rank_from_id($id);
 	
-	echo json_encode($rank);
+//	echo json_encode($rank);
 ?>

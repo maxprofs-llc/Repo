@@ -1,14 +1,16 @@
 <?php
   define('__ROOT__', dirname(dirname(__FILE__))); 
+  define('__baseHref__', 'https://www.europinball.org/2013'); 
   require_once(__ROOT__.'/functions/db.php');
   require_once(__ROOT__.'/functions/header.php');
   require_once(__ROOT__.'/contrib/ulogin/config/all.inc.php');
   require_once(__ROOT__.'/contrib/ulogin/main.inc.php');
   require_once(__ROOT__.'/functions/auth.php');
-  
 
   $baseHref = 'https://www.europinball.org/2013';
   
+  $exts = array('png', 'jpg', 'jpeg', 'jpg');
+
   spl_autoload_register(function($class) { // Autoloading classes. To fix some day: For some reason, some of the classes require require_once:s - which they shouldn't. 
     if (is_file(__ROOT__.'/classes/'.$class.'.class.php')) {
       include __ROOT__.'/classes/'.$class.'.class.php';
@@ -16,9 +18,81 @@
   });  
   
   $classes = (object) array(
+    'game' => (object) array(
+      'name' => 'game', 'geo' => false, 'plural' => 'games', 'label' => 'Game', 
+      'headers' => array('name', 'acronym', 'manufacturer', 'year', 'isIpdb', 'rules'), // Headers normally used in tables and lists
+      'info' => array('name', 'type', 'acronym', 'manufacturer', 'year', 'isIpdb', 'rules'), // Headers normally used in info divs
+      'fields' => (object) array(
+        'name' => (object) array(
+          'label' => 'Name',
+          'type' => 'text',  
+          'mandatory' => true,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => true,
+          'default' => ''
+        ),
+        'type' => (object) array(
+          'label' => 'Type',
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''
+        ),
+        'acronym' => (object) array(
+          'label' => 'Acronym',
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''
+        ),
+        'manufacturer' => (object) array(
+          'label' => 'Manufacturer',
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''
+        ),
+        'year' => (object) array(
+          'label' => 'Year',
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''
+        ),
+        'isIpdb' => (object) array(
+          'label' => 'IPDB',
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''
+        ),
+        'rules' => (object) array(
+          'label' => 'Rules',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => ''
+        )
+      ),
+      'complete' => false
+    ),
     'continent' => (object) array(
       'name' => 'continent', 'geo' => true, 'plural' => 'continents', 
       'headers' => array('name', 'latitude', 'longitude'), // Headers normally used in tables and lists
+      'info' => array('name', 'latitude', 'longitude'), // Headers normally used in info divs
       'fields' => (object) array(
         'name' => (object) array(
           'label' => 'Name',
@@ -53,6 +127,7 @@
     'country' => (object) array(
       'name' => 'country', 'geo' => true, 'plural' => 'countries',
       'headers' => array('name', 'continent', 'latitude', 'longitude'), // Headers normally used in tables and lists
+      'info' => array('name', 'parentCountry', 'continent', 'latitude', 'longitude'), // Headers normally used in info divs
       'fields' => (object) array(
         'name' => (object) array( 
           'label' => 'Name',  
@@ -65,11 +140,20 @@
         ),
         'continent' => (object) array(
           'label' => 'Continent',  
-          'type' => 'text',  
+          'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'insert' => true,
           'bundle' => false  
+        ),
+        'parentCountry' => (object) array(  
+          'label' => 'Parent country',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
         ),
         'latitude' => (object) array(  
           'label' => 'Latitude',  
@@ -95,6 +179,7 @@
     'region' => (object) array(
       'name' => 'region', 'geo' => true, 'plural' => 'regions',
       'headers' => array('name', 'country', 'continent', 'latitude', 'longitude'),  // Headers normally used in tables nd lists
+      'info' => array('name', 'parentRegion', 'country', 'parentCountry', 'continent', 'latitude', 'longitude'), // Headers normally used in info divs
       'fields' => (object) array(
         'name' => (object) array(  
           'label' => 'Name',  
@@ -107,17 +192,35 @@
         ),
         'continent' => (object) array(  
           'label' => 'Continent',  
-          'type' => 'text',  
+          'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'country' => (object) array(  
           'label' => 'Country',  
-          'type' => 'text',  
+          'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
+        ),
+        'parentRegion' => (object) array(
+          'label' => 'Parent region',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
+        ),
+        'parentCountry' => (object) array(  
+          'label' => 'Parent country',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
         ),
         'latitude' => (object) array(  
           'label' => 'Latitude',  
@@ -143,6 +246,7 @@
     'city' => (object) array(
       'name' => 'city', 'geo' => true, 'plural' => 'cities',
       'headers' => array('name', 'region', 'country', 'continent', 'latitude', 'longitude'), // Headers normally used in tables and lists
+      'info' => array('name', 'region', 'parentRegion', 'country', 'parentCountry', 'continent', 'latitude', 'longitude'), // Headers normally used in info divs
       'fields' => (object) array(
         'name' => (object) array(  
           'label' => 'Name',  
@@ -155,24 +259,42 @@
         ),
         'continent' => (object) array(  
           'label' => 'Continent',  
-          'type' => 'text',  
+          'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'country' => (object) array(  
           'label' => 'Country',  
-          'type' => 'text',  
+          'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'region' => (object) array(  
           'label' => 'Region',  
-          'type' => 'text',  
+          'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
+        ),
+        'parentRegion' => (object) array(
+          'label' => 'Parent region',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
+        ),
+        'parentCountry' => (object) array(  
+          'label' => 'Parent country',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
         ),
         'latitude' => (object) array(  
           'label' => 'Latitude',  
@@ -198,6 +320,7 @@
     'player' => (object) array(
       'name' => 'player', 'geo' => false, 'plural' => 'players', 
       'headers' => array('name', 'initials', 'city', 'region', 'country', 'continent'), // Headers normally used in tables and lists
+      'info' => array('name', 'initials', 'qualGroup', 'birthDate', 'gender', 'city', 'region', 'parentRegion', 'country', 'parentCountry', 'continent', 'isIfpa', 'main', 'classics', 'volunteer'), // Headers normally used in info divs
       'fields' => (object) array(
         'id' => (object) array(  
           'label' => 'ID',  
@@ -208,6 +331,15 @@
           'insert' => true,
           'default' => 0  
         ),
+        'name' => (object) array(  
+          'label' => 'Name',  
+          'type' => '',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => true,
+          'default' => null 
+        ),
         'ifpa_id' => (object) array(  
           'label' => 'IFPA ID',  
           'type' => 'hidden',  
@@ -216,6 +348,15 @@
           'bundle' => false,  
           'insert' => false,
           'default' => 0  
+        ),
+        'ifpaRank' => (object) array(  
+          'label' => 'Rank position',  
+          'type' => 'text',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,  
+          'insert' => false,
+          'default' => null 
         ),
         'class' => (object) array(  
           'label' => 'Class',  
@@ -245,7 +386,7 @@
           'default' => true  
         ),
         'isIfpa' => (object) array(  
-          'label' => 'isIfpa',  
+          'label' => 'IFPA rank',  
           'type' => 'hidden',  
           'mandatory' => false,  
           'special' => false,  
@@ -361,6 +502,24 @@
           'insert' => true,
           'default' => ''  
         ),
+        'parentRegion' => (object) array(
+          'label' => 'Parent region',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
+        ),
+        'parentCountry' => (object) array(  
+          'label' => 'Parent country',  
+          'type' => 'select',  
+          'mandatory' => false,  
+          'special' => false,  
+          'bundle' => false,
+          'insert' => false,
+          'default' => ''  
+        ),
         'continent' => (object) array(  
           'label' => 'Continent',  
           'type' => 'select',  
@@ -465,10 +624,10 @@
   );
   
   $geoTypes = array('continent', 'country', 'region', 'city');
-  $playerHeaders = array('firstName', 'lastName', 'username', 'password', 'initials', 'ifpa_id', 'gender', 'streetAddress', 'zipCode', 'city', 'region', 'country', 'continent', 'telephoneNumber', 'mobileNumber', 'mailAddress', 'dateRegistered', 'birthDate', 'main', 'classics', 'volunteer', 'id', 'comment');
-  $playerLabels = array('First name', 'Last name', 'Username', 'Password', 'Initials (tag)', 'IFPA ID', 'Gender', 'Address', 'ZIP', 'City', 'Region', 'Country', 'Continent', 'Phone', 'Cell phone', 'E-mail', 'Date registered', 'Birth date', 'Main division', 'Classics division', 'Volunteer', 'ID', 'Comment');
-  $playerTypes = array('text', 'text', 'text', 'text', 'text', 'text', 'select', 'text', 'text', 'select', 'select', 'select', 'select', 'text', 'text', 'text', 'text', 'text', 'checkbox', 'checkbox', 'checkbox', 'text', 'text');
-  $debug = $_GET['debug'];
+  $playerHeaders = array('firstName', 'lastName', 'username', 'password', 'initials', 'ifpa_id', 'ifpaRank', 'gender', 'streetAddress', 'zipCode', 'city', 'region', 'country', 'continent', 'telephoneNumber', 'mobileNumber', 'mailAddress', 'dateRegistered', 'birthDate', 'main', 'classics', 'volunteer', 'id', 'comment');
+  $playerLabels = array('First name', 'Last name', 'Username', 'Password', 'Initials (tag)', 'IFPA ID', 'Rank position',  'Gender', 'Address', 'ZIP', 'City', 'Region', 'Country', 'Continent', 'Phone', 'Cell phone', 'E-mail', 'Date registered', 'Birth date', 'Main division', 'Classics division', 'Volunteer', 'ID', 'Comment');
+  $playerTypes = array('text', 'text', 'text', 'text', 'text', 'text', 'text', 'select', 'text', 'text', 'select', 'select', 'select', 'select', 'text', 'text', 'text', 'text', 'text', 'checkbox', 'checkbox', 'checkbox', 'text', 'text');
+//  $debug = $_GET['debug'];
     
   function getObject($dbh, $class, $id) {
     $query = 'select * from '.$class.' where id = '.$id;
@@ -520,6 +679,84 @@
     return $isValid;
   }
   
+  function getManufacturers($dbh, $where, $order = 'order by mn.name') {
+    $query = '
+      select
+        mn.id as id,
+        mn.name as name,
+        "manufacturer" as class
+      from manufacturer mn
+    '; 
+    $where = preg_replace('/ id /', ' mn.id ', $where);
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject()) {
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  function getGames($dbh, $where, $order = 'order by g.name') {
+    $query = '
+      select
+        ma.id as id,
+        g.name as name,
+        "game" as class,
+        mn.id as manufacturer_id,
+        mn.name as manufacturer,
+        g.acronym as acronym,
+        if(g.game_ipdb_id is not null, 1, 0) as isIpdb,
+        g.game_ipdb_id as ipdb_id,
+        g.game_year_released as year,
+        g.game_link_rulesheet as rules,
+        if(d.id = 1, 1, 0) as main,
+        if(d.id = 2, 1, 0) as classics,
+        e.id as tournamentEdition_id
+      from machine ma
+      left join game g
+        on g.id = ma.game_id
+      left join manufacturer mn
+        on mn.id = g.manufacturer_id
+      left join tournamentDivision d
+        on d.id = ma.tournamentDivision_id
+      left join tournamentEdition e
+        on e.id = d.tournamentEdition_id
+    '; 
+    $where = preg_replace('/ id /', ' ma.id ', $where);
+    $where = preg_replace('/ manufacturer_id /', ' mn.id ', $where);
+    $where = preg_replace('/ game_id /', ' g.id ', $where);
+    $where = preg_replace('/ ipdb_id /', ' g.game_ipdb_id ', $where);
+    $where = preg_replace('/ tournamentDivision_id /', ' d.id ', $where);
+    $where = preg_replace('/ tournamentEdition_id /', ' e.id ', $where);
+    $where = preg_replace('/ type = main /', ' d.id = 1 ', $where);
+    $where = preg_replace('/ type = classics /', ' d.id = 2 ', $where);
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('game')) {
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  
+  function getGenders($dbh, $where, $order = 'order by name') {
+    $query = '
+      select
+        ge.id as id,
+        ge.id as continent_id,
+        "gender" as class,
+        "gender" as type,
+        ge.name as name,
+        ge.comment as comment
+      from gender ge
+    '; 
+    $where = preg_replace('/ id /', ' ge.id ', $where);
+    $where = preg_replace('/ gender_id /', ' ge.id ', $where);
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject('gender')) {
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+
   function getContinents($dbh, $where, $order = 'order by name') {
     $query = '
       select
@@ -535,13 +772,13 @@
     '; 
     $where = preg_replace('/ id /', ' cn.id ', $where);
     $where = preg_replace('/ continent_id /', ' cn.id ', $where);
+//    echo($query.' '.$where.' '.$order);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('continent')) {
       $objs[] = $obj;
     }
     return $objs;
-  }
-  
+  }  
   
   function getCountries($dbh, $where, $order = 'order by name') {
     $query = '
@@ -709,6 +946,7 @@
     return $objs;
   }
   
+  
   function getPlayerJoin() {
     return '
       left join player m
@@ -797,7 +1035,7 @@
         on (mT.tournamentEdition_id = e.id or clT.tournamentEdition_id = e.id or v.tournamentEdition_id = e.id) and e.id = 1 
     ';
   }
-  
+    
   function getPlayers($dbh, $where, $order = 'order by p.firstName, p.lastName') {
     $query = '
       select 
@@ -829,6 +1067,7 @@
         p.mailAddress as mailAddress,
         p.birthDate as birthDate,
         p.ifpa_id as ifpa_id,
+        p.ifpaRank as ifpaRank,
         p.comment as comment,
         if(p.ifpa_id is not null,1,0) as isIfpa,
         null as password,
@@ -845,13 +1084,14 @@
     $query .= getPlayerJoin();
     $where = preg_replace('/ tournamentEdition_id /', ' mT.tournamentEdition_id ', $where);
     $where = preg_replace('/ id /', ' p.id ', $where);
+    $where = preg_replace('/ player_id /', ' p.id ', $where);
     $where = preg_replace('/ city_id /', ' pC.id ', $where);
     $where = preg_replace('/ region_id /', ' coalesce(pR.id, pRPr.id, pCR.id, pCRPr.id) ', $where);
     $where = preg_replace('/ parentRegion_id /', ' coalesce(pRPr.id, pCRPr.id) ', $where);
     $where = preg_replace('/ country_id /', ' coalesce(pCo.id, pCoPco.id, pRCo.id, pRCoPco.id, pRPrCo.id, pRPrCoPco.id, pCCo.id, pCCoPco.id, pCRCo.id, pCRCoPco.id, pCRPrCo.id, pCRPrCoPco.id) ', $where);
     $where = preg_replace('/ parentCountry_id /', ' coalesce(pCoPco.id, pRCoPco.id, pRPrCoPco.id, pCCoPco.id, pCRCoPco.id, pCRPrCoPco.id) ', $where);
     $where = preg_replace('/ continent_id /', ' coalesce(pCn.id, pCoCn.id, pCoPcoCn.id, pRCn.id, pRCoCn.id, pRCoPcoCn.id, pRPrCn.id, pRPrCoCn.id, pRPrCoPcoCn.id, pCCn.id, pCCoCn.id, pCCoPcoCn.id, pCRCn.id, pCRCoCn.id, pCRCoPcoCn.id, pCRPrCn.id, pCRPrCoCn.id, pCRPrCoPcoCn.id) ', $where);
-//    echo($query.' '.$where.' '.$order);
+    //echo($query.' '.$where.' '.$order);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('player')) {
       $objs[] = $obj;
@@ -873,6 +1113,110 @@
     }
     return getPlayers($dbh, $where);
   } 
+  
+  function getManufacturerById($dbh, $id) {
+    $where = 'where mn.id = '.$id;
+    if ($obj = getManufacturers($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }
+
+  function getGameById($dbh, $id) {
+    $where = 'where g.id = '.$id;
+    if ($obj = getGames($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }
+  
+  function getPlayerById($dbh, $id) {
+    $where = 'where p.id = '.$id;
+    if ($obj = getPlayers($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }
+  
+  function getCityById($dbh, $id) {
+    $where = 'where c.id = '.$id;
+    if ($obj = getCities($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }
+  
+  function getRegionById($dbh, $id) {
+    $where = 'where r.id = '.$id;
+    if ($obj = getRegions($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }
+  
+  function getCountryById($dbh, $id) {
+    $where = 'where co.id = '.$id;
+    if ($obj = getCountries($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }
+  
+  function getContinentById($dbh, $id) {
+    $where = 'where cn.id = '.$id;
+    if ($obj = getContinents($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }  
+
+  function getGenderById($dbh, $id) {
+    $where = 'where ge.id = '.$id;
+    if ($obj = getGenders($dbh, $where)[0]) {
+      return $obj;
+    } else {
+      return false;
+    }
+  }  
+  
+  function getObjectById($dbh, $type, $id) {
+    switch ($type) {
+      case 'game':
+        return getGameById($dbh, $id);
+      break;
+      case 'manufacturer':
+        return getManufacturerById($dbh, $id);
+      break;
+      case 'player':
+        return getPlayerById($dbh, $id);
+      break;
+      case 'city':
+        return getCityById($dbh, $id);
+      break;
+      case 'region':
+        return getRegionById($dbh, $id);
+      break;
+      case 'country':
+        return getCountryById($dbh, $id);
+      break;
+      case 'continent':
+        return getContinentById($dbh, $id);
+      break;
+      case 'gender':
+        return getGenderById($dbh, $id);
+      break;
+      default:
+        return false;
+      break;
+    }
+  }
     
   function addGeo($dbh, $geoType, $name, $parentType = null, $parentId = null) {
     $update[':name'] = $name;
@@ -881,7 +1225,6 @@
       $update[':parentId'] = $parentId;
       $query .= ', '.$parentType.'_id = :parentId';
     }
-    echo $query;
     $sth = $dbh->prepare($query);
     $sth->execute($update);
     return $dbh->lastInsertId();
@@ -891,7 +1234,6 @@
     $update[':id'] = $id;
     $update[':parentId'] = $parentArray[1];
     $query = 'update '.$geoType.' set '.$parentArray[0].'_id = :parentId where id = :id';
-    echo $query;
     $sth = $dbh->prepare($query);
     $sth->execute($update);
   }
@@ -900,13 +1242,6 @@
     global $geoTypes;
     $update = false;
     foreach ($geoTypes as $geoType) {
-      var_dump('run:');
-      var_dump($geotype);
-      var_dump($player->{$geoType});
-      var_dump($player->{$geoType.'_id'});
-      var_dump($parentType);
-      var_dump($parentId);
-      var_dump($update);
       if (preg_match('/^[0-9]+$/', $player->{$geoType})) {
         $geoId = $player->{$geoType};
         if ($update) {
@@ -927,9 +1262,9 @@
     return $player;
   }
   
-  function addPlayerQuery($dbh, $player, $type = 'player', $division = 1) {
+  function addPlayerQuery($dbh, $player, $type = 'player', $division = 1, $method = 'insert into') {
     global $classes;
-    $query = 'insert into '.$type.' set';
+    $query = $method.' '.$type.' set';
     foreach($classes->player->fields as $value => $meta) {
       if ($player->{$value}) {
         switch ($meta->type) {
@@ -972,19 +1307,17 @@
     return array(rtrim($query, ','), $update);
   }
   
-  function addPlayer($dbh, $player) {
+  function addPlayer($dbh, $player, $ulogin = null) {
     $player = addPlayerGeo($dbh, $player);
-    var_dump($player);
     if ($player->id == '0') {
       $player->id = addPerson($dbh, $player);
     } 
     if ($player->username && $player->password) {
-      updateUser($dbh, $player);
+      updateUser($dbh, $player, $ulogin);
     }
     foreach(array('main', 'classics') as $division) {
       if ($player->{$division} == 'true') {
         $query = addPlayerQuery($dbh, $player, 'player', (($division == 'main') ? 1 : 2));
-        var_dump($query);
         $sth = $dbh->prepare($query[0]);
         $sth->execute($query[1]);
       }
@@ -994,23 +1327,94 @@
     }
   }
   
+  function editPlayer($dbh, $player, $ulogin = null) {
+    $pId = $player->id;
+    $player = addPlayerGeo($dbh, $player);
+    foreach(array('main', 'classics') as $division) {
+      if ($player->{$division} == 'true') {
+        if (checkPlayer($dbh, $player, $division)) {
+          $query = addPlayerQuery($dbh, $player, 'player', (($division == 'main') ? 1 : 2), 'update');
+          $query[0] .= ' where person_id = :pId and tournamentDivision_id = :divisionId';
+          $query[1][':pId'] = $pId;
+          $query[1][':divisionId'] = ($division == 'main') ? 1 : 2;
+        } else {
+          $query = addPlayerQuery($dbh, $player, 'player', (($division == 'main') ? 1 : 2));
+        }
+        $sth = $dbh->prepare($query[0]);
+        $sth->execute($query[1]);
+      } else {
+        deletePlayer($dbh, $player, $division);
+      }
+    }
+    if ($player->username && $player->password) {
+      updateUser($dbh, $player, $ulogin);
+    }
+    if ($player->volunteer == 'true') {
+      if (checkPlayer($dbh, $player, 'volunteer')) {
+        addVolunteer($dbh, $player, 1, 'update');        
+      } else {
+        addVolunteer($dbh, $player, 1);
+      }
+    } else {
+      deletePlayer($dbh, $player, 'volunteer');
+    }
+    if ($player->newPhoto != 'false') {
+      setPhoto($player);
+    }
+  }
+  
+  function checkPlayer($dbh, $player, $division) {
+    $table = ($division == 'volunteer') ? 'volunteer' : 'player';
+    $field = ($division == 'volunteer') ? 'tournamentEdition_id' : 'tournamentDivision_id';
+    $divisionId = ($division == 'classics') ? 2 : 1;
+    $query = 'select count(*) from '.$table.' where person_id = '.$player->id.' and '.$field.' = '.$divisionId;
+    $sth = $dbh->query($query);
+    if ($sth->fetchColumn() > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  function deletePlayer($dbh, $player, $division) {
+    $table = ($division == 'volunteer') ? 'volunteer' : 'player';
+    $field = ($division == 'volunteer') ? 'tournamentEdition_id' : 'tournamentDivision_id';
+    $delete[':divisionId'] = ($division == 'classics') ? 2 : 1;
+    $delete[':person_id'] = $player->id;
+    $query = 'delete from '.$table.' where person_id = :person_id and '.$field.' = :divisionId';
+    $sth = $dbh->prepare($query);
+    $sth->execute($delete);
+  }
+  
   function addPerson($dbh, $player) {
     $query = addPlayerQuery($dbh, $player, 'person');
     $sth = $dbh->prepare($query[0]);
-    var_dump($query);
     $sth->execute($query[1]);
     return $dbh->lastInsertId();
   }
   
-  function addVolunteer($dbh, $player, $tournament) {
-    $query = addPlayerQuery($dbh, $player, 'volunteer', $tournament);
+  function addVolunteer($dbh, $player, $tournament, $method = 'insert into') {
+    $pId = $player->id;
+    $query = addPlayerQuery($dbh, $player, 'volunteer', $tournament, $method);
+    if ($method == 'update') {
+      $query[0] .= ' where person_id = :pId';
+      $query[1][':pId'] = $pId;
+    }
     $sth = $dbh->prepare($query[0]);
-    var_dump($query);
     $sth->execute($query[1]);
     return $dbh->lastInsertId();
   }
   
-  function updateUser($dbh, $player){
+  function getIdFromUser($dbh, $username) {
+    $query = "select id from person where username = :username";
+    $select[':username'] = $username;
+    $sth = $dbh->prepare($query);
+    $sth->execute($select);
+    $player = $sth->fetchObject('player');
+    return $player->id;
+  }
+  
+  function updateUser($dbh, $player, $ulogin = null){
     $query = 'update person p set p.username = :username,';
     $query .= ' password = :password';
     $query .= ' where p.id = :playerId';
@@ -1018,19 +1422,19 @@
     $update[':password'] = encrPass($player->password, $player->username);
     $update[':playerId'] = $player->id;
     $sth = $dbh->prepare($query);
-    $sth->execute($update);
-    $ulogin = new uLogin('appLogin', 'appLoginFail');
-    $ulogin->CreateUser($player->username,  $player->password);
-  }
-  
-  function getIfpaIds($dbh, $where = 'where p.ifpa_id is not null', $order = 'order by ifpa_id asc') {
-    $query = 'select p.id, p.ifpa_id from person p'.getPlayerJoin();
-    $sth = $dbh->query($query.' '.$where.' '.$order);
-    var_dump($query);
-    while ($obj = $sth->fetchObject()) {
-      $objs[] = $obj;
+    if ($sth->execute($update)) {
+      if ($ulogin) {
+        if ($ulogin->CreateUser($player->username,  $player->password)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    } else {
+      return false;
     }
-    return $objs;
   }
   
   function salt($ind = null){
@@ -1042,6 +1446,131 @@
     return sha1($salt.$pass);
   }
   
+  function getIfpaIds($dbh, $where = 'where p.ifpa_id is not null', $order = 'order by ifpa_id asc') {
+    $query = 'select p.id, p.ifpa_id from person p'.getPlayerJoin();
+    $sth = $dbh->query($query.' '.$where.' '.$order);
+    while ($obj = $sth->fetchObject()) {
+      $objs[] = $obj;
+    }
+    return $objs;
+  }
+  
+  function updateIfpaRank($dbh, $player) {
+    $query = 'update person p set p.ifpaRank = :ifpaRank';
+    $query .= ' where p.id = :playerId';
+    $update[':playerId'] = $player->id;
+    $update[':ifpaRank'] = $player->rank;
+    $sth = $dbh->prepare($query);
+    $sth->execute($update);
+  }
+  
+  function getTable($type) {
+    $content = '<div id="'.$type.'Div">
+                  <h3 id="'.$type.'H3" class="entry-title">'.ucfirst(getPlural($type)).'</h3>
+                  <span id="'.$type.'Loading"><img src="'.__baseHref__.'/images/ajax-loader.gif" alt="Loading data..."></span>
+                  <table id="'.$type.'Table" class="list"></table>
+                  <span id="'.$type.'All" class="getAll"></span>
+                  <br />
+                </div>
+    ';
+    return $content;
+  }
+  
+  function getGeoFilterWheres($type = false, $gender = true) {
+    global $geoTypes;
+    $start = false;
+    foreach(array_reverse($geoTypes) as $geoType) {
+      if ($start || !$type || $type == $geoType) {
+        $start = true;
+        if ($filter = getGeoFilterWhere($geoType)) {
+          return $filter;
+        }
+      }
+    }
+    if ($gender && $filter = getGeoFilterWhere('gender')) {
+      return $filter;
+    }
+    return false;
+  }
+  
+  function getGeoFilterWhere($type) {
+    if (isset($_REQUEST['obj']) && $_REQUEST['obj'] == $type) {
+      if (isset($_REQUEST['id']) && preg_match('/^[0-9]+$/', $_REQUEST['id'])) {
+        if ($type == 'region' || $type == 'country') {
+          return $type.'_id = '.$_REQUEST['id'].' or parent'.ucfirst($type).'_id = '.$_REQUEST['id'];
+        } else {
+          return $type.'_id = '.$_REQUEST['id'];
+        }
+      } else {
+        return false;
+      } 
+    } else {
+      return false;
+    }
+  }  
+    
+  function getPhotoExts() {
+    return array('png', 'jpg', 'jpeg', 'gif');
+  }
+    
+  function getPhoto($dbh, $type, $id, $thumbnail = false) {
+    if ($thumbnail) {
+      foreach (getPhotoExts() as $ext) {
+        if (file_exists(__ROOT__.'/images/objects/'.$type.'/'.$id.'.thumb.'.$ext)) {
+          return __baseHref__.'/images/objects/'.$type.'/'.$id.'.thumb.'.$ext;
+        }
+      }
+    } 
+    foreach (getPhotoExts() as $ext) {
+      if (file_exists(__ROOT__.'/images/objects/'.$type.'/'.$id.'.'.$ext)) {
+        return __baseHref__.'/images/objects/'.$type.'/'.$id.'.'.$ext;
+      }
+    }
+    $ifpa_id = getIfpaIds($dbh, 'where p.id = '.$id)[0]->ifpa_id;
+    foreach (getPhotoExts() as $ext) {
+      if (file_exists(__ROOT__.'/images/objects/'.$type.'/ifpa/'.$ifpa_id.'.'.$ext)) {
+        return __baseHref__.'/images/objects/'.$type.'/ifpa/'.$ifpa_id.'.'.$ext;
+      }
+    }
+    if ($thumbnail) {
+      foreach (getPhotoExts() as $ext) {
+        if (file_exists(__ROOT__.'/images/objects/'.$type.'/0.thumb.'.$ext)) {
+          return __baseHref__.'/images/objects/'.$type.'/0.thumb.'.$ext;
+        }
+      }
+    }
+    foreach (getPhotoExts() as $ext) {
+      if (file_exists(__ROOT__.'/images/objects/'.$type.'/0.'.$ext)) {
+        return __baseHref__.'/images/objects/'.$type.'/0.'.$ext;
+      }
+    }
+    foreach (getPhotoExts() as $ext) {
+      if (file_exists(__ROOT__.'/images/objects/0.'.$ext)) {
+        return __baseHref__.'/images/objects/0.'.$ext;
+      }
+    }
+    return false;
+  }
+
+  function setPhoto($obj) {
+    if ($obj->id && $obj->id != 0) {
+      foreach (getPhotoExts() as $ext) {
+        if (file_exists(__ROOT__.'/images/objects/'.$obj->class.'/'.$obj->id.'.'.$ext)) {
+          unlink(__ROOT__.'/images/objects/'.$obj->class.'/'.$obj->id.'.'.$ext);
+        }
+      }
+      rename(__ROOT__.'/images/objects/'.$obj->newPhoto, __ROOT__.'/images/objects/'.preg_replace('/\/preview\//', '/', $obj->newPhoto));
+    }
+  }
+  
+  function getLink($obj, $baseHref = 'https://www.europinball.org/wordpress/registration') {
+    switch ($obj->class) {
+      default:
+        return '<a href="'.$baseHref.'/'.$obj->class.'/?obj='.$obj->class.'&id='.$obj->id.'">'.$obj->name.'</a>';
+      break;
+    }
+  }
+    
   function checkField($dbh, $field, $value, $id = 0) {
     switch ($field) {
       case 'username':
@@ -1096,6 +1625,9 @@
         }
       break;
       case 'password':
+      case 'currentPassword':
+      case 'newPassword':
+      case 'newPassword2':
         if (preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$])[0-9A-Za-z!@#$]{6,50}$/', $value)) {
           $return = array(true, '{"valid":true,"reason":"Password is OK!","field":"'.$field.'"}');
         } else {
@@ -1134,8 +1666,10 @@
       case 'streetAddress':
       case 'zipCode':
       case 'main':
+      case 'name':
       case 'id':
       case 'ifpa_id':
+      case 'ifpaRank':
       case 'isPlayer':
       case 'isPerson':
       case 'passwordRequired':
@@ -1217,6 +1751,11 @@
   
   function getPlural($text) {
     $plurals = array(
+      'game' => 'games',
+      'machine' => 'machines',
+      'manufacturer' => 'manufacturers',
+      'gender' => 'genders',
+      'person' => 'persons',
       'player' => 'players',
       'city' => 'cities',
       'region' => 'regions',
