@@ -46,8 +46,10 @@
     public $mainPlayerId;
     public $place;
     public $wpprPlace;
+    public $wpprPoints;
     public $classicsPlace;
     public $classicsWpprPlace;
+    public $classicsWpprPoints;
     public $qualGroup_id;
     public $mainQualGroup_id;
     public $classicsQualGroup_id;

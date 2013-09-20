@@ -69,7 +69,7 @@
             <tr>
               <td>'.$player->classicsPlace.'</td>
               <td>'.$player->classicsWpprPlace.'</td>
-              <td>TBD</td>
+              <td>'.$player->classicsWpprPoints.'</td>
               <td>'.$player->getLink().'</td>
               <td>'.$player->initials.'</td>
               <td><a href="'.__baseHref__.'/countries/?obj=country&id='.$player->country_id.'">'.$player->country.'</td>

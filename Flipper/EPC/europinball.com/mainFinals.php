@@ -50,7 +50,7 @@
             <tr>
               <td>'.$player->place.'</td>
               <td>'.$player->wpprPlace.'</td>
-              <td>TBD</td>
+              <td>'.$player->wpprPoints.'</td>
               <td>'.$player->getLink().'</td>
               <td>'.$player->initials.'</td>
               <td><a href="'.__baseHref__.'/countries/?obj=country&id='.$player->country_id.'">'.$player->country.'</td>
