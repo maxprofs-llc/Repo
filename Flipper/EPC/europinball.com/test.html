@@ -1,45 +1,32 @@
-<!DOCTYPE html>
-<head>
-<meta charset="utf-8" />
-<title>Rodentia Test</title>
-<style type="text/css">
-html{
-font-family: "Segoe UI", Segoe, Calibri, Candara, Optima, Arial, sans-serif;
-font-size:20px;
-}
-body{
-margin:0px;
-padding:0px;
-}
-
-.items tr:first-child{
-font-weight: bold;
-}
-
-.items{
-width:500px;
-margin: 0 auto;
-padding: 5px 0 0 0;
-}
-</style>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript"> 
-$(document).ready(function() {
-	$(function rodentia() {
-		$.getJSON( "http://api.rodentia.se/api/matches/1?api_key=micke&format=json&callback=?",
-		function (data) {
-			$('div#user-list').html('<div class="items"></div>');
-			$.each(data.feed.entry, function(i,entry) { 
-				var item = '<span>' + entry.arenaId.$t + '</span>'; 
-				$('.items').append('<div>' + item + '</span></div>');   
-			});
-		});
-	setTimeout(rodentia,10000);    
-	});
-});
-</script>
-</head>
-<body>
-</body>
-</html>
-
+<html><head></head><body>
+<a href='http://www.europinball.org/2013/ajax/continent.php'>http://www.europinball.org/2013/ajax/continent.php</a><br />
+<a href='http://www.europinball.org/2013/ajax/continent.php?id=2'>http://www.europinball.org/2013/ajax/continent.php?id=2</a><br />
+<a href='http://www.europinball.org/2013/ajax/continent.php?continent_id=2'>http://www.europinball.org/2013/ajax/continent.php?continent_id=2</a><br />
+<a href='http://www.europinball.org/2013/ajax/country.php'>http://www.europinball.org/2013/ajax/country.php</a><br />
+<a href='http://www.europinball.org/2013/ajax/country.php?id=188'>http://www.europinball.org/2013/ajax/country.php?id=188</a><br />
+<a href='http://www.europinball.org/2013/ajax/country.php?country_id=188'>http://www.europinball.org/2013/ajax/country.php?country_id=188</a><br />
+<a href='http://www.europinball.org/2013/ajax/country.php?country_id=74'>http://www.europinball.org/2013/ajax/country.php?country_id=74</a><br />
+<a href='http://www.europinball.org/2013/ajax/country.php?continent_id=2'>http://www.europinball.org/2013/ajax/country.php?continent_id=2</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php'>http://www.europinball.org/2013/ajax/region.php</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php?id=92'>http://www.europinball.org/2013/ajax/region.php?id=92</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php?region_id=92'>http://www.europinball.org/2013/ajax/region.php?region_id=92</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php?region_id=420'>http://www.europinball.org/2013/ajax/region.php?region_id=420</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php?country_id=188'>http://www.europinball.org/2013/ajax/region.php?country_id=188</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php?country_id=74'>http://www.europinball.org/2013/ajax/region.php?country_id=74</a><br />
+<a href='http://www.europinball.org/2013/ajax/region.php?continent_id=2'>http://www.europinball.org/2013/ajax/region.php?continent_id=2</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php'>http://www.europinball.org/2013/ajax/city.php</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php?id=8'>http://www.europinball.org/2013/ajax/city.php?id=8</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php?region_id=92'>http://www.europinball.org/2013/ajax/city.php?region_id=92</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php?region_id=420'>http://www.europinball.org/2013/ajax/city.php?region_id=420</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php?country_id=188'>http://www.europinball.org/2013/ajax/city.php?country_id=188</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php?country_id=74'>http://www.europinball.org/2013/ajax/city.php?country_id=74</a><br />
+<a href='http://www.europinball.org/2013/ajax/city.php?continent_id=2'>http://www.europinball.org/2013/ajax/city.php?continent_id=2</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php'>http://www.europinball.org/2013/ajax/player.php</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?id=8'>http://www.europinball.org/2013/ajax/player.php?id=8</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?city_id=8'>http://www.europinball.org/2013/ajax/player.php?city_id=8</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?region_id=92'>http://www.europinball.org/2013/ajax/player.php?region_id=92</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?region_id=420'>http://www.europinball.org/2013/ajax/player.php?region_id=420</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?country_id=188'>http://www.europinball.org/2013/ajax/player.php?country_id=188</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?country_id=74'>http://www.europinball.org/2013/ajax/player.php?country_id=74</a><br />
+<a href='http://www.europinball.org/2013/ajax/player.php?continent_id=2'>http://www.europinball.org/2013/ajax/player.php?continent_id=2</a><br />
+</body></html>
