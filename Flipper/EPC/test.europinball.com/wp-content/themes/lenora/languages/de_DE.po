@@ -1,0 +1,316 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Lenora v1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-07-17 14:15:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:7
+#@ lenora
+msgid "Page not found"
+msgstr "Seite nicht gefunden."
+
+#: 404.php:10
+#@ lenora
+msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
+msgstr "Die Seite die Sie gesucht haben existiert nicht. Möglicherweise kann Ihnen die Suche helfen, die gewünschten Informationen zu finden."
+
+#: category.php:7
+#, php-format
+#@ lenora
+msgid "Category Archives: %s"
+msgstr "Kategorien Archiv"
+
+#: comments.php:3
+#@ lenora
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dieser Artikel ist passwortgeschützt. Geben Sie bitte das Passwort ein um die Kommentare sehen zu."
+
+#: comments.php:12
+#, php-format
+#@ lenora
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Kommentar zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &ldquo;%2$s&rdquo;"
+
+#: comments.php:18
+#: comments.php:29
+#@ lenora
+msgid "&larr; Older Comments"
+msgstr "Ältere Kommentare"
+
+#: comments.php:19
+#: comments.php:30
+#@ lenora
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare"
+
+#: comments.php:37
+#@ lenora
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: page.php:12
+#: single.php:13
+#@ lenora
+msgid "by"
+msgstr "von"
+
+#: content.php:16
+#: page.php:20
+#: single.php:21
+#@ lenora
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: single.php:27
+#, php-format
+#@ lenora
+msgid "Categories: %2$s"
+msgstr "Kategorien: %2$s"
+
+#: single.php:34
+#@ lenora
+msgid "Share on:"
+msgstr "Teilen:"
+
+#: single.php:43
+#@ lenora
+msgid "Twitter"
+msgstr "Twitter"
+
+#: single.php:45
+#@ lenora
+msgid "Facebook"
+msgstr "Facebook"
+
+#: single.php:47
+#@ lenora
+msgid "Delicious"
+msgstr "Delicious"
+
+#: content.php:5
+#: single.php:49
+#@ lenora
+msgid "Permalink "
+msgstr "Permalink"
+
+#: single.php:51
+#@ lenora
+msgid "Edit &rarr;"
+msgstr "Bearbeiten &rarr;"
+
+#: functions.php:39
+#@ lenora
+msgid "Primary Navigation"
+msgstr "Hauptnavigation"
+
+#: functions.php:75
+#@ lenora
+msgid "Right sidebar"
+msgstr "Rechte Seitenleiste"
+
+#: functions.php:77
+#@ lenora
+msgid "The widget area on the right sidebar"
+msgstr "Der Widgetbereich in der rechten Seiteleiste."
+
+#: functions.php:112
+#, php-format
+#@ lenora
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">meint:</span>"
+
+#: functions.php:115
+#@ lenora
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Freischaltung."
+
+#: functions.php:120
+#, php-format
+#@ lenora
+msgid "%1$s at %2$s"
+msgstr "%1$s am %2$s"
+
+#: functions.php:120
+#@ lenora
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+#: functions.php:135
+#@ lenora
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:135
+#@ lenora
+msgid "(edit)"
+msgstr "(bearbeiten)"
+
+#: footer.php:6
+#, php-format
+#@ lenora
+msgid "Theme: %1$s by %2$s"
+msgstr "Theme: %1$s von %2$s"
+
+#: includes/theme-options.php:99
+#@ lenora
+msgid "Custom Color"
+msgstr "Benutzerdefinierte Farbe"
+
+#: includes/theme-options.php:102
+#@ lenora
+msgid "Select a Color"
+msgstr "Farbe auswählen"
+
+#: archive.php:43
+#: category.php:17
+#: index.php:12
+#: single.php:71
+#: tag.php:19
+#@ shiro
+#@ lenora
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Artikel"
+
+#: archive.php:44
+#: category.php:18
+#: index.php:13
+#: single.php:72
+#: tag.php:20
+#@ shiro
+#@ lenora
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Neuere Artikel <span class=\"meta-nav\">&rarr;</span>"
+
+#: search.php:8
+#, php-format
+#@ lenora
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: archive.php:32
+#: search.php:17
+#@ lenora
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: search.php:20
+#@ lenora
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Zu ihren eingegebenen Suchkriterien konnten keine Inhalte gefunden werden. Bitte versuchen Sie es mit anderen Suchbegriffen erneut."
+
+#: searchform.php:4
+#@ lenora
+msgid "search"
+msgstr "suchen"
+
+#: tag.php:8
+#, php-format
+#@ lenora
+msgid "Tag Archives: %s"
+msgstr "Schlagwort Archiv: %s"
+
+#: includes/theme-options.php:89
+#, php-format
+#@ lenora
+msgid "%s Options"
+msgstr "%s Optionen"
+
+#: includes/theme-options.php:106
+#@ lenora
+msgid "Custom Logo"
+msgstr "Benutzerdefiniertes Logo"
+
+#: includes/theme-options.php:109
+#@ lenora
+msgid "Upload your own logo image"
+msgstr "Laden Sie unter Zuhilfenahme der Wordpress-Library"
+
+#: includes/theme-options.php:109
+#@ lenora
+msgid " using the WordPress Media Library and then insert the URL here"
+msgstr "Ihr eigenes Logo auf den Server und geben Sie die Url vom Bild anschließend hier ein"
+
+#: includes/theme-options.php:110
+#@ lenora
+msgid "Custom Favicon"
+msgstr "Benutzerdefiniertes Favicon"
+
+#: includes/theme-options.php:112
+#@ lenora
+msgid "Upload your .ico Favicon image (via FTP) to your server and enter the Favicon URL here."
+msgstr "Laden Sie Ihr .ico Favicon auf Ihren Server (zum Beispiel via FTP) und geben Sie hier die Url ein."
+
+#: archive.php:15
+#, php-format
+#@ lenora
+msgid "Daily Archives: %s"
+msgstr "Archiv nach Tagen: %s"
+
+#: archive.php:17
+#, php-format
+#@ lenora
+msgid "Monthly Archives: %s"
+msgstr "Archiv nach Monaten: %s"
+
+#: archive.php:19
+#, php-format
+#@ lenora
+msgid "Yearly Archives: %s"
+msgstr "Archiv nach Jahren: %s"
+
+#: archive.php:21
+#@ lenora
+msgid "Archives"
+msgstr "Archiv"
+
+#: archive.php:35
+#@ lenora
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Der gesuchte Inhalt konnte nicht gefunden werden. Möglicherweise hilft die Suchfunktion weiter."
+
+#: content.php:15
+#: page.php:19
+#: single.php:20
+#@ lenora
+msgid "read more &rarr;"
+msgstr "weiterlesen &rarr;"
+
+#: includes/theme-options.php:55
+#: includes/theme-options.php:56
+#@ lenora
+msgid "Lenora Options"
+msgstr "Lenora Optionen"
+
+#: includes/theme-options.php:105
+#@ lenora
+msgid "Changes the color of the mouse over effects."
+msgstr "Ändert die Farben der Mouseover-Effekte."
+
+#: single.php:31
+#, php-format
+#@ lenora
+msgid "Tags: %2$s"
+msgstr "Schlagworte: %2$s"
+
+#: footer.php:6
+#@ lenora
+msgid "proudly powered by"
+msgstr "proudly powered by"
+

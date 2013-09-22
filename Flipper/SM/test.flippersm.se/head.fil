@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<?php
+if($_GET['s']== "resultat" or $_GET['s']== "resultatclassics")
+echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
+	
+else
+echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
+	
+?>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=1;"/>
+	<title>Flipper-SM 2013</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+	
+<!--[if IE]>
+<style type="text/css">
+
+#content hr {color: black;
+height: 11px;
+border: solid 0px black;}
+
+</style>
+<![endif]-->
+	
+
+	
+</head>
+<body>
+
+	<div id="head">
+
+		<div id="menu">
+			<p id="tagline">Stockholm, Heron City 8-10 november 2013</p>
+
+			<div id="logo">
+				<a href="http://www.flippersm.se">
+				<img src="bilder/layout/logo.png" alt="Flipper-SM 2013" />
+				</a>
+			</div>
+			
+
+			<div id="buttons">
+				<?php
+				include("menu.fil");
+				print_menu(0,$s);
+				?>
+			</div>
+
+			<div id="submenu1">
+				<?php
+				print_menu(1,$s);
+				?>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="content">
