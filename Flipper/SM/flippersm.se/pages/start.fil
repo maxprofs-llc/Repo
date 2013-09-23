@@ -1,7 +1,40 @@
-<h1>Svenska m&auml;sterskapen i flipperspel 2013</h1>
+<script src="js/contrib/jquery.js"></script>
+<script src="js/contrib/jquery.slides.min.js"></script>
+  <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
 
+<h1>Svenska m&auml;sterskapen i flipperspel 2013</h1>
 <div class="spaltbred">
+<div id="slides">
+<?php
+
+require_once 'php/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+ 
+if ( $detect->isMobile() ) {
+	echo "<img src=\"bilder/foton/splash1.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash2.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash3.jpg\" alt=\"\" />";
+}
+else {
+	echo "<img src=\"bilder/foton/splash1_lores.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash2_lores.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash3_lores.jpg\" alt=\"\" />";
+}
+?>
 <img src="bilder/foton/splash.jpg" alt="" />
+</div>
 </div>
 
 <div class="spalt">
@@ -18,15 +51,6 @@
 
 
 <?php
-require_once 'php/Mobile_Detect.php';
-$detect = new Mobile_Detect;
- 
-if ( $detect->isMobile() ) {
-	echo "mobil";
-}
-else {
-	echo "vanlig";
-}
 
 require("dbas/dbas.php");
 
