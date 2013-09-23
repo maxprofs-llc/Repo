@@ -376,10 +376,7 @@ td:nth-of-type(2):after { content: "kvalpoäng"; }
       .container {
         width: auto
       }
-.play
-{
- display:none;
-}
+
 
 @media only screen and (max-device-width: 460px),
 (max-width: 460px) {
