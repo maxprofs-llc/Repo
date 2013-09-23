@@ -19,6 +19,16 @@
 
 <?php
 require("dbas/dbas.php");
+require_once 'php/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+ 
+// Any mobile device (phones or tablets).
+if ( $detect->isMobile() ) {
+	echo "mobil";
+}
+else {
+	echo "vanlig";
+}
 
 $sql = "SELECT COUNT(*) AS total FROM sm_2012_anmalda WHERE Main = 1 OR Classic = 1";
 $result = mysqli_query($sql);
