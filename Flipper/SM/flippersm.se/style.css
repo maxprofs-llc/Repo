@@ -258,6 +258,17 @@ border-top: 0px;
 border-bottom: 0px;
 text-align: left;}
 
+    #slides {
+      display: none
+    }
+
+    .container {
+      margin: 0 auto
+    }
+
+      .container {
+        width: 1170px
+      }
 
 /* små skärmar: */
 
@@ -362,6 +373,14 @@ td:nth-of-type(2):after { content: "kvalpoäng"; }
 
 }
 
+      body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .container {
+        width: auto
+      }
+
 
 @media only screen and (max-device-width: 460px),
 (max-width: 460px) {
@@ -383,3 +402,8 @@ margin: 0px auto;}
 div#menu #submenu1 {
 text-align: center;}
 }
+
+      .container {
+        width: auto
+      }
+
