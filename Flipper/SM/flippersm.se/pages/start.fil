@@ -14,11 +14,11 @@
 <p>Under flipper-SM kommer det att koras vinnare i sex olika klasser (Main, Classic, Split, Enhands, U18 och Set-the-highscore). 
 <hr/>
 
-<h2>SM-siffrorna</h2>
+<h2>SM-siffror</h2>
 
 
 <?php
-require_once '../php/Mobile_Detect.php';
+require_once 'php/Mobile_Detect.php';
 $detect = new Mobile_Detect;
  
 if ( $detect->isMobile() ) {
