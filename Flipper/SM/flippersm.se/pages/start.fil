@@ -6,7 +6,7 @@
         width: 1200,
         height: 420,
         play: {
-          active: true,
+          active: false,
           auto: true,
           interval: 4000,
           swap: true,
