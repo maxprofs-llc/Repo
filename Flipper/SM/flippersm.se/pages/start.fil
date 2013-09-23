@@ -24,14 +24,16 @@ require_once 'php/Mobile_Detect.php';
 $detect = new Mobile_Detect;
  
 if ( $detect->isMobile() ) {
-	echo "<img src=\"bilder/foton/splash1.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash.jpg\" alt=\"\" />";
 	echo "<img src=\"bilder/foton/splash2.jpg\" alt=\"\" />";
 	echo "<img src=\"bilder/foton/splash3.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash4.jpg\" alt=\"\" />";
 }
 else {
-	echo "<img src=\"bilder/foton/splash1_lores.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash_lores.jpg\" alt=\"\" />";
 	echo "<img src=\"bilder/foton/splash2_lores.jpg\" alt=\"\" />";
 	echo "<img src=\"bilder/foton/splash3_lores.jpg\" alt=\"\" />";
+	echo "<img src=\"bilder/foton/splash4_lores.jpg\" alt=\"\" />";
 }
 ?>
 <img src="bilder/foton/splash.jpg" alt="" />
