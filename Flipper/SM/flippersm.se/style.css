@@ -373,10 +373,6 @@ td:nth-of-type(2):after { content: "kvalpoäng"; }
 
 }
 
-      body {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
       .container {
         width: auto
       }
