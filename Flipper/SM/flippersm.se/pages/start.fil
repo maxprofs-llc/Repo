@@ -9,16 +9,15 @@
           active: true,
           auto: true,
           interval: 4000,
-          swap: true
+          swap: false
+          effect: "fade"
         },
         pagination: {
         active: false
         },
-        effect: {
-        fade: {
-        speed: 400
-        }
-		}
+            navigation: {
+      active: false,
+	}
       });
     });
   </script>
