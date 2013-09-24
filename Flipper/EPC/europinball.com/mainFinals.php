@@ -19,6 +19,8 @@
 
     <p>The third place was claimed by <a href="'.__baseHref__.'/player/?obj=player&id=14579">Philippe Bocquet</a> from <a href="'.__baseHref__.'/country/?obj=country&id=72">France</a>, beating <a href="'.__baseHref__.'/player/?obj=player&id=306">René Gool</a> from the <a href="'.__baseHref__.'/country/?obj=country&id=158">Netherlands</a> in the bronze match on <a href="'.__baseHref__.'/information/game/?obj=game&id=354">Metallica</a>.</p>
 
+    <p>The fair play prize was won by <a href="'.__baseHref__.'/player/?obj=player&id=14579">David Kjellberg</a>. Playing multiball on <a href="https://www.europinball.org/information/game/?obj=game&id=36">Fish Tales</a> with Super Jackpot lit, when one ball got stuck in the wheel. In stead of super jackpot frenzy, David called for the scorekeeper. And when opening the coin door to release the ball, the game reset, and David had to start all over again.</p>
+
     <div id="tabs">
       <ul>
         <li class="tabs"><a href="#treeView"><h2>Full finals tree</h2></a></li>
