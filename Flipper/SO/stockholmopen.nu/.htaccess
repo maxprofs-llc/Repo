@@ -1,0 +1,3 @@
+php_flag magic_quotes_gpc Off
+php_flag display_errors Off
+php_flag error_reporting 3^M
