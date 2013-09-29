@@ -55,7 +55,11 @@
 
     public function Log($statusCode)
     {
-        $log_line = date('Y-m-d H:i:s') . ", " . file_get_contents("php://input") . ", " . $statusCode;
+        $playerId = $this->getString("playerId");
+        $gameId = $this->getString("gameId");
+        $score = $this->getString("score");
+        $user = $this->getString("user");
+        $log_line = date('Y-m-d H:i:s') . "," . $playerId . "," . $gameId . "," . $score . "," . $user . "," . $statusCode . "\n";
         file_put_contents(MOB_LOG_FILE_NAME, $log_line, FILE_APPEND);
     }
   }
