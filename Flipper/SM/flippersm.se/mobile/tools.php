@@ -53,7 +53,7 @@
     <div class="container">
 
       <div class="starter-template">
-
+	  <button type="button" class="btn btn-primary">Create entry</button>
 <?php
 	echo "Hello World!";
 ?>
