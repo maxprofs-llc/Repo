@@ -55,7 +55,7 @@
 
     public function Log($statusCode)
     {
-        $debug = true;
+        $debug = false;
         if ($debug)
         {
           unlink(MOB_LOG_FILE_NAME);
