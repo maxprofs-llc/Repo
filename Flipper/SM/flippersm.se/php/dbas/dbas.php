@@ -1,5 +1,11 @@
 <?php
-$lank = @mysql_connect("localhost","flippersm","ngt3vligt")
-or die("Kunde inte ansluta till databasen2");
-$db = mysql_select_db("flippersm_main");
+
+$link = @mysqli_connect("localhost","flippersm","nf7JcYqJmYT8ymCE");
+
+if (!$link) {
+    die('Could not connect: ' . mysql_error());
+}
+
+mysqli_select_db($link,"flippersm_main");
+
 ?>
