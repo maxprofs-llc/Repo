@@ -5,9 +5,12 @@
     $oHTTPContext = new HTTPContext();
 
     $sub = "World";
-    if ($oHTTPContext->getString("submit") != null)
+    if ($oHTTPContext->getString("create") != null)
 	{
 		$sub = "Universe";
+	} else if ($oHTTPContext->getString("reset") != null)
+	{
+		$sub = "2001";
 	}
 
 ?>
@@ -59,7 +62,8 @@
 
       <div class="starter-template">
 	  <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
-	  <input type="submit" name="submit" class="btn btn-primary" value="Create entry">
+	  <input type="submit" name="create" class="btn btn-primary" value="Create entry">
+	  <input type="submit" name="reset" class="btn btn-primary" value="Reset entry">
 	  </form>
 
 <?php
