@@ -1,6 +1,6 @@
 var scripts = new Array();
 var debugMode = 1;
-var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://www.europinball.org';
+var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://flippersm.se';
 var pageMode = 'register';
 var choice = false;
 
@@ -1477,7 +1477,6 @@ function getObjects(type, obj, id, all) { // Load all objects from ajax. If type
         } else if (document.getElementById('loggedIn') && document.getElementById('loggedIn').value == 'true' && document.getElementById('id') && /^[0-9]+$/.test(document.getElementById('id').value)) {
           editPlayer(document.getElementById('id').value); // Same thing coming through wordpress
         }
-        var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://www.europinball.org';
       }
     })
     .fail(function(jqHXR,status,error) {
