@@ -55,12 +55,18 @@
 
     public function Log($statusCode)
     {
-        $playerId = $this->getString("playerId");
-        $gameId = $this->getString("gameId");
-        $score = $this->getString("score");
-        $user = $this->getString("user");
-        $log_line = date('Y-m-d H:i:s') . "," . $playerId . "," . $gameId . "," . $score . "," . $user . "," . $statusCode . "\n";
-        file_put_contents(MOB_LOG_FILE_NAME, $log_line, FILE_APPEND);
+        $debug = true;
+        if ($debug)
+        {
+          unlink(MOB_LOG_FILE_NAME);
+        } else {
+          $playerId = "player:".$this->getString("playerId");
+          $gameId = "game:".$this->getString("gameId");
+          $score = "score:".$this->getString("score");
+          $user = "user:".$this->getString("user");
+          $log_line = date('Y-m-d H:i:s') . "," . $playerId . "," . $gameId . "," . $score . "," . $user . "," . $statusCode . "\n";
+          file_put_contents(MOB_LOG_FILE_NAME, $log_line, FILE_APPEND);
+        }
     }
   }
 
