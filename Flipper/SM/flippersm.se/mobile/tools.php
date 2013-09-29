@@ -2,6 +2,8 @@
   require_once('../functions/general.php');
   require_once('mobile.php');
 
+  define(MOB_TOOLS_URL, "https://ithora.pal.pp.se/flippersm.se");
+
     $oHTTPContext = new HTTPContext();
 
     $sub = "World";
@@ -19,11 +21,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EPC Standings">
+    <meta name="description" content="Mobile tools">
     <meta name="author" content="Andreas Thorsen">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>EPC 2013 standings</title>
+    <title>Mobile tools</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -48,11 +50,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="https://www.europinball.org/mobile/tools.php">Mobile tools</a>
+          <a class="navbar-brand" href="<?MOB_TOOLS_URL;?>/mobile/tools.php">Mobile tools</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="https://www.europinball.org/mobile/tools.php">Entry</a></li>
+            <li class="active"><a href="<?MOB_TOOLS_URL;?>/mobile/tools.php">Entry</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
