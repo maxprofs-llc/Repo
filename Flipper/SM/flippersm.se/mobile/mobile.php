@@ -9,7 +9,7 @@
   define('MOB_SAVE_URL_GAME', __baseHref__ . "/images/objects/mobile/gameimg.png");
   define('MOB_LOAD_URL_GAME', __ROOT__."/images/objects/mobile/gameimg.png");
 
-  define('MOB_LOG_FILE_NAME', "mobile.log";
+  define('MOB_LOG_FILE_NAME', "mobile.log");
 
   class DataMapper 
   {
