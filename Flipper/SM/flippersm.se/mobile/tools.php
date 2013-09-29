@@ -3,7 +3,7 @@
   require_once('mobile.php');
 
   define(MOB_TOOLS_URL, "https://ithora.pal.pp.se/flippersm.se");
-
+  $mob_tools_url = MOB_TOOLS_URL;
     $oHTTPContext = new HTTPContext();
 
     $sub = "World";
@@ -50,11 +50,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?MOB_TOOLS_URL;?>/mobile/tools.php">Mobile tools</a>
+          <a class="navbar-brand" href="<?$mob_tools_url;?>/mobile/tools.php">Mobile tools</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?MOB_TOOLS_URL;?>/mobile/tools.php">Entry</a></li>
+            <li class="active"><a href="<?$mob_tools_url;?>/mobile/tools.php">Entry</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
