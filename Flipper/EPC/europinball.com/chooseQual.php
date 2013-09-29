@@ -5,7 +5,7 @@
   printHeader('EPC 2013', __baseHref__);
   printTopper();
   
-  $choice = false;
+  $choice = true;
 
 
   if ($choice) {
