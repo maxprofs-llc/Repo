@@ -3,7 +3,7 @@
   define('__ROOT__', dirname(dirname(__FILE__))); 
   define('__mainQualLimit__', '60'); 
   define('__classicsQualLimit__', '30'); 
-  define('__baseHref__', 'https://www.europinball.org'); 
+  define('__baseHref__', 'https://flippersm.pal.pp.se');
   require_once(__ROOT__.'/functions/db.php');
   require_once(__ROOT__.'/contrib/ulogin/config/all.inc.php');
   require_once(__ROOT__.'/contrib/ulogin/main.inc.php');
@@ -869,7 +869,7 @@
   }
   
   function getError($msg, $tr = true, $colspan = 7) {
-    $errorMsg = $msg.', please <a href="JavaScript:window.location.reload()">reload the page</a> and try again, or <a href="mailto:support@europinball.org">contact us</a>.';
+    $errorMsg = $msg.', please <a href="JavaScript:window.location.reload()">reload the page</a> and try again, or <a href="mailto:support@flippersm.se">contact us</a>.';
     if ($tr) {
       $errorMsg = '<tr><td colspan="'.$colspan.'">'.$errorMsg.'</td></tr>';
     }
@@ -1319,7 +1319,7 @@
       $editTeamDisplay = 'none';
     }
     $content = '
-      <p class="regTeam"><b>National teams do NOT register here! Please have your IFPA country director send an email to <a href="mailto:support@europinball.org">support@europinball.org</a></b></p>
+      <p class="regTeam"><b>National teams do NOT register here! Please have your IFPA country director send an email to <a href="mailto:support@flippersm.se">support@flippersm.se</a></b></p>
       <p id="regTeamHeader" class="regTeam" style="display: '.$regTeamDisplay.';"><b>You are not a member of a team.</b> If you are supposed to be a member of an already registered team, please ask one of the existing members to add you to that team. If you want to register a new team, please fill in the details below.</p>
       <p id="editTeamHeader" class="editTeam" style="display: '.$editTeamDisplay.';">You are a member of the following team, and may change any parameters. <span class="italic">Use the button to change name or tag. Member changes are instant.</span></p>
       <p class="italic" class="editTeam" style="display: '.$editTeamDisplay.';">Note: You can not add players to this team if they are already members of another team, they need to leave their existing team before they can join your team.</p>

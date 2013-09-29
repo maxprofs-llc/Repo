@@ -1,9 +1,9 @@
 <?php
 
   $dbhost = 'localhost';
-  $dbname = 'epc_main';
-  $dbuser = 'epc';
-  $dbpass = 'vLdqLYyvxSZermEv';
+  $dbname = 'flippersm_main';
+  $dbuser = 'flippersm';
+  $dbpass = 'nf7JcYqJmYT8ymCE';
 
   try {
     $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname;charset=utf8", $dbuser, $dbpass);      
