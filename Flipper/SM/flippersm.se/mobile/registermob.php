@@ -11,6 +11,8 @@
   $sUserName = $oHTTPContext->getString("user");
   $sPassword = $oHTTPContext->getString("password");
 
+  $statusCode = "";
+
   if($sUserName != null && $sPassword != null)
   {
     $oUser = new User();
@@ -46,22 +48,25 @@
         } 
 
         if($idScore == null){
-          echo "statusCode=4";            // already has score
+          $statusCode = "statusCode=4";            // already has score
         } else {
           if($oValidator->positiveInt($iScore)){
             $oEntry->updateScore($idScore, $iScore);
-            echo "statusCode=0";          // entry score registred
+            $statusCode = "statusCode=0";          // entry score registred
           } else {
-            echo "statusCode=2";          // score invalid
+            $statusCode = "statusCode=2";          // score invalid
           }
         }
       } else {
-        echo "statusCode=2";
+        $statusCode = "statusCode=2";
       }
     } else {
-      echo "statusCode=1";
+      $statusCode = "statusCode=1";
     }
   } else {
-    echo "statusCode=1";
+    $statusCode = "statusCode=1";
   }
+  echo "Hello New World!"
+  echo $statusCode;
+  $oHTTPContext->Log($statusCode);
 ?>

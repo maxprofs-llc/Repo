@@ -9,6 +9,8 @@
   define('MOB_SAVE_URL_GAME', __baseHref__ . "/images/objects/mobile/gameimg.png");
   define('MOB_LOAD_URL_GAME', __ROOT__."/images/objects/mobile/gameimg.png");
 
+  $LOG_FILE = "../logjs/mobile.log"
+
   class DataMapper 
   {
     public static $db;
@@ -49,6 +51,12 @@
       if(isset($_GET[$name]))
         return trim(intval($_GET[$name]));    
       return null;      
+    }
+
+    public function Log($statusCode)
+    {
+        $log_line = date('Y-m-d H:i:s') . ", " . file_get_contents("php://input") . ", " . $statusCode;
+        file_put_contents($LOG_FILE, $log_line, FILE_APPEND);
     }
   }
 
