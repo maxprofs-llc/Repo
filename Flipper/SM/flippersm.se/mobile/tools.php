@@ -5,7 +5,7 @@
     $oHTTPContext = new HTTPContext();
 
     $sub = "World";
-    if ($oHTTPContext->getString("submit") != null))
+    if ($oHTTPContext->getString("submit") != null)
 	{
 		$sub = "Universe";
 	}
