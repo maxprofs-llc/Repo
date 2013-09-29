@@ -2,6 +2,7 @@
   require_once('../functions/general.php');
   require_once('mobile.php');
 
+  define(MOB_TITLE, "Flipper-SM 2013");
     $oHTTPContext = new HTTPContext();
 ?>
 
@@ -39,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?=__baseHref__?>/mobile/standings.php">EPC 2013</a>
+          <a class="navbar-brand" href="<?=__baseHref__?>/mobile/standings.php"><?=MOB_TITLE?></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
