@@ -66,7 +66,7 @@
   } else {
     $statusCode = "statusCode=1";
   }
-  echo "Hello New World!"
+  echo "Hello New World!";
   echo $statusCode;
   $oHTTPContext->Log($statusCode);
 ?>
