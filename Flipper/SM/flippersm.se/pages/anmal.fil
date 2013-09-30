@@ -11,7 +11,7 @@
     echo 'LOGIN!';
     $player = getCurrentPlayer($dbh, $ulogin);
     if ($player->mainPlayerId) {
-      header('Location: '.__baseHref__.'?s=edit');
+      header('Location: '.__baseHref__.'/?s=edit');
     } else {
       $content .= '
         <input type="hidden" id="nonPlayerLogin" value="true">

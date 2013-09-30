@@ -792,13 +792,15 @@ function printPlayers(objs, dstId, meBtns, sels) {
 // This is me!
 function thisIsMe(btnId) {
   var obj = player(btnId.id.replace('meBtn_', '')); // Let's find out who "me" is and make him a player
+/*
   if ((!obj.passwordRequired || obj.passwordRequired == 0) && obj.id != 0) { // This user has already registered! He can log in to do his stuff.
     return false;
     window.location.href = baseHref + '/editplayer/?obj=player&id=' + btnId.id.replace('meBtn_', '');
   } else {
+  */
     printPlayerAsList(obj,'ifpaRegResults'); // Show the details form to the player, with info pre-filled in.
     window.scrollTo(0,680);
-  }
+//  }
 }
 
 function editPlayer(id) {
@@ -1166,11 +1168,11 @@ function submitChecked(obj) {
       }
     } else { 
       if (document.getElementById('loggedIn') || document.getElementById('loggedIn').value == 'true') {
-        window.location.href = baseHref + 's=object&obj=player&id=self';
+        window.location.href = baseHref + '/?s=object&obj=player&id=self';
       } else {
         $.post(baseHref + '/ajax/login.php', {u: document.getElementById('usernameText').value, p: document.getElementById('passwordPassword').value}) // Let's login
         .done(function(data) {
-          window.location.href = baseHref + '?s=object&obj=player&id=self';
+          window.location.href = baseHref + '/?s=object&obj=player&id=self';
         })
         .fail(function(jqHXR,status,error) {
           debugOut('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
