@@ -1478,7 +1478,7 @@ function getObjects(type, obj, id, all) { // Load all objects from ajax. If type
             document.getElementById('ifpaButton').disabled = false;
           }
           if (document.getElementById('nonPlayerLogin') && document.getElementById('nonPlayerLogin').value == 'true') {
-            thisisme(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId')));
+            thisIsMe(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId')));
           }
           
         } else if ($.url().attr('file') == 'edit.php' && /^[0-9]+$/.test($.url().param('id'))) {
