@@ -132,6 +132,7 @@ function checkLogin($dbh, $ulogin, $req = true, $title = 'You need to login to a
         // redirect the user to a different page, in which case it does not return.
         $ulogin->Authenticate($_POST['username'],  $_POST['password']);
         if ($ulogin->IsAuthSuccess()) {
+          echo 'LOGIN';
           // Since we have specified callback functions to uLogin,
           // we don't have to do anything here.
         }
@@ -150,9 +151,9 @@ function checkLogin($dbh, $ulogin, $req = true, $title = 'You need to login to a
   if (!isAppLoggedIn()) {
     if ($req == true) {
       printTopper();
-      echo($msg);
       echo(showLogin($ulogin, $title));
     }
+    echo($msg);
     return false;
   } else {
     return true;
