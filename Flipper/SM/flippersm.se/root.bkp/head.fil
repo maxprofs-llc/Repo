@@ -4,16 +4,12 @@
 <head>
 
 <?php
-/*
 if($_GET['s']== "resultat" or $_GET['s']== "resultatclassics")
 echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
 	
 else
 echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
-*/
-
-echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />";
-
+	
 ?>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=1;"/>
 	<title>Flipper-SM 2013</title>
