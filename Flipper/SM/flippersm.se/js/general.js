@@ -981,10 +981,10 @@ function printPlayerAsList(obj,dstId) {
       })
     }, 100);
   }
-  // Hard coded shit! Remove when chance given!
-//  selectOption(document.getElementById('countrySelect'), 188);
-//  selectOption(document.getElementById('continentSelect'), 1);
   document.getElementById(dstId).appendChild(tbl); // Let's show it to the user
+  // Hard coded shit! Remove when chance given!
+  selectOption(document.getElementById('countrySelect'), 188);
+  selectOption(document.getElementById('continentSelect'), 1);
 }
 
 function addFieldRow(tbody, obj, prop) {
