@@ -2,7 +2,7 @@ var scripts = new Array();
 var debugMode = 1;
 var baseHref = (document.getElementById('baseHref')) ? document.getElementById('baseHref').value : 'https://flippersm.pal.pp.se';
 var pageMode = 'register';
-var choice = false;
+var choice = true;
 
 // The classes variable contains meta-information about the classes.
 var classes = {
@@ -2169,7 +2169,7 @@ function geoSelected(sel) { // Someone chose something in a geo-select! The "sel
         if (targetSel.options[targetSel.selectedIndex].value != 0) { // Check if the user had already selected something (or if something was already in the database)
           if (window[targetSel.name](targetSel.options[targetSel.selectedIndex].value)[sel.name + '_id'] && window[targetSel.name](targetSel.options[targetSel.selectedIndex].value)[sel.name + '_id'] != '') { // Check if the object already had a parent?
             var oldParent = window[sel.name](window[targetSel.name](targetSel.options[targetSel.selectedIndex].value)[sel.name + '_id']);
-            var geoMove = confirm(targetSel.options[targetSel.selectedIndex].text + ' was already selected, and located in ' + oldParent.name + '. Do you suggest moving ' + targetSel.options[targetSel.selectedIndex].text + ' to ' + sel.options[sel.selectedIndex].text + '?');
+            var geoMove = confirm(targetSel.options[targetSel.selectedIndex].text + ' was already selected, and located in ' + oldParent.name + '. Do you suggest moving ' + targetSel.options[targetSel.selectedIndex].text + ' to ' + sel.options[sel.selectedIndex].text + ', or do you want to reselect? (OK to move, cancel to reselect)');
             if (!geoMove) {
               filterOptions(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)); // No move! Then we filter - i.e. if the user chose a country, the targetSel is regions or cities and will be filtered to only showing for that country
             } else {
