@@ -20,6 +20,7 @@
     }
   }
 
+
   $form = new regForm();
   $form->id = 'reg';
   $form->table = false;
