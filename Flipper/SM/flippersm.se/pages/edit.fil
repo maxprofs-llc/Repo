@@ -1,0 +1,10 @@
+<h1>Redigera dina uppgifter</h1>
+<div class = 'bred'>
+<?php
+
+  if (checkLogin($dbh, $ulogin, true, 'Please use your login details to access the page.')) {
+    $content = showEditPlayer($dbh, $ulogin);
+    echo($content);
+  }
+?>
+</div>

@@ -1166,11 +1166,11 @@ function submitChecked(obj) {
       }
     } else { 
       if (document.getElementById('loggedIn') || document.getElementById('loggedIn').value == 'true') {
-        window.location.href = baseHref + '/registration/players/?obj=player&id=self';
+        window.location.href = baseHref + 's=object&obj=player&id=self';
       } else {
         $.post(baseHref + '/ajax/login.php', {u: document.getElementById('usernameText').value, p: document.getElementById('passwordPassword').value}) // Let's login
         .done(function(data) {
-          window.location.href = baseHref + '/registration/players/?obj=player&id=self';
+          window.location.href = baseHref + '?s=object&obj=player&id=self';
         })
         .fail(function(jqHXR,status,error) {
           debugOut('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!

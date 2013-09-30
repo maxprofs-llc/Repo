@@ -3,10 +3,8 @@
 <?php
 
   if (checkLogin($dbh, $ulogin, false)) {
-//    printHeader('Flipper-SM 2013', __baseHref__);
-//    printTopper("getObjects('geo');");
-//    $content = showEditPlayer($dbh, $ulogin);
-//    echo($content);
+    $content = showEditPlayer($dbh, $ulogin);
+    echo($content);
     echo'<span class="italic">If you intend to register another player, you need to logout first.</span>';
   } else {
 
@@ -70,3 +68,4 @@
 
     printFooter($dbh, $ulogin);
 ?>
+</div>
