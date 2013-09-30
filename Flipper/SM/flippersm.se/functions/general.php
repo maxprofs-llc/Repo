@@ -2657,7 +2657,7 @@
     $where = preg_replace('/ country_id /', ' m.country_id ', $where);
     $where = preg_replace('/ parentCountry_id /', ' m.parentCountry_id ', $where);
     $where = preg_replace('/ continent_id /', ' m.continent_id ', $where);
-    //echo($query.' '.$where.' '.$order);
+    echo($query.' '.$where.' '.$order);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('player')) {
       $objs[] = $obj;
