@@ -724,12 +724,12 @@ function ifpaReg(id, dstId) {
   }
   $('#ifpaRegResultsTableDiv').hide();
   showLoading(classes['player']);
-  try { 
+  try {
     $('#' + tbl.id).dataTable.fnClearTable(); // Clear the datatable layout (and the table) if the datatable object exists...
   } catch(err) {
     tbl.innerHTML = ''; // ...otherwise empty the whole table. (Nulling the table with datatable object attached will make datatable freak out.)
   }
-  $.getJSON(baseHref + '/ajax/ifpaReg.php',{ifpaId: $('#' + id).val()}) // Returns a JSON with all hits
+ $.getJSON(baseHref + '/ajax/ifpaReg.php',{ifpaId: $('#' + id).val()}) // Returns a JSON with all hits
   .done(function(data) {
     var type = 'player';
     var objs = [];
@@ -767,6 +767,7 @@ function printPlayers(objs, dstId, meBtns, sels) {
   var tbody = addTbody(tbl);
   addRows(tbody, classes['player'], false, meBtns, sels, objs); // Add the rows, and include info about meBtn and sels.
   $('#' + dstId).show(); // Allright, table done, let's show it
+/*
   $('#' + tbl.id).dataTable({
     'bProcessing': true, 
     'bDestroy': true, 
@@ -787,6 +788,7 @@ function printPlayers(objs, dstId, meBtns, sels) {
   }); // Rebuild the datatable  
   $('#' + tbl.id).css('width', ''); // This is needed, or the table is butt ugly!
   $('#newData').css('width', ''); // This is needed, or the table is butt ugly!
+*/
 }
 
 // This is me!
@@ -2317,6 +2319,7 @@ function popTbl(tbl, type) { // Let's populate a table
     } else {
       aoColumns = null;
     }
+/*
     $('#' + tbl.id).dataTable({
       'bProcessing': true, 
       'bDestroy': true, 
@@ -2327,6 +2330,7 @@ function popTbl(tbl, type) { // Let's populate a table
       'aLengthMenu': [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'All']]
     }); // Rebuild the datatable
     $('#' + tbl.id).css('width', ''); // This is needed, or the table is butt ugly!
+*/
     hideLoading(type);
   }
 }
