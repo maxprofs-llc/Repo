@@ -51,7 +51,10 @@ switch ($s) {
   case 'anmal':
     echo ' onload="getObjects(\'geo\'); document.getElementById(\'ifpaIdText\').focus();"';
   break;
-}
+  case 'edit':
+    echo ' onload="getObjects(\'geo\');"';
+  break;
+  }
 
 ?>
 >

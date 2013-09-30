@@ -47,10 +47,12 @@
       </div>
       <div id="debug" align="left"></div>
       <div id="debug2"></div>
+    ');
+/*
     </div>
   </body>
 </html>
-    ');
+*/
   }
   //     <script type="text/javascript" src="'.$scriptPath.'json.js"></script>
 
