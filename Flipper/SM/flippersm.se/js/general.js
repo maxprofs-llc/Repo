@@ -107,7 +107,7 @@ var classes = {
     name: 'player',
     geo: false,
     plural: 'players',
-    headers: ['initials', 'name', 'city', 'region', 'ifpaRank', 'classics', 'dateRegistered'], // Headers normally used in tables and lists
+    headers: ['initials', 'name', 'city', 'region', 'ifpaRank', 'classics', 'dateRegistered', 'paid'], // Headers normally used in tables and lists
     fields: {
       id: { label: 'ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
       name: { label: 'Namn', type: 'hidden', mandatory: false, special: false, bundle: false, default: ''},
@@ -134,7 +134,8 @@ var classes = {
       mobileNumber: { label: 'Cell phone', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       mailAddress: { label: 'Email', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       main: { label: 'Main', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
-      classics: { label: 'Classic', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
+      classics: { label: 'Classic', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: false},
+      paid: { label: 'Betalat', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: false},
       volunteer: { label: 'Volunteer', type: 'checkbox', mandatory: false, special: false, bundle: false, default: true},
       birthDate: { label: 'Birth date', type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
       dateRegistered: { label: 'Anmäld', type: 'hidden', mandatory: false, special: false, bundle: false, default: new Date().toISOString().substring(0,10)}
