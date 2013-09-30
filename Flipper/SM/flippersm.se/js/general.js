@@ -1478,7 +1478,24 @@ function getObjects(type, obj, id, all) { // Load all objects from ajax. If type
             document.getElementById('ifpaButton').disabled = false;
           }
           if (document.getElementById('nonPlayerLogin') && document.getElementById('nonPlayerLogin').value == 'true') {
-            thisIsMe(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId').value));
+            $.getJSON(baseHref + '/ajax/player.php',{id: document.getElementById('nonPlayerLoginId').value}) // Returns a JSON with the player
+            .done(function(data) {
+              var type = 'player';
+              var objs = [];
+              players.length = 0; // Let's delete all the players...
+              if (data && data.length > 0) {
+                for (var obj in data) {
+                  new window[type.toUpperCase()](data[obj]); // ...and create new player objects from the JSON.
+                }
+                thisIsMe(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId').value));
+              } else {
+                $('#noHits').show();
+              }
+            })
+            .fail(function(jqHXR,status,error) {
+              debugOut('Fail: S: ' + status + ' E: ' + error); // Oh, no! Fail!
+              debugOut(jqHXR.responseText);
+            });
           }
           
         } else if ($.url().attr('file') == 'edit.php' && /^[0-9]+$/.test($.url().param('id'))) {
