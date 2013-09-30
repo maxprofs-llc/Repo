@@ -107,10 +107,10 @@ var classes = {
     name: 'player',
     geo: false,
     plural: 'players',
-    headers: ['initials', 'name', 'city', 'region', 'ifpaRank'], // Headers normally used in tables and lists
+    headers: ['initials', 'name', 'city', 'region', 'ifpaRank', 'classics', 'dateRegistered'], // Headers normally used in tables and lists
     fields: {
       id: { label: 'ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
-      name: { label: 'Name', type: 'hidden', mandatory: false, special: false, bundle: false, default: ''},
+      name: { label: 'Namn', type: 'hidden', mandatory: false, special: false, bundle: false, default: ''},
       ifpa_id: { label: 'IFPA ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
       ifpaRank: { label: 'IFPA', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
       class: { label: 'Class', type: 'hidden', mandatory: false, special: false, bundle: false, default: 'player'},
@@ -119,14 +119,14 @@ var classes = {
       isIfpa: { label: 'isIfpa', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
       firstName: { label: 'First name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       lastName: { label: 'Last name', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
-      initials: { label: 'Initials', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
+      initials: { label: 'Tag', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
       username: { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       password: { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''},
       passwordRequired: { label: 'Password', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
       gender: { label: 'Gender', type: 'select', mandatory: false, special: false, bundle: false},
       streetAddress: { label: 'Street address', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
       zipCode: { label: 'ZIP', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
-      city: { label: 'City', type: 'select', mandatory: false, special: 'add', bundle: false},
+      city: { label: 'Hemort', type: 'select', mandatory: false, special: 'add', bundle: false},
       region: { label: 'Region', type: 'select', mandatory: false, special: 'add', bundle: false},
       country: { label: 'Country', type: 'select', mandatory: true, special: false, bundle: false},
       continent: { label: 'Continent', type: 'select', mandatory: false, special: false, bundle: false},
@@ -134,10 +134,10 @@ var classes = {
       mobileNumber: { label: 'Cell phone', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       mailAddress: { label: 'Email', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       main: { label: 'Main', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
-      classics: { label: 'Classics', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
+      classics: { label: 'Classic', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: true},
       volunteer: { label: 'Volunteer', type: 'checkbox', mandatory: false, special: false, bundle: false, default: true},
       birthDate: { label: 'Birth date', type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
-      dateRegistered: { label: 'Date registered', type: 'hidden', mandatory: false, special: false, bundle: false, default: new Date().toISOString().substring(0,10)}
+      dateRegistered: { label: 'Anmäld', type: 'hidden', mandatory: false, special: false, bundle: false, default: new Date().toISOString().substring(0,10)}
     },
     complete: false
   },
