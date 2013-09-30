@@ -976,7 +976,7 @@ function printPlayerAsList(obj,dstId) {
   td.appendChild(btn);
   if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
     setTimeout(function() { // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
-      Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', {
+      Recaptcha.create('6LeXJOgSAAAAANSQ19LKVh5iVrvRCasr5ODfv8Lb', 'recaptcha', {
         theme: 'blackglass'
       })
     }, 100);
@@ -1091,7 +1091,7 @@ function submit(obj) {
       } else {
 //        alert('Recaptcha was invalid - try again! ' + data); // Oh, no! Our user can't read!
         alert('Recaptcha was invalid - try again!'); // Oh, no! Our user can't read!
-        Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { //... so let's recreate the recaptcha, and start all over again.
+        Recaptcha.create('6LeXJOgSAAAAANSQ19LKVh5iVrvRCasr5ODfv8Lb', 'recaptcha', { //... so let's recreate the recaptcha, and start all over again.
           theme: 'blackglass',
           callback: Recaptcha.focus_response_field
         });
