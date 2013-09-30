@@ -1091,7 +1091,6 @@
   
   function getCurrentPlayer($dbh, $ulogin) {
     $id = getIdFromUser($dbh, $ulogin->Username($_SESSION['uid']));
-    echo $id;
     $player = ($id) ? getPlayerById($dbh, $id) : false;
     return ($player) ? $player : false;    
   }
@@ -2658,7 +2657,7 @@
     $where = preg_replace('/ country_id /', ' m.country_id ', $where);
     $where = preg_replace('/ parentCountry_id /', ' m.parentCountry_id ', $where);
     $where = preg_replace('/ continent_id /', ' m.continent_id ', $where);
-    echo($query.' '.$where.' '.$order);
+    //echo($query.' '.$where.' '.$order);
     $sth = $dbh->query($query.' '.$where.' '.$order);
     while ($obj = $sth->fetchObject('player')) {
       $objs[] = $obj;
@@ -3469,13 +3468,11 @@
   }
   
   function getIdFromUser($dbh, $username) {
-    echo $username;
     $query = "select id from person where username LIKE :username";
     $select[':username'] = $username;
     $sth = $dbh->prepare($query);
     $sth->execute($select);
     $player = $sth->fetchObject('player');
-    var_dump($player);
     if ($player) {
       return $player->id;
     } else {
