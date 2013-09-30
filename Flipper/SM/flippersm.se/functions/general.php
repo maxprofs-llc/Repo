@@ -1091,6 +1091,7 @@
   
   function getCurrentPlayer($dbh, $ulogin) {
     $id = getIdFromUser($dbh, $ulogin->Username($_SESSION['uid']));
+    echo $id;
     $player = ($id) ? getPlayerById($dbh, $id) : false;
     return ($player) ? $player : false;    
   }
