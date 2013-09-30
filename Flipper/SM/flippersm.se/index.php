@@ -9,16 +9,16 @@ function undermenu($page)
   
   if($page == "anmal")
      {echo "
-     <a href=\"?s=anmal2012\">Anm‰lan ordinarie & U18</a> &middot; <a href=\"?s=anmal_small_family\">Liten familj</a> &middot; <a href=\"?s=anmal_big_family\">Stor familj</a> &middot; <a href=\"?s=anmalda\">Anm‰lda spelare</a><br /><a href = '?s=funkis2012'>Bli funktion‰r</a> &middot; <a href = '?s=funkislista'>Dessa ‰r funktion‰rer</a> &middot;  <a href=\"?s=ko\">Kˆlista</a>";
+     <a href=\"?s=anmal2012\">Anm√§lan ordinarie & U18</a> &middot; <a href=\"?s=anmal_small_family\">Liten familj</a> &middot; <a href=\"?s=anmal_big_family\">Stor familj</a> &middot; <a href=\"?s=anmalda\">Anm√§lda spelare</a><br /><a href = '?s=funkis2012'>Bli funktion√§r</a> &middot; <a href = '?s=funkislista'>Dessa √§r funktion√§rer</a> &middot;  <a href=\"?s=ko\">K√∂lista</a>";
 	}
 
   if($page == "regler")
      {echo "
-     <a href=\"?s=regler\">Regler</a> &middot; <a href=\"?s=system\">T‰vlingssystem</a> &middot; <a href=\"?s=former\">T‰vlingsformer & spellista</a>
+     <a href=\"?s=regler\">Regler</a> &middot; <a href=\"?s=system\">T√§vlingssystem</a> &middot; <a href=\"?s=former\">T√§vlingsformer & spellista</a>
      ";}
      
   if($page == "blandat")
-	{echo "<a href=\"?s=blandat\">ƒr flipper lagligt?</a> &middot; <a href =\"?s=stories\">Ber‰ttelser</a> &middot; <a href = \"?s=stories2\">Fler ber‰ttelser</a>";}
+	{echo "<a href=\"?s=blandat\">√Ñr flipper lagligt?</a> &middot; <a href =\"?s=stories\">Ber√§ttelser</a> &middot; <a href = \"?s=stories2\">Fler ber√§ttelser</a>";}
 
      
   if($page == "tidigare")
@@ -26,8 +26,8 @@ function undermenu($page)
      ";}
      
   if($page == "resultat")
-    /* {echo "<a href=\"?s=resultat2011\">Huvudt&auml;vling</a> &middot; <a href=\"?s=resultatclassics2011\">Classics</a> &middot; <a href=\"?s=11kvalspel\">Main per spel</a> &middot; <a href=\"?s=11classicskvalspel\">Classics per spel</a> <br> <a href=\"bilder/diverse/11slutspelmainA.png\">Slutspelstr‰d main A</a> &middot; <a href=\"bilder/diverse/11slutspelclassics.png\">
-Slutspelstr‰d classics</a>
+    /* {echo "<a href=\"?s=resultat2011\">Huvudt&auml;vling</a> &middot; <a href=\"?s=resultatclassics2011\">Classics</a> &middot; <a href=\"?s=11kvalspel\">Main per spel</a> &middot; <a href=\"?s=11classicskvalspel\">Classics per spel</a> <br> <a href=\"bilder/diverse/11slutspelmainA.png\">Slutspelstr√§d main A</a> &middot; <a href=\"bilder/diverse/11slutspelclassics.png\">
+Slutspelstr√§d classics</a>
      ";} */
 
   if($page == "kvaltider")
