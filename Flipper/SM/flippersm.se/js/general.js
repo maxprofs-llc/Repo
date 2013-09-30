@@ -1082,7 +1082,7 @@ function addFieldRow(tbody, obj, prop) {
 }
 
 function submit(obj) {
-  if (document.getElementById('loggedIn') && document.getElementById('loggedIn').value == 'true') {
+  if (document.getElementById('nonPlayerLogin') || (document.getElementById('loggedIn') && document.getElementById('loggedIn').value == 'true')) {
     checkFields(obj);
   } else {
     $.post(baseHref + '/ajax/recaptcha.php', {resp: Recaptcha.get_response(), chall: Recaptcha.get_challenge()}) // Let's ajax-check the recaptcha
@@ -1167,7 +1167,7 @@ function submitChecked(obj) {
         fade(document.getElementById('submitSpan'), reason, false);
       }
     } else { 
-      if (document.getElementById('loggedIn') || document.getElementById('loggedIn').value == 'true') {
+      if (document.getElementById('nonPlayerLogin') || (document.getElementById('loggedIn') || document.getElementById('loggedIn').value == 'true')) {
         window.location.href = baseHref + '/?s=object&obj=player&id=self';
       } else {
         $.post(baseHref + '/ajax/login.php', {u: document.getElementById('usernameText').value, p: document.getElementById('passwordPassword').value}) // Let's login
@@ -1202,7 +1202,7 @@ function checkFields(obj) {
       if (data.valid) {
         submitChecked(obj);
       } else {
-        if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
+        if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
           Recaptcha.create('6LcpYOMSAAAAAMyv1GntlQeQQMXNdrK1X32NLZo1', 'recaptcha', { // Didn't validate! So let's recreate the recaptcha, and start all over again.
             theme: 'blackglass',
             callback: Recaptcha.focus_response_field
