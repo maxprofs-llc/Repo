@@ -949,7 +949,7 @@ function printPlayerAsList(obj,dstId) {
   var td = tr.insertCell(-1);
   td.colSpan = 2;
   var div = document.createElement('div');
-  if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
+  if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
     div.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
     td.appendChild(div);
   }
