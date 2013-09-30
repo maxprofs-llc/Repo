@@ -6,10 +6,11 @@
   $where = ' where ';
   $where .= (((isset($_REQUEST['obj']) && $_REQUEST['obj'] == 'country') || !isset($_REQUEST['obj'])) && (isset($_REQUEST['id']) && preg_match('/^[0-9]+$/', $_REQUEST['id']))) ? 'id = '.$_REQUEST['id'] : '1';
   if ($filter = getGeoFilterWheres('country')) {
-  //Hard coded shit! Remove when chance given!
-    $where .= $filter.' and id=188';
+    $where .= $filter;
   }
-        
+
+  //Hard coded shit! Remove when chance given!
+  $where .= ' and id=188'
   $objs = (array) getCountries($dbh, $where);
     
   echo ($objs) ? json_encode(array_values($objs)) : '{"data": false}';

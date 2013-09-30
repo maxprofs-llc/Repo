@@ -3802,7 +3802,7 @@
     $obj = ($_REQUEST['obj']) ? $_REQUEST['obj'] : '';
     $id = ($_REQUEST['id']) ? $_REQUEST['id'] : '';
     // Hard coded shit! Remove when chance given!
-    if ($obj == '' && $id == '' && preg_match('/flippersm/', __baseHref__)) {
+    if ($id == '' && preg_match('/flippersm/', __baseHref__)) {
       $obj = 'country';
       $id = 188;
     }
