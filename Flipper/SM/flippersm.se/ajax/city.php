@@ -7,7 +7,6 @@
   if ($filter = getGeoFilterWheres('city')) {
     $where .= $filter;
   }
-  echo $where;
   $objs = (array) getCities($dbh, $where);
 
   echo ($objs) ? json_encode(array_values($objs)) : '{"data": false}';

@@ -3781,8 +3781,6 @@
       if ($start || !$type || $type == $geoType) {
         $start = true;
         if ($filter = getGeoFilterWhere($geoType, $type)) {
-        // Hard coded shit! Remove when chance given!
-          $filter .= (preg_match('/flippersm/', __baseHref__)) ? ' and country = "Sweden"' : '';
           return $filter;
         }
       }
@@ -3794,11 +3792,18 @@
   }
     
   function getGeoFilterWhere($type, $origType = false) {
-    if (isset($_REQUEST['obj']) && $_REQUEST['obj'] == $type) {
-      if (isset($_REQUEST['id']) && preg_match('/^[0-9]+$/', $_REQUEST['id'])) {
-        $return = $type.'_id = '.$_REQUEST['id'];
+    $obj = ($_REQUEST['obj']) ? $_REQUEST['obj'] : '';
+    $id = ($_REQUEST['id']) ? $_REQUEST['id'] : '';
+    // Hard coded shit! Remove when chance given!
+    if ($obj == '' && $id == '' && preg_match('/flippersm/', __baseHref__)) {
+      $obj = 'country';
+      $id == 188;
+    }
+    if (isset($obj) && $obj == $type) {
+      if (isset($id) && preg_match('/^[0-9]+$/', $id)) {
+        $return = $type.'_id = '.$id;
         if ($type == 'region' || $type == 'country') {
-          $parentReturn = ' or parent'.ucfirst($type).'_id = '.$_REQUEST['id'];
+          $parentReturn = ' or parent'.ucfirst($type).'_id = '.$id;
         }
         if ($type == $origType) {
           return $parentReturn;
