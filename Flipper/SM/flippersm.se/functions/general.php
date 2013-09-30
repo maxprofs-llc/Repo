@@ -3469,11 +3469,13 @@
   }
   
   function getIdFromUser($dbh, $username) {
+    echo $username;
     $query = "select id from person where username LIKE :username";
     $select[':username'] = $username;
     $sth = $dbh->prepare($query);
     $sth->execute($select);
     $player = $sth->fetchObject('player');
+    var_dump($player);
     if ($player) {
       return $player->id;
     } else {
