@@ -1,4 +1,4 @@
-<h1>Anm‰lda spelare till Flipper-SM 2012</h1>
+<h1>Anm√§lda spelare till Flipper-SM 2012</h1>
 <?php
 
 	switch(($_REQUEST['obj']) ? $_REQUEST['obj'] : array_slice(preg_split('/\//', preg_split('/\?/', $_SERVER['REQUEST_URI'])[0]), -2)[0]) {
