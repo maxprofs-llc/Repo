@@ -12,7 +12,18 @@ else
 echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
 */
 
-echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />";
+echo '
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="'.__baseHref__.'/js/contrib/jquery.js"></script>
+    <script type="text/javascript" src="'.__baseHref__.'/js/contrib/jquery-ui.js"></script>
+    <script type="text/javascript" src="'.__baseHref__.'/js/contrib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="'.__baseHref__.'/js/contrib/purl.js"></script>
+    <script type="text/javascript" src="'.__baseHref__.'/js/contrib/recaptcha_ajax.js"></script>
+    <script type="text/javascript" src="'.__baseHref__.'/js/general.js"></script>
+    <link href="'.__baseHref__.'/css/jquery.dataTables_themeroller.css" rel="stylesheet" type="text/css" />
+    <link href="'.__baseHref__.'/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="'.__baseHref__.'/js/contrib/ga.js"></script>
+';
 
 ?>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=1;"/>
@@ -33,7 +44,17 @@ border: solid 0px black;}
 
 	
 </head>
-<body>
+<body
+<?php
+
+switch ($s) {
+  case 'anmal':
+    echo ' onload="getObjects('geo'); document.getElementById('ifpaIdText').focus();"';
+  break;
+}
+
+?>
+>
 
 	<div id="head">
 

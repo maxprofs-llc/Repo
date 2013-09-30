@@ -1,4 +1,6 @@
 <?php
+  define('__ROOT__', dirname(__FILE__));
+  require_once(__ROOT__.'/functions/general.php');
 
 $s = isset($_GET['s']) ? $_GET['s'] : 'start';
 
