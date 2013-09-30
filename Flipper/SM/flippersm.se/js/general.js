@@ -1475,6 +1475,9 @@ function getObjects(type, obj, id, all) { // Load all objects from ajax. If type
           if (/^[0-9]{1,}$|.{3,}/.test(document.getElementById('ifpaIdText').value)) {
             document.getElementById('ifpaButton').disabled = false;
           }
+          if (document.getElementById('nonPlayerLogin') && document.getElementById('nonPlayerLogin').value == 'true') {
+            thisisme(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId')));
+          }
           
         } else if ($.url().attr('file') == 'edit.php' && /^[0-9]+$/.test($.url().param('id'))) {
           editPlayer($.url().param('id')); // Player editing the profile = no recaptchas (player is logged in) and some other differences long the way
