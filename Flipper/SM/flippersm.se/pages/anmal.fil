@@ -8,6 +8,7 @@
   $content .= '<br /><br /><h3 class="entry-title">Otherwise, register a new player:</h3>';
 
   if (checkLogin($dbh, $ulogin, false)) {
+    echo 'LOGIN!';
     $player = getCurrentPlayer($dbh, $ulogin);
     if ($player->mainPlayerId) {
       header('Location: '.__baseHref__.'?s=edit');
