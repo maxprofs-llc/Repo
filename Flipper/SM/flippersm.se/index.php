@@ -1,6 +1,7 @@
 <?php
 
-$s = $_GET['s'];
+$s = isset($_GET['s']) ? $_GET['s'] : 'start';
+
 
 function undermenu($page)
   {
