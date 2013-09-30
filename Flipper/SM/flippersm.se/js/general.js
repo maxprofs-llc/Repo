@@ -1487,8 +1487,9 @@ function getObjects(type, obj, id, all) { // Load all objects from ajax. If type
                 for (var obj in data) {
                   new window[type.toUpperCase()](data[obj]); // ...and create new player objects from the JSON.
                 }
-                $('#loginTable').hide();
+                $('.loginTable').hide();
                 $('#regDiv').hide();
+                $('#regTitle').hide();
                 thisIsMe(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId').value));
               } else {
                 $('#noHits').show();
