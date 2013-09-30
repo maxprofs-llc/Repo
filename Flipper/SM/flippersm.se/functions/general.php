@@ -3797,7 +3797,7 @@
     // Hard coded shit! Remove when chance given!
     if ($obj == '' && $id == '' && preg_match('/flippersm/', __baseHref__)) {
       $obj = 'country';
-      $id == 188;
+      $id = 188;
     }
     if (isset($obj) && $obj == $type) {
       if (isset($id) && preg_match('/^[0-9]+$/', $id)) {
