@@ -4,7 +4,6 @@
 
 
   $content = '<h2 class="entry-title regTitle">Register player</h2>';
-var_dump($_SESSION);
   if (checkLogin($dbh, $ulogin, false)) {
     $player = getCurrentPlayer($dbh, $ulogin);
     if ($player->mainPlayerId) {
@@ -21,6 +20,7 @@ var_dump($_SESSION);
     $content .= '<br /><br /><h3 class="entry-title regTitle">Otherwise, register a new player:</h3>';
   }
 
+var_dump($_SESSION);
 
   $form = new regForm();
   $form->id = 'reg';
