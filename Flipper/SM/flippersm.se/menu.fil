@@ -54,8 +54,6 @@ function get_menu_content($level)
 
 function print_menu($level,$page)
 	{
-  var_dump($level);
-  var_dump($page);
 	$categories = get_menu_content($level);
 	$menu_content = $categories;
 
@@ -94,10 +92,6 @@ function check_categories($categories,$page)
 
 function print_menu_items($links,$content,$type,$current_page)
 	{
-  var_dump($links);
-  var_dump($content);
-  var_dump($type);
-  var_dump($current_page);
 	for ($n=0; $n<count($content); $n++)
 		{
 		if ($links[$n] == $current_page)
