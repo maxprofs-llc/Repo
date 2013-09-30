@@ -10,6 +10,7 @@
   if (checkLogin($dbh, $ulogin, false)) {
     echo 'LOGIN!';
     $player = getCurrentPlayer($dbh, $ulogin);
+    var_dump($player);
     if ($player->mainPlayerId) {
       header('Location: '.__baseHref__.'/?s=edit');
     } else {
