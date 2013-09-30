@@ -178,7 +178,7 @@ function showLogin($ulogin, $title = 'You need to login to access this page') {
       '.(($_REQUEST['id']) ? '<input type="hidden" name="id" id="id" value="'.$_REQUEST['id'].'">' : '').'
       <input type="hidden" name="baseHref" id="baseHref" value="'.__baseHref__.'">
 			<input type="hidden" id="nonce" name="nonce" value="'.ulNonce::Create('login').'">
-      <table>
+      <table id="loginTable" class="loginTable">
         <tr>
           <td><label for="username">Username:</label></td>
   		    <td><input type="text" name="username" id="usernameLogin" class="mandatory" onkeyup="login(this);"></td>

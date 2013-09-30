@@ -2677,6 +2677,8 @@
     } else {
       $where = ' and concat(ifnull(p.firstName,""), " ", ifnull(p.lastName,"")) like "%'.$ifpaId.'%"';
     }
+        // Hard coded shit! Remove when chance is given!
+    $where .= (preg_match(/flippersm/, __baseHref__)) ? ' and p.country = "Sweden"' : '';
     $query = '
       select 
         p.id as id,
@@ -3779,6 +3781,8 @@
       if ($start || !$type || $type == $geoType) {
         $start = true;
         if ($filter = getGeoFilterWhere($geoType, $type)) {
+        // Hard coded shit! Remove when chance given!
+          $filter .= (preg_match(/flippersm/, __baseHref__)) ? ' and country = "Sweden"' : '';
           return $filter;
         }
       }
