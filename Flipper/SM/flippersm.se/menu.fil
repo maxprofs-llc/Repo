@@ -53,9 +53,9 @@ function get_menu_content($level)
 	
 
 function print_menu($level,$page)
+	{
   var_dump($level);
   var_dump($page);
-	{
 	$categories = get_menu_content($level);
 	$menu_content = $categories;
 
