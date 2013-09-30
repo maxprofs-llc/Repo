@@ -3,9 +3,9 @@
 <?php
 
 
-  $content = '<h2 class="entry-title">Register player</h2>';
+  $content = '<h2 class="entry-title regTitle">Register player</h2>';
   $content .= showLogin($ulogin, 'If you already have a user, please login.');
-  $content .= '<br /><br /><h3 class="entry-title" id="regTitle">Otherwise, register a new player:</h3>';
+  $content .= '<br /><br /><h3 class="entry-title regTitle">Otherwise, register a new player:</h3>';
 
   if (checkLogin($dbh, $ulogin, false)) {
     $player = getCurrentPlayer($dbh, $ulogin);

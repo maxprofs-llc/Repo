@@ -1489,7 +1489,7 @@ function getObjects(type, obj, id, all) { // Load all objects from ajax. If type
                 }
                 $('.loginTable').hide();
                 $('#regDiv').hide();
-                $('#regTitle').hide();
+                $('.regTitle').hide();
                 thisIsMe(document.getElementById('meBtn_' + document.getElementById('nonPlayerLoginId').value));
               } else {
                 $('#noHits').show();
