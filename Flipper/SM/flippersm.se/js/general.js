@@ -107,7 +107,7 @@ var classes = {
     name: 'player',
     geo: false,
     plural: 'players',
-    headers: ['name', 'initials', 'city', 'region', 'country', 'continent', 'ifpaRank'], // Headers normally used in tables and lists
+    headers: ['initials', 'name', 'city', 'region', 'ifpaRank'], // Headers normally used in tables and lists
     fields: {
       id: { label: 'ID', type: 'hidden', mandatory: false, special: false, bundle: false, default: 0},
       name: { label: 'Name', type: 'hidden', mandatory: false, special: false, bundle: false, default: ''},
