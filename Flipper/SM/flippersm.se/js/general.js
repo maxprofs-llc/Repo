@@ -985,6 +985,8 @@ function printPlayerAsList(obj,dstId) {
   // Hard coded shit! Remove when chance given!
   selectOption(document.getElementById('countrySelect'), 188);
   selectOption(document.getElementById('continentSelect'), 1);
+  document.getElementById('countrySelect').disable = true;
+  document.getElementById('continentSelect').disable = true;
 }
 
 function addFieldRow(tbody, obj, prop) {
@@ -1009,7 +1011,7 @@ function addFieldRow(tbody, obj, prop) {
   if (type == 'select') {
     popSel(input);
     selectOption(input, obj[prop + '_id']);
-    input.onchange = function () { geoSelected(this); }; // When the user has selected one geo-object, then let's adapt all the other ones. If choosing Sweden, only Swedish regions and cities will be shown in the other dropdowns. And if a city in Uppland is chosen - Uppland, Sweden and Europe are automatically selected.
+    input.onchange = (prop != 'gender') ? function () { geoSelected(this); } : ''; // When the user has selected one geo-object, then let's adapt all the other ones. If choosing Sweden, only Swedish regions and cities will be shown in the other dropdowns. And if a city in Uppland is chosen - Uppland, Sweden and Europe are automatically selected.
   } else {
     input.type = type;
     if (type == 'checkbox') {
@@ -2181,14 +2183,16 @@ function geoSelected(sel) { // Someone chose something in a geo-select! The "sel
         }
       } else {
         if(window[sel.name](sel.options[sel.selectedIndex].value)[targetSel.name + '_id']) {
-          selectOption(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)[targetSel.name + '_id']); 
-          // This is selecting - i.e. if the user chose a country, the targetsel is continents. Example, with country chosen and continents as targetSel:
-          // window[sel.name] = country
-          // sel.options[sel.selectedIndex].value = the ID of the country chosen, let's pick 188 (Sweden) as example
-          // targetSel.name + '_id' = continent_id
-          // Result: country(188).continent_id
-          // The country(188) function will return the country object with ID 188 = Sweden
-          // I.e. selectOption will select Sweden.continent_id - the continent that Sweden is located on = Europe
+          if (!targetSel.disabled) { // Don't change disabled selects - they're disabled for a reason
+            selectOption(targetSel, window[sel.name](sel.options[sel.selectedIndex].value)[targetSel.name + '_id']);
+            // This is selecting - i.e. if the user chose a country, the targetsel is continents. Example, with country chosen and continents as targetSel:
+            // window[sel.name] = country
+            // sel.options[sel.selectedIndex].value = the ID of the country chosen, let's pick 188 (Sweden) as example
+            // targetSel.name + '_id' = continent_id
+            // Result: country(188).continent_id
+            // The country(188) function will return the country object with ID 188 = Sweden
+            // I.e. selectOption will select Sweden.continent_id - the continent that Sweden is located on = Europe
+          }
         } else {
           selectOption(targetSel, 0); // There was no parent! So let's have the user choose one.
         }
