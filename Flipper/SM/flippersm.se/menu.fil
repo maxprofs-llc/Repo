@@ -92,6 +92,10 @@ function check_categories($categories,$page)
 
 function print_menu_items($links,$content,$type,$current_page)
 	{
+  var_dump($links);
+  var_dump($content);
+  var_dump($type);
+  var_dump($current_page);
 	for ($n=0; $n<count($content); $n++)
 		{
 		if ($links[$n] == $current_page)
