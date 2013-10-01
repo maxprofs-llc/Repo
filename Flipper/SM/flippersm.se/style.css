@@ -461,7 +461,7 @@ text-align: center;}
         width: auto
       }
 
-table#playerEditTable th {
+table#playerEditTable th h3 {
   color: #FFFFFF;
 }
 
@@ -471,4 +471,5 @@ table#playerEditTable th {
 
 img.icon {
   position: relative;
+  padding: 0px;
 }
