@@ -469,7 +469,7 @@ table#playerEditTable th h3 {
   display: none;
 }
 
-img.icon {
+#content img.icon {
   position: relative;
   padding: 0px;
 }
