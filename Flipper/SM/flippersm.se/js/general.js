@@ -958,14 +958,7 @@ function printPlayerAsList(obj,dstId) {
   var btn = document.createElement('button');
   btn.id = 'submit';
   btn.type = 'button';
-  switch (pageMode) {
-    case 'register':
-      btn.appendChild(document.createTextNode('Let\'s play!'));
-    break;
-    case 'edit':
-      btn.appendChild(document.createTextNode('Submit changes'));
-    break;
-  }
+  btn.appendChild(document.createTextNode('Skicka!'));
   btn.onclick = function() { checkForm(this); return false; };
   submitDiv.appendChild(btn);
   div.appendChild(submitDiv);

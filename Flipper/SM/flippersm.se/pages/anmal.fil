@@ -25,7 +25,7 @@
   $newField = new formInput('hidden', 'dateRegistered', date('Y-m-d'));
   $form->addField($newField);
 
-  $geoComment = new formInput('comment', 'ifpaComment', '<p class="bold">Vi vet antagligen vem du är!</p> Har du någonsin spelat i en flippertävling så finns du antaligen redan i databasen. Sök på ditt namn (minst fyra bokstäver), din trebokstavs-TAG, din mailaddress, ditt telefonnnummer eller ditt IFPA-ID och klicka sen på "Här är jag!".<br /><br />Om du inte lyckas hitta dig själv, så kan du klicka på "Registrera helt ny spelare".');
+  $geoComment = new formInput('comment', 'ifpaComment', '<p class="bold">Vi vet antagligen vem du är!</p> Även om du inte var med i EPC. Har du någonsin spelat i en flippertävling så finns du antaligen redan i databasen. Sök på ditt namn (minst fyra bokstäver), din trebokstavs-TAG, din mailaddress, ditt telefonnnummer eller ditt IFPA-ID och klicka sen på "Här är jag!".<br /><br />Om du inte lyckas hitta dig själv, så kan du klicka på "Registrera helt ny spelare".');
   $geoComment->label = '';
   $form->addField($geoComment);
 
