@@ -1071,10 +1071,10 @@ function addFieldRow(tbody, obj, prop) {
 }
 
 function addFieldDiv(div, obj, prop) {
-  debugOut(div);
   var type = classes[obj.class].fields[prop].type;
+  var propDiv = document.createElement('div');
+  div.appendChild(propDiv);
   if (type != 'hidden') { // No label or td needed for hidden stuff
-    var propDiv = document.createElement('div');
     var lbl = document.createElement('label');
     lbl.id = prop + 'Label';
     var txt = document.createTextNode(classes[obj.class].fields[prop].label); // Field name.
@@ -1151,10 +1151,8 @@ function addFieldDiv(div, obj, prop) {
       cImg.onclick = function () { geoAdd(this, false ); }; // The don't want to add something (false)!
       propDiv.appendChild(cImg);
     }
-    div.appendChild(propDiv);
     return document.createTextNode('');
   }
-  div.appendChild(propDiv);
   return input;
 }
 
