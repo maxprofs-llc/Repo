@@ -654,15 +654,15 @@ td, th {
   }
 }
 
-.invisible {
+#content .invisible {
   display: none;
 }
 
-.italic {
+#content .italic {
   font-style: italic;
 }
 
-.bold {
+#content .bold {
   font-weight: bold;
 }
 
@@ -680,15 +680,15 @@ td, th {
   background-color: #FFFF00;
 }
 
-#countryDiv {
+#content #countryDiv {
   display: none;
 }
 
-#continentDiv {
+#content #continentDiv {
   display: none;
 }
 
-#imageUpload {
+#content #imageUpload {
   width: 1px;
   height: 1px;
 }
