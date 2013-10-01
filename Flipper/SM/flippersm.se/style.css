@@ -471,5 +471,6 @@ table#playerEditTable th h3 {
 
 #content img.icon {
   position: relative;
-  padding: 0px;
+  top: 2px;
+  padding: 0px 10px 0px 0px;
 }
