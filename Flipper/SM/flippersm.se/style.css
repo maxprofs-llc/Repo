@@ -408,7 +408,6 @@ td, th {
     width: 290px;
   }
 
-
   @media only screen and (max-device-width: 780px), (max-width: 780px) {
 
     div#logo {
@@ -605,51 +604,51 @@ td, th {
     }
 
     .result td:nth-of-type(2):after {
-      content: "kvalpoäng"; }
+      content: "kvalpoäng";
+    }
+  }
+
+  .container {
+    width: auto
+  }
+
+  @media only screen and (max-device-width: 460px), max-width: 460px) {
+
+    .result td:nth-of-type(2):after {
+      content: "p";
+    }
+
+    #menu #tagline, #menu #buttons, #menu #submenu1 {
+      padding-right: 0px;
+    }
+
+    div#logo {
+      margin: 0px auto;
+      float: none;
+      padding-left: 20px;
+    }
+
+    div#menu #buttons {
+      position: relative;
+      width: 100%;
+      line-height: 2.5em;
+      top: 20px;
+      margin-left: 40px;
+      text-align: center;
+    }
+
+    div#menu #buttons a {
+      width: auto;
+      display: inline;
+      margin: 0px auto;
+    }
+
+    div#menu #submenu1 {
+      text-align: center;
     }
 
     .container {
       width: auto
-    }
-
-    @media only screen and (max-device-width: 460px), max-width: 460px) {
-
-      .result td:nth-of-type(2):after {
-        content: "p";
-      }
-
-      #menu #tagline, #menu #buttons, #menu #submenu1 {
-        padding-right: 0px;
-      }
-
-      div#logo {
-        margin: 0px auto;
-        float: none;
-        padding-left: 20px;
-      }
-
-      div#menu #buttons {
-        position: relative;
-        width: 100%;
-        line-height: 2.5em;
-        top: 20px;
-        margin-left: 40px;
-        text-align: center;
-      }
-
-      div#menu #buttons a {
-        width: auto;
-        display: inline;
-        margin: 0px auto;
-      }
-
-      div#menu #submenu1 {
-        text-align: center;}
-      }
-
-      .container {
-        width: auto
-      }
     }
   }
 }
