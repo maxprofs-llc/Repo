@@ -2393,6 +2393,7 @@ function popTbl(tbl, type) { // Let's populate a table
     } else {
       aoColumns = null;
     }
+    $('#' + tbl.id).tablesorter();
 /*
     $('#' + tbl.id).dataTable({
       'bProcessing': true, 

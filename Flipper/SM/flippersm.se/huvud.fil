@@ -1,51 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-
-<?php
-if($_GET['s']== "resultat" or $_GET['s']== "resultatclassics")
-echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
-	
-else
-echo "<meta http-equiv=\"content-type\" content=\"text/html; charset=iso-8859-1\" />";
-	
-?>
-	
-	<title>Flipper-SM 2012</title>
+  <head>
+    <?php
+      echo '
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script type="text/javascript" src="'.__baseHref__.'/js/contrib/jquery.js"></script>
+        <script type="text/javascript" src="'.__baseHref__.'/js/contrib/jquery-ui.js"></script>
+        <script type="text/javascript" src="'.__baseHref__.'/js/contrib/jquery.tablesorter.min.js"></script>
+        <script type="text/javascript" src="'.__baseHref__.'/js/contrib/purl.js"></script>
+        <script type="text/javascript" src="'.__baseHref__.'/js/contrib/recaptcha_ajax.js"></script>
+        <script type="text/javascript" src="'.__baseHref__.'/js/general.js"></script>
+        <link href="'.__baseHref__.'/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="'.__baseHref__.'/js/contrib/ga.js"></script>
+      ';
+    ?>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1"/>
+	  <title>Flipper-SM 2013</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
-		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans|Plaster' rel='stylesheet' type='text/css'>
-</head>
-	
-<!--[if IE]>
-<style type="text/css">
-
-#content hr {color: black;
-height: 11px;
-border: solid 0px black;}
-
-</style>
-<![endif]-->
-	
-
-	
-</head>
-<body>
-
-<div id="menu">
-
-<a href="?s=start">Start</a><a href="?s=narvar">N&auml;r och var?</a><a href="?s=blandat">Blandat</a><a href="?s=2012">Tidigare SM</a><a href="?s=regler">Regler</a><a href="?s=resultat">Resultat</a><a href="?s=kontakt">Kontakt</a><a href="?s=prislista">Anm&auml;lan</a><a href="?s=funkis2012">Funktion&auml;r!</a><a href="?s=kvalschema_2012">Kvalschema</a>
-
-</div>
-
-
-<div id="logo">
-
-<a href="http://www.flippersm.se">
-<img src="bilder/loggor/sm12_logo_bred.png" alt="Flipper-SM 2012" width = '800px' />
-</a>
-
-</div>
-
-
-<div id="content">
+    <!--[if IE]>
+      <style type="text/css">
+        #content hr {color: black;
+        height: 11px;
+        border: solid 0px black;}
+      </style>
+    <![endif]-->
+  </head>
+  <body
+    <?php
+     switch ($s) {
+       case 'anmal':
+         echo ' onload="getObjects(\'geo\'); document.getElementById(\'ifpaIdText\').focus();"';
+       break;
+       case 'edit':
+         echo ' onload="getObjects(\'geo\');"';
+       break;
+     }
+   ?>
+  >
+	<div id="head">
+		<div id="menu">
+			<p id="tagline">Stockholm, Heron City 8-10 november 2013</p>
+			<div id="logo">
+				<a href="http://www.flippersm.se">
+				<img src="bilder/layout/logo.png" alt="Flipper-SM 2013" />
+				</a>
+			</div>
+			<div id="buttons">
+				<a href="&#63;s=start" class="link">Start</a><a href="&#63;s=anmal" class="link">Anmälan</a>
+			</div>
+			<div id="submenu1">
+   			<?php
+	    		undermenu("anmal");
+			  ?>
+   		</div>
+		</div>
+	</div>
+	<div id="content">
