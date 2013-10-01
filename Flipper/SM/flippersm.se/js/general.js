@@ -1085,7 +1085,6 @@ function addFieldDiv(div, obj, prop) {
   var input = document.createElement((type == 'select') ? 'select' : 'input');
   input.name = prop; // Name is actual property name, as defined in the database.
   input.id = prop + ucfirst(type); // ...while ID will also tell what type of input it is.
-  propDiv.appendChild(input);
   if (type == 'select') {
     popSel(input);
     selectOption(input, obj[prop + '_id']);
@@ -1110,7 +1109,10 @@ function addFieldDiv(div, obj, prop) {
       setTimeout(function() { $('#' + input.id).datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, yearRange: '-100:-0', changeMonth: true }); }, 100); // Fancy date picker added!
     }
   }
-  if (type != 'hidden') { // No label, td or span needed for hidden stuff
+  if (type == 'hidden') { // No label, td or span needed for hidden stuff
+    div.appendChild(input);
+  } else {
+    propDiv.appendChild(input);
     lbl.for = input.id;
     var span = document.createElement('span'); // Let's put the result from the field check in here
     span.id = prop + 'Span';
