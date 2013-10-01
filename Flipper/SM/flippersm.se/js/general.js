@@ -2426,7 +2426,7 @@ function popTbls(tbls){ // Let's populate some tables
   }
 }
 
-function addThead(tbl, type, meBtn) { // meBtn is the "This is me!" button at the end of each row - it also needs a header
+function addThead(tbl, type, meBtn) { // meBtn is the "Här är jag!" button at the end of each row - it also needs a header
   var thead = tbl.createTHead();
   addTheaders(thead, type, meBtn); // The type is the meta object (scroll up) containing meta info about the classes - including what headers to use
 }
@@ -2509,7 +2509,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
     var btn = document.createElement('button');
     btn.id = 'meBtn_' + obj.id;
     btn.type = 'button';
-    btn.appendChild(document.createTextNode('This is me!'));
+    btn.appendChild(document.createTextNode('Här är jag!'));
     btn.onclick = function() { thisIsMe(this); return false; };
     var td = tr.insertCell(-1);
     td.className = 'tdFix'
