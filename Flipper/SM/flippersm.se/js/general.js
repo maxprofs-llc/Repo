@@ -137,7 +137,7 @@ var classes = {
       classics: { label: 'Classics', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: false},
       paid: { label: 'Betalat', type: 'checkbox', mandatory: false, special: false, bundle: 1, default: false},
       volunteer: { label: 'Voluntär', type: 'checkbox', mandatory: false, special: false, bundle: false, default: true},
-      birthDate: { label: 'Född, type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
+      birthDate: { label: 'Född', type: 'text', mandatory: false, special: 'date', bundle: false, default: ''},
       dateRegistered: { label: 'Anmäld', type: 'hidden', mandatory: false, special: false, bundle: false, default: new Date().toISOString().substring(0,10)}
     },
     complete: false
