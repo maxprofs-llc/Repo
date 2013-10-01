@@ -1069,10 +1069,10 @@ function addFieldRow(tbody, obj, prop) {
 
 function addFieldDiv(div, obj, prop) {
   var type = classes[obj.class].fields[prop].type;
-  var propDiv = document.createElement('div');
-  propDiv.id = prop + 'Div';
-  div.appendChild(propDiv);
-  if (type != 'hidden') { // No label or td needed for hidden stuff
+  if (type != 'hidden') { // No label or div needed for hidden stuff
+    var propDiv = document.createElement('div');
+    propDiv.id = prop + 'Div';
+    div.appendChild(propDiv);
     var lbl = document.createElement('label');
     lbl.id = prop + 'Label';
     var txt = document.createTextNode(classes[obj.class].fields[prop].label); // Field name.
