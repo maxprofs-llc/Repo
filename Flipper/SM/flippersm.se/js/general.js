@@ -1075,6 +1075,7 @@ function addFieldRow(tbody, obj, prop) {
 function addFieldDiv(div, obj, prop) {
   var type = classes[obj.class].fields[prop].type;
   var propDiv = document.createElement('div');
+  div.id = prop + 'Div';
   div.appendChild(propDiv);
   if (type != 'hidden') { // No label or td needed for hidden stuff
     var lbl = document.createElement('label');

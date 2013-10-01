@@ -506,3 +506,10 @@ input[type="password"] {
   background-color: #FFFF00;
 }
 
+#countryDiv {
+  display: none;
+}
+
+#continentDiv {
+  display: none;
+}
