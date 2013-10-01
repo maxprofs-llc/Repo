@@ -4042,18 +4042,18 @@
   
   function getPlural($text) {
     $plurals = array(
-      'qualGroup' => 'groups',
-      'game' => 'games',
-      'machine' => 'machines',
-      'manufacturer' => 'manufacturers',
-      'gender' => 'genders',
-      'person' => 'persons',
-      'player' => 'players',
-      'city' => 'cities',
-      'region' => 'regions',
-      'country' => 'countries',
-      'continent' => 'continents',      
-      'team' => 'teams'
+      'qualGroup' => 'kvalgrupper',
+      'game' => 'spel',
+      'machine' => 'maskiner',
+      'manufacturer' => 'tillverkare',
+      'gender' => 'kön',
+      'person' => 'personer',
+      'player' => 'spelare',
+      'city' => 'städer',
+      'region' => 'landskap',
+      'country' => 'länder',
+      'continent' => 'kontinenter',
+      'team' => 'lag'
     );
     return $plurals[$text];    
   }
