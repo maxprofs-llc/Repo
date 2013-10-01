@@ -68,7 +68,6 @@
     public function __construct($data = null, $type = 'array') {
       parent::__construct($data, $type);
       $this->name = ($this->name) ? $this->name : $this->firstName.' '.$this->lastName;
-      if ($this->birthDate && )
     }
     
     public function isMemberOfTeam($dbh, $tournament = 3) { 
