@@ -469,8 +469,15 @@ table#playerEditTable th h3 {
   display: none;
 }
 
-#content img.icon {
+table#playerEditTable img.icon {
   position: relative;
   top: 2px;
   padding: 0px 0px 0px 10px;
+}
+
+table#playerEditTable input select {
+  width: 300px;
+  height: 20px;
+  padding: 0.2em;
+  border: solid 0.2em #000000;
 }
