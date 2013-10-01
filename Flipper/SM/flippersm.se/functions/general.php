@@ -476,7 +476,7 @@
       'selfParent' => false, 'acronym' => 'Pe'
     ), 
     'player' => (object) array(
-      'name' => 'player', 'geo' => false, 'plural' => 'players', 'table' => 'player', 'column' => 'player_id',
+      'name' => 'player', 'label' => 'spelare', 'geo' => false, 'plural' => 'spelare', 'table' => 'player', 'column' => 'player_id',
       'headers' => array('name', 'initials', 'city', 'region', 'country', 'continent'), // Headers normally used in tables and lists
       'info' => array('name', 'initials', 'qualGroup', 'birthDate', 'gender', 'city', 'region', 'parentRegion', 'country', 'parentCountry', 'continent', 'isIfpa', 'main', 'classics', 'volunteer'), // Headers normally used in info divs
       'parents' => array('person', 'city', 'region', 'country', 'continent', 'tournamentDivision', 'tournamentEdition', 'gender'),
@@ -1406,7 +1406,7 @@
     $content = '
       <script src="'.__baseHref__.'/js/contrib/jquery.form.min.js" type="text/javascript"></script>
       <form id="imageForm" method="post" enctype="multipart/form-data" action="'.__baseHref__.'/ajax/imageUpload.php?obj='.$obj->class.'&id='.$obj->id.'" style="display: '.(($display) ? '' : 'none').';" class="edit'.ucfirst($obj->class).'">
-        <h2 colspan="2" id="reg'.ucfirst($obj->class).'ImgH2">'.ucfirst($obj->class).' logo or picture</h2>
+        <h2 colspan="2" id="reg'.ucfirst($obj->class).'ImgH2">'.ucfirst($classes[$obj->class]['label']).' logga eller foto</h2>
   	    <div id="preview">
   		    <img src="'.$obj->getPhoto(true).'" id="thumb" class="preview" alt="Preview of '.$obj->name.'">
           <div id="imageLoader"></div>

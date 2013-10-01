@@ -180,7 +180,7 @@ function showLogin($ulogin, $title = 'Du måste logga in för att komma åt den 
         '.(($_REQUEST['id']) ? '<input type="hidden" name="id" id="id" value="'.$_REQUEST['id'].'">' : '').'
         <input type="hidden" name="baseHref" id="baseHref" value="'.__baseHref__.'">
 			  <input type="hidden" id="nonce" name="nonce" value="'.ulNonce::Create('login').'">
-        <label for="username">Username:</label>
+        <label for="username">Användarnamn:</label>
   		  <input type="text" name="username" id="usernameLogin" class="mandatory" onkeyup="login(this);">
         <span id="usernameLoginSpan" class="errorSpan">*</span>
         <label for="password">Lösenord:</label>
@@ -188,7 +188,7 @@ function showLogin($ulogin, $title = 'Du måste logga in för att komma åt den 
         <span id="passwordSpan" class="errorSpan">*</span>
         <label for="autologin">Kom ihåg mig:</label>
         <input type="checkbox" name="autologin" value="1" id="autologinCheckbox">
-  		  <input type="submit" value="Login" id="loginButton" onclick="login(this);" disabled>
+  		  <input type="submit" value="Logga in" id="loginButton" onclick="login(this);" disabled>
         <a href="'.__baseHref__.'/your-pages/password-reset/" class="italic">Glömt löesnordet?</a>
   	  </form>
     </div>
@@ -241,8 +241,7 @@ function showChangeUsername($dbh, $username) {
 
 function showEditPlayer($dbh, $ulogin) {
   $player = getCurrentPlayer($dbh, $ulogin);
-  $content = '    <h2 class="entry-title">Edit player profile</h2>';
-  $content .=  getUploadForm($dbh, $player, true, false);
+  $content =  getUploadForm($dbh, $player, true, false);
   $content .= '
     <form id="newData" name="newData">
       <input type="hidden" name="newPhoto" id="newPhoto" value="false">
@@ -252,18 +251,18 @@ function showEditPlayer($dbh, $ulogin) {
       <input type="hidden" name="id" id="id" value="'.$player->id.'">
       <input type="hidden" name="user" id="user" value="'.$player->username.'">
       <div id="ifpaRegResults">
-        <span id="playerLoading"><img src="'.__baseHref__.'/images/ajax-loader.gif" alt="Loading data..."></span>
+        <span id="playerLoading"><img src="'.__baseHref__.'/images/ajax-loader.gif" alt="Laddar data..."></span>
         <div id="ifpaRegResultsTableDiv" style="display: none">
-          <h3 id="ifpaRegResultsH3">People found:</h3>
+          <h3 id="ifpaRegResultsH3">Hittade spelare:</h3>
           <table id="ifpaRegResultsTable" class="list">
           </table>
         </div>
       </div>
     </form>
-    <div id="changeUser"><a href="'.__baseHref__.'/your-pages/change-credentials/">Change username or password</a></div>
+    <div id="changeUser"><a href="'.__baseHref__.'/your-pages/change-credentials/">Ändra användarnamn eller lösenord</a></div>
     <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
       <input type="hidden" name="action" value="logout">
-      <input type="submit" value="Logout">
+      <input type="submit" value="Logga ut">
     </form>
   ';
   return $content;

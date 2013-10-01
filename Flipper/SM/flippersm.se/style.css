@@ -493,3 +493,7 @@ input[type="password"] {
   padding: 0.2em;
   border: solid 0.2em #000000;
 }
+
+.yellow {
+  background-color: #FFFF00;
+}

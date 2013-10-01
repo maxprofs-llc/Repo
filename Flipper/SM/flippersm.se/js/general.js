@@ -120,7 +120,7 @@ var classes = {
       firstName: { label: 'Förnamn', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       lastName: { label: 'Efternamn', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       initials: { label: 'Tag', type: 'text', mandatory: false, special: false, bundle: false, default: ''},
-      username: { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
+      username: { label: 'Användarnamn', type: 'text', mandatory: true, special: false, bundle: false, default: ''},
       password: { label: 'Lösenord', type: 'password', mandatory: true, special: false, bundle: false, default: ''},
       passwordRequired: { label: 'Password', type: 'hidden', mandatory: false, special: false, bundle: false, default: true},
       gender: { label: 'Kön', type: 'select', mandatory: false, special: false, bundle: false},
