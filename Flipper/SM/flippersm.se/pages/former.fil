@@ -1,4 +1,4 @@
- <h1>Tävlingsformer</h1>
+ <h1>TÃ¤vlingsformer</h1>
 
 <?php
 
@@ -8,33 +8,33 @@ undermenu("regler");
 
 <div class="spalt">
 
- <h3>Ett antal olika tävlingar</h3>
-  <p>Under SM-helgen koras en vinnare i huvudklassen, och en vinnare i classic. Men dessutom hålls tävlingar i lite olika format och varianter. Här benar vi ut vad som skiljer de olika tävlingarna åt.<br />En nyckelregel som gäller i de allra flesta tävlingarna är att spelen är inställda på tre kulor, Tournament mode (förhindrar en del slumpvisa belöningar) och inga extrabollar.<br />För varje tävlingsform står angivet vilka som får priser, och det är uteslutande pokaler, medaljer eller liknande av ringa värde som delas ut. Enda undantaget är "Best in show", där Lotteriinspektionen gett oss tillstånd att ha ett monetärt pris.</p>
-<h3>Huvudtävlingen</h3>
-<p>Ingår i anmälningsavgiften.<br />Spelas på moderna flipperspel (tillverkade 1986 eller senare). Tjugoett olika spel ingår i huvudtävlingen och varje deltagare lottas att få spela på fyra av dessa. Två försök får man på varje spel, och den högsta poängen förs in i resultatdatabasen.
-Denna poäng jämförs sedan mot alla andra poäng som tagits på just det spelet. Varje deltagare får utifrån sitt resultat en kvalpoäng mellan 0-100 på varje spel, och den sammanlagda kvalpoängen från de fyra spelen utgör basen för en rankinglista.<br />
-De 64 främsta spelarna i denna går till söndagens A-slutspel, medan spelare 65-96 går till B-slutspelet samma dag. Vinnaren i A-slutspelet koras till svensk mästare i flipper, huvudtävlingen.<br /><strong>Priser till plats 1-3 i A samt till ettan i B.</strong></p>
+ <h3>Ett antal olika tÃ¤vlingar</h3>
+  <p>Under SM-helgen koras en vinnare i huvudklassen, och en vinnare i classic. Men dessutom hÃ¥lls tÃ¤vlingar i lite olika format och varianter. HÃ¤r benar vi ut vad som skiljer de olika tÃ¤vlingarna Ã¥t.<br />En nyckelregel som gÃ¤ller i de allra flesta tÃ¤vlingarna Ã¤r att spelen Ã¤r instÃ¤llda pÃ¥ tre kulor, Tournament mode (fÃ¶rhindrar en del slumpvisa belÃ¶ningar) och inga extrabollar.<br />FÃ¶r varje tÃ¤vlingsform stÃ¥r angivet vilka som fÃ¥r priser, och det Ã¤r uteslutande pokaler, medaljer eller liknande av ringa vÃ¤rde som delas ut. Enda undantaget Ã¤r "Best in show", dÃ¤r Lotteriinspektionen gett oss tillstÃ¥nd att ha ett monetÃ¤rt pris.</p>
+<h3>HuvudtÃ¤vlingen</h3>
+<p>IngÃ¥r i anmÃ¤lningsavgiften.<br />Spelas pÃ¥ moderna flipperspel (tillverkade 1986 eller senare). Tjugoett olika spel ingÃ¥r i huvudtÃ¤vlingen och varje deltagare lottas att fÃ¥ spela pÃ¥ fyra av dessa. TvÃ¥ fÃ¶rsÃ¶k fÃ¥r man pÃ¥ varje spel, och den hÃ¶gsta poÃ¤ngen fÃ¶rs in i resultatdatabasen.
+Denna poÃ¤ng jÃ¤mfÃ¶rs sedan mot alla andra poÃ¤ng som tagits pÃ¥ just det spelet. Varje deltagare fÃ¥r utifrÃ¥n sitt resultat en kvalpoÃ¤ng mellan 0-100 pÃ¥ varje spel, och den sammanlagda kvalpoÃ¤ngen frÃ¥n de fyra spelen utgÃ¶r basen fÃ¶r en rankinglista.<br />
+De 64 frÃ¤msta spelarna i denna gÃ¥r till sÃ¶ndagens A-slutspel, medan spelare 65-96 gÃ¥r till B-slutspelet samma dag. Vinnaren i A-slutspelet koras till svensk mÃ¤stare i flipper, huvudtÃ¤vlingen.<br /><strong>Priser till plats 1-3 i A samt till ettan i B.</strong></p>
 <h3>U18</h3>
-<p>De sex bästa U18-spelarna från mainkvalet får spela slutspel på söndagen om titeln <strong>U18-mästare.</strong> Tider och schema för detta <a href = 'http://flippersm.se/?s=system'>hittas här.</a><br /><strong>Priser till plats 1-3.</strong></p>
+<p>De sex bÃ¤sta U18-spelarna frÃ¥n mainkvalet fÃ¥r spela slutspel pÃ¥ sÃ¶ndagen om titeln <strong>U18-mÃ¤stare.</strong> Tider och schema fÃ¶r detta <a href = 'http://flippersm.se/?s=system'>hittas hÃ¤r.</a><br /><strong>Priser till plats 1-3.</strong></p>
 <h3>Classic</h3>
-<p>Kostar 100 kr att anmäla sig till.<br />Här ingår enbart flipperspel tillverkade 1985 eller tidigare. Av de åtta tävlingsspelen lottas man att få spela på fyra, och får två försök på vardera. Systemet för kvalpoäng skiljer sig lite mot det som används i huvudtävlingen, då det är fler spelare som rangordnas på varje spel. De 48 bästa spelarna i classic går till söndagens slutspel. Vinnaren i slutspelet koras till svensk mästare i flipper, classic.<br /><strong>Priser till plats 1-3.</strong></p>
+<p>Kostar 100 kr att anmÃ¤la sig till.<br />HÃ¤r ingÃ¥r enbart flipperspel tillverkade 1985 eller tidigare. Av de Ã¥tta tÃ¤vlingsspelen lottas man att fÃ¥ spela pÃ¥ fyra, och fÃ¥r tvÃ¥ fÃ¶rsÃ¶k pÃ¥ vardera. Systemet fÃ¶r kvalpoÃ¤ng skiljer sig lite mot det som anvÃ¤nds i huvudtÃ¤vlingen, dÃ¥ det Ã¤r fler spelare som rangordnas pÃ¥ varje spel. De 48 bÃ¤sta spelarna i classic gÃ¥r till sÃ¶ndagens slutspel. Vinnaren i slutspelet koras till svensk mÃ¤stare i flipper, classic.<br /><strong>Priser till plats 1-3.</strong></p>
 <h3>Split</h3>
-<p>Ingår i anmälningsavgiften. <br />Kallas också parflipper, och två spel kommer att vara tillgängliga för denna tävling. Ett lag består av två spelare, där man sköter varsin sida av spelet. Två försök på vardera spelet ingår och det gäller att få så hög poäng som möjligt. <br />De åtta bästa lagen går till slutspel på lördagkvällen (kl 22).<br /><strong>Priser till lag 1-3.</strong></p>
+<p>IngÃ¥r i anmÃ¤lningsavgiften. <br />Kallas ocksÃ¥ parflipper, och tvÃ¥ spel kommer att vara tillgÃ¤ngliga fÃ¶r denna tÃ¤vling. Ett lag bestÃ¥r av tvÃ¥ spelare, dÃ¤r man skÃ¶ter varsin sida av spelet. TvÃ¥ fÃ¶rsÃ¶k pÃ¥ vardera spelet ingÃ¥r och det gÃ¤ller att fÃ¥ sÃ¥ hÃ¶g poÃ¤ng som mÃ¶jligt. <br />De Ã¥tta bÃ¤sta lagen gÃ¥r till slutspel pÃ¥ lÃ¶rdagkvÃ¤llen (kl 22).<br /><strong>Priser till lag 1-3.</strong></p>
 <h3>Enhands</h3>
-<p>Kostar 10 kr/försök. <br />Spelas som antyds av namnet med endast en hand. Den andra placeras lämpligen i en ficka eller bakom ryggen. Ett spel kommer att upplåtas till denna tävlingsform, och högst poäng när spelet stänger kl 14 på söndagen vinner.<br />Varje deltagare får göra flera försök.<br /><strong>Pris till vinnaren.</strong></p>
+<p>Kostar 10 kr/fÃ¶rsÃ¶k. <br />Spelas som antyds av namnet med endast en hand. Den andra placeras lÃ¤mpligen i en ficka eller bakom ryggen. Ett spel kommer att upplÃ¥tas till denna tÃ¤vlingsform, och hÃ¶gst poÃ¤ng nÃ¤r spelet stÃ¤nger kl 14 pÃ¥ sÃ¶ndagen vinner.<br />Varje deltagare fÃ¥r gÃ¶ra flera fÃ¶rsÃ¶k.<br /><strong>Pris till vinnaren.</strong></p>
 <h3>Set the highscore</h3>
-<p>Kostar 10 kr/försök. <br />Två spel finns till förfogande och det är enbart den högsta poängen som räknas. De spelare som innehar förstaplatsen när tävlingen stänger kl 14 på söndagen, vinner.<br />Varje deltagare får göra flera försök.<br /><strong>Priser till vinnarna.</strong></p>
+<p>Kostar 10 kr/fÃ¶rsÃ¶k. <br />TvÃ¥ spel finns till fÃ¶rfogande och det Ã¤r enbart den hÃ¶gsta poÃ¤ngen som rÃ¤knas. De spelare som innehar fÃ¶rstaplatsen nÃ¤r tÃ¤vlingen stÃ¤nger kl 14 pÃ¥ sÃ¶ndagen, vinner.<br />Varje deltagare fÃ¥r gÃ¶ra flera fÃ¶rsÃ¶k.<br /><strong>Priser till vinnarna.</strong></p>
 <h3>80-tals-tresteg</h3>
-<p>Max tre försök per spelare<br />
-Föna håret, lämna tillbaks movieboxen, ta på dig jeansvästen med Gary Moore-märke, lyssna på Rock Steady Crew/Judas Priest och njut av det som då var nutidens spel. <br />En kula på vart och ett av de tre spelen från denna gyllene era. Addera ihop den totala poängen och du har ditt trestegsresultat.<br />Varje deltagare får göra max tre försök.<br /><strong>"Pris" till vinnaren.</strong> </p>
+<p>Max tre fÃ¶rsÃ¶k per spelare<br />
+FÃ¶na hÃ¥ret, lÃ¤mna tillbaks movieboxen, ta pÃ¥ dig jeansvÃ¤sten med Gary Moore-mÃ¤rke, lyssna pÃ¥ Rock Steady Crew/Judas Priest och njut av det som dÃ¥ var nutidens spel. <br />En kula pÃ¥ vart och ett av de tre spelen frÃ¥n denna gyllene era. Addera ihop den totala poÃ¤ngen och du har ditt trestegsresultat.<br />Varje deltagare fÃ¥r gÃ¶ra max tre fÃ¶rsÃ¶k.<br /><strong>"Pris" till vinnaren.</strong> </p>
 <h3>Best in show</h3>
-<p>De personer som är vänliga nog att låna ut sina spel kommer även i år att få lite extra uppskattning för det. Varje deltagare får nämligen ett röstkort där den antecknar numret på det spel som den tycker är i bäst skick. Ägaren till det spel som får flest röster kommer att erhålla ett pris värt 1000 kr.</p>
+<p>De personer som Ã¤r vÃ¤nliga nog att lÃ¥na ut sina spel kommer Ã¤ven i Ã¥r att fÃ¥ lite extra uppskattning fÃ¶r det. Varje deltagare fÃ¥r nÃ¤mligen ett rÃ¶stkort dÃ¤r den antecknar numret pÃ¥ det spel som den tycker Ã¤r i bÃ¤st skick. Ã„garen till det spel som fÃ¥r flest rÃ¶ster kommer att erhÃ¥lla ett pris vÃ¤rt 1000 kr.</p>
 </div>
 <div class = "spalt">
 <h2>Spellista</h2>
-<p>Här följer en <strong>mycket preliminär</strong> lista över de spel som är tänkta att finnas på plats under SM-helgen. Tävlingsledningen förbehåller sig rätten att ändra i listan.</p><br />
+<p>HÃ¤r fÃ¶ljer en <strong>mycket preliminÃ¤r</strong> lista Ã¶ver de spel som Ã¤r tÃ¤nkta att finnas pÃ¥ plats under SM-helgen. TÃ¤vlingsledningen fÃ¶rbehÃ¥ller sig rÃ¤tten att Ã¤ndra i listan.</p><br />
 <hr>
-<h3>Spel som troligen ingår i Main</h3>
+<h3>Spel som troligen ingÃ¥r i Main</h3>
 <p><a href="http://ipdb.org/search.pl?any=acdc&sortby=name&search=Search+Database&searchtype=quick#5777">AC/DC: Back in Black LE</a> (Stern 2012)</p>
 <p><a href="http://ipdb.org/search.pl?any=attack+from+mars&sortby=name&search=Search+Database&searchtype=quick#3781">Attack from Mars</a> (Bally 1995)</p>
 <p><a href="http://ipdb.org/search.pl?any=baywatch&sortby=name&search=Search+Database&searchtype=quick#2848">Baywatch</a> (Sega 1995)</p>
@@ -66,7 +66,7 @@ Föna håret, lämna tillbaks movieboxen, ta på dig jeansvästen med Gary Moore-märk
 <p><a href="http://ipdb.org/search.pl?any=whirlwind&sortby=name&search=Search+Database&searchtype=quick#2765">Whirlwind</a> (Williams 1990)</p>
 
 
-<h3>Förströelsespel</h3>
+<h3>FÃ¶rstrÃ¶elsespel</h3>
 <p><a href="http://ipdb.org/search.pl?any=acdc&search=Search+Database&searchtype=quick#5775">AC/DC: Premium</a> (Stern 2012)</p>
 <!--<p><a href="http://ipdb.org/search.pl?any=banzai+run&sortby=name&search=Search+Database&searchtype=quick">Banzai Run</a> (Williams 1988)</p>!-->
 <p><a href="http://ipdb.org/search.pl?any=batman+forever&sortby=name&search=Search+Database&searchtype=quick#3593">Batman Forever</a> (Sega 1995)</p>
