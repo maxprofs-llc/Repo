@@ -503,7 +503,7 @@ function PLAYER(data) {
     this.birthDate = data.birthDate;
     this.classics = data.classics;
     this.main = data.main;
-    this.paid = (data.paid) ? 1 : 0;
+    this.paid = (data.paid > 0) ? 1 : 0;
     this.volunteer = data.volunteer;
     this.username = data.username;
     this.password = data.password;
@@ -2492,7 +2492,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
         } 
         item = (item) ? item : ((obj[headers[header]].hasOwnProperty('name')) ? document.createTextNode(obj[headers[header]].name) : document.createTextNode(obj[headers[header]])); // There was no link - so let's just add the text (either a name - if this is an object, or the actual content - if this is a string)
       }
-      item = (classes[obj.class].fields[headers[header]].type == 'checkbox') ? ((obj[headers[header]] == 1) ? document.createTextNode('Ja') : document.createTextNode('Nej')) : item;
+      item = (classes[obj.class].fields[headers[header]].type == 'checkbox') ? ((obj[headers[header]] == 1) ? document.createTextNode('Ja') : document.createTextNode('Nej')) : item; // Change checkbox to Ja/Nej in stead of 1/0
       if (obj[headers[header]] && obj[headers[header]].hasOwnProperty('name')) {
         if (obj[headers[header]].id > 0) {
           td.appendChild(item);
