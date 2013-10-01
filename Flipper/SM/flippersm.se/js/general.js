@@ -2441,10 +2441,12 @@ function addTheaders (thead, type, meBtn) { // meBtn is the "This is me!" button
   if (meBtn) { // "This is me!" should be shown
     tr.appendChild(th)
     th.appendChild(document.createTextNode('Me?')); 
-  } else {
+  }
+  /* else {
     tr.appendChild(th)
     th.style.display = 'none';
   }
+  */
   return thead;
 }
 
@@ -2508,10 +2510,12 @@ function addRow(tbody, obj, link, meBtn, sels) {
     var td = tr.insertCell(-1);
     td.className = 'tdFix'
     td.appendChild(btn);
-  } else {
+  }
+/* else {
     var td = tr.insertCell(-1);
     td.className = 'tdFix invisible'
   }
+  */
 }
 
 function tShirtIcon(tbody) {

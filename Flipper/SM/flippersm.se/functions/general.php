@@ -2604,6 +2604,7 @@
         coalesce(m.mobileNumber, p.mobileNumber) as mobileNumber,
         coalesce(m.mailAddress, p.mailAddress) as mailAddress,
         coalesce(m.birthDate, p.birthDate) as birthDate,
+        coalesce(m.dateRegistered, p.dateRegistered) as dateRegistered,
         m.place as place,
         ifnull(m.wpprPlace, m.place) as wpprPlace,
         cl.place as classicsPlace,
