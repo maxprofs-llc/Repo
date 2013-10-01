@@ -2443,7 +2443,7 @@ function addTheaders (thead, type, meBtn) { // meBtn is the "This is me!" button
   var th = document.createElement('th');
   if (meBtn) { // "This is me!" should be shown
     tr.appendChild(th)
-    th.appendChild(document.createTextNode('Me?')); 
+    th.appendChild(document.createTextNode('Jag?'));
   }
   /* else {
     tr.appendChild(th)
