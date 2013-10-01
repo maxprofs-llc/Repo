@@ -53,7 +53,7 @@
   $content .= $form->output();
 
   $content .= '
-    <p id="loadingObjects"><p>Laddar objekt... tålamod är en dygd...<img src="'.__baseHref__.'/images/sel-loader.gif" alt="Laddar data..."></p>
+    <p id="loadingObjects"><p>Laddar objekt... tålamod är en dygd... <img class="icon" src="'.__baseHref__.'/images/sel-loader.gif" alt="Laddar data..."></p>
     <p id="noHits" style="display: none;">Ingen träff! Försök att söka på nåt annat.</p>
     <form id="newData" name="newData">
       <input type="hidden" name="loggedIn" id="loggedIn" value="false">
