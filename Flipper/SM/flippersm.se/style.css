@@ -221,7 +221,7 @@ div#content {
 }
 
 #content select {
-  width: 300px;
+  width: 310px;
   height: 30px;
 }
 
@@ -665,18 +665,14 @@ td, th {
   font-weight: bold;
 }
 
+#content .mandatory {
+  background-color: #FFFF00;
+}
+
 #content img.icon {
   position: relative;
   top: 2px;
   padding: 0px 0px 0px 10px;
-}
-
-#content input.mandatory {
-  background-color: #FFFF00;
-}
-
-#content select.mandatory {
-  background-color: #FFFF00;
 }
 
 #content #countryDiv {
