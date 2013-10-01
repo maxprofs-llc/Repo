@@ -2475,7 +2475,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
   for (var header in headers) {
     var td = tr.insertCell(-1);
 //    td.className = 'tdFix'
-    if (obj[headers[header]] || obj[headers[header] + '_id']) { // Check that the header exist on this object
+    if (typeof obj[headers[header]] !== 'undefined' || obj[headers[header] + '_id']) { // Check that the header exist on this object
       obj.addParents(); // Make sure all parent-child relations are there
       var item = null;
       if (sels && obj[headers[header]].hasOwnProperty('name')) { // If there is a name on the content, it means that this header contains another object - so let's make a select
