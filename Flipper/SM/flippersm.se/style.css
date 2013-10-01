@@ -99,12 +99,14 @@ div#menu {
 /* loggan: */
 
 div#logo {
+  border: 0px;
   position: absolute;
   left: -10px;
   top: 10px;
 }
 
 #logo img {
+  border: 0px;
   height:192px;
 }
 
@@ -406,6 +408,7 @@ td, th {
     float: left;
     margin-left: 10px;
     width: 290px;
+    border: 0px;
   }
 
   @media only screen and (max-device-width: 780px), (max-width: 780px) {
@@ -413,6 +416,7 @@ td, th {
     div#logo {
       position: relative;
       height: 190px;
+      border: 0px;
     }
 
     #content h1 {
@@ -626,6 +630,7 @@ td, th {
       margin: 0px auto;
       float: none;
       padding-left: 20px;
+      border: 0px;
     }
 
     div#menu #buttons {
