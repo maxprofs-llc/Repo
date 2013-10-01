@@ -16,8 +16,8 @@
       ';
     }
   } else {
-    $content .= showLogin($ulogin, 'If you already have a user, please login.');
-    $content .= '<br /><br /><h3 class="entry-title regTitle">Otherwise, register a new player:</h3>';
+    $content .= showLogin($ulogin, 'Om du deltog i EPC - logga in och anmäl dig här!');
+    $content .= '<br /><br /><h3 class="entry-title regTitle">Om du inte deltog i EPC, sök reda på dig själv!</h3>';
   }
 
   $form = new regForm();
@@ -26,7 +26,7 @@
   $newField = new formInput('hidden', 'dateRegistered', date('Y-m-d'));
   $form->addField($newField);
 
-  $geoComment = new formInput('comment', 'ifpaComment', 'We might already know who you are! Enter your IFPA ID (visible in the address bar when you look at your IFPA page), your email address or phone number used for SO, SM or EPC registrations in the past, your first, last, middle, partial or full name (more than three letters) or even your three-letter TAG (include trailing spaces). Then press the button (or enter/return) and feel the magic. If we can\'t find you, just try another sarch - we\'ve got 20 000 friends, and you\'re most probably one of them.<br /><br /><p class="bold">PLEASE SEARCH BEFORE YOU DECIDE TO CLICK ON THE NEW GUY BUTTON! If you have ever played a pinball tournament, you are most likely NOT a new guy.</p>');
+  $geoComment = new formInput('comment', 'ifpaComment', '<p class="bold">Vi vet antagligen vem du är!</p> Har du någonsin spelat i en flippertävling så finns du antaligen redan i databasen. Sök på ditt namn (minst fyra bokstäver), din trebokstavs-TAG, din mailaddress, ditt telefonnnummer eller ditt IFPA-ID och klicka sen på "Här är jag!".<br /><br />Om du inte lyckas hitta dig själv, så kan du klicka på "Registrera helt ny spelare".');
   $geoComment->label = '';
   $form->addField($geoComment);
 

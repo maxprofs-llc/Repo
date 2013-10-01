@@ -938,7 +938,7 @@ function printPlayerAsList(obj,dstId) {
   h3.appendChild(document.createTextNode('Bekräfta, ändra och lägg till din information. Gula fält är obligatoriska.'));
   div.appendChild(h3);
   for (var prop in classes[obj.class].fields) { // Loop through all object properties (player names and such)
-    document.getElementById(dstId).appendChild(addFieldDiv(div, obj, prop));
+    addFieldDiv(div, obj, prop);
   }
   var recapDiv = document.createElement('div');
   if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
