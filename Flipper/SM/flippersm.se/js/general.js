@@ -945,9 +945,9 @@ function printPlayerAsList(obj,dstId) {
     }
   }
   if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
-    var recapDiv = document.createElement('div');
-    recapDiv.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
-    div.appendChild(recapDiv);
+    var recapP = document.createElement('p');
+    recapP.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
+    div.appendChild(recapP);
   }
   var submitDiv = document.createElement('div');
   var lbl = document.createElement('label');
