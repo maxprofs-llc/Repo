@@ -837,6 +837,7 @@ function editPlayer(id) {
 
 // I'm a new guy!
 function newGuy(dstId) {
+  $('#noHits').hide();
   if (!classes.player.fields.username) {
     classes.player.fields.username = { label: 'Username', type: 'text', mandatory: true, special: false, bundle: false, default: ''};
     classes.player.fields.password = { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''};
