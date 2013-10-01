@@ -958,7 +958,7 @@ function printPlayerAsList(obj,dstId) {
   var btn = document.createElement('input');
   btn.type = 'button';
   btn.id = 'submit';
-  btn.appendChild(document.createTextNode('Skicka!'));
+  btn.value = 'Skicka!';
   btn.onclick = function() { checkForm(this); return false; };
   submitDiv.appendChild(btn);
   div.appendChild(submitDiv);
@@ -2509,7 +2509,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
     var btn = document.createElement('input');
     btn.id = 'meBtn_' + obj.id;
     btn.type = 'button';
-    btn.appendChild(document.createTextNode('Här är jag!'));
+    btn.value = 'Här är jag!';
     btn.onclick = function() { thisIsMe(this); return false; };
     var td = tr.insertCell(-1);
     td.className = 'tdFix'
