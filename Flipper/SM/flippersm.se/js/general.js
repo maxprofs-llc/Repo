@@ -2474,12 +2474,12 @@ function addRow(tbody, obj, link, meBtn, sels) {
   var headers = classes[obj.class].headers; // Get the headers to use
   for (var header in headers) {
     var td = tr.insertCell(-1);
-//s    td.className = 'tdFix'
+//    td.className = 'tdFix'
     if (obj[headers[header]] || obj[headers[header] + '_id']) { // Check that the header exist on this object
       obj.addParents(); // Make sure all parent-child relations are there
       var item = null;
       if (sels && obj[headers[header]].hasOwnProperty('name')) { // If there is a name on the content, it means that this header contains another object - so let's make a select
-        var item = document.createElement('select');
+        item = document.createElement('select');
         item.id = headers[header] + 'Select';
         popSel(item); // Populate it with all objectofs  the specific type
         selectOption(item, obj[headers[header]].id); // Select the correct option
@@ -2490,7 +2490,10 @@ function addRow(tbody, obj, link, meBtn, sels) {
           }
           item = (obj.links[headers[header]]) ? obj.links[headers[header]] : null; // If there is a link - let's use it
         } 
-        var item = (item) ? item : ((obj[headers[header]].hasOwnProperty('name')) ? document.createTextNode(obj[headers[header]].name) : document.createTextNode(obj[headers[header]])); // There was no link - so let's just add the text (either a name - if this is an object, or the actual content - if this is a string)
+        item = (item) ? item : ((obj[headers[header]].hasOwnProperty('name')) ? document.createTextNode(obj[headers[header]].name) : document.createTextNode(obj[headers[header]])); // There was no link - so let's just add the text (either a name - if this is an object, or the actual content - if this is a string)
+      }
+      if (classes[obj.class].fields[header].type == 'checkbox') {
+        item = (item == 1) ? 'Ja' : 'Nej';
       }
       if (obj[headers[header]] && obj[headers[header]].hasOwnProperty('name')) {
         if (obj[headers[header]].id > 0) {
