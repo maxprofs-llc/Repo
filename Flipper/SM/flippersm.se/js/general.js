@@ -944,8 +944,8 @@ function printPlayerAsList(obj,dstId) {
       addFieldDiv(div, obj, prop);
     }
   }
-  var recapDiv = document.createElement('div');
   if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
+    var recapDiv = document.createElement('div');
     recapDiv.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
     div.appendChild(recapDiv);
   }
@@ -962,7 +962,7 @@ function printPlayerAsList(obj,dstId) {
   btn.onclick = function() { checkForm(this); return false; };
   submitDiv.appendChild(btn);
   div.appendChild(submitDiv);
-  if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
+  if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
     setTimeout(function() { // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
       Recaptcha.create('6LeXJOgSAAAAANSQ19LKVh5iVrvRCasr5ODfv8Lb', 'recaptcha', {
         theme: 'blackglass'
@@ -1263,7 +1263,7 @@ function submitChecked(obj) {
 function checkFields(obj) {
   var propArray = [];
   for (var prop in classes[obj.class].fields) {
-    if (!(obj.class == 'player' && prop == 'name')) {
+    if (!(obj.class == 'player' && (prop == 'name' || prop == 'paid'))) {
       propArray.push('{"f":"' + prop + '","v":"' + obj[prop] +'","id":"' + obj.id +'"}');
     }
   }
@@ -1395,17 +1395,19 @@ function setCaptain() {
 function checkForm(el) {
   var obj = player();
   for (var prop in classes[obj.class].fields) {
-    var meta = classes[obj.class].fields[prop]
-    obj[prop] = document.getElementById(prop + ucfirst(meta.type)).value;
-    if (meta.type == 'select') {
-      if (meta.special == 'add') { // For selects we want to store the IDs, unless they added something
-        if (document.getElementById(prop + 'AddText').value != '') {
-          obj[prop] = document.getElementById(prop + 'AddText').value;
-        } 
+    if (prop != 'paid') {
+      var meta = classes[obj.class].fields[prop]
+      obj[prop] = document.getElementById(prop + ucfirst(meta.type)).value;
+      if (meta.type == 'select') {
+        if (meta.special == 'add') { // For selects we want to store the IDs, unless they added something
+          if (document.getElementById(prop + 'AddText').value != '') {
+            obj[prop] = document.getElementById(prop + 'AddText').value;
+          }
+        }
+        obj[prop + '_id'] = obj[prop];
+      } else if (meta.type == 'checkbox') {
+        obj[prop] = document.getElementById(prop + ucfirst(meta.type)).checked;
       }
-      obj[prop + '_id'] = obj[prop];
-    } else if (meta.type == 'checkbox') {
-      obj[prop] = document.getElementById(prop + ucfirst(meta.type)).checked;
     }
   }
   // Check required fields:
