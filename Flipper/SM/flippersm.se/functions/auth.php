@@ -172,34 +172,26 @@ function showLogin($ulogin, $title = 'You need to login to access this page') {
         }, 500);
       }); 
     </script>
-  	<form action="'.$_SERVER['REQUEST_URI'].'" method="POST" id="loginForm">
-      <input type="hidden" name="action" value="login">
-      <input type="hidden" name="loggedIn" id="loggedIn" value="false">
-      '.(($_REQUEST['obj']) ? '<input type="hidden" name="obj" id="obj" value="'.$_REQUEST['obj'].'">' : '').'
-      '.(($_REQUEST['id']) ? '<input type="hidden" name="id" id="id" value="'.$_REQUEST['id'].'">' : '').'
-      <input type="hidden" name="baseHref" id="baseHref" value="'.__baseHref__.'">
-			<input type="hidden" id="nonce" name="nonce" value="'.ulNonce::Create('login').'">
-      <table id="loginTable" class="loginTable">
-        <tr>
-          <td><label for="username">Username:</label></td>
-  		    <td><input type="text" name="username" id="usernameLogin" class="mandatory" onkeyup="login(this);"></td>
-          <td><span id="usernameLoginSpan" class="errorSpan">*</span></td>
-        </tr>
-        <tr>
-          <td><label for="password">Password:</label></td>
-          <td><input type="password" name="password" id="passwordText" class="mandatory" onkeyup="login(this);"></td>
-          <td><span id="passwordSpan" class="errorSpan">*</span></td>
-        </tr>
-        <tr>
-          <td><label for="autologin>Remember me:</label></td>
-          <td><input type="checkbox" name="autologin" value="1" id="autologinCheckbox"></td>
-        </tr>
-        <tr>
-  		    <td><input type="submit" value="Login" id="loginButton" onclick="login(this);" disabled></td>
-          <td><a href="'.__baseHref__.'/your-pages/password-reset/" class="italic">Forgot  password?</a></td>
-        </tr>
-      </table>
-  	</form>
+    <div id="loginDiv" class="loginDiv">
+     	<form action="'.$_SERVER['REQUEST_URI'].'" method="POST" id="loginForm">
+        <input type="hidden" name="action" value="login">
+        <input type="hidden" name="loggedIn" id="loggedIn" value="false">
+        '.(($_REQUEST['obj']) ? '<input type="hidden" name="obj" id="obj" value="'.$_REQUEST['obj'].'">' : '').'
+        '.(($_REQUEST['id']) ? '<input type="hidden" name="id" id="id" value="'.$_REQUEST['id'].'">' : '').'
+        <input type="hidden" name="baseHref" id="baseHref" value="'.__baseHref__.'">
+			  <input type="hidden" id="nonce" name="nonce" value="'.ulNonce::Create('login').'">
+        <label for="username">Username:</label>
+  		  <input type="text" name="username" id="usernameLogin" class="mandatory" onkeyup="login(this);">
+        <span id="usernameLoginSpan" class="errorSpan">*</span>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="passwordText" class="mandatory" onkeyup="login(this);">
+        <span id="passwordSpan" class="errorSpan">*</span>
+        <label for="autologin>Remember me:</label>
+        <input type="checkbox" name="autologin" value="1" id="autologinCheckbox">
+  		  <input type="submit" value="Login" id="loginButton" onclick="login(this);" disabled>
+        <a href="'.__baseHref__.'/your-pages/password-reset/" class="italic">Forgot  password?</a>
+  	  </form>
+    </div>
   ';
   return $content;
 }
