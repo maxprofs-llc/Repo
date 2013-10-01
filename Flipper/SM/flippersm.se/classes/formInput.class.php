@@ -98,8 +98,9 @@
         case 'email':
         case 'checkbox':
         case 'radiobutton':
-        case 'hidden':        
-        
+        case 'hidden':
+        case 'button':
+
           $this->content .= '<input type="'.$this->type.'" name="'.$this->name.'" id="'.$this->id.'" class="'.$this->class.'"';
           if ($this->action) {
             $this->content .= ' onclick="'.$this->action.'"';
@@ -120,20 +121,6 @@
             $this->content .= ' disabled';
           }
           $this->content .= '>';
-          if ($this->text) {
-            $this->content .= ' '.$this->text;
-          }
-          $this->content .= "\n";
-        break;
-        case 'button':
-          $this->content .= '<button id="'.$this->id.'" type="'.(($this->type) ? $this->type : 'submit').'" value="'.$this->value.'" class="'.$this->class.'"';
-          if ($this->action) {
-            $this->content .= ' onclick="'.$this->action.'"';
-          }
-          if ($this->disabled) {
-            $this->content .= ' disabled';
-          }
-          $this->content .= '>'.$this->value.'</button>';
           if ($this->text) {
             $this->content .= ' '.$this->text;
           }
