@@ -952,7 +952,7 @@ function printPlayerAsList(obj,dstId) {
   var submitDiv = document.createElement('div');
   var lbl = document.createElement('label');
   lbl.id = 'submitTextLabel';
-  var txt = document.createTextNode('Submit the above'); // We have it all! Let's play!
+  var txt = document.createTextNode('Skicka'); // We have it all! Let's play!
   lbl.appendChild(txt);
   submitDiv.appendChild(lbl);
   var btn = document.createElement('button');

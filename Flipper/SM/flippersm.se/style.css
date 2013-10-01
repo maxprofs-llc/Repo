@@ -513,3 +513,8 @@ input[type="password"] {
 #continentDiv {
   display: none;
 }
+
+#imageUpload {
+  width: 1px;
+  height: 1px;
+}

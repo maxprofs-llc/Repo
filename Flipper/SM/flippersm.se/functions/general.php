@@ -1402,20 +1402,20 @@
     return $content;
   }
   
-  function getUploadForm($dbh, $obj, $display = true, $button = false) {
+  function getUploadForm($dbh, $obj, $display = true, $button = true) {
     $content = '
       <script src="'.__baseHref__.'/js/contrib/jquery.form.min.js" type="text/javascript"></script>
       <form id="imageForm" method="post" enctype="multipart/form-data" action="'.__baseHref__.'/ajax/imageUpload.php?obj='.$obj->class.'&id='.$obj->id.'" style="display: '.(($display) ? '' : 'none').';" class="edit'.ucfirst($obj->class).'">
-        <h2 colspan="2" id="reg'.ucfirst($obj->class).'ImgH2">'.ucfirst($classes[$obj->class]['label']).' logga eller foto</h2>
+        <h2 colspan="2" id="reg'.ucfirst($obj->class).'ImgH2">Ändra foto/logga</h2>
   	    <div id="preview">
   		    <img src="'.$obj->getPhoto(true).'" id="thumb" class="preview" alt="Preview of '.$obj->name.'">
           <div id="imageLoader"></div>
   	    </div>
   	    <div id="uploadForm">
-          <label id="imageUploadLabel" class="italic">Klicka på bilden för att byta bild (spara med skicka-knappen nedan)</label>
+          <label id="imageUploadLabel" class="italic">Klicka på bilden för att byta bild (spara med skicka-knappen)</label>
           <input type="file" name="imageUpload" id="imageUpload">
         </div>
-        <button id="submitImg" type="button" value="Submit image!" class="formInput" onclick="'.$obj->class.'Photo();" style="display: '.(($button) ? '' : 'none').'" disabled>Submit image!</button><span id="submitImgSpan" class=" errorSpan" style="display: none;"></span>
+        <button id="submitImg" type="button" value="Skicka upp bilden!" class="formInput" onclick="'.$obj->class.'Photo();" style="display: '.(($button) ? '' : 'none').'" disabled>Skicka in bilden!</button><span id="submitImgSpan" class=" errorSpan" style="display: none;"></span>
         <script type="text/javascript">
           $(document).ready(function() { 
             $(\'#imageUpload\').on(\'change\', function() {
