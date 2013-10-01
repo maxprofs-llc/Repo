@@ -465,6 +465,14 @@ text-align: center;}
   display: none;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 #content img.icon {
   position: relative;
   top: 2px;
