@@ -391,8 +391,8 @@ left: -9999px;}
 left: 4em;
 margin-top: 1.6em;}
 
-.registered td:nth-of-type(4):before { content: "U18: ";}
-.registered td:nth-of-type(5):before { content: "Classic: ";}
+.registered td:nth-of-type(4):before { content: "Region: ";}
+.registered td:nth-of-type(5):before { content: "Classics: ";}
 .registered td:nth-of-type(7):before { content: "Betalat: ";}
 
 
@@ -423,7 +423,7 @@ margin-top: 0em;}
 top: 1.6em;
 left: 3.6em;}
 
-.result td:nth-of-type(2):after { content: "kvalpoŠng"; }
+.result td:nth-of-type(2):after { content: "kvalpoäng"; }
 }
 
       .container {
@@ -460,6 +460,10 @@ text-align: center;}
       .container {
         width: auto
       }
+
+
+
+// Added by Pal below this line
 
 .invisible {
   display: none;

@@ -2435,7 +2435,7 @@ function addTheaders (thead, type, meBtn) { // meBtn is the "This is me!" button
   for (var header in type.headers) { // Let's go through the headers form the meta information objects
     var th = document.createElement('th');
     tr.appendChild(th)
-    th.appendChild(document.createTextNode(type.fields[type.headers[header]].label));
+    th.appendChild(document.createTextNode(type.fields[type.headers[header]].label + ': '));
   }
   var th = document.createElement('th');
   if (meBtn) { // "This is me!" should be shown
