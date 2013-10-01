@@ -1047,7 +1047,7 @@ function addFieldRow(tbody, obj, prop) {
       img.src = baseHref + '/images/add_icon.gif';
       img.className += ' icon';
       img.onclick = function () { geoAdd(this, true); }; // They want to add something (true)!
-      img.alt = 'Click to add a new ' + classes[obj.class].fields[prop].label.toLowerCase();
+      img.alt = 'Klicka för att lägga till en ny ' + classes[obj.class].fields[prop].label.toLowerCase();
       img.title = img.alt;
       td.appendChild(img);
       var selTxt = document.createElement('input'); // So let's replace the select with a text input
@@ -1133,7 +1133,7 @@ function addFieldDiv(div, obj, prop) {
       img.src = baseHref + '/images/add_icon.gif';
       img.className += ' icon';
       img.onclick = function () { geoAdd(this, true); }; // They want to add something (true)!
-      img.alt = 'Click to add a new ' + classes[obj.class].fields[prop].label.toLowerCase();
+      img.alt = 'Klicka för att lägga till en ny ' + classes[obj.class].fields[prop].label.toLowerCase();
       img.title = img.alt;
       propDiv.appendChild(img);
       var selTxt = document.createElement('input'); // So let's replace the select with a text input
@@ -2304,7 +2304,7 @@ function geoSelected(sel) { // Someone chose something in a geo-select! The "sel
 function geoAdd(el, add) { // Somebody wants to add (or regrets wanting to add depending on add = true/false) a geo-object. The "el" is the plus sign. 
   if (add) { // We're adding!
     // Let's change the label using some creative (and ugly) cut'n'pasting-replacing of element IDs
-    document.getElementById(el.id.replace('Add', '') + 'Label').innerHTML = 'New ' + document.getElementById(el.id.replace('Add', '') + 'Label').innerHTML.toLowerCase();
+    document.getElementById(el.id.replace('Add', '') + 'Label').innerHTML = 'Ny ' + document.getElementById(el.id.replace('Add', '') + 'Label').innerHTML.toLowerCase();
     $('#' + el.id.replace('Add', '') + 'Select').hide(); // Hide the dropdown
     el.style.display = 'none'; // Hide the plus sign
     $('#' + el.id + 'Text').show(); // Show the text input field
@@ -2312,7 +2312,7 @@ function geoAdd(el, add) { // Somebody wants to add (or regrets wanting to add d
     $('#' + el.id + 'Text').focus(); // Put the focus on the text input
   } else { // We're regretting!
   // Some more creative (and ugly) cut'n'pasting-replacing of element IDs to change the label back
-    document.getElementById(el.id.replace('AddCancel', '') + 'Label').innerHTML = ucfirst(document.getElementById(el.id.replace('AddCancel', '') + 'Label').innerHTML.replace('New ', ''));
+    document.getElementById(el.id.replace('AddCancel', '') + 'Label').innerHTML = ucfirst(document.getElementById(el.id.replace('AddCancel', '') + 'Label').innerHTML.replace('Ny ', ''));
     $('#' + el.id.replace('AddCancel', '') + 'Select').show(); // Show the dropdown again
     $('#' + el.id.replace('Cancel', '')).show(); // Show the plus sign again
     $('#' + el.id.replace('Cancel', '') + 'Text').hide(); // Hide the text input

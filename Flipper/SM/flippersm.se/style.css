@@ -461,28 +461,17 @@ text-align: center;}
         width: auto
       }
 
-table#playerEditTable th h3 {
-  color: #FFFFFF;
-}
-
 .invisible {
   display: none;
 }
 
-table#playerEditTable img.icon {
+#content img.icon {
   position: relative;
   top: 2px;
   padding: 0px 0px 0px 10px;
 }
 
-table#playerEditTable select {
-  width: 300px;
-  height: 30px;
-  padding: 0.2em;
-  border: solid 0.2em #000000;
-}
-
-table#playerEditTable input[type="password"] {
+input[type="password"] {
   width: 300px;
   height: 20px;
   padding: 0.2em;
