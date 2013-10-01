@@ -2472,7 +2472,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
   var headers = classes[obj.class].headers; // Get the headers to use
   for (var header in headers) {
     var td = tr.insertCell(-1);
-    td.className = 'tdFix'
+//s    td.className = 'tdFix'
     if (obj[headers[header]] || obj[headers[header] + '_id']) { // Check that the header exist on this object
       obj.addParents(); // Make sure all parent-child relations are there
       var item = null;
