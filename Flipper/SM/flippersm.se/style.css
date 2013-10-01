@@ -460,3 +460,15 @@ text-align: center;}
       .container {
         width: auto
       }
+
+table#playerEditTable th {
+  color: #FFFFFF;
+}
+
+.invisible {
+  display: none;
+}
+
+img.icon {
+  position: relative;
+}
