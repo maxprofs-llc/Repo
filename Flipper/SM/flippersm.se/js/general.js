@@ -955,9 +955,9 @@ function printPlayerAsList(obj,dstId) {
   var txt = document.createTextNode('Skicka'); // We have it all! Let's play!
   lbl.appendChild(txt);
   submitDiv.appendChild(lbl);
-  var btn = document.createElement('button');
-  btn.id = 'submit';
+  var btn = document.createElement('input');
   btn.type = 'button';
+  btn.id = 'submit';
   btn.appendChild(document.createTextNode('Skicka!'));
   btn.onclick = function() { checkForm(this); return false; };
   submitDiv.appendChild(btn);
@@ -2506,7 +2506,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
     }
   }
   if (meBtn) { // This is me! button
-    var btn = document.createElement('button');
+    var btn = document.createElement('input');
     btn.id = 'meBtn_' + obj.id;
     btn.type = 'button';
     btn.appendChild(document.createTextNode('Här är jag!'));

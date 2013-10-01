@@ -200,41 +200,30 @@ function showChangeUsername($dbh, $username) {
   $username = $_SESSION['username'];
   $id = getIdFromUser($dbh, $username);
   $content = '
-    <form action="'.$_SERVER['REQUEST_URI'].'" method="POST" id="changeUsernameForm">    
-	    <input type="hidden" id="changeNonce" name="changeNonce" value="'.ulNonce::Create('change').'">
-      <input type="hidden" id="action" name="action" value="changeUsername">
-      <input type="hidden" id="idHidden" name="id" value="'.$id.'">
-      <input type="hidden" id="currentUsernameHidden" name="currentUsername" value="'.$username.'">
-      <h3 class="entry-title">Change username and/or password:</h3>
-      <span class="italic">Changing username requires setting a new password</span>
-      <table>
-        <tr>
-          <td><label for="user">New username:</label></td>
-          <td><input type="text" name="username" id="usernameText" value="'.$username.'" onkeyup="checkField(this);" class="mandatory"></td>
-          <td><span id="usernameSpan" class="errorSpan">*</span></td>
-        </tr>
-        <tr>
-          <td><label for="pwd">Current password:</label></td>
-          <td><input type="password" name="currentPassword" id="currentPasswordText" onkeyup="checkUsernameFields();" class="mandatory"></td>
-          <td><span id="currentPasswordSpan" class="errorSpan">*</span></td>
-        </tr>
-        <tr>
-          <td><label for="user">New password:</label></td>
-          <td><input type="password" name="newPassword" id="newPasswordText" onkeyup="checkField(this);" class="mandatory"></td>
-          <td><span id="newPasswordSpan" class="errorSpan">*</span></td>
-        </tr>
-        <tr>
-          <td><label for="user">Retype new password:</label></td>
-          <td><input type="password" name="newPassword2" id="newPassword2Text" onkeyup="checkField(this);" class="mandatory"></td>
-          <td><span id="newPassword2Span" class="errorSpan">*</span></td>
-        </tr>
-        <tr>
-          <td><label for="submit">Change credentials:</label></td>
-          <td><input type="submit" value="Change" id="submit" onclick="changeUsername(this);" disabled></td>
-          <td></td>
-        </tr>
-      </table>
-    </form>
+    <div id="changeUserDiv">
+      <form action="'.$_SERVER['REQUEST_URI'].'" method="POST" id="changeUsernameForm">
+	      <input type="hidden" id="changeNonce" name="changeNonce" value="'.ulNonce::Create('change').'">
+        <input type="hidden" id="action" name="action" value="changeUsername">
+        <input type="hidden" id="idHidden" name="id" value="'.$id.'">
+        <input type="hidden" id="currentUsernameHidden" name="currentUsername" value="'.$username.'">
+        <h3 class="entry-title">Change username and/or password:</h3>
+        <span class="italic">Changing username requires setting a new password</span>
+        <label for="user">New username:</label>
+        <input type="text" name="username" id="usernameText" value="'.$username.'" onkeyup="checkField(this);" class="mandatory">
+        <span id="usernameSpan" class="errorSpan">*</span>
+        <label for="pwd">Current password:</label>
+        <input type="password" name="currentPassword" id="currentPasswordText" onkeyup="checkUsernameFields();" class="mandatory">
+        <span id="currentPasswordSpan" class="errorSpan">*</span>
+        <label for="user">New password:</label>
+        <input type="password" name="newPassword" id="newPasswordText" onkeyup="checkField(this);" class="mandatory">
+        <span id="newPasswordSpan" class="errorSpan">*</span>
+        <label for="user">Retype new password:</label>
+        <input type="password" name="newPassword2" id="newPassword2Text" onkeyup="checkField(this);" class="mandatory">
+        <span id="newPassword2Span" class="errorSpan">*</span>
+        <label for="submit">Change credentials:</label>
+        <input type="submit" value="Change" id="submit" onclick="changeUsername(this);" disabled>
+      </form>
+    </div>
   ';
   return $content;
 }
@@ -259,7 +248,7 @@ function showEditPlayer($dbh, $ulogin) {
         </div>
       </div>
     </form>
-    <div id="changeUser"><a href="'.__baseHref__.'/your-pages/change-credentials/">Ändra användarnamn eller lösenord</a></div>
+    <div id="changeUser"><p><a href="'.__baseHref__.'/your-pages/change-credentials/">Ändra användarnamn eller lösenord</a></p></div>
     <form action="'.$_SERVER['REQUEST_URI'].'" method="POST">
       <input type="hidden" name="action" value="logout">
       <input type="submit" value="Logga ut">
