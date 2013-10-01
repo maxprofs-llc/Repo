@@ -26,7 +26,7 @@
   $newField = new formInput('hidden', 'dateRegistered', date('Y-m-d'));
   $form->addField($newField);
 
-  $geoComment = new formInput('comment', 'ifpaComment', '<p class="bold">Vi vet antagligen vem du är!</p><p>Även om du inte var med i EPC. Har du någonsin spelat i en flippertävling så finns du antaligen redan i databasen. Sök på ditt namn (minst fyra bokstäver), din trebokstavs-TAG, din mailaddress, ditt telefonnnummer eller ditt IFPA-ID och klicka sen på "Här är jag!".<br /><br />Om du inte lyckas hitta dig själv, så kan du klicka på "Registrera helt ny spelare".</p>');
+  $geoComment = new formInput('comment', 'ifpaComment', '<p class="bold">Vi vet antagligen vem du är!</p><p>Även om du inte var med i EPC. Har du någonsin spelat i en flippertävling så finns du antaligen redan i databasen. Sök på ditt namn (minst fyra bokstäver), din trebokstavs-TAG, din mailaddress, ditt telefonnnummer eller ditt IFPA-ID och klicka sen på "Här är jag!".<br /><br />Om du inte lyckas hitta dig själv, så kan du klicka på "Jag är en helt ny spelare".</p>');
   $geoComment->label = '';
   $form->addField($geoComment);
 
@@ -53,8 +53,8 @@
   $content .= $form->output();
 
   $content .= '
-    <span id="loadingObjects">Laddar objekt... tålamod är en dygd...<img src="'.__baseHref__.'/images/sel-loader.gif" alt="Laddar data..."></span>
-    <span id="noHits" style="display: none;">Ingen träff! Försök att söka på nåt annat.</span>
+    <p id="loadingObjects"><p>Laddar objekt... tålamod är en dygd...<img src="'.__baseHref__.'/images/sel-loader.gif" alt="Laddar data..."></p>
+    <p id="noHits" style="display: none;">Ingen träff! Försök att söka på nåt annat.</p>
     <form id="newData" name="newData">
       <input type="hidden" name="loggedIn" id="loggedIn" value="false">
       <input type="hidden" name="baseHref" id="baseHref" value="'.__baseHref__.'">
