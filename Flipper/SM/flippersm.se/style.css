@@ -498,6 +498,6 @@ input[type="password"] {
   background-color: #FFFF00;
 }
 
-.mandatory {
+#content input.mandatory {
   background-color: #FFFF00;
 }
