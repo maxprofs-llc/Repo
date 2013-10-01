@@ -47,7 +47,7 @@
 				</a>
 			</div>
 			<div id="buttons">
-				<a href="&#63;s=start" class="link">Start</a><a href="&#63;s=anmal" class="link">Anm‰lan</a>
+				<a href="&#63;s=start" class="link">Start</a><a href="&#63;s=anmal" class="link">Anm√§lan</a>
 			</div>
 			<div id="submenu1">
    			<?php
