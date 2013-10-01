@@ -160,7 +160,7 @@ function checkLogin($dbh, $ulogin, $req = true, $title = 'You need to login to a
   }
 }
 
-function showLogin($ulogin, $title = 'You need to login to access this page') {
+function showLogin($ulogin, $title = 'Du måste logga in för att komma åt den här sidan') {
   $content = '
   	<h3 id="loginTitle" class="loginTable">'.$title.'</h3>
     <script type="text/javascript">
@@ -183,13 +183,13 @@ function showLogin($ulogin, $title = 'You need to login to access this page') {
         <label for="username">Username:</label>
   		  <input type="text" name="username" id="usernameLogin" class="mandatory" onkeyup="login(this);">
         <span id="usernameLoginSpan" class="errorSpan">*</span>
-        <label for="password">Password:</label>
+        <label for="password">Lösenord:</label>
         <input type="password" name="password" id="passwordText" class="mandatory" onkeyup="login(this);">
         <span id="passwordSpan" class="errorSpan">*</span>
-        <label for="autologin>Remember me:</label>
+        <label for="autologin>Kom ihåg mig:</label>
         <input type="checkbox" name="autologin" value="1" id="autologinCheckbox">
   		  <input type="submit" value="Login" id="loginButton" onclick="login(this);" disabled>
-        <a href="'.__baseHref__.'/your-pages/password-reset/" class="italic">Forgot  password?</a>
+        <a href="'.__baseHref__.'/your-pages/password-reset/" class="italic">Glömt löesnordet?</a>
   	  </form>
     </div>
   ';

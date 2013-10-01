@@ -2,8 +2,7 @@
 <div class = 'bred'>
 <?php
 
-
-  $content = '<h2 class="entry-title regTitle">Register player</h2>';
+  $content = '';
   if (checkLogin($dbh, $ulogin, false)) {
     $player = getCurrentPlayer($dbh, $ulogin);
     if ($player->mainPlayerId) {
