@@ -658,19 +658,19 @@ td, th {
   }
 }
 
-#content .invisible {
+#content .invisible, #content input.invisible, #content select.invisible, #content p.invisible, #content span.invisible {
   display: none;
 }
 
-#content .italic {
+#content .italic, #content p.italic, #content span.italic {
   font-style: italic;
 }
 
-#content .bold {
+#content .bold, #content p.bold, #content span.bold {
   font-weight: bold;
 }
 
-#content .mandatory {
+#content .mandatory, #content input.mandatory, #content select.mandatory {
   background-color: #FFFF00;
 }
 
