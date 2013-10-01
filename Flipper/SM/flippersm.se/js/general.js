@@ -932,7 +932,7 @@ function printPlayerAsList(obj,dstId) {
   if ($('#playerEditDiv')) {
     $('#playerEditDiv').remove(); // Kill the player table
   }
-  var div = document.createElement(div'); // Details form table. Table based layout design ftw!
+  var div = document.createElement('div'); // Details form table. Table based layout design ftw!
   div.id = 'playerEditDiv';
   var h3 = document.createElement('h3');
   h3.appendChild(document.createTextNode('Bekräfta, ändra och lägg till din information. Gula fält är obligatoriska.'));
