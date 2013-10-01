@@ -196,13 +196,14 @@ var currencies = {
   }
 }
 
+/*
 $.fn.dataTableExt.afnSortData['dom-link'] = function  ( oSettings, iColumn )
 {
 	return $.map( oSettings.oApi._fnGetTrNodes(oSettings), function (tr, i) {
 		return $('td:eq('+iColumn+') a', tr).text().replace(/^$/, '20000').replace(/^0$/, '20000');
 	} );
 }
-
+*/
 
 // Classes definitions for continents, countries, regions, cities, players and genders.
 // Implemented as JS functions with protoypes.
