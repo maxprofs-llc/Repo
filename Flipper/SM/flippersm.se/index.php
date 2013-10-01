@@ -9,16 +9,16 @@ function undermenu($page)
   
   if($page == "anmal")
      {echo "
-     <a href=\"?s=anmal\">Anm‰lan</a> <a href=\"?s=anmalda\">Anm‰lda spelare</a><a href = '?s=funktionar'>Bli funktion‰r</a>";
+     <a href=\"?s=anmal\">Anm√§lan</a> <a href=\"?s=anmalda\">Anm√§lda spelare</a><a href = '?s=funktionar'>Bli funktion√§r</a>";
 	}
 
   if($page == "regler")
      {echo "
-     <a href=\"?s=regler\">Regler</a> <a href=\"?s=system\">T‰vlingssystem</a><a href=\"?s=former\">T‰vlingsformer & spellista</a>
+     <a href=\"?s=regler\">Regler</a> <a href=\"?s=system\">T√§vlingssystem</a><a href=\"?s=former\">T√§vlingsformer & spellista</a>
      ";}
      
   if($page == "blandat")
-	{echo "<a href=\"?s=blandat\">ƒr flipper lagligt?</a> <a href =\"?s=stories\">Ber‰ttelser</a> <a href = \"?s=stories2\">Fler ber‰ttelser</a>";}
+	{echo "<a href=\"?s=blandat\">√Ñr flipper lagligt?</a> <a href =\"?s=stories\">Ber√§ttelser</a> <a href = \"?s=stories2\">Fler ber√§ttelser</a>";}
 
      
   if($page == "tidigare")
@@ -26,8 +26,8 @@ function undermenu($page)
      ";}
      
   if($page == "resultat")
-    /* {echo "<a href=\"?s=resultat2011\">Huvudt&auml;vling</a> &middot; <a href=\"?s=resultatclassics2011\">Classics</a> &middot; <a href=\"?s=11kvalspel\">Main per spel</a> &middot; <a href=\"?s=11classicskvalspel\">Classics per spel</a> <br> <a href=\"bilder/diverse/11slutspelmainA.png\">Slutspelstr‰d main A</a> &middot; <a href=\"bilder/diverse/11slutspelclassics.png\">
-Slutspelstr‰d classics</a>
+    /* {echo "<a href=\"?s=resultat2011\">Huvudt&auml;vling</a> &middot; <a href=\"?s=resultatclassics2011\">Classics</a> &middot; <a href=\"?s=11kvalspel\">Main per spel</a> &middot; <a href=\"?s=11classicskvalspel\">Classics per spel</a> <br> <a href=\"bilder/diverse/11slutspelmainA.png\">Slutspelstr√§d main A</a> &middot; <a href=\"bilder/diverse/11slutspelclassics.png\">
+Slutspelstr√§d classics</a>
      ";} */
 
   if($page == "kvaltider")
@@ -42,16 +42,16 @@ function submenu2($category)
   
   if($category == "anmalan")
      {echo "
-     <a href=\"?s=anmal\">Anm‰lan ordinarie & U18</a> <a href=\"?s=anmal_small_family\">Liten familj</a> <a href=\"?s=anmal_big_family\">Stor familj</a>";
+     <a href=\"?s=anmal\">Anm√§lan ordinarie & U18</a> <a href=\"?s=anmal_small_family\">Liten familj</a> <a href=\"?s=anmal_big_family\">Stor familj</a>";
 	}
 
   if($category == "anmalda")
      {echo "
-      <a href=\"?s=anmalda\">Anm‰lda spelare</a><br /> <a href=\"?s=ko\">Kˆlista</a>
+      <a href=\"?s=anmalda\">Anm√§lda spelare</a><br /> <a href=\"?s=ko\">K√∂lista</a>
      ";}
      
   if($category == "funktionar")
-	{echo "<a href = '?s=funktionar'>Bli funktion‰r</a> <a href = '?s=funkislista'>Dessa ‰r funktion‰rer</a>";}
+	{echo "<a href = '?s=funktionar'>Bli funktion√§r</a> <a href = '?s=funkislista'>Dessa √§r funktion√§rer</a>";}
 
      
   if($category == "tidigare")
@@ -59,8 +59,8 @@ function submenu2($category)
      ";}
      
   if($category == "resultat")
-    /* {echo "<a href=\"?s=resultat2011\">Huvudt&auml;vling</a> &middot; <a href=\"?s=resultatclassics2011\">Classics</a> &middot; <a href=\"?s=11kvalspel\">Main per spel</a> &middot; <a href=\"?s=11classicskvalspel\">Classics per spel</a> <br> <a href=\"bilder/diverse/11slutspelmainA.png\">Slutspelstr‰d main A</a> &middot; <a href=\"bilder/diverse/11slutspelclassics.png\">
-Slutspelstr‰d classics</a>
+    /* {echo "<a href=\"?s=resultat2011\">Huvudt&auml;vling</a> &middot; <a href=\"?s=resultatclassics2011\">Classics</a> &middot; <a href=\"?s=11kvalspel\">Main per spel</a> &middot; <a href=\"?s=11classicskvalspel\">Classics per spel</a> <br> <a href=\"bilder/diverse/11slutspelmainA.png\">Slutspelstr√§d main A</a> &middot; <a href=\"bilder/diverse/11slutspelclassics.png\">
+Slutspelstr√§d classics</a>
      ";} */
 
   if($page == "kvaltider")
@@ -79,7 +79,7 @@ function print_payment_info()
         echo "Kontoinnehavare: Hans Andersson<br/>\n";
         echo "<p>Spar en kopia p&aring; din inbetalning. Ange <b>enbart</b> TAG p&aring; avs&auml;ndare. Vet du med dig att du har samma TAG som en annan deltagare kan du skicka ett mail till <a href=\"mailto:hans@hulabeck.se\">hans@hulabeck.se</a> n&auml;r du gjort din inbetalning s&aring; att vi bockar f&ouml;r r&auml;tt person som betalande.</p>\n\n";
         
-        echo "<p><b>OBS!</b> Det ‰r de fˆrsta 210 personerna som B≈DE anm‰ler sig och betalar som fÂr plats, och det ‰r de 42 fˆrsta per pass som bÂde anm‰ler sig och betalar som fÂr sin kvalˆnskan igenom! Fˆr att se om din betalning registrerats, kan du kolla pÂ <a href='?s=anmalda'>anm‰lda-sidan</a>. Eftersom detta sker manuellt, kan det ta ett par dagar innan din betalning syns pÂ hemsidan.</p>\n\n";
+        echo "<p><b>OBS!</b> Det √§r de f√∂rsta 210 personerna som B√ÖDE anm√§ler sig och betalar som f√•r plats, och det √§r de 42 f√∂rsta per pass som b√•de anm√§ler sig och betalar som f√•r sin kval√∂nskan igenom! F√∂r att se om din betalning registrerats, kan du kolla p√• <a href='?s=anmalda'>anm√§lda-sidan</a>. Eftersom detta sker manuellt, kan det ta ett par dagar innan din betalning syns p√• hemsidan.</p>\n\n";
         
         echo "<p>Kontaktperson vid fr&aring;gor om anm&auml;lan: <a href='mailto:hans@hulabeck.se'>Hans Andersson</a></p>\n";
 	}
@@ -92,7 +92,7 @@ function print_payment_info()
    else
       {
       $filnamn = str_replace(":", "", $s);
-      @include("$filnamn".".fil");
+      @include('pages/'.$filnamn.".fil");
       }
       
 include("fot.fil");
