@@ -1402,7 +1402,7 @@
     return $content;
   }
   
-  function getUploadForm($dbh, $obj, $display = true, $button = true) {
+  function getUploadForm($dbh, $obj, $display = true, $button = false) {
     $content = '
       <script src="'.__baseHref__.'/js/contrib/jquery.form.min.js" type="text/javascript"></script>
       <form id="imageForm" method="post" enctype="multipart/form-data" action="'.__baseHref__.'/ajax/imageUpload.php?obj='.$obj->class.'&id='.$obj->id.'" style="display: '.(($display) ? '' : 'none').';" class="edit'.ucfirst($obj->class).'">
@@ -1412,7 +1412,7 @@
           <div id="imageLoader"></div>
   	    </div>
   	    <div id="uploadForm">
-          <label id="imageUploadLabel" class="italic">Click picture to change preview (save with submit button below)</label>
+          <label id="imageUploadLabel" class="italic">Klicka på bilden för att byta bild (spara med skicka-knappen nedan)</label>
           <input type="file" name="imageUpload" id="imageUpload">
         </div>
         <button id="submitImg" type="button" value="Submit image!" class="formInput" onclick="'.$obj->class.'Photo();" style="display: '.(($button) ? '' : 'none').'" disabled>Submit image!</button><span id="submitImgSpan" class=" errorSpan" style="display: none;"></span>
