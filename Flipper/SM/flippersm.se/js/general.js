@@ -1085,6 +1085,7 @@ function addFieldDiv(div, obj, prop) {
   var input = document.createElement((type == 'select') ? 'select' : 'input');
   input.name = prop; // Name is actual property name, as defined in the database.
   input.id = prop + ucfirst(type); // ...while ID will also tell what type of input it is.
+  propDiv.appendChild(input);
   if (type == 'select') {
     popSel(input);
     selectOption(input, obj[prop + '_id']);
@@ -1111,7 +1112,6 @@ function addFieldDiv(div, obj, prop) {
   }
   if (type != 'hidden') { // No label, td or span needed for hidden stuff
     lbl.for = input.id;
-    propDiv.appendChild(input);
     var span = document.createElement('span'); // Let's put the result from the field check in here
     span.id = prop + 'Span';
     span.className += ' errorSpan';
