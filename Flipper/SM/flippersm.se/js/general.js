@@ -720,8 +720,8 @@ function ifpaReg(id, dstId) {
     classes['player'].fields.password = { label: 'Password', type: 'password', mandatory: true, special: false, bundle: false, default: ''};
   }
   var tbl = document.getElementById(dstId + 'Table');
-  if ($('#playerEditTable')) {
-    $('#playerEditTable').hide();
+  if ($('#playerEditDiv')) {
+    $('#playerEditDiv').hide();
   }
   $('#ifpaRegResultsTableDiv').hide();
   showLoading(classes['player']);
@@ -929,43 +929,28 @@ function printPlayerAsList(obj,dstId) {
   }
   $('#' + dstId + 'TableDiv').hide(); // Hide the table div with players - either we've found the player or this is a new guy.
   $('#' + dstId).show(); // And show the details form
-  if ($('#playerEditTable')) {
-    $('#playerEditTable').remove(); // Kill the player table
+  if ($('#playerEditDiv')) {
+    $('#playerEditDiv').remove(); // Kill the player table
   }
-  var tbl = document.createElement('table'); // Details form table. Table based layout design ftw!
-  tbl.id = 'playerEditTable';
-  var thead = tbl.createTHead();
-  var tr = thead.insertRow(-1);
-  tr.className += ' header';
-  var th = document.createElement('th');
-  th.colSpan = 2;
-  th.align = 'left';
-  tr.appendChild(th)
+  var div = document.createElement(div'); // Details form table. Table based layout design ftw!
+  div.id = 'playerEditDiv';
   var h3 = document.createElement('h3');
-  h3.appendChild(document.createTextNode('Please confirm, change or add to our info. Yellow fields are mandatory.'));
-  th.appendChild(h3); // It only took 10 lines to add a title!
-  var tbody = tbl.appendChild(document.createElement('tbody'));
+  h3.appendChild(document.createTextNode('Bekräfta, ändra och lägg till din information. Gula fält är obligatoriska.'));
+  div.appendChild(h3);
   for (var prop in classes[obj.class].fields) { // Loop through all object properties (player names and such)
-    document.getElementById(dstId).appendChild(addFieldRow(tbody, obj, prop));
+    document.getElementById(dstId).appendChild(addFieldDiv(div, obj, prop));
   }
-  var tr = tbody.insertRow(-1);
-  var td = tr.insertCell(-1);
-  td.colSpan = 2;
-  var div = document.createElement('div');
+  var recapDiv = document.createElement('div');
   if (!document.getElementById('nonPlayerLogin') && (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true')) {
-    div.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
-    td.appendChild(div);
+    recapDiv.id = 'recaptcha'; // Let's add a Google Recaptcha to keep robots away. They can't play pinball anyway!
+    div.appendChild(recapDiv);
   }
-  var tr = tbody.insertRow(-1);
-  var lblTd = tr.insertCell(-1); // Label TD
-  lblTd.id = 'submitLabelTd';
+  var submitDiv = document.createElement('div');
   var lbl = document.createElement('label');
   lbl.id = 'submitTextLabel';
   var txt = document.createTextNode('Submit the above'); // We have it all! Let's play!
   lbl.appendChild(txt);
-  lblTd.appendChild(lbl);
-  var td = tr.insertCell(-1);
-  td.id = 'submitTd';
+  submitDiv.appendChild(lbl);
   var btn = document.createElement('button');
   btn.id = 'submit';
   btn.type = 'button';
@@ -978,7 +963,8 @@ function printPlayerAsList(obj,dstId) {
     break;
   }
   btn.onclick = function() { checkForm(this); return false; };
-  td.appendChild(btn);
+  submitDiv.appendChild(btn);
+  div.appendChild(submitDiv);
   if (!document.getElementById('loggedIn') || document.getElementById('loggedIn').value != 'true') {
     setTimeout(function() { // Recaptcha is faster than its shadow (or at least faster than creating a div and giving it an ID in the dom), so we need to delay it for 100ms, or it won't find its div. Strange but true.
       Recaptcha.create('6LeXJOgSAAAAANSQ19LKVh5iVrvRCasr5ODfv8Lb', 'recaptcha', {
@@ -986,7 +972,7 @@ function printPlayerAsList(obj,dstId) {
       })
     }, 100);
   }
-  document.getElementById(dstId).appendChild(tbl); // Let's show it to the user
+  document.getElementById(dstId).appendChild(div); // Let's show it to the user
   // Hard coded shit! Remove when chance given!
   selectOption(document.getElementById('countrySelect'), 188);
   selectOption(document.getElementById('continentSelect'), 1);
@@ -1081,6 +1067,93 @@ function addFieldRow(tbody, obj, prop) {
     }
     return document.createTextNode('');
   }
+  return input;
+}
+
+function addFieldDiv(div, obj, prop) {
+  var type = classes[obj.class].fields[prop].type;
+  if (type != 'hidden') { // No label or td needed for hidden stuff
+    var propDiv = document.createElement('div');
+    var lbl = document.createElement('label');
+    lbl.id = prop + 'Label';
+    var txt = document.createTextNode(classes[obj.class].fields[prop].label); // Field name.
+    lbl.appendChild(txt);
+    propDiv.appendChild(lbl);
+  } else {
+    $('#' + prop + 'Hidden').remove(); // If this is not the first time this player found him/her self, there will be old hidden fields laying around. Let's remove those.
+  }
+  var input = document.createElement((type == 'select') ? 'select' : 'input');
+  input.name = prop; // Name is actual property name, as defined in the database.
+  input.id = prop + ucfirst(type); // ...while ID will also tell what type of input it is.
+  if (type == 'select') {
+    popSel(input);
+    selectOption(input, obj[prop + '_id']);
+    input.onchange = (prop != 'gender') ? function () { geoSelected(this); } : ''; // When the user has selected one geo-object, then let's adapt all the other ones. If choosing Sweden, only Swedish regions and cities will be shown in the other dropdowns. And if a city in Uppland is chosen - Uppland, Sweden and Europe are automatically selected.
+  } else {
+    input.type = type;
+    if (type == 'checkbox') {
+      input.checked = (obj[prop] == 1) ? true : false;
+    } else {
+      input.value = (obj[prop]) ? obj[prop] : classes[obj.class].fields[prop].default;
+    }
+    if (prop == 'main') {
+      input.disabled = true;
+      input.checked = true;
+    }
+    if ((prop == 'classics' || prop == 'volunteer') && !choice) {
+      input.disabled = true;
+    }
+//    input[(type == 'checkbox') ? 'checked' : 'value'] = (obj[prop]) ? obj[prop] : classes[obj.class].fields[prop].default; // Add existing value, or the default value
+    input.onchange = function() { checkField(this); }; // Let's check that the field is correct. Only done when leaving the field (changed), and not at every keypress.
+    if (classes[obj.class].fields[prop].special == 'date') {
+      setTimeout(function() { $('#' + input.id).datepicker({ dateFormat: 'yy-mm-dd', changeYear: true, yearRange: '-100:-0', changeMonth: true }); }, 100); // Fancy date picker added!
+    }
+  }
+  if (type != 'hidden') { // No label, td or span needed for hidden stuff
+    lbl.for = input.id;
+    propDiv.appendChild(input);
+    var span = document.createElement('span'); // Let's put the result from the field check in here
+    span.id = prop + 'Span';
+    span.className += ' errorSpan';
+    if (classes[obj.class].fields[prop].mandatory) {
+      input.className += ' mandatory'; // Mandatory fields will become yellow
+      span.appendChild(document.createTextNode('*')); // Let's be very clear!
+    }
+    propDiv.appendChild(span);
+    if (input.id == 'passwordPassword') {
+      var span2 = document.createElement('span'); // Let's put the result from the field check in here
+      span2.id = prop + 'Span2';
+      span2.className += ' errorSpan';
+      propDiv.appendChild(span2);
+    }
+    if (classes[obj.class].fields[prop].special == 'add') { // Users have a possibility to add cities and regions not already in the database. So let's add some elements for that.
+      var img = document.createElement('img'); // A plus sign after the select, to click on to add stuff.
+      img.id = prop + 'Add';
+      img.src = baseHref + '/images/add_icon.gif';
+      img.className += ' icon';
+      img.onclick = function () { geoAdd(this, true); }; // They want to add something (true)!
+      img.alt = 'Click to add a new ' + classes[obj.class].fields[prop].label.toLowerCase();
+      img.title = img.alt;
+      propDiv.appendChild(img);
+      var selTxt = document.createElement('input'); // So let's replace the select with a text input
+      selTxt.type = 'text';
+      selTxt.name = selTxt.id; // We can't use actual property name here, since that is used by the dropdown. If this field has a value, the dropdown value is ignored.
+      selTxt.id = prop + 'AddText'; // ...so both ID and name will also tell what type of input it is.
+      selTxt.className += ' invisible'; // Display none until the plus sign is clicked
+      propDiv.appendChild(selTxt);
+      var cImg = document.createElement('img'); // What if the user regrets his/her choice, and wants to select an existing item anyway? No problem - just click the X icon! If they do, we will remove the value from the selTxt text input, and use the value from the dropdown.
+      cImg.id = prop + 'AddCancel';
+      cImg.src = baseHref + '/images/cancel.png';
+      cImg.className += ' icon invisible'; // Display none until the plus sign is clicked
+      cImg.alt = 'Click to cancel and get back to the dropdown';
+      cImg.title = cImg.alt;
+      cImg.onclick = function () { geoAdd(this, false ); }; // The don't want to add something (false)!
+      propDiv.appendChild(cImg);
+    }
+    div.appendChild(propDiv);
+    return document.createTextNode('');
+  }
+  div.appendChild(propDiv);
   return input;
 }
 
