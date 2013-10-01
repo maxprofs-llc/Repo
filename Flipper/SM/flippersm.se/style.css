@@ -391,7 +391,7 @@ left: -9999px;}
 left: 4em;
 margin-top: 1.6em;}
 
-.registered td:nth-of-type(4):before { content: "Region: ";}
+.registered td:nth-of-type(4):before { content: "IFPA: ";}
 .registered td:nth-of-type(5):before { content: "Classics: ";}
 .registered td:nth-of-type(7):before { content: "Betalat: ";}
 
