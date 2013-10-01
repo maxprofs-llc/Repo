@@ -503,6 +503,7 @@ function PLAYER(data) {
     this.birthDate = data.birthDate;
     this.classics = data.classics;
     this.main = data.main;
+    this.paid = (data.paid) ? 1 : 0;
     this.volunteer = data.volunteer;
     this.username = data.username;
     this.password = data.password;
