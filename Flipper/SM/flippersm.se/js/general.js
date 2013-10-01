@@ -2493,7 +2493,7 @@ function addRow(tbody, obj, link, meBtn, sels) {
         item = (item) ? item : ((obj[headers[header]].hasOwnProperty('name')) ? document.createTextNode(obj[headers[header]].name) : document.createTextNode(obj[headers[header]])); // There was no link - so let's just add the text (either a name - if this is an object, or the actual content - if this is a string)
       }
       if (classes[obj.class].fields[headers[header]].type == 'checkbox') {
-        item = (item == 1) ? 'Ja' : 'Nej';
+        item = (item == 1) ? document.createTextNode('Ja') : document.createTextNode('Nej');
       }
       if (obj[headers[header]] && obj[headers[header]].hasOwnProperty('name')) {
         if (obj[headers[header]].id > 0) {
