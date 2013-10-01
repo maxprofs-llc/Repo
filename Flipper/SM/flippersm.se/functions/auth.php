@@ -186,7 +186,7 @@ function showLogin($ulogin, $title = 'Du måste logga in för att komma åt den 
         <label for="password">Lösenord:</label>
         <input type="password" name="password" id="passwordText" class="mandatory" onkeyup="login(this);">
         <span id="passwordSpan" class="errorSpan">*</span>
-        <label for="autologin>Kom ihåg mig:</label>
+        <label for="autologin">Kom ihåg mig:</label>
         <input type="checkbox" name="autologin" value="1" id="autologinCheckbox">
   		  <input type="submit" value="Login" id="loginButton" onclick="login(this);" disabled>
         <a href="'.__baseHref__.'/your-pages/password-reset/" class="italic">Glömt löesnordet?</a>
