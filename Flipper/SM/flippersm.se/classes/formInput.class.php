@@ -120,7 +120,7 @@
             $this->content .= ' onblur="'.$this->keyup.'"';
           }
           if ($this->input) {
-            $this->content .= ' oninput="'.$this->keyup.'"';
+            $this->content .= ' oninput="'.$this->input.'"';
           }
           if ($this->value) {
             $this->content .= ' value="'.$this->value.'"';
