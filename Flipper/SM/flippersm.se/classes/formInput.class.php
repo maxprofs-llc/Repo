@@ -109,10 +109,10 @@
             $this->content .= ' onkeydown="'.$this->keydown.'"';
           }
           if ($this->keyup) {
-            $this->content .= ' onkeydown="'.$this->keyup.'"';
+            $this->content .= ' onkeyup="'.$this->keyup.'"';
           }
           if ($this->keypress) {
-            $this->content .= ' onkeydown="'.$this->keypress.'"';
+            $this->content .= ' onkeypress="'.$this->keypress.'"';
           }
           if ($this->value) {
             $this->content .= ' value="'.$this->value.'"';
