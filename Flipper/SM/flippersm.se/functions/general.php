@@ -3563,6 +3563,7 @@
     global $classes;
     if ($obj = getObjectById($dbh, $type, $id)) {
       $content = '
+                  <h1>'.$obj->name.'</h1>
                   <div id="infoDiv" class="infoDiv">
                     <div class="leftInfoDiv" id="leftInfoDiv">
                       '.(($select) ? '<span id="all'.ucfirst($type).'Span">Other '.getPlural($type).': '.createSelect(getObjectList($dbh, $type, array ('tournament' => '1', 'national' => $obj->national)), 'all'.ucfirst($type).'Select', $id).'</span>' : '').'
