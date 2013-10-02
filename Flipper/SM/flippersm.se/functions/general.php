@@ -31,7 +31,7 @@
       'children' => false,
       'fields' => (object) array(
         'name' => (object) array(
-          'label' => 'Name',
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -40,7 +40,7 @@
           'default' => ''
         ),
         'type' => (object) array(
-          'label' => 'Type',
+          'label' => 'Typ',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -49,7 +49,7 @@
           'default' => ''
         ),
         'acronym' => (object) array(
-          'label' => 'Acronym',
+          'label' => 'Kortnamn',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -58,7 +58,7 @@
           'default' => ''
         ),
         'manufacturer' => (object) array(
-          'label' => 'Manufacturer',
+          'label' => 'Tillverkare',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -67,7 +67,7 @@
           'default' => ''
         ),
         'year' => (object) array(
-          'label' => 'Year',
+          'label' => 'År',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -85,7 +85,7 @@
           'default' => ''
         ),
         'rules' => (object) array(
-          'label' => 'Rules',  
+          'label' => 'Regler',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -110,7 +110,7 @@
       'selfParent' => false, 'acronym' => 'qg',
       'fields' => (object) array(
         'shortName' => (object) array(
-          'label' => 'Name',
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -119,7 +119,7 @@
           'default' => ''
         ),
         'date' => (object) array(
-          'label' => 'Date',
+          'label' => 'Datum',
           'type' => 'date',  
           'mandatory' => true,  
           'special' => false,  
@@ -137,7 +137,7 @@
           'default' => ''
         ),
         'endTime' => (object) array(
-          'label' => 'End',
+          'label' => 'Slut',
           'type' => 'time',  
           'mandatory' => true,  
           'special' => false,  
@@ -146,7 +146,7 @@
           'default' => ''
         ),
         'noOfPlayers' => (object) array(
-          'label' => 'Players',
+          'label' => 'Spelare',
           'type' => 'text',
           'mandatory' => true,
           'special' => false,
@@ -176,8 +176,8 @@
       'id2name' => false,
       'fields' => (object) array(
         'name' => (object) array(
-          'label' => 'Name',
-          'type' => 'text',  
+          'label' => 'Namn',
+          'type' => 'text',
           'mandatory' => true,  
           'special' => false,  
           'bundle' => false,
@@ -185,7 +185,7 @@
           'default' => ''
         ),
         'link' => (object) array(
-          'label' => 'Link',
+          'label' => 'Länk',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -205,7 +205,7 @@
       'id2name' => false,
       'fields' => (object) array(
         'name' => (object) array(
-          'label' => 'Name',
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -214,7 +214,7 @@
           'default' => ''
         ),
         'latitude' => (object) array(
-          'label' => 'Latitude',
+          'label' => 'Latitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -223,7 +223,7 @@
           'default' => ''
         ),
         'longitude' => (object) array(
-          'label' => 'Longtitude',  
+          'label' => 'Longitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -245,7 +245,7 @@
       'acronym' => 'Co',
       'fields' => (object) array(
         'name' => (object) array( 
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -254,7 +254,7 @@
           'default' => ''  
         ),
         'altName' => (object) array( 
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -263,7 +263,7 @@
           'default' => ''  
         ),
         'continent' => (object) array(
-          'label' => 'Continent',  
+          'label' => 'Kontinent',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
@@ -271,7 +271,7 @@
           'bundle' => false  
         ),
         'parentCountry' => (object) array(  
-          'label' => 'Parent country',  
+          'label' => 'Tillhör land',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -280,7 +280,7 @@
           'default' => ''  
         ),
         'latitude' => (object) array(  
-          'label' => 'Latitude',  
+          'label' => 'Latitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -289,7 +289,7 @@
           'default' => ''  
         ),
         'longitude' => (object) array(  
-          'label' => 'Longtitude',  
+          'label' => 'Longtitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -310,7 +310,7 @@
       'selfParent' => true, 'acronym' => 'Re',
       'fields' => (object) array(
         'name' => (object) array(  
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -319,7 +319,7 @@
           'default' => ''  
         ),
         'altName' => (object) array( 
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -328,21 +328,21 @@
           'default' => ''  
         ),
         'continent' => (object) array(  
-          'label' => 'Continent',  
+          'label' => 'Kontinent',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'country' => (object) array(  
-          'label' => 'Country',  
+          'label' => 'Land',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'parentRegion' => (object) array(
-          'label' => 'Parent region',  
+          'label' => 'Tillhör landsdel',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -351,7 +351,7 @@
           'default' => ''  
         ),
         'parentCountry' => (object) array(  
-          'label' => 'Parent country',  
+          'label' => 'Tillhör land',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -360,7 +360,7 @@
           'default' => ''  
         ),
         'latitude' => (object) array(  
-          'label' => 'Latitude',  
+          'label' => 'Latitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -369,7 +369,7 @@
           'default' => ''  
         ),
         'longitude' => (object) array(  
-          'label' => 'Longtitude',  
+          'label' => 'Longtitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -391,7 +391,7 @@
       'acronym' => 'Ci',
       'fields' => (object) array(
         'name' => (object) array(  
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -400,7 +400,7 @@
           'default' => ''  
         ),
         'altName' => (object) array( 
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -409,28 +409,28 @@
           'default' => ''  
         ),
         'continent' => (object) array(  
-          'label' => 'Continent',  
+          'label' => 'Kontinent',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'country' => (object) array(  
-          'label' => 'Country',  
+          'label' => 'Land',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'region' => (object) array(  
-          'label' => 'Region',  
+          'label' => 'Landskap',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
           'bundle' => 1  
         ),
         'parentRegion' => (object) array(
-          'label' => 'Parent region',  
+          'label' => 'Tillhör landsdel',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -439,7 +439,7 @@
           'default' => ''  
         ),
         'parentCountry' => (object) array(  
-          'label' => 'Parent country',  
+          'label' => 'Tillhör land',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -448,7 +448,7 @@
           'default' => ''  
         ),
         'latitude' => (object) array(  
-          'label' => 'Latitude',  
+          'label' => 'Latitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -457,7 +457,7 @@
           'default' => ''  
         ),
         'longitude' => (object) array(  
-          'label' => 'Longtitude',  
+          'label' => 'Longitud',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -494,7 +494,7 @@
           'default' => 0  
         ),
         'name' => (object) array(  
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => '',  
           'mandatory' => false,  
           'special' => false,  
@@ -512,7 +512,7 @@
           'default' => 0  
         ),
         'ifpaRank' => (object) array(  
-          'label' => 'Rank position',  
+          'label' => 'Rankad',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -521,7 +521,7 @@
           'default' => null 
         ),
         'class' => (object) array(  
-          'label' => 'Class',  
+          'label' => 'Klass',
           'type' => 'hidden',  
           'mandatory' => false,  
           'special' => false,  
@@ -548,7 +548,7 @@
           'default' => true  
         ),
         'isIfpa' => (object) array(  
-          'label' => 'IFPA rank',  
+          'label' => 'IFPA-rankad',
           'type' => 'hidden',  
           'mandatory' => false,  
           'special' => false,  
@@ -557,7 +557,7 @@
           'default' => true  
         ),
         'firstName' => (object) array(  
-          'label' => 'First name',  
+          'label' => 'Förnamn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -566,7 +566,7 @@
           'default' => ''  
         ),
         'lastName' => (object) array(  
-          'label' => 'Last name',  
+          'label' => 'Efternamn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -575,7 +575,7 @@
           'default' => ''  
         ),
         'initials' => (object) array(  
-          'label' => 'Initials',  
+          'label' => 'TAG',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -584,7 +584,7 @@
           'default' => ''  
         ),
         'username' => (object) array(  
-          'label' => 'Username',  
+          'label' => 'Användarnamn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -593,7 +593,7 @@
           'default' => ''  
         ),
         'password' => (object) array(  
-          'label' => 'Password',  
+          'label' => 'Lösenord',
           'type' => 'password',  
           'mandatory' => true,  
           'special' => false,  
@@ -602,7 +602,7 @@
           'default' => ''  
         ),
         'passwordRequired' => (object) array(  
-          'label' => 'Password',  
+          'label' => 'Lösenord',
           'type' => 'hidden',  
           'mandatory' => false,  
           'special' => false,  
@@ -611,7 +611,7 @@
           'default' => true  
         ),
         'gender' => (object) array(  
-          'label' => 'Gender',  
+          'label' => 'Kön',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -620,7 +620,7 @@
           'default' => ''
         ),
         'streetAddress' => (object) array(  
-          'label' => 'Street address',  
+          'label' => 'Gatuadress',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -629,7 +629,7 @@
           'default' => ''  
         ),
         'zipCode' => (object) array(  
-          'label' => 'ZIP',  
+          'label' => 'Postnr',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -638,7 +638,7 @@
           'default' => ''  
         ),
         'city' => (object) array(  
-          'label' => 'City',  
+          'label' => 'Hemort',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => 'add',  
@@ -647,7 +647,7 @@
           'default' => ''  
         ),
         'region' => (object) array(  
-          'label' => 'Region',  
+          'label' => 'Landskap',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => 'add',  
@@ -656,7 +656,7 @@
           'default' => ''  
         ),
         'country' => (object) array(  
-          'label' => 'Country',  
+          'label' => 'Land',
           'type' => 'select',  
           'mandatory' => true,  
           'special' => false,  
@@ -665,7 +665,7 @@
           'default' => ''  
         ),
         'parentRegion' => (object) array(
-          'label' => 'Parent region',  
+          'label' => 'Landsdel',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -674,7 +674,7 @@
           'default' => ''  
         ),
         'parentCountry' => (object) array(  
-          'label' => 'Parent country',  
+          'label' => 'Tillhör land',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -683,7 +683,7 @@
           'default' => ''  
         ),
         'continent' => (object) array(  
-          'label' => 'Continent',  
+          'label' => 'Kontinent',
           'type' => 'select',  
           'mandatory' => false,  
           'special' => false,  
@@ -692,7 +692,7 @@
           'default' => ''            
         ),
         'telephoneNumber' => (object) array(  
-          'label' => 'Phone',  
+          'label' => 'Telefon',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -701,7 +701,7 @@
           'default' => ''  
         ),
         'mobileNumber' => (object) array(  
-          'label' => 'Cell phone',  
+          'label' => 'Mobil',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -710,7 +710,7 @@
           'default' => ''  
         ),
         'mailAddress' => (object) array(  
-          'label' => 'Email',  
+          'label' => 'Mailadress',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -737,7 +737,7 @@
           'default' => true  
         ),
         'volunteer' => (object) array(  
-          'label' => 'Volunteer',  
+          'label' => 'Volontär',
           'type' => 'checkbox',  
           'mandatory' => false,  
           'special' => false,  
@@ -746,7 +746,7 @@
           'default' => true  
         ),
         'birthDate' => (object) array(  
-          'label' => 'Birth date',  
+          'label' => 'Född',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => 'date',  
@@ -755,7 +755,7 @@
           'default' => ''  
         ),
         'dateRegistered' => (object) array(  
-          'label' => 'Date registered',  
+          'label' => 'Anmäld',
           'type' => 'hidden',  
           'mandatory' => false,  
           'special' => false,  
@@ -773,7 +773,7 @@
       'mandatory' => array('name'),
       'fields' => (object) array(
         'name' => (object) array(  
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -794,7 +794,7 @@
       'id2name' => array('city', 'region', 'country', 'continent'),
       'fields' => (object) array(
         'name' => (object) array(  
-          'label' => 'Name',  
+          'label' => 'Namn',
           'type' => 'text',  
           'mandatory' => true,  
           'special' => false,  
@@ -803,7 +803,7 @@
           'default' => ''  
         ),
         'initials' => (object) array(  
-          'label' => 'Initials',  
+          'label' => 'TAG',
           'type' => 'text',  
           'mandatory' => false,  
           'special' => false,  
@@ -819,7 +819,7 @@
   
   $geoTypes = array('continent', 'country', 'region', 'city');
   $playerHeaders = array('firstName', 'lastName', 'username', 'password', 'initials', 'ifpa_id', 'ifpaRank', 'gender', 'streetAddress', 'zipCode', 'city', 'region', 'country', 'continent', 'telephoneNumber', 'mobileNumber', 'mailAddress', 'dateRegistered', 'birthDate', 'main', 'classics', 'volunteer', 'id', 'comment');
-  $playerLabels = array('First name', 'Last name', 'Username', 'Password', 'Initials (tag)', 'IFPA ID', 'Rank position',  'Gender', 'Address', 'ZIP', 'City', 'Region', 'Country', 'Continent', 'Phone', 'Cell phone', 'E-mail', 'Date registered', 'Birth date', 'Main division', 'Classics division', 'Volunteer', 'ID', 'Comment');
+  $playerLabels = array('Förnamn', 'Efternamn', 'Användarnamn', 'Lösenord', 'TAG', 'IFPA ID', 'Rankad',  'Kön', 'Gatuadress', 'Postnr', 'Stad', 'Landskap', 'Land', 'Kontinent', 'Telefon', 'Mobil', 'Mailadress', 'Anmäld', 'Född', 'Main', 'Classics', 'Volontär', 'ID', 'Kommentar');
   $playerTypes = array('text', 'text', 'text', 'text', 'text', 'text', 'text', 'select', 'text', 'text', 'select', 'select', 'select', 'select', 'text', 'text', 'text', 'text', 'text', 'checkbox', 'checkbox', 'checkbox', 'text', 'text');
   //  $debug = $_GET['debug'];
   
@@ -3566,7 +3566,7 @@
                   <h1>'.$obj->name.'</h1>
                   <div id="infoDiv" class="infoDiv">
                     <div class="leftInfoDiv" id="leftInfoDiv">
-                      '.(($select) ? '<span id="all'.ucfirst($type).'Span">Other '.getPlural($type).': '.createSelect(getObjectList($dbh, $type, array ('tournament' => '1', 'national' => $obj->national)), 'all'.ucfirst($type).'Select', $id).'</span>' : '').'
+                      '.(($select) ? '<span id="all'.ucfirst($type).'Span">Andra '.getPlural($type).': '.createSelect(getObjectList($dbh, $type, array ('tournament' => '1', 'national' => $obj->national)), 'all'.ucfirst($type).'Select', $id).'</span>' : '').'
                       <h2 class="entry-title">'.$obj->name.'</h2>
       ';
       foreach($classes->{$type}->info as $field) {
