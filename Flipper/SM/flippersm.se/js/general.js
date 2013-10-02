@@ -2941,7 +2941,7 @@ function addLink(obj) { // Create a link for an object. This will be rewritten.
 //    var url = $.url().attr('source').replace($.url().segment(-1), obj.class);
 //    url = url.split('?')[0];
     var url = baseHref + '/?s=object';
-    a.href = url + '?obj=' + obj.class + '&id=' + obj.id + (($.url().param('debug')) ? '&debug=1' : '') + (($.url().param('t')) ? '&t=' + $.url().param('t') : '');
+    a.href = url + '&obj=' + obj.class + '&id=' + obj.id + (($.url().param('debug')) ? '&debug=1' : '') + (($.url().param('t')) ? '&t=' + $.url().param('t') : '');
     a.appendChild(txt);
     return a;
   } else {
