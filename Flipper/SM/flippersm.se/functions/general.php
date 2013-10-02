@@ -3602,7 +3602,7 @@
           
           $content .= '
                       <div id="'.$field.'Div">
-                        <label id="'.$field.'Label" for="'.$field.'ValueDiv">'.(($label) ? $label : $classes->{$type}->fields->{$field}->label).':
+                        <label id="'.$field.'Label" for="'.$field.'ValueDiv">'.(($label) ? $label : $classes->{$type}->fields->{$field}->label).':</label>
                         <div id="'.$field.'ValueDiv">'.$value.'</div>
                       </div>
           ';
@@ -3618,7 +3618,7 @@
           foreach ($players as $player) {
             $content .= '
                         <div class="memberDiv" id="'.$player->id.'memberDiv">
-                          '.getLink($player).'
+                          <p>'.getLink($player).'</p>
                         </div>
             ';
           }
