@@ -3560,6 +3560,7 @@
   }
   
   function getInfo($dbh, $type, $id, $select = true) {
+    deNorm();
     global $classes;
     if ($obj = getObjectById($dbh, $type, $id)) {
       $content = '
