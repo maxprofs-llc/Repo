@@ -3567,7 +3567,6 @@
                     <div class="leftInfoDiv" id="leftInfoDiv">
                       '.(($select) ? '<span id="all'.ucfirst($type).'Span">Other '.getPlural($type).': '.createSelect(getObjectList($dbh, $type, array ('tournament' => '1', 'national' => $obj->national)), 'all'.ucfirst($type).'Select', $id).'</span>' : '').'
                       <h2 class="entry-title">'.$obj->name.'</h2>
-                      <table id="infoTable">
       ';
       foreach($classes->{$type}->info as $field) {
         $label = '';
@@ -3602,40 +3601,34 @@
           }
           
           $content .= '
-                      <tr>
-                        <td>'.(($label) ? $label : $classes->{$type}->fields->{$field}->label).': </td>
-                        <td>'.$value.'</td>
-                      </tr>
+                      <div id="'.$field.'Div">
+                        <label id="'.$field.'Label" for="'.$field.'ValueDiv">'.(($label) ? $label : $classes->{$type}->fields->{$field}->label).':
+                        <div id="'.$field.'ValueDiv">'.$value.'</div>
+                      </div>
           ';
         }
       } 
       if ($type == 'team') {
         $players = $obj->getMembers($dbh);
         $content .= '
-                      <tr>
-                        <td><b>Members:</b></td>
-                        <td></td>
-                      </tr>
+                      <div id="membersDiv">
+                        <label>Members:</label>
         ';
         if ($players[0]) {
           foreach ($players as $player) {
             $content .= '
-                      <tr>
-                        <td colspan="2">'.getLink($player).'</td>
-                      </tr>
+                        <div class="memberDiv" id="'.$player->id.'memberDiv">
+                          '.getLink($player).'
+                        </div>
             ';
           }
         }
+        $content .= '</div>';
       }
       $content .= '
-                    </table>    
                   </div>
-                  <div class="rightInfoDiv">
-                    <table>
-                      <tr>
-                        <td><img class="objectPhoto" src="'.$obj->getPhoto().'" alt="'.$obj->name.'"></td>
-                      </tr>
-                    </table>
+                  <div class="rightInfoDiv" id="objectPhotoDiv">
+                    <img class="objectPhoto" src="'.$obj->getPhoto().'" alt="'.$obj->name.'">
                   </div>
       ';
       if ($type == 'player') {
@@ -3708,7 +3701,8 @@
         </div>
           ';
         }
-        $content .= '</div>'.getDataTables('.scores');
+//        $content .= '</div>'.getDataTables('.scores');
+        $content .= '</div>';
       }
       if ($type == 'game') {
         $content .= '
@@ -3740,7 +3734,7 @@
           </tbody>
         </table>
         ';
-        $content .= getDataTables('.scores');
+//        $content .= getDataTables('.scores');
       }
       if ($type == 'team') {
         $content .= '
@@ -3772,7 +3766,7 @@
             </tbody>
           </table>
         ';
-        $content .= getDataTables('.scores');
+//        $content .= getDataTables('.scores');
       }
       $content .= '</div>';
       
