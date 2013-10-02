@@ -42,6 +42,7 @@
   $button->type = 'button';
   $button->disabled = true;
   $button->action = "ifpaReg('ifpaIdText', 'ifpaRegResults');";
+  $button->blur = "ifpaReg('ifpaIdText', 'ifpaRegResults');";
   $form->addField($button);
 
   $button = new formInput('button', 'newButton', 'Jag är en helt ny spelare');

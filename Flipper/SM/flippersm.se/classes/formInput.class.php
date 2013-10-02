@@ -11,6 +11,7 @@
     public $keydown;
     public $keyup;
     public $keypress;
+    public $blur;
     public $disabled = false;
     public $loading = true;
     public $addIcon = true;
@@ -113,6 +114,9 @@
           }
           if ($this->keypress) {
             $this->content .= ' onkeypress="'.$this->keypress.'"';
+          }
+          if ($this->blur) {
+            $this->content .= ' onblur="'.$this->keyup.'"';
           }
           if ($this->value) {
             $this->content .= ' value="'.$this->value.'"';
