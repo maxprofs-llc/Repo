@@ -846,13 +846,16 @@ function newGuy(dstId) {
 }
 
 function checkIfpaBtn(el, event) {
-  debugOut(event.keyCode)
   $('#noHits').hide();
   setTimeout(function() { 
     if (/^[0-9]{1,}$|.{3,}/.test(el.value)) {
       document.getElementById('ifpaButton').disabled = (complete('geo')) ? false : true;
       if (!document.getElementById('ifpaButton').disabled) {
-        enterClick('ifpaButton', event);
+        if (event == 'click') {
+          document.getElementById('ifpaButton').click();
+        } else {
+          enterClick('ifpaButton', event);
+        }
       }
     } else {
       document.getElementById('ifpaButton').disabled = true;

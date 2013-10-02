@@ -73,7 +73,9 @@
   echo('
     <script type="text/javascript">
       document.getElementById(\'ifpaIdText\').focus();
-      document.getElementById(\'ifpaButtonDiv\').onclick = function() { checkIfpaBtn(this, event); };
+      $(document).ready(function() {
+        document.getElementById(\'ifpaButtonDiv\').onclick = function() { checkIfpaBtn(document.getElementById(\'ifpaIdText\'), \'click\'); };
+      });
     </script>
   ');
 ?>
