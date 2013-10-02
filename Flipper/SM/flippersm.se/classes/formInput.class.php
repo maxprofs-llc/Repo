@@ -5,7 +5,7 @@
     
     public $label;
     public $labels = true;
-    public $table = true;
+    public $table = false;
     public $value;
     public $text;
     public $keydown;

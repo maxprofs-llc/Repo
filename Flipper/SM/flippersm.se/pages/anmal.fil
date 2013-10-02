@@ -36,7 +36,6 @@
   $newField->label = 'Ange IFPA ID, mailadress, telefonnummer, TAG eller ditt namn';
   $newField->type = 'text';
   $newField->keyup = 'checkIfpaBtn(this, event);';
-  $newField->blur = 'checkIfpaBtn(this, event);';
   $form->addField($newField);
 
   $button = new formInput('button', 'ifpaButton', 'Hitta mig!');
