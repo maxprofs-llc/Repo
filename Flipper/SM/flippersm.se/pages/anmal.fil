@@ -70,6 +70,11 @@
   ';
 
   echo($content);
-  echo('<script type="text/javascript">document.getElementById(\'ifpaIdText\').focus();</script>');
+  echo('
+    <script type="text/javascript">
+      document.getElementById(\'ifpaIdText\').focus();
+      document.getElementById(\'ifpaButtonDiv\').onclick = function() { checkIfpaBtn(this, event); };
+    </script>
+  ');
 ?>
 </div>
