@@ -3634,7 +3634,7 @@
       ';
       if ($type == 'player') {
         $content .= '
-        <div id="tabs">
+        <div id="tabs" class="clearboth">
           <ul>
             <li class="tabs"><a href="#mainTable"><h2>Main tournament</h2></a></li>
             '.(($obj->classics) ? '<li class="tabs"><a href="#classicsTable"><h2>Classics tournament</h2></a></li>' : '').'
