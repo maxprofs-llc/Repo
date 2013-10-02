@@ -846,6 +846,7 @@ function newGuy(dstId) {
 }
 
 function checkIfpaBtn(el, event) {
+  debugOut(event);
   $('#noHits').hide();
   setTimeout(function() { 
     if (/^[0-9]{1,}$|.{3,}/.test(el.value)) {
