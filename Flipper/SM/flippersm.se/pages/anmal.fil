@@ -35,7 +35,8 @@
   $newField->name = 'ifpaId';
   $newField->label = 'Ange IFPA ID, mailadress, telefonnummer, TAG eller ditt namn';
   $newField->type = 'text';
-  $newField->keydown = 'checkIfpaBtn(this, event);';
+  $newField->input = 'checkIfpaBtn(this, event);';
+  $newField->keydown = 'checkIfpaBtn(this, \'noclick\');';
   $form->addField($newField);
 
   $button = new formInput('button', 'ifpaButton', 'Hitta mig!');
@@ -73,9 +74,6 @@
   echo('
     <script type="text/javascript">
       document.getElementById(\'ifpaIdText\').focus();
-      $(document).ready(function() {
-        document.getElementById(\'ifpaButtonDiv\').setAttribute(\'onclick\', "checkIfpaBtn(document.getElementById(\'ifpaIdText\'), \'click\');");
-      });
     </script>
   ');
 ?>

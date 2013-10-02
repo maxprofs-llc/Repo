@@ -851,9 +851,7 @@ function checkIfpaBtn(el, event) {
     if (/^[0-9]{1,}$|.{3,}/.test(el.value)) {
       document.getElementById('ifpaButton').disabled = (complete('geo')) ? false : true;
       if (!document.getElementById('ifpaButton').disabled) {
-        if (event == 'click') {
-          document.getElementById('ifpaButton').click();
-        } else {
+        if (event != 'noclick') {
           enterClick('ifpaButton', event);
         }
       }

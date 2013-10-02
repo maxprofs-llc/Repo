@@ -12,6 +12,7 @@
     public $keyup;
     public $keypress;
     public $blur;
+    public $input;
     public $disabled = false;
     public $loading = true;
     public $addIcon = true;
@@ -117,6 +118,9 @@
           }
           if ($this->blur) {
             $this->content .= ' onblur="'.$this->keyup.'"';
+          }
+          if ($this->input) {
+            $this->content .= ' oninput="'.$this->keyup.'"';
           }
           if ($this->value) {
             $this->content .= ' value="'.$this->value.'"';
