@@ -694,3 +694,12 @@ td, th {
   width: 1px;
   height: 1px;
 }
+
+.leftInfoDiv {
+  float: left;
+}
+
+.objectPhoto {
+  max-width: 400px;
+  margin: 10px;
+}
